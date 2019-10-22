@@ -1,0 +1,11 @@
+language: r
+cache: packages
+r_check_args: --as-cran 
+
+r:
+  - release
+  - devel
+
+os:
+  - linux
+  - osx
