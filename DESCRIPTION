@@ -1,0 +1,13 @@
+Package: deepdep
+Type: Package
+Title: Visualise dependiences between packages in an elegant way
+Version: 0.1
+Date: 2019-10-22
+Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
+                  role = c("aut", "cre")),
+             person("Szymon", "Maksymiuk", role = c("aut")),
+             person("Hubert", "Baniecki", role = c("aut")),
+             person("Mateusz", "Bakala", role = c("aut")))
+Description: Coming soon.
+License: GPL (>= 2)
+RoxygenNote: 6.1.1
