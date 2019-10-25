@@ -10,10 +10,10 @@ get_downloads(package)
 \method{print}{package_downloads}(x, ...)
 }
 \arguments{
-\item{package}{A \code{character} vector. Names of packages that are on CRAN}
+\item{package}{A \code{character}. Name of the package that is on CRAN}
 }
 \value{
-An object of \code{package_download} class
+An object of \code{package_downloads} class
 }
 \description{
 Download logs from the RStudio CRAN mirror through [META CRAN Logs](https://cranlogs.r-pkg.org/)

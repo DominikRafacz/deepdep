@@ -2,9 +2,9 @@
 #' 
 #' @description Download logs from the RStudio CRAN mirror through [META CRAN Logs](https://cranlogs.r-pkg.org/)
 #' 
-#' @param package A \code{character} vector. Names of packages that are on CRAN
+#' @param package A \code{character}. Name of the package that is on CRAN
 #' 
-#' @return An object of \code{package_download} class 
+#' @return An object of \code{package_downloads} class 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk
 #' 
