@@ -10,13 +10,13 @@ get_description(package)
 \method{print}{package_description}(x, ...)
 }
 \arguments{
-\item{package}{A \code{character}. Name of the package that is on CRAN}
+\item{package}{A \code{character}. Name of the package that is on CRAN.}
 }
 \value{
-An object of \code{package_description} class
+An object of \code{package_description} class.
 }
 \description{
-[CRAN Data Base](http://crandb.r-pkg.org)
+[API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
 }
 \examples{
 library(deepdep)

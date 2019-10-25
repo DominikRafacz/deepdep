@@ -2,15 +2,33 @@
 % Please edit documentation in R/deepdep.R
 \name{deepdep}
 \alias{deepdep}
-\title{Visualizing dependiences between packages}
+\title{deepdep}
 \usage{
-deepdep(package, depth = 3)
+deepdep(package, downloads = FALSE, depth = 1)
 }
 \arguments{
-\item{package}{\code{character} Name of the package that is on CRAN}
+\item{package}{A \code{character}. Name of the package that is on CRAN.}
 
-\item{depth}{\code{integer}}
+\item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{FALSE}.}
+
+\item{depth}{An \code{integer}. Depth of package dependency. By default it's \code{1}.}
+}
+\value{
+An object of \code{deepdep} class.
 }
 \description{
-Visualize connections between packages.
+deepdep.
+}
+\examples{
+library(deepdep)
+
+dd <- deepdep("ggplot2")
+dd
+
+dd5 <- deepdep("ggplot2")
+dd5
+
+}
+\author{
+Hubert Baniecki, Szymon Maksymiuk
 }

@@ -1,10 +1,10 @@
 #' @title Scrap the download data of the package 
 #' 
-#' @description Download logs from the RStudio CRAN mirror through [META CRAN Logs](https://cranlogs.r-pkg.org/)
+#' @description Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)
 #' 
-#' @param package A \code{character}. Name of the package that is on CRAN
+#' @param package A \code{character}. Name of the package that is on CRAN.
 #' 
-#' @return An object of \code{package_downloads} class 
+#' @return An object of \code{package_downloads} class. 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk
 #' 
@@ -18,14 +18,19 @@
 #' @export
 get_downloads <- function(package) {
   
-  # check name
+  check_package_name(package)
   
-  # use the official `cranlogs` package for the querry
-  downloads <- cranlogs::cran_downloads(package, from = "1996-01-01", to = Sys.Date())
+  # use the `cranlogs` package for the querry (from offical cran downloads data)
+  # count from 2012-10-01 - date of first entry "http://cran-logs.rstudio.com/"
+  downloads <- cranlogs::cran_downloads(package, from = "2012-10-01", to = Sys.Date())
   
   # remove zeros from last few days without data
   downloads_count <- rev(downloads$count)
-  downloads_count <- downloads_count[which(downloads_count != 0)[1]:length(downloads_count)]
+  
+  # first two entries are 0 
+  # downloads_count <- downloads_count[which(downloads_count != 0)[1]:length(downloads_count)]
+  
+  downloads_count <- downloads_count[3:length(downloads_count)]
   
   # take count from last day that was not 0 ( cran_downloads(when = "last-day") )
   last_day <- downloads_count[1]

@@ -25,3 +25,7 @@ skip_lines <- function(text, head = 1e6, tail = 1e6) {
   ret <- paste(ret, collapse = "\n")
   ret
 }
+
+check_package_name <- function(package) {
+  if (!package %in% available.packages()[,1]) stop("This package is not on CRAN.")
+}

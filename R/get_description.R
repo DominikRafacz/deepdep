@@ -1,10 +1,10 @@
 #' @title Scrap the DESCRIPTION file and CRAN metadata of the package
 #' 
-#' @description  [CRAN Data Base](http://crandb.r-pkg.org)
+#' @description  [API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
 #' 
-#' @param package A \code{character}. Name of the package that is on CRAN
+#' @param package A \code{character}. Name of the package that is on CRAN.
 #'
-#' @return An object of \code{package_description} class 
+#' @return An object of \code{package_description} class. 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk
 #' 
@@ -18,7 +18,7 @@
 #' @export
 get_description <- function(package) {
   
-  # check name
+  check_package_name(package)
   
   # get the description
   json_as_string <- DB(package)

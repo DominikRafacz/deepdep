@@ -10,13 +10,13 @@ get_downloads(package)
 \method{print}{package_downloads}(x, ...)
 }
 \arguments{
-\item{package}{A \code{character}. Name of the package that is on CRAN}
+\item{package}{A \code{character}. Name of the package that is on CRAN.}
 }
 \value{
-An object of \code{package_downloads} class
+An object of \code{package_downloads} class.
 }
 \description{
-Download logs from the RStudio CRAN mirror through [META CRAN Logs](https://cranlogs.r-pkg.org/)
+Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)
 }
 \examples{
 library(deepdep)

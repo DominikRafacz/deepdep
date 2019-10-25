@@ -1,12 +1,33 @@
-#' Visualizing dependiences between packages 
+#' deepdep
 #' 
-#' @description Visualize connections between packages. 
+#' @description deepdep. 
 #' 
-#' @param package  \code{character} Name of the package that is on CRAN 
-#' @param depth \code{integer}
+#' @param package A \code{character}. Name of the package that is on CRAN. 
+#' @param downloads A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{FALSE}.
+#' @param depth An \code{integer}. Depth of package dependency. By default it's \code{1}.
+#' 
+#' @return An object of \code{deepdep} class. 
+#' 
+#' @author Hubert Baniecki, Szymon Maksymiuk
+#' 
+#' @examples 
+#' library(deepdep)
+#' 
+#' dd <- deepdep("ggplot2")
+#' dd
+#' 
+#' dd5 <- deepdep("ggplot2")
+#' dd5
 #' 
 #' @export
-#' 
-deepdep <- function(package, depth = 3) {
-  NULL
+deepdep <- function(package, downloads = FALSE, depth = 1) {
+  
+  check_package_name(package)
+  
+  
+}
+
+#' @export
+print.deepdep <- function(x, ...) {
+  print.data.frame(x)
 }
