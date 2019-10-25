@@ -11,14 +11,14 @@
 #' @examples
 #' library(deepdep)
 #' 
-#' desc <- get_description("ggplot2")
-#' print(desc)
+#' desc <- get_description("stringr")
+#' desc
 #' 
 #'
 #' @export
 get_description <- function(package) {
   
-  check_package_name(package)
+  if (!is_available(package)) return(NULL)
   
   # get the description
   json_as_string <- DB(package)
@@ -77,11 +77,25 @@ get_description <- function(package) {
 
   ret <- description
   
+  attr(ret, "package_name") <- package
   class(ret) <- c("package_description", "list")
   ret
 }
 
-#' @rdname get_description
+#' @title Print function for an object of \code{package_description} class
+#' 
+#' @param x An object of \code{package_description} class.
+#' @param ... other
+#'
+#' @author Hubert Baniecki, Szymon Maksymiuk
+#' 
+#' @examples
+#' library(deepdep)
+#' 
+#' desc <- get_description("stringr")
+#' desc
+#' 
+#' @rdname print.package_description
 #' @export
 print.package_description <- function(x, ...) {
   cat(x$package, ": ", x$title, "\n", sep = "")

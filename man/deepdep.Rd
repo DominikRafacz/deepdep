@@ -22,11 +22,11 @@ deepdep.
 \examples{
 library(deepdep)
 
-dd <- deepdep("ggplot2")
+dd <- deepdep("stringr", downloads = TRUE)
 dd
 
-dd5 <- deepdep("ggplot2")
-dd5
+dd2 <- deepdep("stringr", depth = 2)
+dd2
 
 }
 \author{

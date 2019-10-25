@@ -2,12 +2,9 @@
 % Please edit documentation in R/get_description.R
 \name{get_description}
 \alias{get_description}
-\alias{print.package_description}
 \title{Scrap the DESCRIPTION file and CRAN metadata of the package}
 \usage{
 get_description(package)
-
-\method{print}{package_description}(x, ...)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
@@ -21,8 +18,8 @@ An object of \code{package_description} class.
 \examples{
 library(deepdep)
 
-desc <- get_description("ggplot2")
-print(desc)
+desc <- get_description("stringr")
+desc
 
 
 }

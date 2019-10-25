@@ -1,3 +1,5 @@
+# TODO: document this functions
+
 DB <- function(api, head = 1e6, tail = head) {
   
   ret <- paste0("http://crandb.r-pkg.org", "/", api)
@@ -26,6 +28,12 @@ skip_lines <- function(text, head = 1e6, tail = 1e6) {
   ret
 }
 
+#' @importFrom utils available.packages contrib.url
+#'
+is_available <- function(package) {
+  package %in% available.packages(contriburl = contrib.url("https://cloud.r-project.org/"))[, 1]
+}
+
 check_package_name <- function(package) {
-  if (!package %in% available.packages()[,1]) stop(paste(package, "is not on CRAN."))
+  if (!is_available(package)) stop(paste0(package, " is not on CRAN."))
 }

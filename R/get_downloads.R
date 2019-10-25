@@ -11,14 +11,14 @@
 #' @examples
 #' library(deepdep)
 #' 
-#' downloads <- get_downloads("ggplot2")
+#' downloads <- get_downloads("stringr")
 #' downloads
 #' 
 #'
 #' @export
 get_downloads <- function(package) {
   
-  check_package_name(package)
+  if (!is_available(package)) return(NULL)
   
   # use the `cranlogs` package for the querry (from offical cran downloads data)
   # count from 2012-10-01 - date of first entry "http://cran-logs.rstudio.com/"
@@ -49,7 +49,20 @@ get_downloads <- function(package) {
   ret
 }
 
-#' @rdname get_downloads
+#' @title Print function for an object of \code{package_downloads} class
+#' 
+#' @param x An object of \code{package_downloads} class.
+#' @param ... other
+#'
+#' @author Hubert Baniecki, Szymon Maksymiuk
+#' 
+#' @examples
+#' library(deepdep)
+#' 
+#' desc <- get_downloads("stringr")
+#' desc
+#' 
+#' @rdname print.package_downloads
 #' @export
 print.package_downloads <- function(x, ...) {
   print(as.data.frame(x))

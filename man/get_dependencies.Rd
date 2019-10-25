@@ -2,12 +2,9 @@
 % Please edit documentation in R/get_dependencies.R
 \name{get_dependencies}
 \alias{get_dependencies}
-\alias{print.package_dependencies}
 \title{Acquire dependencies of the package}
 \usage{
 get_dependencies(package, downloads = FALSE)
-
-\method{print}{package_dependencies}(x, ...)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
@@ -24,7 +21,7 @@ to acquire dependencies.
 \examples{
 library(deepdep)
 
-dependencies <- get_dependencies("ggplot2")
+dependencies <- get_dependencies("stringr")
 dependencies
 
 

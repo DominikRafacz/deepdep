@@ -2,12 +2,9 @@
 % Please edit documentation in R/get_downloads.R
 \name{get_downloads}
 \alias{get_downloads}
-\alias{print.package_downloads}
 \title{Scrap the download data of the package}
 \usage{
 get_downloads(package)
-
-\method{print}{package_downloads}(x, ...)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
@@ -21,7 +18,7 @@ Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-h
 \examples{
 library(deepdep)
 
-downloads <- get_downloads("ggplot2")
+downloads <- get_downloads("stringr")
 downloads
 
 
