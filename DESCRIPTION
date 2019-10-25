@@ -1,15 +1,22 @@
 Package: deepdep
 Type: Package
-Title: Visualise dependiences between packages in an elegant way
-Version: 0.1
+Title: Acquire and Visualise Deep Dependiences of R packages 
+Version: 0.0.1
 Date: 2019-10-22
 Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
                   role = c("aut", "cre")),
-             person("Szymon", "Maksymiuk", role = c("aut")),
              person("Hubert", "Baniecki", role = c("aut")),
+             person("Szymon", "Maksymiuk", role = c("aut")),
              person("Mateusz", "Bakala", role = c("aut")))
-Description: Coming soon.
+Description: Something something CRAN, http://crandb.r-pkg.org, https://cranlogs.r-pkg.org/.
 License: GPL (>= 2)
+Encoding: UTF-8
 RoxygenNote: 6.1.1
+Imoorts:
+    hhtr,
+    jsonlite,
+    cranlogs
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown

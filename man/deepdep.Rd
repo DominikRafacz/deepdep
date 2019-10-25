@@ -4,16 +4,12 @@
 \alias{deepdep}
 \title{Visualizing dependiences between packages}
 \usage{
-deepdep(package, plot_type = "circular", deps_depth = "standard")
+deepdep(package, depth = 3)
 }
 \arguments{
-\item{package}{\code{\link{Character}} vector giving a package name.}
+\item{package}{\code{character} Name of the package that is on CRAN}
 
-\item{plot_type}{\code{\link{Character}} string giving the type of the plot - either "circular",
-"horizontal tree" or "vertical tree".}
-
-\item{deps_depth}{\code{\link{Character}} string or \code{\link{numeric}} vector, giving 
-information what types of dependencies to plot and how deep - see details.}
+\item{depth}{\code{integer}}
 }
 \description{
 Visualize connections between packages.
