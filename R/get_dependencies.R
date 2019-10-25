@@ -23,66 +23,33 @@ get_dependencies <- function(package, downloads = FALSE) {
   check_package_name(package)
   
   description <- get_description(package)
+  description$depends$R <- NULL
   
-  depends <- imports <- suggests <- enhances <- linkingto <- NULL
+  package_names <- names(c(description$depends, description$imports, description$suggests,
+                           description$enhances, description$linkingto))
   
-  if (!is.null(description$depends)) {
-    package_names <- names(description$depends)
-    package_names <- package_names[!(package_names %in% "R")]
+  package_versions <- unlist(c(description$depends, description$imports, description$suggests,
+                               description$enhances, description$linkingto), use.names = FALSE)
+  
+  package_types <- c(rep("Depends", length(description$depends)), rep("Imports", length(description$imports)),
+                     rep("Suggests", length(description$suggests)), rep("Enhances", length(description$enhances)),
+                     rep("LinkingTo", length(description$linkingto)))
     
-    if (length(package_names) != 0) {
-      package_names <- names(description$depends)
-      package_versions <- unlist(description$depends, use.names = FALSE)
-      
-      downloads <- lapply(package_names, get_downloads) 
-      downloads <- as.data.frame(do.call(rbind, downloads))
-      
-      depends <- cbind(name = package_names, version = package_versions, type = "Depends", downloads)
-    }
+  downloads_df <- NULL
+  
+  if (downloads) {
+    downloads_list <- lapply(package_names, get_downloads)
+    downloads_df <- as.data.frame(do.call(rbind, downloads_list)) 
   }
   
-  if (!is.null(description$imports)) {
-    package_names <- names(description$imports)
-    package_versions <- unlist(description$imports, use.names = FALSE)
-    
-    downloads <- lapply(package_names, get_downloads) 
-    downloads <- as.data.frame(do.call(rbind, downloads))
-    
-    imports <- cbind(name = package_names, version = package_versions, type = "Imports", downloads)
-  }
+  # this works if downloads_df is NULL
+  ret <- as.data.frame(cbind(name = package_names,
+                             version = package_versions,
+                             type = package_types,
+                             downloads_df),
+                       stringsAsFactors = FALSE)
   
-  if (!is.null(description$suggests)) {
-    package_names <- names(description$suggests)
-    package_versions <- unlist(description$suggests, use.names = FALSE)
-    
-    downloads <- lapply(package_names, get_downloads) 
-    downloads <- as.data.frame(do.call(rbind, downloads))
-    
-    suggests <- cbind(name = package_names, version = package_versions, type = "Suggests", downloads)
-  }
-  
-  if (!is.null(description$enhances)) {
-    package_names <- names(description$enhances)
-    package_versions <- unlist(description$enhances, use.names = FALSE)
-    
-    downloads <- lapply(package_names, get_downloads) 
-    downloads <- as.data.frame(do.call(rbind, downloads))
-    
-    enhances <- cbind(name = package_names, version = package_versions, type = "Enhances", downloads)
-  }
-  
-  if (!is.null(description$linkingto)) {
-    package_names <- names(description$linkingto)
-    package_versions <- unlist(description$linkingto, use.names = FALSE)
-    
-    downloads <- lapply(package_names, get_downloads) 
-    downloads <- as.data.frame(do.call(rbind, downloads))
-    
-    linkingto <- cbind(name = package_names, version = package_versions, type = "LinkingTo", downloads)
-  }
-  
-  ret <- rbind(depends, imports, suggests, enhances, linkingto)
-  
+  attr(ret, "package_name") <- package
   class(ret) <- c("package_dependencies", "data.frame")
   ret
 }

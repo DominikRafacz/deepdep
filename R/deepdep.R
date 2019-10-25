@@ -24,7 +24,20 @@ deepdep <- function(package, downloads = FALSE, depth = 1) {
   
   check_package_name(package)
   
+  package_dependencies <- get_dependencies(package, downloads)
   
+  if (depth > 1) {
+    for (i in 2:depth) {
+      x <- lapply(package_dependencies$name, function(x) get_dependencies(x, downloads))
+    }
+  }
+  
+  # cbind with 'from' package name (package_name attr)
+  # TODO: make df
+  # rbind
+  
+  class(ret) <- c("deepdep", "data.frame")
+  ret
 }
 
 #' @export

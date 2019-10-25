@@ -31,9 +31,13 @@ get_description <- function(package) {
   # authors is a vector of "person" class objects (named character)
   description$author <- NULL
   names(description)[names(description) == "authors@r"] <- "authors"
-  description$authors <- gsub("\n", "", x = description$authors, fixed = TRUE)
-  description$authors <- eval(parse(text = description$authors))
   
+  # gsub("\n") did not remove all backslashes
+  # gsub("\\") dit no work
+  # this apparently works with '\n' in input 
+  # this below was very optimistic
+  # description$authors <- eval(parse(text = description$authors))
+  # this below was very optimistic too
   # description$description <- gsub("\n", "", x = description$description, fixed = TRUE)
   
   # add NA if a version of the dependency is not specified (instead of "*")

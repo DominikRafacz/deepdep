@@ -44,6 +44,7 @@ get_downloads <- function(package) {
   ret <- list("last_day" = last_day, "last_week" = last_week, "last_month" = last_month,
               "last_quarter" = last_quarter, "last_half" = last_half, "grand_total" = grand_total)
   
+  attr(ret, "package_name") <- package
   class(ret) <- c("package_downloads", "list")
   ret
 }
