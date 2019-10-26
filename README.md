@@ -10,3 +10,12 @@ Acquire and Visualise Deep Dependiences of R packages.
 ----------------------
 
 This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.
+
+
+## Installation
+
+To install the package, use the following code:
+
+```{r}
+devtools::install_github("DominikRafacz/deepdep")
+```
