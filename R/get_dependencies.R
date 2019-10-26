@@ -34,22 +34,24 @@ get_dependencies <- function(package, downloads = FALSE) {
                      rep("Suggests", length(description$suggests)), rep("Enhances", length(description$enhances)),
                      rep("LinkingTo", length(description$linkingto)))
     
-  downloads_df <- NULL
-  remove_base_or_R <- sapply(package_names, is_available)
-  
-  if (downloads) {
-    downloads_list <- lapply(package_names, get_downloads)
-    downloads_df <- as.data.frame(do.call(rbind, downloads_list))
-  }
-  
-  # this works if downloads_df is NULL
-  ret <- as.data.frame(cbind(name = package_names[remove_base_or_R],
-                             version = package_versions[remove_base_or_R],
-                             type = package_types[remove_base_or_R],
-                             downloads_df),
-                       stringsAsFactors = FALSE)
-  
-  ret$downloads_df <- downloads_df
+  if (!is.null(package_names)) {
+    downloads_df <- NULL
+    remove_base_or_R <- sapply(package_names, is_available)
+    
+    if (downloads) {
+      downloads_list <- lapply(package_names, get_downloads)
+      downloads_df <- as.data.frame(do.call(rbind, downloads_list))
+    }
+    
+    # this works if downloads_df is NULL
+    ret <- as.data.frame(cbind(name = package_names[remove_base_or_R],
+                               version = package_versions[remove_base_or_R],
+                               type = package_types[remove_base_or_R],
+                               downloads_df),
+                         stringsAsFactors = FALSE)
+    
+    ret$downloads_df <- downloads_df  
+  } else return(NULL)
   
   attr(ret, "package_name") <- package
   class(ret) <- c("package_dependencies", "data.frame")
