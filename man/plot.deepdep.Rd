@@ -2,18 +2,35 @@
 % Please edit documentation in R/plot_deepdep.R
 \name{plot.deepdep}
 \alias{plot.deepdep}
-\title{plot}
+\title{Plot dependency data}
 \usage{
-\method{plot}{deepdep}(x, plot_type, ...)
+\method{plot}{deepdep}(x, plot_type, same_level = FALSE, ...)
 }
 \arguments{
-\item{x}{x}
+\item{x}{A \code{\link{deepdep}} object.}
 
-\item{plot_type}{A \code{character}. \code{circular}, \code{ee}, \code{bb}
-"horizontal tree" or "vertical tree".}
+\item{plot_type}{A \code{character}. Possible values are \code{circular} and \code{tree}.}
 
-\item{...}{other}
+\item{same_level}{A \code{boolean}. Whether to plot links between dependencies on the same
+level.}
+
+\item{...}{Other arguments passed to plotting function.}
 }
 \description{
-plot
+Visualize dependency data passed as \code{deepdep} object using
+\code{ggplot2} and \code{ggraph} packages. Several tree-like layouts are
+available
+}
+\examples{
+library(deepdep)
+
+dd <- deepdep("stringr")
+plot(dd, "tree")
+
+dd2 <- deepdep("cranlogs", depth = 2)
+plot(dd2, "circular")
+
+}
+\author{
+Mateusz Bąkała
 }
