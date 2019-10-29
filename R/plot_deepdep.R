@@ -21,12 +21,16 @@
 #' dd2 <- deepdep("cranlogs", depth = 2)
 #' plot(dd2, "circular")
 #' 
+#' @importFrom ggforce geom_circle
+#' @importFrom igraph V
+#' @importFrom igraph graph_from_data_frame
+#' @import ggraph
 #' @export
 plot.deepdep <- function(x, plot_type, same_level = FALSE, ...) {
   # stopifnot(is.deepdep(x)) # we need this function guys
   
   # we don't use pipes here, right?
-  G <- igraph::graph_from_data_frame(x)
+  G <- graph_from_data_frame(x)
   G <- add_layers_to_vertices(G)
   if (!same_level) {
     G <- delete_edges_within_layer(G)
@@ -34,22 +38,22 @@ plot.deepdep <- function(x, plot_type, same_level = FALSE, ...) {
   
   switch (plot_type,
     circular = {
-      g <- ggraph::ggraph(G, "tree", circular = TRUE) +
-        ggforce::geom_circle(ggplot2::aes(x0 = 0, y0 = 0, r = (layer-1)/max(layer-1), colour = factor(layer)), size = 3) +
-        ggraph::geom_edge_link(ggplot2::aes(colour = factor(type)), arrow = grid::arrow(angle = 16.6, ends = "first", type = "closed")) +
-        ggraph::geom_node_point(ggplot2::aes(colour = factor(layer)), size = 5) +
-        ggraph::geom_node_label(ggplot2::aes(label = names(igraph::V(G)), fill = factor(layer))) +
-        ggplot2::xlim(c(-1, 1)) +
-        ggplot2::ylim(c(-1, 1)) +
-        ggplot2::coord_equal() +
-        ggplot2::theme_void()
+      g <- ggraph(G, "tree", circular = TRUE) +
+        geom_circle(ggplot2::aes(x0 = 0, y0 = 0, r = (layer-1)/max(layer-1), colour = factor(layer)), size = 3) +
+        geom_edge_link(aes(colour = type), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
+        geom_node_point(aes(colour = factor(layer)), size = 5) +
+        geom_node_label(aes(label = names(V(G)), fill = factor(layer))) +
+        xlim(c(-1, 1)) +
+        ylim(c(-1, 1)) +
+        coord_equal() +
+        theme_void()
     },
     tree = {
-      g <- ggraph::ggraph(G, "tree") +
-        ggraph::geom_edge_link(ggplot2::aes(colour = factor(type)), arrow = grid::arrow(angle = 16.6, ends = "first", type = "closed")) +
-        ggraph::geom_node_point(ggplot2::aes(colour = factor(layer)), size = 5) +
-        ggraph::geom_node_label(ggplot2::aes(label = names(igraph::V(G)), fill = factor(layer))) +
-        ggplot2::theme_void()
+      g <- ggraph(G, "tree") +
+        geom_edge_link(aes(colour = factor(type)), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
+        geom_node_point(aes(colour = factor(layer)), size = 5) +
+        geom_node_label(aes(label = names(V(G)), fill = factor(layer))) +
+        theme_void()
     }
   )
   g
@@ -60,16 +64,18 @@ plot.deepdep <- function(x, plot_type, same_level = FALSE, ...) {
 #' @title Add layer property to graph vertices
 #' 
 #' @param G An \code{igraph} object
+#' @import igraph 
 add_layers_to_vertices <- function(G) {
-  igraph::V(G)$layer <- igraph::distances(G, v = igraph::V(G)[1]) + 1
+  V(G)$layer <- distances(G, v = V(G)[1]) + 1
   G
 }
 
 #' @title Remove edges on the same level
 #' 
 #' @param G An \code{igraph} object
+#' @import igraph 
 delete_edges_within_layer <- function(G) {
-  edges_to_delete <- igraph::E(G)[
-    igraph::head_of(G, igraph::E(G))$layer == igraph::tail_of(G, igraph::E(G))$layer]
-  igraph::delete_edges(G, edges_to_delete)
+  edges_to_delete <- E(G)[
+    head_of(G, E(G))$layer == tail_of(G, E(G))$layer]
+  delete_edges(G, edges_to_delete)
 }
