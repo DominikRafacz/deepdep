@@ -4,7 +4,8 @@
 \alias{plot.deepdep}
 \title{Plot dependency data}
 \usage{
-\method{plot}{deepdep}(x, plot_type, same_level = FALSE, ...)
+\method{plot}{deepdep}(x, plot_type, same_level = FALSE, n_iter = 10,
+  ...)
 }
 \arguments{
 \item{x}{A \code{\link{deepdep}} object.}
@@ -13,6 +14,8 @@
 
 \item{same_level}{A \code{boolean}. Whether to plot links between dependencies on the same
 level.}
+
+\item{n_iter}{Number of iterations made to optimize layout.}
 
 \item{...}{Other arguments passed to plotting function.}
 }

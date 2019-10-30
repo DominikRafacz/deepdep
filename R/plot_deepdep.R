@@ -8,6 +8,7 @@
 #' @param plot_type A \code{character}. Possible values are \code{circular} and \code{tree}.
 #' @param same_level A \code{boolean}. Whether to plot links between dependencies on the same
 #' level.
+#' @param n_iter Number of iterations made to optimize layout.
 #' @param ... Other arguments passed to plotting function.
 #' 
 #' @author Mateusz Bąkała
@@ -26,7 +27,7 @@
 #' @importFrom igraph graph_from_data_frame
 #' @import ggraph
 #' @export
-plot.deepdep <- function(x, plot_type, same_level = FALSE, ...) {
+plot.deepdep <- function(x, plot_type, same_level = FALSE, n_iter = 10, ...) {
   # stopifnot(is.deepdep(x)) # we need this function guys
   
   # we don't use pipes here, right?
@@ -38,8 +39,12 @@ plot.deepdep <- function(x, plot_type, same_level = FALSE, ...) {
   
   switch (plot_type,
     circular = {
-      g <- ggraph(G, "tree", circular = TRUE) +
-        geom_circle(ggplot2::aes(x0 = 0, y0 = 0, r = (layer-1)/max(layer-1), colour = factor(layer)), size = 3) +
+      G_layout <- create_layout(graph = G, layout = "tree", circular = TRUE)
+      for (i in 1:n_iter) {
+        G_layout <- gravity_iteration(layout = G_layout, G = G)
+      }
+      g <- ggraph(graph = G, layout = "manual", node.positions = G_layout) +
+        geom_circle(aes(x0 = 0, y0 = 0, r = (layer-1)/max(layer-1), colour = factor(layer)), size = 3) +
         geom_edge_link(aes(colour = type), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
         geom_node_point(aes(colour = factor(layer)), size = 5) +
         geom_node_label(aes(label = names(V(G)), fill = factor(layer))) +
