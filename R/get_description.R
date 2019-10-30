@@ -58,7 +58,7 @@ get_description <- function(package) {
   }
   
   if (!is.null(description$linkingto)) {
-    description$linkingto <- lapply(description$linkingtos, function(x) ifelse(x == "*", NA, x))
+    description$linkingto <- lapply(description$linkingto, function(x) ifelse(x == "*", NA, x))
   }
   
   # change url to the vector of properl urls
