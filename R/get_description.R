@@ -19,7 +19,7 @@
 get_description <- function(package, bioc = FALSE, local = FALSE, reset_cache = FALSE) {
   if (reset_cache) reset_cached_files("desc")
   if (!is_available(package, bioc, local)) return(NULL)
-  if (local) return(get_desc_cached(pacakge, "local"))
+  if (local) return(get_desc_cached(package, "local"))
   desc <- NULL
   if (bioc) desc <- get_desc_cached(package, "bioc")
   if (is.null(desc)) desc <- get_desc_cached(package, "CRAN")
@@ -161,4 +161,11 @@ get_all_desc_bioc <- function(descs) {
   attr(descs, "type") <- "desc"
   attr(descs, "repo") <- "bioc"
   descs
+}
+
+get_desc_local <- function(package, descs) {
+  #pacakge - string giving pacakge name
+  #descs - list of already scrapped descriptions
+  stop("NOT IMPLEMENTED YET")
+  #this function should append descs by description of pacakge 
 }
