@@ -26,6 +26,7 @@
 #' @importFrom igraph V
 #' @importFrom igraph graph_from_data_frame
 #' @importFrom graphlayouts draw_circle
+#' @import ggplot2
 #' @import ggraph
 #' @export
 plot.deepdep <- function(x, plot_type, same_level = FALSE, n_iter = 10, ...) {
