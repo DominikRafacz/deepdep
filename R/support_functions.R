@@ -28,25 +28,9 @@ skip_lines <- function(text, head = 1e6, tail = 1e6) {
   ret
 }
 
-#' @importFrom utils available.packages contrib.url
-#'
-is_available <- function(package) {
-  package %in% get_available_packages()
-}
-
-check_package_name <- function(package) {
-  if (!is_available(package)) stop(paste0(package, " is not on CRAN."))
-}
-
-get_available_packages <- function() {
-  cache_dir <- tempdir()
-  ava_pkg_file <- paste0(cache_dir, "/deepdep_ava_pkg.RDS")
-  if (!file.exists(ava_pkg_file) || 
-      difftime(Sys.time(), file.info(ava_pkg_file)$mtime, units = "secs") > 600) {
-    ava_pkg <- available.packages(contriburl = contrib.url("https://cloud.r-project.org/"))[, 1]
-    saveRDS(ava_pkg, ava_pkg_file)
-    ava_pkg
-  } else {
-    readRDS(ava_pkg_file)
+check_package_name <- function(package, bioc) {
+  if (!is_available(package, bioc)) {
+    if (bioc) stop(paste0(package, " is not available neither on CRAN nor on Bioconductor"))
+    else stop(paste0(package, " is not available on CRAN"))
   }
 }

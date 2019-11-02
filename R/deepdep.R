@@ -20,9 +20,8 @@
 #' dd2
 #' 
 #' @export
-deepdep <- function(package, downloads = FALSE, depth = 1) {
-  
-  check_package_name(package)
+deepdep <- function(package, downloads = FALSE, depth = 1, bioc = FALSE) {
+  check_package_name(package, bioc)
   
   pkg_dep <- get_dependencies(package, downloads)
   pkg_dep_names <- pkg_dep$name

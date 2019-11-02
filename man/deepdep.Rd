@@ -4,7 +4,7 @@
 \alias{deepdep}
 \title{deepdep}
 \usage{
-deepdep(package, downloads = FALSE, depth = 1)
+deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
