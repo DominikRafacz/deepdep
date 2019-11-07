@@ -4,7 +4,8 @@
 \alias{get_dependencies}
 \title{Acquire dependencies of the package}
 \usage{
-get_dependencies(package, downloads = FALSE)
+get_dependencies(package, downloads = FALSE, bioc = FALSE,
+  local = FALSE)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}

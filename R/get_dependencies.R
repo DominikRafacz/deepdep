@@ -18,11 +18,11 @@
 #' 
 #'
 #' @export
-get_dependencies <- function(package, downloads = FALSE) {
+get_dependencies <- function(package, downloads = FALSE, bioc = FALSE, local = FALSE) {
+  if (downloads && (local || bioc)) stop("If you use downloads, you cannot use",
+                                         " neither bioc nor local")
   
-  if (!is_available(package)) return(NULL)
-  
-  description <- get_description(package)
+  description <- get_description(package, bioc, local)
   
   package_names <- names(c(description$depends, description$imports, description$suggests,
                            description$enhances, description$linkingto))

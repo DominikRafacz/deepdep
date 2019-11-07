@@ -4,7 +4,8 @@
 \alias{get_description}
 \title{Scrap the DESCRIPTION file and CRAN metadata of the package}
 \usage{
-get_description(package, bioc = FALSE, local = FALSE)
+get_description(package, bioc = FALSE, local = FALSE,
+  reset_cache = FALSE)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
