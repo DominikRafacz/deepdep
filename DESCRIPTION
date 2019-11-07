@@ -18,9 +18,11 @@ Imports:
     cranlogs,
     ggforce,
     ggraph,
+    graphlayouts,
     httr,
     igraph,
-    jsonlite
+    jsonlite,
+    stringi
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
