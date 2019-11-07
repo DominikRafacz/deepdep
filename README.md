@@ -1,4 +1,4 @@
-# deepdep
+# deepdep <img src='inst/logo.png' align="right" height="250" />
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master)](https://travis-ci.org/DominikRafacz/deepdep)
