@@ -17,22 +17,34 @@
 #' library(deepdep)
 #' 
 #' dd <- deepdep("stringr")
-#' plot(dd, "tree")
+#' plot_dependencies(dd, "tree")
 #' 
 #' dd2 <- deepdep("cranlogs", depth = 2)
-#' plot(dd2, "circular")
-#' 
+#' plot_dependencies(dd2, "circular")
+#' @rdname plot_deepdep
+#' @export
+plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE) {
+  UseMethod("plot_dependencies")
+}
+
+#' @rdname plot_deepdep
+#' @exportMethod plot_dependencies default 
+#' @export
+plot_dependencies.default <- function(x, plot_type = "circular", same_level = FALSE) {
+  stop("This type of object does not have implemented method for 'plot_dependencies'")
+}
+
+#' @rdname plot_deepdep
 #' @importFrom ggforce geom_circle
 #' @importFrom igraph V
 #' @importFrom igraph graph_from_data_frame
 #' @importFrom graphlayouts draw_circle
 #' @import ggplot2
 #' @import ggraph
+#' @exportMethod plot_dependencies deepdep
 #' @export
-plot.deepdep <- function(x, plot_type, same_level = FALSE, n_iter = 10, ...) {
-  # stopifnot(is.deepdep(x)) # we need this function guys
-  
-  # we don't use pipes here, right?
+plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FALSE, 
+                         n_iter = 10, ...) {
   G <- graph_from_data_frame(x)
   G <- add_layers_to_vertices(G)
   if (!same_level) {
