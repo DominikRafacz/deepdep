@@ -26,7 +26,8 @@ Imports:
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 VignetteBuilder: knitr
 URL: https://github.com/DominikRafacz/deepdep
 BugReports: https://github.com/DominikRafacz/deepdep/issues
