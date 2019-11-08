@@ -5,6 +5,9 @@
 #' @param package A \code{character}. Name of the package that is on CRAN. 
 #' @param downloads A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{FALSE}.
 #' @param depth An \code{integer}. Depth of package dependency. By default it's \code{1}.
+#' @param bioc A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
+#' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
+#' installed.
 #' 
 #' @return An object of \code{deepdep} class. 
 #' 
@@ -20,10 +23,10 @@
 #' dd2
 #' 
 #' @export
-deepdep <- function(package, downloads = FALSE, depth = 1, bioc = FALSE) {
-  check_package_name(package, bioc)
+deepdep <- function(package, downloads = FALSE, depth = 1, bioc = FALSE, local = FALSE) {
+  check_package_name(package, bioc, local)
   
-  pkg_dep <- get_dependencies(package, downloads)
+  pkg_dep <- get_dependencies(package, downloads, bioc, local)
   pkg_dep_names <- pkg_dep$name
   
   ret <- data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep)
@@ -34,7 +37,7 @@ deepdep <- function(package, downloads = FALSE, depth = 1, bioc = FALSE) {
   if (depth > 1) {
     for (i in 2:depth) {
       for (name in pkg_dep_names) {
-        pkg_dep_dep <- get_dependencies(name, downloads)
+        pkg_dep_dep <- get_dependencies(name, downloads, bioc, local)
         
         if (length(pkg_dep_dep$name) != 0) {
           # find all unique dependency names (for next depth level)

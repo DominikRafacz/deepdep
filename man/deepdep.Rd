@@ -4,7 +4,8 @@
 \alias{deepdep}
 \title{deepdep}
 \usage{
-deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE)
+deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE,
+  local = FALSE)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
@@ -12,6 +13,10 @@ deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE)
 \item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{FALSE}.}
 
 \item{depth}{An \code{integer}. Depth of package dependency. By default it's \code{1}.}
+
+\item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
+Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
+installed.}
 }
 \value{
 An object of \code{deepdep} class.

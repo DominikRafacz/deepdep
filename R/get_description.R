@@ -3,7 +3,12 @@
 #' @description  [API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
 #' 
 #' @param package A \code{character}. Name of the package that is on CRAN.
-#'
+#' @param bioc A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
+#' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
+#' installed.
+#' @param local A \code{logical} value. Should only already installed packages be checked?
+#' @param reset_cache A \code{\link{logical}} value. Should cache be cleared before obtaining the 
+#' list of packages?
 #' @return An object of \code{package_description} class. 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk
@@ -17,6 +22,7 @@
 #'
 #' @export
 get_description <- function(package, bioc = FALSE, local = FALSE, reset_cache = FALSE) {
+  if (local && bioc) stop("You cannot use both 'local' and 'bioc' options at once.")
   if (reset_cache) reset_cached_files("desc")
   if (!is_available(package, bioc, local)) return(NULL)
   if (local) return(get_desc_cached(package, "local"))
@@ -130,12 +136,12 @@ get_all_desc_bioc <- function(descs) {
   n <- nrow(mat)
   mat[,2] <- stri_replace_all_regex(mat[, 2], "(\\n)?        |\\n", " ")
   pkg_begs <- (1:n)[mat[, 1] == "Package"]
-  pkg_ends <- c((pkg_inds - 1)[-1], n)
+  pkg_ends <- c((pkg_begs - 1)[-1], n)
   
   # transform two-column matrix into a list
-  lapply(1:length(pkg_inds), function(i) {
-    ret <- as.list(mat[pkg_inds[i]:pkg_ends[i], 2])
-    names(ret) <- mat[pkg_inds[i]:pkg_ends[i], 1]
+  lapply(1:length(pkg_begs), function(i) {
+    ret <- as.list(mat[pkg_begs[i]:pkg_ends[i], 2])
+    names(ret) <- mat[pkg_begs[i]:pkg_ends[i], 1]
     ret
   }) -> pkgs
   

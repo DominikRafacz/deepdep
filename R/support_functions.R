@@ -28,8 +28,11 @@ skip_lines <- function(text, head = 1e6, tail = 1e6) {
   ret
 }
 
-check_package_name <- function(package, bioc) {
-  if (!is_available(package, bioc)) {
+check_package_name <- function(package, bioc, local) {
+  if (local) {
+    if (!is_available(package, local = TRUE)) stop(paste0(package, " is not installed"))
+  }
+  else if (!is_available(package, bioc)) {
     if (bioc) stop(paste0(package, " is not available neither on CRAN nor on Bioconductor"))
     else stop(paste0(package, " is not available on CRAN"))
   }

@@ -23,14 +23,14 @@
 #' plot_dependencies(dd2, "circular")
 #' @rdname plot_deepdep
 #' @export
-plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE) {
+plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE, ...) {
   UseMethod("plot_dependencies")
 }
 
 #' @rdname plot_deepdep
 #' @exportMethod plot_dependencies default 
 #' @export
-plot_dependencies.default <- function(x, plot_type = "circular", same_level = FALSE) {
+plot_dependencies.default <- function(x, plot_type = "circular", same_level = FALSE, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
 }
 

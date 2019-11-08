@@ -11,6 +11,12 @@ get_dependencies(package, downloads = FALSE, bioc = FALSE,
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
 
 \item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{FALSE}.}
+
+\item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
+Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
+installed.}
+
+\item{local}{A \code{logical} value. Should only already installed packages be checked?}
 }
 \value{
 An object of \code{package_dependencies} class.
