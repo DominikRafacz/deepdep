@@ -5,7 +5,7 @@
 \title{Acquire dependencies of the package}
 \usage{
 get_dependencies(package, downloads = FALSE, bioc = FALSE,
-  local = FALSE)
+  local = FALSE, deps_types = c("Depends", "Imports"))
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
@@ -17,6 +17,10 @@ Bioconductor repository? For this option to work properly, \code{BiocManager} pa
 installed.}
 
 \item{local}{A \code{logical} value. Should only already installed packages be checked?}
+
+\item{deps_types}{A \code{character} vector. Types of dependencies that should be sought.
+Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
+\code(c\("Depends", "Imports"\))}
 }
 \value{
 An object of \code{package_dependencies} class.

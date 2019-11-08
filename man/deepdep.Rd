@@ -5,7 +5,7 @@
 \title{deepdep}
 \usage{
 deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE,
-  local = FALSE)
+  local = FALSE, deps_types = c("Depends", "Imports"))
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
@@ -17,6 +17,10 @@ deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE,
 \item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
 Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
 installed.}
+
+\item{deps_types}{A \code{character} vector. Types of dependencies that should be sought.
+Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
+\code(c\("Depends", "Imports"\))}
 }
 \value{
 An object of \code{deepdep} class.

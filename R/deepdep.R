@@ -8,7 +8,9 @@
 #' @param bioc A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
 #' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
 #' installed.
-#' 
+#' @param deps_types A \code{character} vector. Types of dependencies that should be sought.
+#' Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
+#' \code(c\("Depends", "Imports"\))
 #' @return An object of \code{deepdep} class. 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk
@@ -23,10 +25,11 @@
 #' dd2
 #' 
 #' @export
-deepdep <- function(package, downloads = FALSE, depth = 1, bioc = FALSE, local = FALSE) {
+deepdep <- function(package, downloads = FALSE, depth = 1, bioc = FALSE, local = FALSE,
+                    deps_types = c("Depends", "Imports")) {
   check_package_name(package, bioc, local)
   
-  pkg_dep <- get_dependencies(package, downloads, bioc, local)
+  pkg_dep <- get_dependencies(package, downloads, bioc, local, deps_types)
   pkg_dep_names <- pkg_dep$name
   
   ret <- data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep)
@@ -37,7 +40,7 @@ deepdep <- function(package, downloads = FALSE, depth = 1, bioc = FALSE, local =
   if (depth > 1) {
     for (i in 2:depth) {
       for (name in pkg_dep_names) {
-        pkg_dep_dep <- get_dependencies(name, downloads, bioc, local)
+        pkg_dep_dep <- get_dependencies(name, downloads, bioc, local, deps_types)
         
         if (length(pkg_dep_dep$name) != 0) {
           # find all unique dependency names (for next depth level)

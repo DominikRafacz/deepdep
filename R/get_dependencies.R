@@ -9,6 +9,9 @@
 #' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
 #' installed.
 #' @param local A \code{logical} value. Should only already installed packages be checked?
+#' @param deps_types A \code{character} vector. Types of dependencies that should be sought.
+#' Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
+#' \code(c\("Depends", "Imports"\))
 #' @return An object of \code{package_dependencies} class. 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk
@@ -21,21 +24,27 @@
 #' 
 #'
 #' @export
-get_dependencies <- function(package, downloads = FALSE, bioc = FALSE, local = FALSE) {
+get_dependencies <- function(package, downloads = FALSE, bioc = FALSE, local = FALSE,
+                             deps_types = c("Depends", "Imports")) {
   if (downloads && (local || bioc)) stop("If you use downloads, you cannot use",
                                          " neither bioc nor local")
   
+  possible_types <- c("Depends", "Imports", "Depends", "Enhances", "LinkingTo")
+  
+  deps_types <- unique(deps_types)
+  if (!all(deps_types %in% possible_types) || length(deps_types) < 1) 
+    stop("'deps_types' should specify which types of dependencies should be included")
+  l_deps_types <- tolower(deps_types)
+  names(deps_types) <- l_deps_types
+  
   description <- get_description(package, bioc, local)
   
-  package_names <- names(c(description$depends, description$imports, description$suggests,
-                           description$enhances, description$linkingto))
+  deps <- description[l_deps_types]
   
-  package_versions <- unlist(c(description$depends, description$imports, description$suggests,
-                               description$enhances, description$linkingto), use.names = FALSE)
-  
-  package_types <- c(rep("Depends", length(description$depends)), rep("Imports", length(description$imports)),
-                     rep("Suggests", length(description$suggests)), rep("Enhances", length(description$enhances)),
-                     rep("LinkingTo", length(description$linkingto)))
+  package_names <- unlist(sapply(deps, names))
+  package_versions <- unlist(deps, use.names = FALSE)
+  package_types <- unlist(sapply(names(deps), function(dep_type) 
+    rep(deps_types[dep_type], length(deps[[dep_type]]))))
     
   if (!is.null(package_names)) {
     downloads_df <- NULL
