@@ -144,7 +144,7 @@ get_all_desc_bioc <- function(descs) {
 
 #' @importFrom stringi stri_match_all_regex stri_replace_all_regex
 prepeare_descs <- function(raw_desc) {
-  mat <- stri_match_all_regex(tmp, "(.*):(?> |\\n)((?>.|\\n        )*)\\n")[[1]][, -1]
+  mat <- stri_match_all_regex(raw_desc, "(.*):(?> |\\n)((?>.|\\n        )*)\\n")[[1]][, -1]
   n <- nrow(mat)
   mat[,2] <- stri_replace_all_regex(mat[, 2], "(\\n)?        |\\n", " ")
   pkg_begs <- (1:n)[mat[, 1] == "Package"]
@@ -177,9 +177,9 @@ ajust_desc_file <- function(pkg) {
 
 get_desc_local <- function(package, descs) {
   # get path to DESCRIPTION file of the package
-  
+  path <- paste(.libPaths()[1], package, "DESCRIPTION", sep = "/")
   # get the description
-  raw_desc <- readLines("DESCRIPTION")
+  raw_desc <- readLines(path)
   
   # prepeare DESCRIPTION so same function as for bioconductor can be used. Packages has to be listed in one line.
   merge <- list()
@@ -210,7 +210,7 @@ get_desc_local <- function(package, descs) {
   raw_desc <- paste0(raw_desc, collapse = "\n")
   
   # Change raw desc to list
-  pkg <- prepeare_descs(tmp)[[1]]
+  pkg <- prepeare_descs(raw_desc)[[1]]
   
   ret <- ajust_desc_file(pkg) 
   
