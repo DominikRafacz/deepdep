@@ -19,8 +19,7 @@ installed.}
 \item{local}{A \code{logical} value. Should only already installed packages be checked?}
 
 \item{deps_types}{A \code{character} vector. Types of dependencies that should be sought.
-Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
-\code(c\("Depends", "Imports"\))}
+Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".}
 }
 \value{
 An object of \code{package_dependencies} class.

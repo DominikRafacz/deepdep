@@ -41,7 +41,8 @@ get_ava_cached <- function(repo) {
                      contriburl = contrib.url("https://cloud.r-project.org/"))[, 1],
                    bioc = {check_bioc_installed()
                      BiocManager::available()},
-                   local = stop("NOT IMPLEMENTED YET")) #here should go code listing installed packages or sthng
+                   local = list.dirs(.libPaths()[1], full.names = FALSE, recursive = FALSE)
+                   ) 
     attr(pkgs, "type") <- "ava"
     attr(pkgs, "repo") <- "bioc"
     attr(pkgs, "new") <- FALSE

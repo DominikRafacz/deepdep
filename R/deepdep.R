@@ -8,9 +8,9 @@
 #' @param bioc A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
 #' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
 #' installed.
+#' @param local A \code{logical} value. If TURE only local installed packages will be used to create data. 
 #' @param deps_types A \code{character} vector. Types of dependencies that should be sought.
-#' Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
-#' \code(c\("Depends", "Imports"\))
+#' Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".
 #' @return An object of \code{deepdep} class. 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk
