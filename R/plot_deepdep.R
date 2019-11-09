@@ -45,6 +45,9 @@ plot_dependencies.default <- function(x, plot_type = "circular", same_level = FA
 #' @export
 plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FALSE, 
                          n_iter = 10, ...) {
+  # Due to NSE inside of the function, we have to decleare "to" and "from" as NULL to prevent check fail
+  type <- NULL
+  
   G <- graph_from_data_frame(x)
   G <- add_layers_to_vertices(G)
   if (!same_level) {

@@ -12,11 +12,11 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
 Depends: 
-    R (>= 3.2.0),
-    ggplot2
+    R (>= 3.2.0)
 Imports:
     cranlogs,
     ggforce,
+    ggplot2,
     ggraph,
     graphlayouts,
     httr,
@@ -24,10 +24,11 @@ Imports:
     jsonlite,
     stringi
 Suggests: 
-    testthat (>= 2.1.0),
+    BiocManager,
+    covr,
     knitr,
     rmarkdown,
-    covr
+    testthat (>= 2.1.0)
 VignetteBuilder: knitr
 URL: https://github.com/DominikRafacz/deepdep
 BugReports: https://github.com/DominikRafacz/deepdep/issues

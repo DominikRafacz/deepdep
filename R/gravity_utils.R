@@ -29,6 +29,9 @@ gravity_iteration <- function(layout, G) {
 #' 
 #' @import igraph
 gravity_node <- function(node, layout, G) {
+  # Due to NSE inside of the function, we have to decleare "to" and "from" as NULL to prevent check fail
+  to <- from <- NULL
+  
   vertex <- node[["ggraph.orig_index"]]
   push <- c(x_push = 0, y_push = 0)
   # if it's central node, ignore it, it ain't movin'

@@ -10,8 +10,7 @@
 #' installed.
 #' @param local A \code{logical} value. Should only already installed packages be checked?
 #' @param deps_types A \code{character} vector. Types of dependencies that should be sought.
-#' Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
-#' \code(c\("Depends", "Imports"\))
+#' Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".
 #' @return An object of \code{package_dependencies} class. 
 #' 
 #' @author Hubert Baniecki, Szymon Maksymiuk

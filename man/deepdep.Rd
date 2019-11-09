@@ -18,9 +18,10 @@ deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE,
 Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
 installed.}
 
+\item{local}{A \code{logical} value. If TURE only local installed packages will be used to create data.}
+
 \item{deps_types}{A \code{character} vector. Types of dependencies that should be sought.
-Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to 
-\code(c\("Depends", "Imports"\))}
+Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".}
 }
 \value{
 An object of \code{deepdep} class.
