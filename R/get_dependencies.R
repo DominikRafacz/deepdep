@@ -60,8 +60,10 @@ get_dependencies <- function(package, downloads = FALSE, bioc = FALSE, local = F
                                type = package_types[remove_base_or_R],
                                downloads_df),
                          stringsAsFactors = FALSE)
-    
-    # ret$downloads_df <- downloads_df
+    # deletes downloads_df column if ret is empty
+    if (is.null(downloads_df)) {
+      ret$downloads_df <- downloads_df
+    }
   } else return(NULL)
   
   attr(ret, "package_name") <- package

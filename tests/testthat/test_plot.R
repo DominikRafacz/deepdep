@@ -12,7 +12,7 @@ test_that("dependencies plot have suitable layers and objects", {
   expect_s3_class(plt$layers[[2]]$stat, "StatEdgeLink")
   expect_s3_class(plt$layers[[3]]$geom, "GeomPoint")
   expect_s3_class(plt$layers[[3]]$stat, "StatFilter")
-  expect_s3_class(plt$layers[[4]]$geom, "GeomLabel")
+  expect_s3_class(plt$layers[[4]]$geom, "GeomLabelRepel")
   expect_s3_class(plt$layers[[4]]$stat, "StatFilter")
   
 })
