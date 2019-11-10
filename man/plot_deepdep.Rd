@@ -6,13 +6,14 @@
 \alias{plot_dependencies.deepdep}
 \title{Plot dependency data}
 \usage{
-plot_dependencies(x, plot_type = "circular", same_level = FALSE, ...)
+plot_dependencies(x, plot_type = "circular", same_level = FALSE,
+  label_percentage = 1, ...)
 
 \method{plot_dependencies}{default}(x, plot_type = "circular",
-  same_level = FALSE, ...)
+  same_level = FALSE, label_percentage = 1, ...)
 
 \method{plot_dependencies}{deepdep}(x, plot_type = "circular",
-  same_level = FALSE, n_iter = 10, ...)
+  same_level = FALSE, label_percentage = 1, ...)
 }
 \arguments{
 \item{x}{A \code{\link{deepdep}} object.}
@@ -22,9 +23,11 @@ plot_dependencies(x, plot_type = "circular", same_level = FALSE, ...)
 \item{same_level}{A \code{boolean}. Whether to plot links between dependencies on the same
 level.}
 
-\item{...}{Other arguments passed to plotting function.}
+\item{label_percentage}{An \code{integer} or \code{boolean}. Should all labels be displayed
+or only a fraction? Uses boolean casting to allow boolean use. Defaults to 1 (all labels
+displayed).}
 
-\item{n_iter}{Number of iterations made to optimize layout.}
+\item{...}{Other arguments passed to plotting function.}
 }
 \description{
 Visualize dependency data passed as \code{deepdep} object using

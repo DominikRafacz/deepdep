@@ -8,7 +8,9 @@
 #' @param plot_type A \code{character}. Possible values are \code{circular} and \code{tree}.
 #' @param same_level A \code{boolean}. Whether to plot links between dependencies on the same
 #' level.
-#' @param n_iter Number of iterations made to optimize layout.
+#' @param label_percentage An \code{integer} or \code{boolean}. Should all labels be displayed
+#' or only a fraction? Uses boolean casting to allow boolean use. Defaults to 1 (all labels
+#' displayed).
 #' @param ... Other arguments passed to plotting function.
 #' 
 #' @author Mateusz Bąkała
@@ -23,14 +25,16 @@
 #' plot_dependencies(dd2, "circular")
 #' @rdname plot_deepdep
 #' @export
-plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE, ...) {
+plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE,
+                              label_percentage = 1, ...) {
   UseMethod("plot_dependencies")
 }
 
 #' @rdname plot_deepdep
 #' @exportMethod plot_dependencies default 
 #' @export
-plot_dependencies.default <- function(x, plot_type = "circular", same_level = FALSE, ...) {
+plot_dependencies.default <- function(x, plot_type = "circular", same_level = FALSE,
+                                      label_percentage = 1, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
 }
 
@@ -43,8 +47,8 @@ plot_dependencies.default <- function(x, plot_type = "circular", same_level = FA
 #' @import ggraph
 #' @exportMethod plot_dependencies deepdep
 #' @export
-plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FALSE, 
-                         n_iter = 10, ...) {
+plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FALSE,
+                                      label_percentage = 1, ...) {
   # Due to NSE inside of the function, we have to decleare "to" and "from" as NULL to prevent check fail
   type <- NULL
   
@@ -54,21 +58,28 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
     G <- delete_edges_within_layer(G)
   }
   
+  # mark vertices to label
+  pkg_downloads <- unlist(x[["grand_total"]])
+  # central node should always be labeled
+  V(G)$labeled <- c(TRUE, pkg_downloads >= quantile(pkg_downloads, probs = 1 - label_percentage))
+  
   switch (plot_type,
     circular = {
       g <- ggraph(graph = G, layout = "focus", focus = 1) +
         draw_circle(use = "focus", max.circle = max(V(G)$layer - 1)) +
-        geom_edge_link(aes(colour = type), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
-        geom_node_point(aes(fill = as.factor(layer)), size = 2, shape = 21) +
-        geom_node_label(aes(label = names(V(G)), fill = factor(layer))) +
+        geom_edge_link(aes_string(colour = "type"), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
+        geom_node_point(aes_string(fill = as.factor("layer")), size = 2, shape = 21, show.legend = FALSE) +
+        geom_node_label(aes(label = names(V(G)), fill = factor(layer), size = 2.5*labeled),
+                        show.legend = FALSE, repel = TRUE) +
         coord_fixed() +
         theme_void()
     },
     tree = {
       g <- ggraph(G, "tree") +
-        geom_edge_link(aes(colour = factor(type)), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
-        geom_node_point(aes(colour = factor(layer)), size = 5) +
-        geom_node_label(aes(label = names(V(G)), fill = factor(layer))) +
+        geom_edge_link(aes_string(colour = factor("type")), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
+        geom_node_point(aes_string(colour = factor("layer")), size = 5, show.legend = FALSE) +
+        geom_node_label(aes(label = names(V(G)), fill = factor(layer)),
+                        show.legend = FALSE, repel = TRUE) +
         theme_void()
     }
   )

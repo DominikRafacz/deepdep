@@ -28,7 +28,7 @@ get_dependencies <- function(package, downloads = FALSE, bioc = FALSE, local = F
   if (downloads && (local || bioc)) stop("If you use downloads, you cannot use",
                                          " neither bioc nor local")
   
-  possible_types <- c("Depends", "Imports", "Depends", "Enhances", "LinkingTo")
+  possible_types <- c("Depends", "Imports", "Suggests", "Enhances", "LinkingTo")
   
   deps_types <- unique(deps_types)
   if (!all(deps_types %in% possible_types) || length(deps_types) < 1) 
@@ -61,7 +61,7 @@ get_dependencies <- function(package, downloads = FALSE, bioc = FALSE, local = F
                                downloads_df),
                          stringsAsFactors = FALSE)
     
-    ret$downloads_df <- downloads_df  
+    # ret$downloads_df <- downloads_df
   } else return(NULL)
   
   attr(ret, "package_name") <- package
