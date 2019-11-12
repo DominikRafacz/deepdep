@@ -21,6 +21,8 @@
 #'
 #' dd2 <- deepdep("cranlogs", depth = 2)
 #' plot_dependencies(dd2, "circular")
+#'
+#' plot_dependencies("mice", label_percentage = 0.3, downloads = TRUE)
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE,
@@ -34,6 +36,15 @@ plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE,
 plot_dependencies.default <- function(x, plot_type = "circular", same_level = FALSE,
                                       label_percentage = 1, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
+}
+
+#' @rdname plot_deepdep
+#' @exportMethod plot_dependencies character
+#' @export
+plot_dependencies.character <- function(x, plot_type = "circular", same_level = FALSE,
+                                      label_percentage = 1, ...) {
+  dd <- deepdep(x, ...)
+  plot_dependencies(dd, plot_type, same_level, label_percentage, ...)
 }
 
 #' @rdname plot_deepdep
