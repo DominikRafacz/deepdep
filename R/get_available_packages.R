@@ -41,7 +41,7 @@ get_available_packages_cached <- function(repo) {
                    local = list.dirs(.libPaths()[1], full.names = FALSE, recursive = FALSE)
                    )
     attr(pkgs, "type") <- "ava"
-    attr(pkgs, "repo") <- "bioc"
+    attr(pkgs, "repo") <- repo
     attr(pkgs, "new") <- FALSE
     save_cache(pkgs)
   }
