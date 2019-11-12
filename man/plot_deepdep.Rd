@@ -3,6 +3,7 @@
 \name{plot_dependencies}
 \alias{plot_dependencies}
 \alias{plot_dependencies.default}
+\alias{plot_dependencies.character}
 \alias{plot_dependencies.deepdep}
 \title{Plot dependency data}
 \usage{
@@ -10,6 +11,9 @@ plot_dependencies(x, plot_type = "circular", same_level = FALSE,
   label_percentage = 1, ...)
 
 \method{plot_dependencies}{default}(x, plot_type = "circular",
+  same_level = FALSE, label_percentage = 1, ...)
+
+\method{plot_dependencies}{character}(x, plot_type = "circular",
   same_level = FALSE, label_percentage = 1, ...)
 
 \method{plot_dependencies}{deepdep}(x, plot_type = "circular",
@@ -42,4 +46,6 @@ plot_dependencies(dd, "tree")
 
 dd2 <- deepdep("cranlogs", depth = 2)
 plot_dependencies(dd2, "circular")
+
+plot_dependencies("mice", label_percentage = 0.3, downloads = TRUE)
 }

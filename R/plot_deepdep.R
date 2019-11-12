@@ -21,6 +21,8 @@
 #'
 #' dd2 <- deepdep("cranlogs", depth = 2)
 #' plot_dependencies(dd2, "circular")
+#'
+#' plot_dependencies("mice", label_percentage = 0.3, downloads = TRUE)
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE,
@@ -37,10 +39,20 @@ plot_dependencies.default <- function(x, plot_type = "circular", same_level = FA
 }
 
 #' @rdname plot_deepdep
+#' @exportMethod plot_dependencies character
+#' @export
+plot_dependencies.character <- function(x, plot_type = "circular", same_level = FALSE,
+                                      label_percentage = 1, ...) {
+  dd <- deepdep(x, ...)
+  plot_dependencies(dd, plot_type, same_level, label_percentage, ...)
+}
+
+#' @rdname plot_deepdep
 #' @importFrom ggforce geom_circle
 #' @importFrom igraph V
 #' @importFrom igraph graph_from_data_frame
 #' @importFrom graphlayouts draw_circle
+#' @importFrom stats quantile
 #' @import ggplot2
 #' @import ggraph
 #' @exportMethod plot_dependencies deepdep
@@ -49,6 +61,7 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
                                       label_percentage = 1, ...) {
   # Due to NSE inside of the function, we have to decleare "to" and "from" as NULL to prevent check fail
   type <- NULL
+  labeled <- NULL
 
   G <- graph_from_data_frame(x)
   G <- add_layers_to_vertices(G)
@@ -66,8 +79,8 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
       g <- ggraph(graph = G, layout = "focus", focus = 1) +
         draw_circle(use = "focus", max.circle = max(V(G)$layer - 1)) +
         geom_edge_link(aes_string(colour = "type"), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
-        geom_node_point(aes_string(fill = as.factor("layer")), size = 2, shape = 21, show.legend = FALSE) +
-        geom_node_label(aes(label = names(V(G)), fill = factor(layer), size = 2.5*labeled),
+        geom_node_point(aes(fill = as.factor(layer)), size = 2, shape = 21, show.legend = FALSE) +
+        geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
                         show.legend = FALSE, repel = TRUE) +
         coord_fixed() +
         theme_void()
@@ -76,7 +89,7 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
       g <- ggraph(G, "tree") +
         geom_edge_link(aes_string(colour = factor("type")), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
         geom_node_point(aes_string(colour = factor("layer")), size = 5, show.legend = FALSE) +
-        geom_node_label(aes(label = names(V(G)), fill = factor(layer)),
+        geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
                         show.legend = FALSE, repel = TRUE) +
         theme_void()
     }
