@@ -41,6 +41,7 @@ plot_dependencies.default <- function(x, plot_type = "circular", same_level = FA
 #' @importFrom igraph V
 #' @importFrom igraph graph_from_data_frame
 #' @importFrom graphlayouts draw_circle
+#' @importFrom stats quantile
 #' @import ggplot2
 #' @import ggraph
 #' @exportMethod plot_dependencies deepdep
@@ -49,6 +50,7 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
                                       label_percentage = 1, ...) {
   # Due to NSE inside of the function, we have to decleare "to" and "from" as NULL to prevent check fail
   type <- NULL
+  labeled <- NULL
 
   G <- graph_from_data_frame(x)
   G <- add_layers_to_vertices(G)
