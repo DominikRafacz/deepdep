@@ -48,7 +48,8 @@ get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FA
 
   if (!is.null(package_names)) {
     downloads_df <- NULL
-    remove_base_or_R <- sapply(package_names, is_available)
+    remove_base_or_R <- sapply(package_names,
+                               function(pkg_name) is_available(pkg_name, bioc, local))
 
     if (downloads) {
       downloads_list <- lapply(package_names, get_downloads)
