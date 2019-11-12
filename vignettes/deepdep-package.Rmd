@@ -16,8 +16,102 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-Package `deepdep` was created to acquire and visualize information on dependencies of R packages in a smart and convenient way. Most of its functionality is contained in two functions: `deepdep` and `plot_dependencies`.
+Package `deepdep` was created to acquire and visualize information on dependencies of R packages in a smart and convenient way. Most of its functionality is contained in two functions: `deepdep` -- to get a `data.frame` with dependencies described and `plot_dependencies` -- visualize this `data.frame`.
 
 ```{r setup}
 library(deepdep)
 ```
+
+## Use case
+
+Suppose you're creating an R package and you want to include graph of its dependencies to your vignette, `README.md` file on your git repostiory or article on your package. With `deepdep` you simply need to type one line:
+
+```{r use_case, eval=FALSE}
+plot_deepdep("YourPackageName")
+```
+
+But before we describe how this function works in detail, let's see what are other functionalities of the package.
+
+# Features
+
+`deepdep` package exports the following functions:
+
+* `get_available_packages`,
+* `get_description`,
+* `get_dependencies`,
+* `get_downloads`,
+* `deepdep`,
+* `plot_dependencies`.
+
+Those functions rely on each other and are ordered from the least to the most top-leveled.
+We'll describe what they exactly do and how on examples.
+
+## get_available_packages
+
+This function lists, as the name indicates, available packages. The default behaviour is listing all CRAN packages.
+
+```{r get_ava_pkg1}
+get_available_packages()
+```
+
+However, if you want to check if package is present in a little wider range -- on CRAN or Bioconductor repositories, you simply need to set argument `bioc = TRUE`. In this case function is simply wrapper around `BiocManager::available()` and to use it you need to have `BiocManager` package (available via CRAN) installed.
+
+```{r get_ava_pkg2}
+get_available_packages(bioc = TRUE)
+```
+
+Another possibility is checking what packages are installed -- you do it by adding `local = TRUE` parameter.
+
+```{r get_ava_pkg3}
+get_available_packages(local = TRUE)
+```
+
+Result of this function is cached (for more details, see *Caching* section of this vignette).
+
+## get_description
+
+When you know, that given package is available, you may want to obtain DESCRIPTION of this package, at least the most essential parts of it, especially dependencies. You can do it by calling:
+
+```{r get_description1}
+get_description("DALEXtra")
+```
+
+Again, you can pass `bioc = TRUE` if you want to check for this package in Bioconductor repository. Notice that if package is not found there, it will be searched for on CRAN. The reason behind this type of behaviour is the fact that packages present on Bioconductor are updated more often than on CRAN and not all of them are present here. Option `local = TRUE` for only installed packages is also possible. If a package is not available in a given source, the function will return `NULL` value:
+
+```{r get_description2}
+get_description("a4")
+get_description("a4", bioc = TRUE)
+```
+
+Result of this function is also cached (for more details, see *Caching* section of this vignette).
+
+## get_dependencies
+
+After parsing description file, you can now create a `data.frame` which will describe dependencies between given package and others. You do it by using this function:
+
+```{r get_dependencies1}
+get_dependencies("ggplot2")
+```
+
+As with previous two functions, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
+
+The first one is parameter `downloads` -- should number of downloads of packages be included?
+
+Another, more important parameter is `deps_types`. You can specify how detailed should be list of dependencies. Default value is `c("Depends", "Imports")`, but you can chose any combination of those and additionally `"Suggests", "Enhances", "LinkingTo"`.
+
+```{r get_dependencies2}
+get_dependencies("ggplot2", downloads = FALSE, deps_types = c("Imports", "Suggests", "Enhances"))
+```
+
+## Data 
+
+# Comparison to other packages
+
+
+
+
+
+
+
+
+
