@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Acquire dependencies of the package — get_dependencies • deepdep</title>
+<title>Plot dependency data — plot_dependencies • deepdep</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,10 +32,11 @@
 
 
 
-<meta property="og:title" content="Acquire dependencies of the package — get_dependencies" />
+<meta property="og:title" content="Plot dependency data — plot_dependencies" />
 
-<meta property="og:description" content="This function is using get_description and get_downloads
-to acquire dependencies." />
+<meta property="og:description" content="Visualize dependency data passed as deepdep object using
+ggplot2 and ggraph packages. Several tree-like layouts are
+available" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,76 +105,72 @@ to acquire dependencies." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Acquire dependencies of the package</h1>
-    <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/get_dependencies.R'><code>R/get_dependencies.R</code></a></small>
-    <div class="hidden name"><code>get_dependencies.Rd</code></div>
+    <h1>Plot dependency data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/plot_deepdep.R'><code>R/plot_deepdep.R</code></a></small>
+    <div class="hidden name"><code>plot_deepdep.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function is using <code><a href='get_description.html'>get_description</a></code> and <code><a href='get_downloads.html'>get_downloads</a></code>
-to acquire dependencies.</p>
+    <p>Visualize dependency data passed as <code>deepdep</code> object using
+<code>ggplot2</code> and <code>ggraph</code> packages. Several tree-like layouts are
+available</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_dependencies</span>(<span class='no'>package</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>bioc</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>deps_types</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Depends"</span>, <span class='st'>"Imports"</span>))</pre>
+    <pre class="usage"><span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>, <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for deepdep</span>
+<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>package</th>
-      <td><p>A <code>character</code>. Name of the package that is on CRAN.</p></td>
+      <th>x</th>
+      <td><p>A <code><a href='deepdep.html'>deepdep</a></code> object.</p></td>
     </tr>
     <tr>
-      <th>downloads</th>
-      <td><p>A <code>logical</code>. If <code>TRUE</code> add package downloads data. By default it's <code>TRUE</code>.</p></td>
+      <th>plot_type</th>
+      <td><p>A <code>character</code>. Possible values are <code>circular</code> and <code>tree</code>.</p></td>
     </tr>
     <tr>
-      <th>bioc</th>
-      <td><p>A <code>logical</code> value. Should Bioconductor dependencies descriptions be red from
-Bioconductor repository? For this option to work properly, <code>BiocManager</code> package needs to be
-installed.</p></td>
+      <th>same_level</th>
+      <td><p>A <code>boolean</code>. Whether to plot links between dependencies on the same
+level.</p></td>
     </tr>
     <tr>
-      <th>local</th>
-      <td><p>A <code>logical</code> value. Should only already installed packages be checked?</p></td>
+      <th>label_percentage</th>
+      <td><p>An <code>integer</code> or <code>boolean</code>. Should all labels be displayed
+or only a fraction? Uses boolean casting to allow boolean use. Defaults to 1 (all labels
+displayed).</p></td>
     </tr>
     <tr>
-      <th>deps_types</th>
-      <td><p>A <code>character</code> vector. Types of dependencies that should be sought.
-Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".</p></td>
+      <th>...</th>
+      <td><p>Other arguments passed to plotting function.</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>An object of <code>package_dependencies</code> class.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='no'>dependencies</span> <span class='kw'>&lt;-</span> <span class='fu'>get_dependencies</span>(<span class='st'>"stringr"</span>)
-<span class='no'>dependencies</span></div><div class='output co'>#&gt;              name  version    type last_day last_week last_month last_quarter
-#&gt; imports1     glue &gt;= 1.2.0 Imports    15676    183834     789981      2372075
-#&gt; imports2 magrittr     &lt;NA&gt; Imports   113881    840456    3430942     10297405
-#&gt; imports3  stringi &gt;= 1.1.7 Imports    14818    164986     693655      2082935
-#&gt;          last_half grand_total
-#&gt; imports1   4431625    14326922
-#&gt; imports2  15821253    30093579
-#&gt; imports3   3642208    21420843</div><div class='input'>
-
-</div></pre>
+<span class='no'>dd</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='deepdep.html'>deepdep</a></span>(<span class='st'>"stringr"</span>)
+<span class='fu'>plot_dependencies</span>(<span class='no'>dd</span>, <span class='st'>"tree"</span>)</div><div class='img'><img src='plot_deepdep-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='no'>dd2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='deepdep.html'>deepdep</a></span>(<span class='st'>"cranlogs"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+<span class='fu'>plot_dependencies</span>(<span class='no'>dd2</span>, <span class='st'>"circular"</span>)</div><div class='img'><img src='plot_deepdep-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
+            
       <li><a href="#examples">Examples</a></li>
     </ul>
 

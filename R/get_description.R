@@ -1,24 +1,23 @@
 #' @title Scrap the DESCRIPTION file and CRAN metadata of the package
-#' 
+#'
 #' @description  [API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
-#' 
+#'
 #' @param package A \code{character}. Name of the package that is on CRAN.
-#' @param bioc A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
-#' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
+#' @param bioc A \code{logical} value. Should Bioconductor dependencies descriptions be red from
+#' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be
 #' installed.
 #' @param local A \code{logical} value. Should only already installed packages be checked?
-#' @param reset_cache A \code{\link{logical}} value. Should cache be cleared before obtaining the 
+#' @param reset_cache A \code{logical} value. Should cache be cleared before obtaining the
 #' list of packages?
-#' @return An object of \code{package_description} class. 
-#' 
-#' @author Hubert Baniecki, Szymon Maksymiuk
-#' 
+#' @return An object of \code{package_description} class.
+#'
+#'
 #' @examples
 #' library(deepdep)
-#' 
+#'
 #' desc <- get_description("stringr")
 #' desc
-#' 
+#'
 #'
 #' @export
 get_description <- function(package, bioc = FALSE, local = FALSE, reset_cache = FALSE) {
@@ -32,40 +31,13 @@ get_description <- function(package, bioc = FALSE, local = FALSE, reset_cache = 
   desc
 }
 
-#' @title Print function for an object of \code{package_description} class
-#' 
-#' @param x An object of \code{package_description} class.
-#' @param ... other
-#'
-#' @author Hubert Baniecki, Szymon Maksymiuk
-#' 
-#' @examples
-#' library(deepdep)
-#' 
-#' desc <- get_description("stringr")
-#' desc
-#' 
-#' @rdname print.package_description
-#' @export
-print.package_description <- function(x, ...) {
-  cat(x$package, ": ", x$title, "\n", sep = "")
-  cat("Maintainer:", x$maintainer, "\n")
-  cat("Description: \n", x$description, "\n")
-  cat("Depends:", names(x$depends), "\n")
-  cat("Imports:", names(x$imports), "\n")
-  cat("LinkingTo:", names(x$linkingto), "\n")
-  cat("Suggests:", names(x$suggests), "\n")
-  cat("Enhances:", names(x$enhances), "\n")
-  cat("Scrap date:", x$crandb_file_date)
-}
-
 get_desc_cached <- function(package, repo) {
   descs <- get_cached_obj("desc", repo)
   if (package %in% names(descs))
     return(descs[[package]])
   descs <- switch(repo,
                   CRAN = append_desc_CRAN(package, descs),
-                  bioc = get_all_desc_bioc(),
+                  bioc = get_all_desc_bioc(descs),
                   local = get_desc_local(package, descs))
   attr(descs, "new") <- FALSE
   save_cache(descs)
@@ -76,45 +48,45 @@ append_desc_CRAN <- function(package, descs) {
   # get the description
   json_as_string <- DB(package)
   description <- jsonlite::fromJSON(json_as_string)
-  
+
   # prettify the description
   names(description) <- tolower(names(description))
-  
+
   # authors is a vector of "person" class objects (named character)
   description$author <- NULL
   names(description)[names(description) == "authors@r"] <- "authors"
-  
+
   # gsub("\n") did not remove all backslashes
   # gsub("\\") dit no work
-  # this apparently works with '\n' in input 
+  # this apparently works with '\n' in input
   # this below was very optimistic
   # description$authors <- eval(parse(text = description$authors))
   # this below was very optimistic too
   # description$description <- gsub("\n", "", x = description$description, fixed = TRUE)
-  
+
   # add NA if a version of the dependency is not specified (instead of "*")
   for (dep_type in c("depends", "imports", "suggests", "enhances", "linkingto")) {
     if (!is.null(description[[dep_type]]))
-      description[[dep_type]] <- 
+      description[[dep_type]] <-
         lapply(description[[dep_type]], function(x) ifelse(x == "*", NA, x))
   }
-  
+
   # change url to the vector of properl urls
   if (!is.null(description$url)) {
-    description$url <- gsub("\n", "", x = description$url, fixed = TRUE) 
+    description$url <- gsub("\n", "", x = description$url, fixed = TRUE)
     description$url <- unlist(strsplit(description$url, ","))
   }
-  
+
   names(description)[names(description) == "date/publication"] <- "publication_date"
-  
+
   # what is date?
   description$date <- NULL
-  
+
   # what is releases?
   description$releases <- NULL
 
   ret <- description
-  
+
   attr(ret, "package_name") <- package
   class(ret) <- c("package_description", "list")
   descs[[package]] <- ret
@@ -125,15 +97,15 @@ append_desc_CRAN <- function(package, descs) {
 get_all_desc_bioc <- function(descs) {
   # if file is not new, it means package is not available via bioc
   if (!attr(descs, "new")) descs
-  
+
   # get all descriptions from bioconductor repository
   tmp <- GET("http://bioconductor.org/packages/release/bioc/VIEWS")
   tmp <- content(tmp, as = "text", encoding = "UTF-8")
-  
+
   pkgs <- prepeare_descs(tmp)
   # name pakcages
   names(pkgs) <- lapply(pkgs, function(pkg) pkg$Package)
-  
+
   # convert strings of dependencies into vectors
   descs <- lapply(pkgs, ajust_desc_file)
 
@@ -149,7 +121,7 @@ prepeare_descs <- function(raw_desc) {
   mat[,2] <- stri_replace_all_regex(mat[, 2], "(\\n)?        |\\n", " ")
   pkg_begs <- (1:n)[mat[, 1] == "Package"]
   pkg_ends <- c((pkg_begs - 1)[-1], n)
-  
+
   # transform two-column matrix into a list
   lapply(1:length(pkg_begs), function(i) {
     ret <- as.list(mat[pkg_begs[i]:pkg_ends[i], 2])
@@ -166,7 +138,7 @@ ajust_desc_file <- function(pkg) {
   for (dep_type in c("depends", "imports", "suggests", "linkingto", "enhances")) {
     if (dep_type %in% nms) {
       deps <- stri_match_all_regex(
-        pkg[[dep_type]], 
+        pkg[[dep_type]],
         "(?>\\s*)([^,\\(]+)(?>(?> \\()(\\>\\=[^)]+)(?>\\)))?(?>,|$)")[[1]]
       pkg[[dep_type]] <- deps[,3]
       names(pkg[[dep_type]]) <- deps[,2]
@@ -180,15 +152,13 @@ get_desc_local <- function(package, descs) {
   path <- paste(.libPaths()[1], package, "DESCRIPTION", sep = "/")
   # get the description
   raw_desc <- readLines(path)
-  
+
   # prepeare DESCRIPTION so same function as for bioconductor can be used. Packages has to be listed in one line.
   merge <- list()
   counter <- 0
   for (i in 1:length(raw_desc)) {
     if (check_if_valid_depend(raw_desc[i])) {
-      counter <- counter + 1
       start <- i
-      next()
     }
     if (counter > 0) {
       if (!grepl(":", raw_desc[i], fixed = TRUE)) {
@@ -200,20 +170,20 @@ get_desc_local <- function(package, descs) {
       }
     }
   }
-  
+
   for (vec in merge) {
     if(is.null(vec)) next()
     raw_desc[vec[1]] <-  paste0(raw_desc[vec[1]:(vec[1]+vec[2]-1)], collapse = " ")
     raw_desc[(vec[1]+1):(vec[1] + vec[2]-1)] <- ""
   }
-  
+
   raw_desc <- paste0(raw_desc, collapse = "\n")
-  
+
   # Change raw desc to list
   pkg <- prepeare_descs(raw_desc)[[1]]
-  
-  ret <- ajust_desc_file(pkg) 
-  
+
+  ret <- ajust_desc_file(pkg)
+
   attr(ret, "package_name") <- package
   class(ret) <- c("package_description", "list")
   descs[[package]] <- ret

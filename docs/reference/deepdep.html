@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>deepdep — deepdep • deepdep</title>
+<title>Acquire the dependencies of the package on any depth level. — deepdep • deepdep</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,10 @@
 
 
 
-<meta property="og:title" content="deepdep — deepdep" />
+<meta property="og:title" content="Acquire the dependencies of the package on any depth level. — deepdep" />
 
-<meta property="og:description" content="deepdep." />
+<meta property="og:description" content="This function is an ultimate wrapper for get_dependencies. It inherits all of the arguments and
+allows to recursively search for the dependencies at the higher level of depth." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -103,33 +104,50 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>deepdep</h1>
+    <h1>Acquire the dependencies of the package on any depth level.</h1>
     <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/deepdep.R'><code>R/deepdep.R</code></a></small>
     <div class="hidden name"><code>deepdep.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>deepdep.</p>
+    <p>This function is an ultimate wrapper for <code>get_dependencies</code>. It inherits all of the arguments and
+allows to recursively search for the dependencies at the higher level of <code>depth</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>deepdep</span>(<span class='no'>package</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>1</span>)</pre>
+    <pre class="usage"><span class='fu'>deepdep</span>(<span class='no'>package</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>bioc</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>deps_types</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Depends"</span>, <span class='st'>"Imports"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>package</th>
-      <td><p>A <code>character</code>. Name of the package that is on CRAN.</p></td>
-    </tr>
-    <tr>
-      <th>downloads</th>
-      <td><p>A <code>logical</code>. If <code>TRUE</code> add package downloads data. By default it's <code>FALSE</code>.</p></td>
+      <td><p>A <code>character</code>. Name of the package that is on CRAN, Bioconductor repository or locally installed.
+See <code>bioc</code> and <code>local</code> arguments.</p></td>
     </tr>
     <tr>
       <th>depth</th>
-      <td><p>An <code>integer</code>. Depth of package dependency. By default it's <code>1</code>.</p></td>
+      <td><p>An <code>integer</code>. Maximum depth level of the dependency. By default it's <code>1</code>.</p></td>
+    </tr>
+    <tr>
+      <th>downloads</th>
+      <td><p>A <code>logical</code>. If <code>TRUE</code> add dependency downloads data. By default it's <code>FALSE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>bioc</th>
+      <td><p>A <code>logical</code> value. If <code>TRUE</code> the Bioconductor dependencies data will be taken from.
+Bioconductor repository. For this option to work properly, <code>BiocManager</code> package needs to be installed.</p></td>
+    </tr>
+    <tr>
+      <th>local</th>
+      <td><p>A <code>logical</code> value. If <code>TRUE</code> only data of locally installed packages will be used (without API usage).</p></td>
+    </tr>
+    <tr>
+      <th>deps_types</th>
+      <td><p>A <code>character</code> vector. Types of dependencies that should be sought.
+Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"</code>. By default it's <code>"Depends","Imports"</code>.</p></td>
     </tr>
     </table>
     
@@ -137,175 +155,29 @@
 
     <p>An object of <code>deepdep</code> class.</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code>get_dependencies</code></p></div>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
 <span class='no'>dd</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"stringr"</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-<span class='no'>dd</span></div><div class='output co'>#&gt;    origin        name  version     type last_day last_week last_month
-#&gt; 1 stringr        glue &gt;= 1.2.0  Imports    33710    196306     852434
-#&gt; 2 stringr    magrittr     &lt;NA&gt;  Imports   119796    789519    3439170
-#&gt; 3 stringr     stringi &gt;= 1.1.7  Imports    29555    169598     737936
-#&gt; 4 stringr        covr     &lt;NA&gt; Suggests    13607     84552     310877
-#&gt; 5 stringr   htmltools     &lt;NA&gt; Suggests    33404    195024     752055
-#&gt; 6 stringr htmlwidgets     &lt;NA&gt; Suggests    17795     98339     436696
-#&gt; 7 stringr       knitr     &lt;NA&gt; Suggests    27232    158223     703387
-#&gt; 8 stringr   rmarkdown     &lt;NA&gt; Suggests    22228    129868     575854
-#&gt; 9 stringr    testthat     &lt;NA&gt; Suggests    16402     95634     412479
-#&gt;   last_quarter last_half grand_total downloads_df.last_day
-#&gt; 1      2249273   4368077    13869739                 33710
-#&gt; 2      9876212  14059851    27997649                119796
-#&gt; 3      1975411   3586639    21013966                 29555
-#&gt; 4       657926    890486     2276754                 13607
-#&gt; 5      1741619   3104423    13797113                 33404
-#&gt; 6      1080596   2050693     8820307                 17795
-#&gt; 7      1909475   3437936    14904385                 27232
-#&gt; 8      1548754   2808819    11533230                 22228
-#&gt; 9      1203376   1786304     6293532                 16402
-#&gt;   downloads_df.last_week downloads_df.last_month downloads_df.last_quarter
-#&gt; 1                 196306                  852434                   2249273
-#&gt; 2                 789519                 3439170                   9876212
-#&gt; 3                 169598                  737936                   1975411
-#&gt; 4                  84552                  310877                    657926
-#&gt; 5                 195024                  752055                   1741619
-#&gt; 6                  98339                  436696                   1080596
-#&gt; 7                 158223                  703387                   1909475
-#&gt; 8                 129868                  575854                   1548754
-#&gt; 9                  95634                  412479                   1203376
-#&gt;   downloads_df.last_half downloads_df.grand_total
-#&gt; 1                4368077                 13869739
-#&gt; 2               14059851                 27997649
-#&gt; 3                3586639                 21013966
-#&gt; 4                 890486                  2276754
-#&gt; 5                3104423                 13797113
-#&gt; 6                2050693                  8820307
-#&gt; 7                3437936                 14904385
-#&gt; 8                2808819                 11533230
-#&gt; 9                1786304                  6293532</div><div class='input'>
+<span class='no'>dd</span></div><div class='output co'>#&gt;           origin     name  version    type last_day last_week last_month
+#&gt; imports1 stringr     glue &gt;= 1.2.0 Imports    15676    183834     789981
+#&gt; imports2 stringr magrittr     &lt;NA&gt; Imports   113881    840456    3430942
+#&gt; imports3 stringr  stringi &gt;= 1.1.7 Imports    14818    164986     693655
+#&gt;          last_quarter last_half grand_total
+#&gt; imports1      2372075   4431625    14326922
+#&gt; imports2     10297405  15821253    30093579
+#&gt; imports3      2082935   3642208    21420843</div><div class='input'>
 <span class='no'>dd2</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"stringr"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='no'>dd2</span></div><div class='output co'>#&gt;          origin           name      version     type
-#&gt; 1       stringr           glue     &gt;= 1.2.0  Imports
-#&gt; 2       stringr       magrittr         &lt;NA&gt;  Imports
-#&gt; 3       stringr        stringi     &gt;= 1.1.7  Imports
-#&gt; 4       stringr           covr         &lt;NA&gt; Suggests
-#&gt; 5       stringr      htmltools         &lt;NA&gt; Suggests
-#&gt; 6       stringr    htmlwidgets         &lt;NA&gt; Suggests
-#&gt; 7       stringr          knitr         &lt;NA&gt; Suggests
-#&gt; 8       stringr      rmarkdown         &lt;NA&gt; Suggests
-#&gt; 9       stringr       testthat         &lt;NA&gt; Suggests
-#&gt; 10         glue       testthat         &lt;NA&gt; Suggests
-#&gt; 11         glue           covr         &lt;NA&gt; Suggests
-#&gt; 12         glue       magrittr         &lt;NA&gt; Suggests
-#&gt; 13         glue         crayon         &lt;NA&gt; Suggests
-#&gt; 14         glue          knitr         &lt;NA&gt; Suggests
-#&gt; 15         glue      rmarkdown         &lt;NA&gt; Suggests
-#&gt; 16         glue            DBI         &lt;NA&gt; Suggests
-#&gt; 17         glue        RSQLite         &lt;NA&gt; Suggests
-#&gt; 18         glue        R.utils         &lt;NA&gt; Suggests
-#&gt; 19         glue        forcats         &lt;NA&gt; Suggests
-#&gt; 20         glue microbenchmark         &lt;NA&gt; Suggests
-#&gt; 21         glue        rprintf         &lt;NA&gt; Suggests
-#&gt; 22         glue        stringr         &lt;NA&gt; Suggests
-#&gt; 23         glue        ggplot2         &lt;NA&gt; Suggests
-#&gt; 24         glue          dplyr         &lt;NA&gt; Suggests
-#&gt; 25         glue          withr         &lt;NA&gt; Suggests
-#&gt; 26     magrittr       testthat         &lt;NA&gt; Suggests
-#&gt; 27     magrittr          knitr         &lt;NA&gt; Suggests
-#&gt; 28         covr         digest         &lt;NA&gt;  Imports
-#&gt; 29         covr       jsonlite         &lt;NA&gt;  Imports
-#&gt; 30         covr            rex         &lt;NA&gt;  Imports
-#&gt; 31         covr           httr         &lt;NA&gt;  Imports
-#&gt; 32         covr         crayon         &lt;NA&gt;  Imports
-#&gt; 33         covr          withr    &gt;=\n1.0.2  Imports
-#&gt; 34         covr           yaml         &lt;NA&gt;  Imports
-#&gt; 35         covr             R6         &lt;NA&gt; Suggests
-#&gt; 36         covr          knitr         &lt;NA&gt; Suggests
-#&gt; 37         covr      rmarkdown         &lt;NA&gt; Suggests
-#&gt; 38         covr      htmltools         &lt;NA&gt; Suggests
-#&gt; 39         covr             DT       &gt;= 0.2 Suggests
-#&gt; 40         covr       testthat         &lt;NA&gt; Suggests
-#&gt; 41         covr          rlang         &lt;NA&gt; Suggests
-#&gt; 42         covr     rstudioapi       &gt;= 0.2 Suggests
-#&gt; 43         covr           xml2     &gt;= 1.0.0 Suggests
-#&gt; 44         covr        memoise         &lt;NA&gt; Suggests
-#&gt; 45         covr        mockery         &lt;NA&gt; Suggests
-#&gt; 46    htmltools         digest         &lt;NA&gt;  Imports
-#&gt; 47    htmltools           Rcpp         &lt;NA&gt;  Imports
-#&gt; 48    htmltools          rlang         &lt;NA&gt;  Imports
-#&gt; 49    htmltools       markdown         &lt;NA&gt; Suggests
-#&gt; 50    htmltools       testthat         &lt;NA&gt; Suggests
-#&gt; 51    htmltools          withr         &lt;NA&gt; Suggests
-#&gt; 52    htmltools          knitr         &lt;NA&gt; Enhances
-#&gt; 53  htmlwidgets      htmltools       &gt;= 0.3  Imports
-#&gt; 54  htmlwidgets       jsonlite    &gt;= 0.9.16  Imports
-#&gt; 55  htmlwidgets           yaml         &lt;NA&gt;  Imports
-#&gt; 56  htmlwidgets          knitr       &gt;= 1.8 Suggests
-#&gt; 57  htmlwidgets          shiny       &gt;= 1.1 Enhances
-#&gt; 58        knitr       evaluate      &gt;= 0.10  Imports
-#&gt; 59        knitr          highr         &lt;NA&gt;  Imports
-#&gt; 60        knitr       markdown         &lt;NA&gt;  Imports
-#&gt; 61        knitr        stringr       &gt;= 0.6  Imports
-#&gt; 62        knitr           yaml    &gt;= 2.1.19  Imports
-#&gt; 63        knitr           xfun         &lt;NA&gt;  Imports
-#&gt; 64        knitr        formatR         &lt;NA&gt; Suggests
-#&gt; 65        knitr         testit         &lt;NA&gt; Suggests
-#&gt; 66        knitr         digest         &lt;NA&gt; Suggests
-#&gt; 67        knitr            rgl &gt;= 0.95.1201 Suggests
-#&gt; 68        knitr      codetools         &lt;NA&gt; Suggests
-#&gt; 69        knitr      rmarkdown         &lt;NA&gt; Suggests
-#&gt; 70        knitr    htmlwidgets       &gt;= 0.7 Suggests
-#&gt; 71        knitr        webshot         &lt;NA&gt; Suggests
-#&gt; 72        knitr     tikzDevice      &gt;= 0.10 Suggests
-#&gt; 73        knitr        tinytex         &lt;NA&gt; Suggests
-#&gt; 74        knitr     reticulate       &gt;= 1.4 Suggests
-#&gt; 75        knitr      JuliaCall    &gt;= 0.11.1 Suggests
-#&gt; 76        knitr         magick         &lt;NA&gt; Suggests
-#&gt; 77        knitr            png         &lt;NA&gt; Suggests
-#&gt; 78        knitr           jpeg         &lt;NA&gt; Suggests
-#&gt; 79        knitr         gifski         &lt;NA&gt; Suggests
-#&gt; 80        knitr           xml2     &gt;= 1.2.0 Suggests
-#&gt; 81        knitr           httr         &lt;NA&gt; Suggests
-#&gt; 82        knitr            DBI     &gt;= 0.4-1 Suggests
-#&gt; 83        knitr       showtext         &lt;NA&gt; Suggests
-#&gt; 84        knitr         tibble         &lt;NA&gt; Suggests
-#&gt; 85        knitr           sass         &lt;NA&gt; Suggests
-#&gt; 86        knitr         styler         &lt;NA&gt; Suggests
-#&gt; 87    rmarkdown          knitr      &gt;= 1.22  Imports
-#&gt; 88    rmarkdown           yaml    &gt;= 2.1.19  Imports
-#&gt; 89    rmarkdown      htmltools    &gt;=\n0.3.5  Imports
-#&gt; 90    rmarkdown       evaluate      &gt;= 0.13  Imports
-#&gt; 91    rmarkdown      base64enc         &lt;NA&gt;  Imports
-#&gt; 92    rmarkdown       jsonlite         &lt;NA&gt;  Imports
-#&gt; 93    rmarkdown           mime         &lt;NA&gt;  Imports
-#&gt; 94    rmarkdown        tinytex      &gt;= 0.11  Imports
-#&gt; 95    rmarkdown           xfun         &lt;NA&gt;  Imports
-#&gt; 96    rmarkdown        stringr     &gt;= 1.2.0  Imports
-#&gt; 97    rmarkdown          shiny      &gt;= 0.11 Suggests
-#&gt; 98    rmarkdown          tufte         &lt;NA&gt; Suggests
-#&gt; 99    rmarkdown       testthat         &lt;NA&gt; Suggests
-#&gt; 100   rmarkdown         digest         &lt;NA&gt; Suggests
-#&gt; 101   rmarkdown       dygraphs         &lt;NA&gt; Suggests
-#&gt; 102   rmarkdown         tibble         &lt;NA&gt; Suggests
-#&gt; 103   rmarkdown             fs         &lt;NA&gt; Suggests
-#&gt; 104   rmarkdown        pkgdown         &lt;NA&gt; Suggests
-#&gt; 105   rmarkdown          callr     &gt;= 2.0.0 Suggests
-#&gt; 106    testthat            cli         &lt;NA&gt;  Imports
-#&gt; 107    testthat         crayon     &gt;= 1.3.4  Imports
-#&gt; 108    testthat         digest         &lt;NA&gt;  Imports
-#&gt; 109    testthat       evaluate         &lt;NA&gt;  Imports
-#&gt; 110    testthat       magrittr         &lt;NA&gt;  Imports
-#&gt; 111    testthat         praise         &lt;NA&gt;  Imports
-#&gt; 112    testthat             R6     &gt;= 2.2.0  Imports
-#&gt; 113    testthat          rlang     &gt;= 0.3.0  Imports
-#&gt; 114    testthat          withr     &gt;= 2.0.0  Imports
-#&gt; 115    testthat           covr         &lt;NA&gt; Suggests
-#&gt; 116    testthat           curl     &gt;= 0.9.5 Suggests
-#&gt; 117    testthat       devtools         &lt;NA&gt; Suggests
-#&gt; 118    testthat          knitr         &lt;NA&gt; Suggests
-#&gt; 119    testthat      rmarkdown         &lt;NA&gt; Suggests
-#&gt; 120    testthat        usethis         &lt;NA&gt; Suggests
-#&gt; 121    testthat          vctrs     &gt;= 0.1.0 Suggests
-#&gt; 122    testthat           xml2         &lt;NA&gt; Suggests</div><div class='input'>
+<span class='no'>dd2</span></div><div class='output co'>#&gt;           origin     name  version    type
+#&gt; imports1 stringr     glue &gt;= 1.2.0 Imports
+#&gt; imports2 stringr magrittr     &lt;NA&gt; Imports
+#&gt; imports3 stringr  stringi &gt;= 1.1.7 Imports</div><div class='input'>
+<span class='no'>dd3</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in check_package_name(package, bioc, local): ggplot2 is not installed</span></div><div class='input'><span class='no'>dd3</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): nie znaleziono obiektu 'dd3'</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -314,12 +186,12 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
 
-    <h2>Author</h2>
-    <p>Hubert Baniecki, Szymon Maksymiuk</p>
   </div>
 </div>
 
