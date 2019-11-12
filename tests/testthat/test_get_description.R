@@ -11,7 +11,7 @@ test_that("Getting CRAN description", {
 # })
 
 test_that("Getting local description", {
-  desc3 <- get_description("cranlogs", local = TRUE)
+  desc3 <- get_description("deepdep", local = TRUE)
   expect_is(desc3, "package_description")
 })
 

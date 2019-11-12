@@ -3,12 +3,14 @@ context("deepdep")
 test_that("deepdep executes with local = FALSE", {
   dd <- deepdep("RcppArmadillo", downloads = TRUE, depth = 1, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
   dd3 <- deepdep("RcppArmadillo", downloads = FALSE, depth = 1, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
+  dd5 <- deepdep("ggforce", downloads = FALSE, depth = 1, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
   expect_is(dd3, "deepdep")
+  expect_is(dd5, "deepdep")
   expect_is(dd, "deepdep")
 })
 
 test_that("deepdep exacutes with local = TRUE, depth higheer than 1", {
-  dd1 <- deepdep("ggforce", downloads = FALSE, local =  TRUE, depth = 2, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
+  dd1 <- deepdep("deepdep", downloads = FALSE, local =  TRUE, depth = 1, deps_types = c("Depends", "Imports"))
   expect_is(dd1, "deepdep")
 })
 
@@ -27,6 +29,6 @@ test_that("Error check",{
 })
 
 test_that("Print works", {
-  dd1 <- deepdep("ggforce", downloads = FALSE, local =  TRUE, depth = 2, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
+  dd1 <- deepdep("deepdep", downloads = FALSE, local =  TRUE, depth = 1, deps_types = c("Depends", "Imports"))
   expect_error(print(dd1), NA)
 })
