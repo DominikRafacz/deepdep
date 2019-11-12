@@ -27,7 +27,7 @@ reset_cached_files <- function(type) {
   cache_dir <- tempdir()
   cache_files <- paste0(cache_dir, "/deepdep_", type, "_",
                        c("CRAN", "bioc", "local"), "_cache.RDS")
-  for (cache_file in cache_file) {
+  for (cache_file in cache_files) {
     if (file.exists(cache_file)) file.remove(cache_file)
   }
 }
