@@ -2,32 +2,33 @@
 % Please edit documentation in R/deepdep.R
 \name{deepdep}
 \alias{deepdep}
-\title{deepdep}
+\title{Acquire the dependencies of the package on any depth level.}
 \usage{
-deepdep(package, downloads = FALSE, depth = 1, bioc = FALSE,
+deepdep(package, depth = 1, downloads = FALSE, bioc = FALSE,
   local = FALSE, deps_types = c("Depends", "Imports"))
 }
 \arguments{
-\item{package}{A \code{character}. Name of the package that is on CRAN.}
+\item{package}{A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
+See \code{bioc} and \code{local} arguments.}
 
-\item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{FALSE}.}
+\item{depth}{An \code{integer}. Maximum depth level of the dependency. By default it's \code{1}.}
 
-\item{depth}{An \code{integer}. Depth of package dependency. By default it's \code{1}.}
+\item{downloads}{A \code{logical}. If \code{TRUE} add dependency downloads data. By default it's \code{FALSE}.}
 
-\item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
-Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
-installed.}
+\item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+Bioconductor repository. For this option to work properly, \code{\link{BiocManager}} package needs to be installed.}
 
-\item{local}{A \code{logical} value. If TURE only local installed packages will be used to create data.}
+\item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
 \item{deps_types}{A \code{character} vector. Types of dependencies that should be sought.
-Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".}
+Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends","Imports"}.}
 }
 \value{
 An object of \code{deepdep} class.
 }
 \description{
-deepdep.
+This function is an ultimate wrapper for \code{get_dependencies}. It inherits all of the arguments and
+allows to recursively search for the dependencies at the higher level of \code{depth}.
 }
 \examples{
 library(deepdep)
@@ -38,7 +39,10 @@ dd
 dd2 <- deepdep("stringr", depth = 2)
 dd2
 
+dd3 <- deepdep("ggplot2", local = TRUE)
+dd3
+
 }
-\author{
-Hubert Baniecki, Szymon Maksymiuk
+\seealso{
+\code{get_dependencies}
 }

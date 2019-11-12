@@ -23,6 +23,3 @@ downloads
 
 
 }
-\author{
-Hubert Baniecki, Szymon Maksymiuk
-}
