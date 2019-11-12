@@ -34,3 +34,7 @@ check_package_name <- function(package, bioc, local) {
     else stop(paste0(package, " is not available on CRAN"))
   }
 }
+
+is_available <- function(package, bioc = FALSE, local = FALSE) {
+  package %in% get_available_packages(bioc, local)
+}

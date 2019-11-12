@@ -4,16 +4,16 @@
 \alias{get_dependencies}
 \title{Acquire dependencies of the package}
 \usage{
-get_dependencies(package, downloads = FALSE, bioc = FALSE,
+get_dependencies(package, downloads = TRUE, bioc = FALSE,
   local = FALSE, deps_types = c("Depends", "Imports"))
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN.}
 
-\item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{FALSE}.}
+\item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{TRUE}.}
 
-\item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from 
-Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be 
+\item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from
+Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be
 installed.}
 
 \item{local}{A \code{logical} value. Should only already installed packages be checked?}
@@ -35,7 +35,4 @@ dependencies <- get_dependencies("stringr")
 dependencies
 
 
-}
-\author{
-Hubert Baniecki, Szymon Maksymiuk
 }

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Acquire dependencies of the package — get_dependencies • deepdep</title>
+<title>Push child towards the parent — gravity_parent • deepdep</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,10 +32,9 @@
 
 
 
-<meta property="og:title" content="Acquire dependencies of the package — get_dependencies" />
+<meta property="og:title" content="Push child towards the parent — gravity_parent" />
 
-<meta property="og:description" content="This function is using get_description and get_downloads
-to acquire dependencies." />
+<meta property="og:description" content="Push child towards the parent" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,78 +103,40 @@ to acquire dependencies." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Acquire dependencies of the package</h1>
-    <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/get_dependencies.R'><code>R/get_dependencies.R</code></a></small>
-    <div class="hidden name"><code>get_dependencies.Rd</code></div>
+    <h1>Push child towards the parent</h1>
+    <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/gravity_utils.R'><code>R/gravity_utils.R</code></a></small>
+    <div class="hidden name"><code>gravity_parent.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function is using <code><a href='get_description.html'>get_description</a></code> and <code><a href='get_downloads.html'>get_downloads</a></code>
-to acquire dependencies.</p>
+    <p>Push child towards the parent</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_dependencies</span>(<span class='no'>package</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>bioc</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>deps_types</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Depends"</span>, <span class='st'>"Imports"</span>))</pre>
+    <pre class="usage"><span class='fu'>gravity_parent</span>(<span class='no'>node</span>, <span class='no'>parent_node</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>package</th>
-      <td><p>A <code>character</code>. Name of the package that is on CRAN.</p></td>
+      <th>node</th>
+      <td><p>A row from <code>layout</code> data frame with node to push towards
+the parent.</p></td>
     </tr>
     <tr>
-      <th>downloads</th>
-      <td><p>A <code>logical</code>. If <code>TRUE</code> add package downloads data. By default it's <code>TRUE</code>.</p></td>
-    </tr>
-    <tr>
-      <th>bioc</th>
-      <td><p>A <code>logical</code> value. Should Bioconductor dependencies descriptions be red from
-Bioconductor repository? For this option to work properly, <code>BiocManager</code> package needs to be
-installed.</p></td>
-    </tr>
-    <tr>
-      <th>local</th>
-      <td><p>A <code>logical</code> value. Should only already installed packages be checked?</p></td>
-    </tr>
-    <tr>
-      <th>deps_types</th>
-      <td><p>A <code>character</code> vector. Types of dependencies that should be sought.
-Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".</p></td>
+      <th>parent_node</th>
+      <td><p>A row from <code>layout</code> data frame with parent node.</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An object of <code>package_dependencies</code> class.</p>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
-
-<span class='no'>dependencies</span> <span class='kw'>&lt;-</span> <span class='fu'>get_dependencies</span>(<span class='st'>"stringr"</span>)
-<span class='no'>dependencies</span></div><div class='output co'>#&gt;              name  version    type last_day last_week last_month last_quarter
-#&gt; imports1     glue &gt;= 1.2.0 Imports    15676    183834     789981      2372075
-#&gt; imports2 magrittr     &lt;NA&gt; Imports   113881    840456    3430942     10297405
-#&gt; imports3  stringi &gt;= 1.1.7 Imports    14818    164986     693655      2082935
-#&gt;          last_half grand_total
-#&gt; imports1   4431625    14326922
-#&gt; imports2  15821253    30093579
-#&gt; imports3   3642208    21420843</div><div class='input'>
-
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>

@@ -1,3 +1,4 @@
+# helper functions for get_available_packages.R and get_description.R
 get_cached_obj <- function(type, repo) {
   cache_dir <- tempdir()
   cache_file <- paste0(cache_dir, "/deepdep_", type, "_", repo, "_cache.RDS")
@@ -24,7 +25,7 @@ is_too_old <- function(file) {
 
 reset_cached_files <- function(type) {
   cache_dir <- tempdir()
-  cache_files <- paste0(cache_dir, "/deepdep_", type, "_", 
+  cache_files <- paste0(cache_dir, "/deepdep_", type, "_",
                        c("CRAN", "bioc", "local"), "_cache.RDS")
   for (cache_file in cache_file) {
     if (file.exists(cache_file)) file.remove(cache_file)

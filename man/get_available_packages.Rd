@@ -2,36 +2,35 @@
 % Please edit documentation in R/get_available_packages.R
 \name{get_available_packages}
 \alias{get_available_packages}
-\title{Get available packages}
+\title{Get the list of available packages.}
 \usage{
 get_available_packages(bioc = FALSE, local = FALSE,
   reset_cache = FALSE)
 }
 \arguments{
-\item{bioc}{A \code{\link{logical}} value. Should only packages from Bioconductor repositories
-be listed? For this option to work properly, \code{BiocManager} package needs to be 
+\item{bioc}{A \code{logical} value. Should only packages from Bioconductor repositories
+be listed? For this option to work properly, \code{\link{BiocManager}} package needs to be
 installed.}
 
-\item{local}{A \code{\link{logical}} value. Should only local packages (installed packages) be
+\item{local}{A \code{logical} value. Should only local packages (installed packages) be
 listed?}
 
-\item{reset_cache}{A \code{\link{logical}} value. Should cache be cleared before obtaining the 
+\item{reset_cache}{A \code{logical} value. Should cache be cleared before obtaining the
 list of packages?}
 }
 \value{
-A \code{\link{character}} vector. If neither \code{local} nor \code{bioc} are 
-\code{TRUE}, vector contains all packages available currently on CRAN. If \code{bioc} is 
+A \code{\link{character}} vector. If neither \code{local} nor \code{bioc} are
+\code{TRUE}, vector contains all packages available currently on CRAN. If \code{bioc} is
 \code{TRUE}, vector contains all packages available currently via Bioconductor. If
 \code{local} is \code{TRUE}, vactor contains all packages that are currently installed.
 }
 \description{
-Obtain a vector of names of all packages that you have installed or that are
-available to be installed.
+Get names of packages that you have locally installed or that are available to be installed.
 }
 \details{
 Function uses caching - only the first usage scraps information from servers. Those
 objects are then saved locally in temporary file and further usages loads needed data from the
 file.
 
-Parameters \code{bioc} and \code{local} cannot be \code{TRUE} simultaneously.
+Arguments \code{bioc} and \code{local} cannot be \code{TRUE} simultaneously.
 }

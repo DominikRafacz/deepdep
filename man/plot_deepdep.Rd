@@ -43,6 +43,3 @@ plot_dependencies(dd, "tree")
 dd2 <- deepdep("cranlogs", depth = 2)
 plot_dependencies(dd2, "circular")
 }
-\author{
-Mateusz Bąkała
-}

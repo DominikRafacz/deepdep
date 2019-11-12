@@ -21,6 +21,3 @@ dependencies <- get_dependencies("stringr")
 dependencies
 
 }
-\author{
-Hubert Baniecki, Szymon Maksymiuk
-}
