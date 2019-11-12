@@ -41,10 +41,10 @@ get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FA
 
   deps <- description[l_deps_types]
 
-  package_names <- unlist(sapply(deps, names))
+  package_names <- unlist(sapply(deps, names), use.names = FALSE)
   package_versions <- unlist(deps, use.names = FALSE)
   package_types <- unlist(sapply(names(deps), function(dep_type)
-    rep(deps_types[dep_type], length(deps[[dep_type]]))))
+    rep(deps_types[dep_type], length(deps[[dep_type]]))), use.names = FALSE)
 
   if (!is.null(package_names)) {
     downloads_df <- NULL
@@ -68,6 +68,7 @@ get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FA
   } else return(NULL)
 
   attr(ret, "package_name") <- package
+  row.names(ret) <- NULL
   class(ret) <- c("package_dependencies", "data.frame")
   ret
 }
