@@ -21,6 +21,3 @@ desc <- get_downloads("stringr")
 desc
 
 }
-\author{
-Hubert Baniecki, Szymon Maksymiuk
-}

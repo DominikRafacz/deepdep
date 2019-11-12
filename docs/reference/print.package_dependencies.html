@@ -135,16 +135,14 @@
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
 <span class='no'>dependencies</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_dependencies.html'>get_dependencies</a></span>(<span class='st'>"stringr"</span>)
-<span class='no'>dependencies</span></div><div class='output co'>#&gt;          name  version     type
-#&gt; 1        glue &gt;= 1.2.0  Imports
-#&gt; 2    magrittr     &lt;NA&gt;  Imports
-#&gt; 3     stringi &gt;= 1.1.7  Imports
-#&gt; 4        covr     &lt;NA&gt; Suggests
-#&gt; 5   htmltools     &lt;NA&gt; Suggests
-#&gt; 6 htmlwidgets     &lt;NA&gt; Suggests
-#&gt; 7       knitr     &lt;NA&gt; Suggests
-#&gt; 8   rmarkdown     &lt;NA&gt; Suggests
-#&gt; 9    testthat     &lt;NA&gt; Suggests</div><div class='input'>
+<span class='no'>dependencies</span></div><div class='output co'>#&gt;              name  version    type last_day last_week last_month last_quarter
+#&gt; imports1     glue &gt;= 1.2.0 Imports    15676    183834     789981      2372075
+#&gt; imports2 magrittr     &lt;NA&gt; Imports   113881    840456    3430942     10297405
+#&gt; imports3  stringi &gt;= 1.1.7 Imports    14818    164986     693655      2082935
+#&gt;          last_half grand_total
+#&gt; imports1   4431625    14326922
+#&gt; imports2  15821253    30093579
+#&gt; imports3   3642208    21420843</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -155,8 +153,6 @@
       <li><a href="#examples">Examples</a></li>
     </ul>
 
-    <h2>Author</h2>
-    <p>Hubert Baniecki, Szymon Maksymiuk</p>
   </div>
 </div>
 
