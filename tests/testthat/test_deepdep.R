@@ -25,3 +25,11 @@ test_that("Error check",{
   expect_error(deepdep("ggforce", downloads = FALSE, local =  TRUE,  bioc = TRUE, depth = 2, deps_types = c("Depends", "Imports")))
   expect_error(deepdep("ggforce", downloads = TRUE, local =  TRUE, bioc = FALSE, depth = 2, deps_types = c("Depends", "Imports")))
 })
+<<<<<<< Updated upstream
+=======
+
+test_that("Print works", {
+  dd1 <- deepdep("ggforce", downloads = FALSE, local =  TRUE, depth = 2, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
+  expect_error(print(dd1), NA)
+})
+>>>>>>> Stashed changes
