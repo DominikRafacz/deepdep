@@ -8,3 +8,4 @@
 ^codecov\.yml$
 ^pkgdown.*$
 ^\.circleci/config\.yml$
+^LICENSE\.md$

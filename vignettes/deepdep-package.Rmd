@@ -1,0 +1,23 @@
+---
+title: "deepdep package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{deepdep package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+Package `deepdep` was created to acquire and visualize information on dependencies of R packages in a smart and convenient way. Most of its functionality is contained in two functions: `deepdep` and `plot_dependencies`.
+
+```{r setup}
+library(deepdep)
+```
