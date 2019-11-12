@@ -158,9 +158,7 @@ get_desc_local <- function(package, descs) {
   counter <- 0
   for (i in 1:length(raw_desc)) {
     if (check_if_valid_depend(raw_desc[i])) {
-      counter <- counter + 1
       start <- i
-      next()
     }
     if (counter > 0) {
       if (!grepl(":", raw_desc[i], fixed = TRUE)) {
