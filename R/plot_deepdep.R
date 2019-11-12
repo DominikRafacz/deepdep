@@ -68,8 +68,8 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
       g <- ggraph(graph = G, layout = "focus", focus = 1) +
         draw_circle(use = "focus", max.circle = max(V(G)$layer - 1)) +
         geom_edge_link(aes_string(colour = "type"), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
-        geom_node_point(aes_string(fill = as.factor("layer")), size = 2, shape = 21, show.legend = FALSE) +
-        geom_node_label(aes(label = names(V(G)), fill = factor(layer), size = 2.5*labeled),
+        geom_node_point(aes(fill = as.factor(layer)), size = 2, shape = 21, show.legend = FALSE) +
+        geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
                         show.legend = FALSE, repel = TRUE) +
         coord_fixed() +
         theme_void()
@@ -78,7 +78,7 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
       g <- ggraph(G, "tree") +
         geom_edge_link(aes_string(colour = factor("type")), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
         geom_node_point(aes_string(colour = factor("layer")), size = 5, show.legend = FALSE) +
-        geom_node_label(aes(label = names(V(G)), fill = factor(layer)),
+        geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
                         show.legend = FALSE, repel = TRUE) +
         theme_void()
     }
