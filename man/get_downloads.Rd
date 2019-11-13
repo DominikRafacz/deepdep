@@ -13,8 +13,8 @@ get_downloads(package)
 An object of \code{package_downloads} class.
 }
 \description{
-This function uses [API](https://github.com/r-hub/cranlogs) of [CRAN Logs](http://cran-logs.rstudio.com/)
-to scrap the download logs of the package.
+This function uses \href{https://github.com/r-hub/cranlogs}{\bold{API}} of
+\href{http://cran-logs.rstudio.com/}{\bold{CRAN Logs}} to scrap the download logs of the package.
 }
 \examples{
 library(deepdep)

@@ -68,5 +68,6 @@ get_available_packages_cached <- function(repo) {
 #' @export
 print.available_packages <- function(x, ...) {
   attributes(x) <- NULL
-  print(unname(x))
+  x <- unname(x)
+  print(x)
 }

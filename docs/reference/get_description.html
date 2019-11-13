@@ -34,8 +34,9 @@
 
 <meta property="og:title" content="Scrap the DESCRIPTION file and CRAN metadata of the package — get_description" />
 
-<meta property="og:description" content="This function uses [API](https://github.com/r-hub/crandb) of [CRAN Data Base](http://crandb.r-pkg.org)
-to scrap the DESCRIPTION file and CRAN metadata of the package. It caches the results to speed the computation process." />
+<meta property="og:description" content="This function uses API of
+CRAN Data Base to scrap the DESCRIPTION file and
+CRAN metadata of the package. It caches the results to speed the computation process." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -111,8 +112,9 @@ to scrap the DESCRIPTION file and CRAN metadata of the package. It caches the re
 
     <div class="ref-description">
     
-    <p>This function uses [API](https://github.com/r-hub/crandb) of [CRAN Data Base](http://crandb.r-pkg.org)
-to scrap the DESCRIPTION file and CRAN metadata of the package. It caches the results to speed the computation process.</p>
+    <p>This function uses <a href='https://github.com/r-hub/crandb'><b>API</b></a> of
+<a href='http://crandb.r-pkg.org'><b>CRAN Data Base</b></a> to scrap the DESCRIPTION file and
+CRAN metadata of the package. It caches the results to speed the computation process.</p>
     
     </div>
 
@@ -164,19 +166,10 @@ Bioconductor repository. For this option to work properly, <code>BiocManager</co
 #&gt; Suggests: covr dplyr ggplot2movies hexbin Hmisc knitr lattice mapproj maps maptools multcomp munsell nlme profvis quantreg rgeos rmarkdown rpart sf svglite testthat vdiffr 
 #&gt; Enhances: sp 
 #&gt; Scrap date: 2019-08-10 23:50:22</div><div class='input'>
+<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='no'>description_local</span> <span class='kw'>&lt;-</span> <span class='fu'>get_description</span>(<span class='st'>"deepdep"</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-<span class='no'>description_local</span></div><div class='output co'>#&gt; deepdep: Acquire and Visualize Deep Dependencies of R packages
-#&gt; Maintainer: Dominik Rafacz &lt;dominikrafacz@gmail.com&gt; 
-#&gt; Description: 
-#&gt;  Something something CRAN, http://crandb.r-pkg.org, https://cranlogs.r-pkg.org/ . 
-#&gt; Depends: R 
-#&gt; Imports: cranlogs ggforce ggplot2 ggraph graphlayouts httr igraph jsonlite 
-#&gt; LinkingTo: 
-#&gt; Suggests: BiocManager covr knitr rmarkdown spelling stringi testthat 
-#&gt; Enhances: 
-#&gt; Scrap date:</div><div class='input'>
-
-</div></pre>
+<span class='no'>description_local</span>
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

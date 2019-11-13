@@ -22,8 +22,9 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 An object of \code{package_description} class.
 }
 \description{
-This function uses [API](https://github.com/r-hub/crandb) of [CRAN Data Base](http://crandb.r-pkg.org)
-to scrap the DESCRIPTION file and CRAN metadata of the package. It caches the results to speed the computation process.
+This function uses \href{https://github.com/r-hub/crandb}{\bold{API}} of
+\href{http://crandb.r-pkg.org}{\bold{CRAN Data Base}} to scrap the DESCRIPTION file and
+CRAN metadata of the package. It caches the results to speed the computation process.
 }
 \examples{
 library(deepdep)
@@ -31,8 +32,10 @@ library(deepdep)
 description <- get_description("ggplot2")
 description
 
+\dontrun{
 description_local <- get_description("deepdep", local = TRUE)
 description_local
+}
 
 
 }

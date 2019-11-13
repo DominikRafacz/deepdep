@@ -22,8 +22,11 @@
 #' dependencies <- get_dependencies("ggplot2")
 #' dependencies
 #'
+#' \dontrun{
 #' dependencies_local <- get_dependencies("deepdep", downloads = FALSE, local = TRUE)
 #' dependencies_local
+#' }
+#'
 #'
 #' @export
 get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FALSE,

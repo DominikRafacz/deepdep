@@ -1,7 +1,7 @@
 #' @title Scrap the download data of the package
 #'
-#' @description This function uses [API](https://github.com/r-hub/cranlogs) of [CRAN Logs](http://cran-logs.rstudio.com/)
-#' to scrap the download logs of the package.
+#' @description This function uses \href{https://github.com/r-hub/cranlogs}{\bold{API}} of
+#' \href{http://cran-logs.rstudio.com/}{\bold{CRAN Logs}} to scrap the download logs of the package.
 #'
 #' @param package A \code{character}. Name of the package that is on CRAN.
 #'

@@ -179,9 +179,11 @@ Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingT
 #&gt; 5    565222     4396963
 #&gt; 6   3243632    17543856</div><div class='input'>
 <span class='no'>dd_2</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='fu'><a href='plot_deepdep.html'>plot_dependencies</a></span>(<span class='no'>dd_2</span>)</div><div class='img'><img src='deepdep-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='no'>dd_local</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"deepdep"</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep): argumenty sugerują różną liczbę wierszy: 1, 0</span></div><div class='input'><span class='no'>dd_local</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): nie znaleziono obiektu 'dd_local'</span></div><div class='input'>
-</div></pre>
+<span class='fu'><a href='plot_deepdep.html'>plot_dependencies</a></span>(<span class='no'>dd_2</span>, <span class='st'>"circular"</span>)</div><div class='img'><img src='deepdep-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='no'>dd_local</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"deepdep"</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'><a href='plot_deepdep.html'>plot_dependencies</a></span>(<span class='no'>dd_local</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

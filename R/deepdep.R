@@ -24,10 +24,13 @@
 #' head(dd_downloads)
 #'
 #' dd_2 <- deepdep("ggplot2", depth = 2)
-#' plot_dependencies(dd_2)
+#' plot_dependencies(dd_2, "circular")
 #'
+#' \dontrun{
 #' dd_local <- deepdep("deepdep", local = TRUE)
-#' dd_local
+#' plot_dependencies(dd_local)
+#' }
+#'
 #'
 #' @export
 deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local = FALSE,

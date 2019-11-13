@@ -37,10 +37,13 @@ dd_downloads <- deepdep("ggplot2", downloads = TRUE)
 head(dd_downloads)
 
 dd_2 <- deepdep("ggplot2", depth = 2)
-plot_dependencies(dd_2)
+plot_dependencies(dd_2, "circular")
 
+\dontrun{
 dd_local <- deepdep("deepdep", local = TRUE)
-dd_local
+plot_dependencies(dd_local)
+}
+
 
 }
 \seealso{
