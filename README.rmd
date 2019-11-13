@@ -24,7 +24,11 @@ devtools::install_github("DominikRafacz/deepdep")
 
 ## Demo
 
-```{r message=FALSE, warning=FALSE}
+```{r set-options, echo=FALSE, cache=FALSE}
+options(width = 800)
+```
+
+```{r message=FALSE, warning=FALSE, fig.width=8, fig.height=4}
 library(deepdep)
 
 dd1 <- deepdep("ggplot2", downloads = TRUE)
