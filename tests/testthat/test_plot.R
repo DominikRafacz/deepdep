@@ -14,5 +14,14 @@ test_that("dependencies plot have suitable layers and objects", {
   expect_s3_class(plt$layers[[3]]$stat, "StatFilter")
   expect_s3_class(plt$layers[[4]]$geom, "GeomLabelRepel")
   expect_s3_class(plt$layers[[4]]$stat, "StatFilter")
-  
+
+})
+
+test_that("Type checks", {
+  expect_error(plot_dependencies("Wrong type"))
+})
+
+test_that("Tree graph test", {
+  plt2 <- plot_dependencies(deps, plot_type = "tree")
+  expect_s3_class(plt2, "ggraph")
 })
