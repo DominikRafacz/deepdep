@@ -144,6 +144,8 @@ ajust_desc_file <- function(pkg) {
       names(pkg[[dep_type]]) <- deps[,2]
     }
   }
+  attr(pkg, "package_name") <- pkg$Package
+  class(pkg) <- c("package_description", "list")
   pkg
 }
 
