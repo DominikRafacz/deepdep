@@ -77,8 +77,21 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>To install the package, use the following code:</p>
-<pre class="{r}"><code><a href="https://rdrr.io/pkg/devtools/man/reexports.html">devtools::install_github("DominikRafacz/deepdep")</a></code></pre>
+<pre class="{r}"><code><a href="https://rdrr.io/pkg/devtools/man/reexports.html"># Install the development version from GitHub:
+devtools::install_github("DominikRafacz/deepdep")</a></code></pre>
+</div>
+<div id="demo" class="section level2">
+<h2 class="hasAnchor">
+<a href="#demo" class="anchor"></a>Demo</h2>
+<pre class="{r}"><code>library(deepdep)
+
+dd1 &lt;- deepdep("ggplot2")
+
+plot_dependencies(dd1, "tree")
+
+dd2 &lt;- deepdep("ggplot2", depth = 2)
+
+plot_dependencies(dd2, "circular")</code></pre>
 <hr>
 <p>This package was made during <code>1120-DS000-ISP-0500</code><a href="https://github.com/mini-pw/2020Z-ProgramowanieWR">Advanced Programming in R</a> course at Warsaw University of Technology.</p>
 </div>

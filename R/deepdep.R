@@ -69,7 +69,7 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
   ret
 }
 
-#' @title Print function for an object of \code{deepdep} class.
+#' @title Print function for an object of \code{deepdep} class
 #'
 #' @param x An object of \code{deepdep} class.
 #' @param ... other

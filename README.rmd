@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 # deepdep <img src='images/logo.png' align="right" height="250" />
 
 <!-- badges: start -->
@@ -13,16 +17,19 @@ Acquire and Visualise Deep Dependiences of R packages.
 
 ## Installation
 
-```{r}
+```{r eval = FALSE}
 # Install the development version from GitHub:
 devtools::install_github("DominikRafacz/deepdep")
 ```
 
 ## Demo
-```{r}
+
+```{r message=FALSE, warning=FALSE}
 library(deepdep)
 
-dd1 <- deepdep("ggplot2")
+dd1 <- deepdep("ggplot2", downloads = TRUE)
+
+head(dd1)
 
 plot_dependencies(dd1, "tree")
 

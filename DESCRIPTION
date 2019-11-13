@@ -15,21 +15,21 @@ Depends:
     R (>= 3.2.0)
 Imports:
     cranlogs,
-    httr,
-    jsonlite,
-    igraph,
+    ggforce,
     ggplot2,
     ggraph,
-    ggforce,
-    graphlayouts
+    graphlayouts,
+    httr,
+    igraph,
+    jsonlite
 Suggests: 
-    stringi,
     BiocManager,
     covr,
     knitr,
     rmarkdown,
-    testthat (>= 2.1.0),
-    spelling
+    spelling,
+    stringi,
+    testthat (>= 2.1.0)
 VignetteBuilder: knitr
 URL: https://github.com/DominikRafacz/deepdep
 BugReports: https://github.com/DominikRafacz/deepdep/issues

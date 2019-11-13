@@ -5,7 +5,7 @@
 \alias{plot_dependencies.default}
 \alias{plot_dependencies.character}
 \alias{plot_dependencies.deepdep}
-\title{Main plot function for a \code{deepdep} object.}
+\title{Main plot function for a \code{deepdep} object}
 \usage{
 plot_dependencies(x, type = "circular", same_level = FALSE,
   label_percentage = 1, ...)

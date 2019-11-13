@@ -1,6 +1,13 @@
-language: r
+language: R
+sudo: false
 cache: packages
-r_check_args: --as-cran 
+
+r_check_args: --as-cran
+warnings_are_errors: true
+
+env:
+  global:
+  - R_CHECK_ARGS="--timings --run-donttest"
 
 r:
   - release
@@ -8,6 +15,13 @@ r:
 
 os:
   - linux
-  
+  - osx
+
+notifications:
+  email: false
+
+r_packages:
+  - covr
+
 after_success:
   - Rscript -e 'covr::codecov()'

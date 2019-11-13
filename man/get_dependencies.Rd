@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_dependencies.R
 \name{get_dependencies}
 \alias{get_dependencies}
-\title{Acquire dependencies of the package}
+\title{Acquire the dependencies of the package}
 \usage{
 get_dependencies(package, downloads = TRUE, bioc = FALSE,
   local = FALSE, deps_types = c("Depends", "Imports"))

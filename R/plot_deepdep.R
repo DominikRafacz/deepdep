@@ -1,4 +1,4 @@
-#' @title Main plot function for a \code{deepdep} object.
+#' @title Main plot function for a \code{deepdep} object
 #'
 #' @description Visualize dependency data from a \code{deepdep} object using
 #' \code{ggplot2} and \code{ggraph} packages. Several tree-like layouts are available.

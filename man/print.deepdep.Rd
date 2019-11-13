@@ -2,7 +2,7 @@
 % Please edit documentation in R/deepdep.R
 \name{print.deepdep}
 \alias{print.deepdep}
-\title{Print function for an object of \code{deepdep} class.}
+\title{Print function for an object of \code{deepdep} class}
 \usage{
 \method{print}{deepdep}(x, ...)
 }
@@ -12,7 +12,7 @@
 \item{...}{other}
 }
 \description{
-Print function for an object of \code{deepdep} class.
+Print function for an object of \code{deepdep} class
 }
 \examples{
 library(deepdep)

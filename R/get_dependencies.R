@@ -1,4 +1,4 @@
-#' @title Acquire dependencies of the package
+#' @title Acquire the dependencies of the package
 #'
 #' @description This function is using \code{\link{get_description}} and \code{\link{get_downloads}}
 #' to acquire dependencies.
