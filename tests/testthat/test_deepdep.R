@@ -27,6 +27,6 @@ test_that("Error check",{
 })
 
 test_that("Print works", {
-  dd1 <- deepdep("deepdep", downloads = FALSE, local =  TRUE, depth = 1, deps_types = c("Depends", "Imports"))
-  expect_error(print(dd1), NA)
+  dd <- deepdep("RcppArmadillo", downloads = TRUE, depth = 1, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
+  expect_error(print(dd), NA)
 })
