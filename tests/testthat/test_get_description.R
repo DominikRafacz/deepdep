@@ -5,10 +5,10 @@ test_that("Getting CRAN description", {
   expect_is(desc1, "package_description")
 })
 
-# test_that("Getting bioc description", {
-#   desc2 <- get_description("a4", bioc = TRUE)
-#   expect_is(desc2, "package_description")
-# })
+test_that("Getting bioc description", {
+  desc2 <- get_description("a4", bioc = TRUE)
+  expect_is(desc2, "package_description")
+})
 
 test_that("Getting local description", {
   desc3 <- get_description("deepdep", local = TRUE)

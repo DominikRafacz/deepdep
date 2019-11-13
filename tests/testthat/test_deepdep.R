@@ -14,12 +14,10 @@ test_that("deepdep exacutes with local = TRUE, depth higheer than 1", {
   expect_is(dd1, "deepdep")
 })
 
-# test_that("deepdep exacutes with bio = TRUE", {
-#   #want to clear cache
-#   dep <- get_description("les", bioc = TRUE, reset_cache = TRUE)
-#   dd2 <- deepdep("les", downloads = FALSE, bioc = TRUE, depth = 1, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
-#   expect_is(dd2, "deepdep")
-# })
+ test_that("deepdep exacutes with bio = TRUE", {
+   dd2 <- deepdep("les", downloads = FALSE, bioc = TRUE, depth = 1, deps_types = c("Depends", "Imports", "Enhances", "LinkingTo"))
+   expect_is(dd2, "deepdep")
+})
 
 test_that("Error check",{
   expect_error(deepdep("ggforce", downloads = TRUE, local =  FALSE, bioc = TRUE, depth = 2, deps_types = c("Depends", "Imports")))
