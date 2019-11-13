@@ -2,37 +2,45 @@
 % Please edit documentation in R/get_dependencies.R
 \name{get_dependencies}
 \alias{get_dependencies}
-\title{Acquire dependencies of the package}
+\title{Acquire the dependencies of the package}
 \usage{
 get_dependencies(package, downloads = TRUE, bioc = FALSE,
   local = FALSE, deps_types = c("Depends", "Imports"))
 }
 \arguments{
-\item{package}{A \code{character}. Name of the package that is on CRAN.}
+\item{package}{A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
+See \code{bioc} and \code{local} arguments.}
 
 \item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{TRUE}.}
 
-\item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from
-Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be
-installed.}
+\item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.}
 
-\item{local}{A \code{logical} value. Should only already installed packages be checked?}
+\item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
-\item{deps_types}{A \code{character} vector. Types of dependencies that should be sought.
-Possibilities are: Imports, Depends, Suggests, Enhances, LinkingTo. Defaults to "Depends" and "Imports".}
+\item{deps_types}{A \code{character} vector. Types of the dependencies that should be sought.
+Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends", "Imports"}.}
 }
 \value{
 An object of \code{package_dependencies} class.
 }
 \description{
-This function is using \code{\link{get_description}} and \code{\link{get_downloads}}
-to acquire dependencies.
+This function uses \code{\link{get_description}} and \code{\link{get_downloads}}
+to acquire the dependencies of the package (with their downloads).
 }
 \examples{
 library(deepdep)
 
-dependencies <- get_dependencies("stringr")
+dependencies <- get_dependencies("ggplot2")
 dependencies
 
+\dontrun{
+dependencies_local <- get_dependencies("deepdep", downloads = FALSE, local = TRUE)
+dependencies_local
+}
 
+
+}
+\seealso{
+\code{\link{get_description}} \code{\link{get_downloads}}
 }

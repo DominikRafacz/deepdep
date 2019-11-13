@@ -6,8 +6,8 @@
 #' @examples
 #' library(deepdep)
 #'
-#' desc <- get_description("stringr")
-#' desc
+#' description <- get_description("ggplot2")
+#' description
 #'
 #' @rdname print.package_description
 #' @export

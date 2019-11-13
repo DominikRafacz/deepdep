@@ -17,7 +17,7 @@ Print function for an object of \code{package_description} class
 \examples{
 library(deepdep)
 
-desc <- get_description("stringr")
-desc
+description <- get_description("ggplot2")
+description
 
 }

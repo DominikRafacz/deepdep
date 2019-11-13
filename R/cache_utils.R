@@ -1,4 +1,5 @@
 # helper functions for get_available_packages.R and get_description.R
+
 get_cached_obj <- function(type, repo) {
   cache_dir <- tempdir()
   cache_file <- paste0(cache_dir, "/deepdep_", type, "_", repo, "_cache.RDS")

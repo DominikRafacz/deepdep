@@ -1,3 +1,12 @@
+#' @title Get the description file from CRAN Data Base API
+#'
+#' @description [API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
+#'
+#' @param api package name
+#' @param head length of head lines
+#' @param tail length of tail lines
+#'
+#' @noRd
 DB <- function(api, head = 1e6, tail = head) {
   ret <- paste0("http://crandb.r-pkg.org", "/", api)
   ret <- httr::GET(ret)
@@ -25,6 +34,13 @@ skip_lines <- function(text, head = 1e6, tail = 1e6) {
   ret
 }
 
+#' @title Check if the package name is valid
+#'
+#' @param package package name
+#' @param bioc TRUE/FALSE
+#' @param local TRUE/FALSE
+#'
+#' @noRd
 check_package_name <- function(package, bioc, local) {
   if (local) {
     if (!is_available(package, local = TRUE)) stop(paste0(package, " is not installed"))

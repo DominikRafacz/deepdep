@@ -1,6 +1,7 @@
 #' @title Scrap the download data of the package
 #'
-#' @description Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)
+#' @description This function uses \href{https://github.com/r-hub/cranlogs}{\bold{API}} of
+#' \href{http://cran-logs.rstudio.com/}{\bold{CRAN Logs}} to scrap the download logs of the package.
 #'
 #' @param package A \code{character}. Name of the package that is on CRAN.
 #'
@@ -10,7 +11,7 @@
 #' @examples
 #' library(deepdep)
 #'
-#' downloads <- get_downloads("stringr")
+#' downloads <- get_downloads("ggplot2")
 #' downloads
 #'
 #'
