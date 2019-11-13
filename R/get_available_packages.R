@@ -7,24 +7,22 @@
 #' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
 #' @param reset_cache A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.
 #'
-#'
-#' @return A \code{\link{character}} vector. If neither \code{local} nor \code{bioc} are
-#' \code{TRUE}, vector contains all packages available currently on CRAN. If \code{bioc} is
-#' \code{TRUE}, vector contains all packages available currently via Bioconductor. If
-#' \code{local} is \code{TRUE}, vactor contains all packages that are currently installed.
+#' @return A \code{character} vector.
 #'
 #' @details Function uses caching - only the first usage scraps information from servers. Those
-#' objects are then saved locally in temporary file and further usages loads needed data from the
-#' file.
+#' objects are then saved locally in temporary file and further usages loads needed data from the file.
 #'
 #' Arguments \code{bioc} and \code{local} cannot be \code{TRUE} simultaneously.
-#'
-#' @return A list of \code{character} values.
+#' If neither \code{local} nor \code{bioc} are \code{TRUE}, vector contains all packages available
+#' currently on CRAN. If \code{bioc} is \code{TRUE}, vector contains all packages available currently
+#' on CRAN and via Bioconductor. If \code{local} is \code{TRUE}, vactor contains all of the packages
+#' that are currently installed.
 #'
 #' @examples
 #' library(deepdep)
 #'
-#' get_available_packages()
+#' av <- get_available_packages()
+#' head(av)
 #'
 #' @export
 get_available_packages <- function(bioc = FALSE, local = FALSE, reset_cache = FALSE) {
@@ -50,5 +48,25 @@ get_available_packages_cached <- function(repo) {
     attr(pkgs, "new") <- FALSE
     save_cache(pkgs)
   }
+  class(pkgs) <- c("character", "available_packages")
   pkgs
+}
+
+
+#' @title Print function for an object of \code{available_packages} class
+#'
+#' @param x An object of \code{available_packages} class.
+#' @param ... other
+#'
+#' @examples
+#' library(deepdep)
+#'
+#' av <- get_available_packages()
+#' head(av)
+#'
+#' @rdname print.available_packages
+#' @export
+print.available_packages <- function(x, ...) {
+  attributes(x) <- NULL
+  print(unname(x))
 }

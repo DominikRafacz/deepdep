@@ -3,6 +3,7 @@
 S3method(plot_dependencies,character)
 S3method(plot_dependencies,deepdep)
 S3method(plot_dependencies,default)
+S3method(print,available_packages)
 S3method(print,deepdep)
 S3method(print,package_dependencies)
 S3method(print,package_description)

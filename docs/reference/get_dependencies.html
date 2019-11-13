@@ -34,8 +34,8 @@
 
 <meta property="og:title" content="Acquire the dependencies of the package — get_dependencies" />
 
-<meta property="og:description" content="This function is using get_description and get_downloads
-to acquire dependencies." />
+<meta property="og:description" content="This function uses get_description and get_downloads
+to acquire the dependencies of the package (with their downloads)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -111,8 +111,8 @@ to acquire dependencies." />
 
     <div class="ref-description">
     
-    <p>This function is using <code><a href='get_description.html'>get_description</a></code> and <code><a href='get_downloads.html'>get_downloads</a></code>
-to acquire dependencies.</p>
+    <p>This function uses <code><a href='get_description.html'>get_description</a></code> and <code><a href='get_downloads.html'>get_downloads</a></code>
+to acquire the dependencies of the package (with their downloads).</p>
     
     </div>
 
@@ -124,7 +124,8 @@ to acquire dependencies.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>package</th>
-      <td><p>A <code>character</code>. Name of the package that is on CRAN.</p></td>
+      <td><p>A <code>character</code>. Name of the package that is on CRAN, Bioconductor repository or locally installed.
+See <code>bioc</code> and <code>local</code> arguments.</p></td>
     </tr>
     <tr>
       <th>downloads</th>
@@ -132,13 +133,12 @@ to acquire dependencies.</p>
     </tr>
     <tr>
       <th>bioc</th>
-      <td><p>A <code>logical</code> value. Should Bioconductor dependencies descriptions be red from
-Bioconductor repository? For this option to work properly, <code>BiocManager</code> package needs to be
-installed.</p></td>
+      <td><p>A <code>logical</code> value. If <code>TRUE</code> the Bioconductor dependencies data will be taken from.
+Bioconductor repository. For this option to work properly, <code>BiocManager</code> package needs to be installed.</p></td>
     </tr>
     <tr>
       <th>local</th>
-      <td><p>A <code>logical</code> value. Should only already installed packages be checked?</p></td>
+      <td><p>A <code>logical</code> value. If <code>TRUE</code> only data of locally installed packages will be used (without API usage).</p></td>
     </tr>
     <tr>
       <th>deps_types</th>
@@ -151,20 +151,42 @@ Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingT
 
     <p>An object of <code>package_dependencies</code> class.</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='get_description.html'>get_description</a></code> <code><a href='get_downloads.html'>get_downloads</a></code></p></div>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='no'>dependencies</span> <span class='kw'>&lt;-</span> <span class='fu'>get_dependencies</span>(<span class='st'>"stringr"</span>)
-<span class='no'>dependencies</span></div><div class='output co'>#&gt;       name  version    type last_day last_week last_month last_quarter
-#&gt; 1     glue &gt;= 1.2.0 Imports    32056    185008     804415      2382273
-#&gt; 2 magrittr     &lt;NA&gt; Imports   125719    870568    3456838     10329762
-#&gt; 3  stringi &gt;= 1.1.7 Imports    26182    163911     704681      2089746
-#&gt;   last_half grand_total
-#&gt; 1   4433353    14358978
-#&gt; 2  15923545    30219298
-#&gt; 3   3643934    21447025</div><div class='input'>
-
+<span class='no'>dependencies</span> <span class='kw'>&lt;-</span> <span class='fu'>get_dependencies</span>(<span class='st'>"ggplot2"</span>)
+<span class='no'>dependencies</span></div><div class='output co'>#&gt;           name  version    type last_day last_week last_month last_quarter
+#&gt; 1       digest     &lt;NA&gt; Imports    33628    220886    1016882      2709067
+#&gt; 2       gtable &gt;= 0.1.1 Imports    17972    118317     505575      1486543
+#&gt; 3     lazyeval     &lt;NA&gt; Imports    21899    139851     617251      1770373
+#&gt; 4         MASS     &lt;NA&gt; Imports     5046     32509     128859       346953
+#&gt; 5         mgcv     &lt;NA&gt; Imports     8502     48164     171209       363180
+#&gt; 6     reshape2     &lt;NA&gt; Imports    31767    158810     682173      1924473
+#&gt; 7        rlang &gt;= 0.3.0 Imports    55447    342173    1449239      3784293
+#&gt; 8       scales &gt;= 0.5.0 Imports    24115    151870     678346      1907930
+#&gt; 9       tibble     &lt;NA&gt; Imports    34379    204082     876364      2587534
+#&gt; 10 viridisLite     &lt;NA&gt; Imports    17473    115090     491375      1439327
+#&gt; 11       withr &gt;= 2.0.0 Imports    17830    118356     501084      1501235
+#&gt;    last_half grand_total
+#&gt; 1    4667194    21943008
+#&gt; 2    2677447    14220311
+#&gt; 3    3061854    15000128
+#&gt; 4     694407     5355621
+#&gt; 5     565222     4396963
+#&gt; 6    3243632    17543856
+#&gt; 7    6635753    20850540
+#&gt; 8    3270169    17591818
+#&gt; 9    4874999    19895012
+#&gt; 10   2559825     9965738
+#&gt; 11   2720027    10648519</div><div class='input'>
+<span class='no'>dependencies_local</span> <span class='kw'>&lt;-</span> <span class='fu'>get_dependencies</span>(<span class='st'>"deepdep"</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='no'>dependencies_local</span></div><div class='output co'>#&gt; [1] name    version type   
+#&gt; &lt;0 wierszy&gt; (lub 'row.names' o zerowej długości)</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -173,6 +195,8 @@ Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingT
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

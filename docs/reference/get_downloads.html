@@ -34,7 +34,8 @@
 
 <meta property="og:title" content="Scrap the download data of the package — get_downloads" />
 
-<meta property="og:description" content="Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)" />
+<meta property="og:description" content="This function uses [API](https://github.com/r-hub/cranlogs) of [CRAN Logs](http://cran-logs.rstudio.com/)
+to scrap the download logs of the package." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -110,7 +111,8 @@
 
     <div class="ref-description">
     
-    <p>Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)</p>
+    <p>This function uses [API](https://github.com/r-hub/cranlogs) of [CRAN Logs](http://cran-logs.rstudio.com/)
+to scrap the download logs of the package.</p>
     
     </div>
 
@@ -133,9 +135,9 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='no'>downloads</span> <span class='kw'>&lt;-</span> <span class='fu'>get_downloads</span>(<span class='st'>"stringr"</span>)
+<span class='no'>downloads</span> <span class='kw'>&lt;-</span> <span class='fu'>get_downloads</span>(<span class='st'>"ggplot2"</span>)
 <span class='no'>downloads</span></div><div class='output co'>#&gt;   last_day last_week last_month last_quarter last_half grand_total
-#&gt; 1    26730    171883     761720      2222914   3852028    21686822</div><div class='input'>
+#&gt; 1    34894    220127     965857      2834162   4991824    25707403</div><div class='input'>
 
 </div></pre>
   </div>

@@ -111,7 +111,7 @@ allows to recursively search for the dependencies at the higher level of depth."
 
     <div class="ref-description">
     
-    <p>This function is an ultimate wrapper for <code>get_dependencies</code>. It inherits all of the arguments and
+    <p>This function is an ultimate wrapper for <code><a href='get_dependencies.html'>get_dependencies</a></code>. It inherits all of the arguments and
 allows to recursively search for the dependencies at the higher level of <code>depth</code>.</p>
     
     </div>
@@ -157,27 +157,30 @@ Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingT
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>get_dependencies</code></p></div>
+    <div class='dont-index'><p><code><a href='get_dependencies.html'>get_dependencies</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='no'>dd</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"stringr"</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-<span class='no'>dd</span></div><div class='output co'>#&gt;    origin     name  version    type last_day last_week last_month last_quarter
-#&gt; 1 stringr     glue &gt;= 1.2.0 Imports    32056    185008     804415      2382273
-#&gt; 2 stringr magrittr     &lt;NA&gt; Imports   125719    870568    3456838     10329762
-#&gt; 3 stringr  stringi &gt;= 1.1.7 Imports    26182    163911     704681      2089746
+<span class='no'>dd_downloads</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>dd_downloads</span>)</div><div class='output co'>#&gt;    origin     name  version    type last_day last_week last_month last_quarter
+#&gt; 1 ggplot2   digest     &lt;NA&gt; Imports    33628    220886    1016882      2709067
+#&gt; 2 ggplot2   gtable &gt;= 0.1.1 Imports    17972    118317     505575      1486543
+#&gt; 3 ggplot2 lazyeval     &lt;NA&gt; Imports    21899    139851     617251      1770373
+#&gt; 4 ggplot2     MASS     &lt;NA&gt; Imports     5046     32509     128859       346953
+#&gt; 5 ggplot2     mgcv     &lt;NA&gt; Imports     8502     48164     171209       363180
+#&gt; 6 ggplot2 reshape2     &lt;NA&gt; Imports    31767    158810     682173      1924473
 #&gt;   last_half grand_total
-#&gt; 1   4433353    14358978
-#&gt; 2  15923545    30219298
-#&gt; 3   3643934    21447025</div><div class='input'>
-<span class='no'>dd2</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"stringr"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='no'>dd2</span></div><div class='output co'>#&gt;    origin     name  version    type
-#&gt; 1 stringr     glue &gt;= 1.2.0 Imports
-#&gt; 2 stringr magrittr     &lt;NA&gt; Imports
-#&gt; 3 stringr  stringi &gt;= 1.1.7 Imports</div><div class='input'>
-<span class='no'>dd3</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in check_package_name(package, bioc, local): ggplot2 is not installed</span></div><div class='input'><span class='no'>dd3</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): nie znaleziono obiektu 'dd3'</span></div><div class='input'>
+#&gt; 1   4667194    21943008
+#&gt; 2   2677447    14220311
+#&gt; 3   3061854    15000128
+#&gt; 4    694407     5355621
+#&gt; 5    565222     4396963
+#&gt; 6   3243632    17543856</div><div class='input'>
+<span class='no'>dd_2</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+<span class='fu'><a href='plot_deepdep.html'>plot_dependencies</a></span>(<span class='no'>dd_2</span>)</div><div class='img'><img src='deepdep-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='no'>dd_local</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"deepdep"</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep): argumenty sugerują różną liczbę wierszy: 1, 0</span></div><div class='input'><span class='no'>dd_local</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): nie znaleziono obiektu 'dd_local'</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

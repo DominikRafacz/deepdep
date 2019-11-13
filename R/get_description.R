@@ -1,6 +1,7 @@
 #' @title Scrap the DESCRIPTION file and CRAN metadata of the package
 #'
-#' @description  [API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
+#' @description This function uses [API](https://github.com/r-hub/crandb) of [CRAN Data Base](http://crandb.r-pkg.org)
+#' to scrap the DESCRIPTION file and CRAN metadata of the package. It caches the results to speed the computation process.
 #'
 #' @param package A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
 #' See \code{bioc} and \code{local} arguments.
@@ -15,8 +16,11 @@
 #' @examples
 #' library(deepdep)
 #'
-#' desc <- get_description("stringr")
-#' desc
+#' description <- get_description("ggplot2")
+#' description
+#'
+#' description_local <- get_description("deepdep", local = TRUE)
+#' description_local
 #'
 #'
 #' @export

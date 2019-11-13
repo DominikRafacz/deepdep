@@ -22,13 +22,17 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 An object of \code{package_description} class.
 }
 \description{
-[API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
+This function uses [API](https://github.com/r-hub/crandb) of [CRAN Data Base](http://crandb.r-pkg.org)
+to scrap the DESCRIPTION file and CRAN metadata of the package. It caches the results to speed the computation process.
 }
 \examples{
 library(deepdep)
 
-desc <- get_description("stringr")
-desc
+description <- get_description("ggplot2")
+description
+
+description_local <- get_description("deepdep", local = TRUE)
+description_local
 
 
 }

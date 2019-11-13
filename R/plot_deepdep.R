@@ -9,20 +9,20 @@
 #' level will be added. By default it's \code{FALSE}.
 #' @param label_percentage A \code{numeric} value between \code{0} and \code{1}. A fraction
 #' of labels to be displayed. By default it's \code{1} (all labels displayed).
-#' @param ... Other arguments passed to the plotting function.
+#' @param ... Other arguments passed to the \code{deepdep} function.
 #'
 #' @return A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
 #'
 #' @examples
 #' library(deepdep)
 #'
-#' dd <- deepdep("stringr")
+#' dd <- deepdep("ggplot2")
 #' plot_dependencies(dd, "tree")
 #'
-#' dd2 <- deepdep("cranlogs", depth = 2)
+#' dd2 <- deepdep("ggplot2", depth = 2)
 #' plot_dependencies(dd2, "circular")
 #'
-#' plot_dependencies("mice", label_percentage = 0.3, downloads = TRUE)
+#' plot_dependencies("deepdep", label_percentage = 0.5, depth = 2, local = TRUE)
 #'
 #' @importFrom ggforce geom_circle
 #' @importFrom graphlayouts draw_circle

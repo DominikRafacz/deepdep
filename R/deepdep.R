@@ -1,6 +1,6 @@
 #' @title Acquire the dependencies of the package on any depth level
 #'
-#' @description This function is an ultimate wrapper for \code{get_dependencies}. It inherits all of the arguments and
+#' @description This function is an ultimate wrapper for \code{\link{get_dependencies}}. It inherits all of the arguments and
 #' allows to recursively search for the dependencies at the higher level of \code{depth}.
 #'
 #' @param package A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
@@ -15,19 +15,19 @@
 #'
 #' @return An object of \code{deepdep} class.
 #'
-#' @seealso \code{get_dependencies}
+#' @seealso \code{\link{get_dependencies}}
 #'
 #' @examples
 #' library(deepdep)
 #'
-#' dd <- deepdep("stringr", downloads = TRUE)
-#' dd
+#' dd_downloads <- deepdep("ggplot2", downloads = TRUE)
+#' head(dd_downloads)
 #'
-#' dd2 <- deepdep("stringr", depth = 2)
-#' dd2
+#' dd_2 <- deepdep("ggplot2", depth = 2)
+#' plot_dependencies(dd_2)
 #'
-#' dd3 <- deepdep("ggplot2", local = TRUE)
-#' dd3
+#' dd_local <- deepdep("deepdep", local = TRUE)
+#' dd_local
 #'
 #' @export
 deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local = FALSE,

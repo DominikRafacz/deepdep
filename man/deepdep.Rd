@@ -27,22 +27,22 @@ Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingT
 An object of \code{deepdep} class.
 }
 \description{
-This function is an ultimate wrapper for \code{get_dependencies}. It inherits all of the arguments and
+This function is an ultimate wrapper for \code{\link{get_dependencies}}. It inherits all of the arguments and
 allows to recursively search for the dependencies at the higher level of \code{depth}.
 }
 \examples{
 library(deepdep)
 
-dd <- deepdep("stringr", downloads = TRUE)
-dd
+dd_downloads <- deepdep("ggplot2", downloads = TRUE)
+head(dd_downloads)
 
-dd2 <- deepdep("stringr", depth = 2)
-dd2
+dd_2 <- deepdep("ggplot2", depth = 2)
+plot_dependencies(dd_2)
 
-dd3 <- deepdep("ggplot2", local = TRUE)
-dd3
+dd_local <- deepdep("deepdep", local = TRUE)
+dd_local
 
 }
 \seealso{
-\code{get_dependencies}
+\code{\link{get_dependencies}}
 }

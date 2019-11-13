@@ -30,7 +30,7 @@ level will be added. By default it's \code{FALSE}.}
 \item{label_percentage}{A \code{numeric} value between \code{0} and \code{1}. A fraction
 of labels to be displayed. By default it's \code{1} (all labels displayed).}
 
-\item{...}{Other arguments passed to the plotting function.}
+\item{...}{Other arguments passed to the \code{deepdep} function.}
 }
 \value{
 A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
@@ -42,12 +42,12 @@ Visualize dependency data from a \code{deepdep} object using
 \examples{
 library(deepdep)
 
-dd <- deepdep("stringr")
+dd <- deepdep("ggplot2")
 plot_dependencies(dd, "tree")
 
-dd2 <- deepdep("cranlogs", depth = 2)
+dd2 <- deepdep("ggplot2", depth = 2)
 plot_dependencies(dd2, "circular")
 
-plot_dependencies("mice", label_percentage = 0.3, downloads = TRUE)
+plot_dependencies("deepdep", label_percentage = 0.5, depth = 2, local = TRUE)
 
 }

@@ -16,26 +16,25 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 \item{reset_cache}{A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.}
 }
 \value{
-A \code{\link{character}} vector. If neither \code{local} nor \code{bioc} are
-\code{TRUE}, vector contains all packages available currently on CRAN. If \code{bioc} is
-\code{TRUE}, vector contains all packages available currently via Bioconductor. If
-\code{local} is \code{TRUE}, vactor contains all packages that are currently installed.
-
-A list of \code{character} values.
+A \code{character} vector.
 }
 \description{
 Get names of packages that you have locally installed or that are available to be installed.
 }
 \details{
 Function uses caching - only the first usage scraps information from servers. Those
-objects are then saved locally in temporary file and further usages loads needed data from the
-file.
+objects are then saved locally in temporary file and further usages loads needed data from the file.
 
 Arguments \code{bioc} and \code{local} cannot be \code{TRUE} simultaneously.
+If neither \code{local} nor \code{bioc} are \code{TRUE}, vector contains all packages available
+currently on CRAN. If \code{bioc} is \code{TRUE}, vector contains all packages available currently
+on CRAN and via Bioconductor. If \code{local} is \code{TRUE}, vactor contains all of the packages
+that are currently installed.
 }
 \examples{
 library(deepdep)
 
-get_available_packages()
+av <- get_available_packages()
+head(av)
 
 }
