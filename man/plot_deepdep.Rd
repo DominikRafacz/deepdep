@@ -5,38 +5,39 @@
 \alias{plot_dependencies.default}
 \alias{plot_dependencies.character}
 \alias{plot_dependencies.deepdep}
-\title{Plot dependency data}
+\title{Main plot function for a \code{deepdep} object.}
 \usage{
-plot_dependencies(x, plot_type = "circular", same_level = FALSE,
+plot_dependencies(x, type = "circular", same_level = FALSE,
   label_percentage = 1, ...)
 
-\method{plot_dependencies}{default}(x, plot_type = "circular",
+\method{plot_dependencies}{default}(x, type = "circular",
   same_level = FALSE, label_percentage = 1, ...)
 
-\method{plot_dependencies}{character}(x, plot_type = "circular",
+\method{plot_dependencies}{character}(x, type = "circular",
   same_level = FALSE, label_percentage = 1, ...)
 
-\method{plot_dependencies}{deepdep}(x, plot_type = "circular",
+\method{plot_dependencies}{deepdep}(x, type = "circular",
   same_level = FALSE, label_percentage = 1, ...)
 }
 \arguments{
-\item{x}{A \code{\link{deepdep}} object.}
+\item{x}{A \code{\link{deepdep}} object or a \code{character} package name.}
 
-\item{plot_type}{A \code{character}. Possible values are \code{circular} and \code{tree}.}
+\item{type}{A \code{character}. Possible values are \code{circular} and \code{tree}.}
 
-\item{same_level}{A \code{boolean}. Whether to plot links between dependencies on the same
-level.}
+\item{same_level}{A \code{logical}. If \code{TRUE} links between dependencies on the same
+level will be added. By default it's \code{FALSE}.}
 
-\item{label_percentage}{An \code{integer} or \code{boolean}. Should all labels be displayed
-or only a fraction? Uses boolean casting to allow boolean use. Defaults to 1 (all labels
-displayed).}
+\item{label_percentage}{A \code{numeric} value between \code{0} and \code{1}. A fraction
+of labels to be displayed. By default it's \code{1} (all labels displayed).}
 
-\item{...}{Other arguments passed to plotting function.}
+\item{...}{Other arguments passed to the plotting function.}
+}
+\value{
+A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
 }
 \description{
-Visualize dependency data passed as \code{deepdep} object using
-\code{ggplot2} and \code{ggraph} packages. Several tree-like layouts are
-available
+Visualize dependency data from a \code{deepdep} object using
+\code{ggplot2} and \code{ggraph} packages. Several tree-like layouts are available.
 }
 \examples{
 library(deepdep)
@@ -48,4 +49,5 @@ dd2 <- deepdep("cranlogs", depth = 2)
 plot_dependencies(dd2, "circular")
 
 plot_dependencies("mice", label_percentage = 0.3, downloads = TRUE)
+
 }

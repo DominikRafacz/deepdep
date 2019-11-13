@@ -2,13 +2,12 @@
 #'
 #' @description  [API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
 #'
-#' @param package A \code{character}. Name of the package that is on CRAN.
-#' @param bioc A \code{logical} value. Should Bioconductor dependencies descriptions be red from
-#' Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be
-#' installed.
-#' @param local A \code{logical} value. Should only already installed packages be checked?
-#' @param reset_cache A \code{logical} value. Should cache be cleared before obtaining the
-#' list of packages?
+#' @param package A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
+#' See \code{bioc} and \code{local} arguments.
+#' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+#' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
+#' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
+#' @param reset_cache A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.
 #'
 #' @return An object of \code{package_description} class.
 #'
@@ -115,11 +114,10 @@ get_all_desc_bioc <- function(descs) {
   descs
 }
 
-#' @importFrom stringi stri_match_all_regex stri_replace_all_regex
 prepeare_descs <- function(raw_desc) {
-  mat <- stri_match_all_regex(raw_desc, "(.*):(?> |\\n)((?>.|\\n        )*)\\n")[[1]][, -1]
+  mat <- stringi::stri_match_all_regex(raw_desc, "(.*):(?> |\\n)((?>.|\\n        )*)\\n")[[1]][, -1]
   n <- nrow(mat)
-  mat[,2] <- stri_replace_all_regex(mat[, 2], "(\\n)?        |\\n", " ")
+  mat[,2] <- stringi::stri_replace_all_regex(mat[, 2], "(\\n)?        |\\n", " ")
   pkg_begs <- (1:n)[mat[, 1] == "Package"]
   pkg_ends <- c((pkg_begs - 1)[-1], n)
 
@@ -132,13 +130,12 @@ prepeare_descs <- function(raw_desc) {
   pkgs
 }
 
-#' @importFrom stringi stri_match_all_regex stri_replace_all_regex
 ajust_desc_file <- function(pkg) {
   nms <- tolower(names(pkg))
   names(pkg) <- nms
   for (dep_type in c("depends", "imports", "suggests", "linkingto", "enhances")) {
     if (dep_type %in% nms) {
-      deps <- stri_match_all_regex(
+      deps <- stringi::stri_match_all_regex(
         pkg[[dep_type]],
         "(?>\\s*)([^,\\(]+)(?>(?> \\()(\\>\\=[^)]+)(?>\\)))?(?>,|$)")[[1]]
       pkg[[dep_type]] <- deps[,3]

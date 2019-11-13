@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot dependency data — plot_dependencies • deepdep</title>
+<title>Main plot function for a <code>deepdep</code> object. — plot_dependencies • deepdep</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,11 +32,10 @@
 
 
 
-<meta property="og:title" content="Plot dependency data — plot_dependencies" />
+<meta property="og:title" content="Main plot function for a <code>deepdep</code> object. — plot_dependencies" />
 
-<meta property="og:description" content="Visualize dependency data passed as deepdep object using
-ggplot2 and ggraph packages. Several tree-like layouts are
-available" />
+<meta property="og:description" content="Visualize dependency data from a deepdep object using
+ggplot2 and ggraph packages. Several tree-like layouts are available." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,32 +104,31 @@ available" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plot dependency data</h1>
+    <h1>Main plot function for a <code>deepdep</code> object.</h1>
     <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/plot_deepdep.R'><code>R/plot_deepdep.R</code></a></small>
     <div class="hidden name"><code>plot_deepdep.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Visualize dependency data passed as <code>deepdep</code> object using
-<code>ggplot2</code> and <code>ggraph</code> packages. Several tree-like layouts are
-available</p>
+    <p>Visualize dependency data from a <code>deepdep</code> object using
+<code>ggplot2</code> and <code>ggraph</code> packages. Several tree-like layouts are available.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>, <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+    <pre class="usage"><span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>, <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for default</span>
-<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for character</span>
-<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for deepdep</span>
-<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -138,28 +136,31 @@ available</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A <code><a href='deepdep.html'>deepdep</a></code> object.</p></td>
+      <td><p>A <code><a href='deepdep.html'>deepdep</a></code> object or a <code>character</code> package name.</p></td>
     </tr>
     <tr>
-      <th>plot_type</th>
+      <th>type</th>
       <td><p>A <code>character</code>. Possible values are <code>circular</code> and <code>tree</code>.</p></td>
     </tr>
     <tr>
       <th>same_level</th>
-      <td><p>A <code>boolean</code>. Whether to plot links between dependencies on the same
-level.</p></td>
+      <td><p>A <code>logical</code>. If <code>TRUE</code> links between dependencies on the same
+level will be added. By default it's <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>label_percentage</th>
-      <td><p>An <code>integer</code> or <code>boolean</code>. Should all labels be displayed
-or only a fraction? Uses boolean casting to allow boolean use. Defaults to 1 (all labels
-displayed).</p></td>
+      <td><p>A <code>numeric</code> value between <code>0</code> and <code>1</code>. A fraction
+of labels to be displayed. By default it's <code>1</code> (all labels displayed).</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed to plotting function.</p></td>
+      <td><p>Other arguments passed to the plotting function.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>ggplot2, gg, ggraph, deepdep_plot</code> class object.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -169,13 +170,16 @@ displayed).</p></td>
 <span class='fu'>plot_dependencies</span>(<span class='no'>dd</span>, <span class='st'>"tree"</span>)</div><div class='img'><img src='plot_deepdep-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='no'>dd2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='deepdep.html'>deepdep</a></span>(<span class='st'>"cranlogs"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
 <span class='fu'>plot_dependencies</span>(<span class='no'>dd2</span>, <span class='st'>"circular"</span>)</div><div class='img'><img src='plot_deepdep-2.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='fu'>plot_dependencies</span>(<span class='st'>"mice"</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>0.3</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot_deepdep-3.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>plot_dependencies</span>(<span class='st'>"mice"</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>0.3</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot_deepdep-3.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

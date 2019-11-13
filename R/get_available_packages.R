@@ -2,13 +2,11 @@
 #'
 #' @description Get names of packages that you have locally installed or that are available to be installed.
 #'
-#' @param bioc A \code{logical} value. Should only packages from Bioconductor repositories
-#' be listed? For this option to work properly, \code{BiocManager} package needs to be
-#' installed.
-#' @param local A \code{logical} value. Should only local packages (installed packages) be
-#' listed?
-#' @param reset_cache A \code{logical} value. Should cache be cleared before obtaining the
-#' list of packages?
+#' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+#' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
+#' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
+#' @param reset_cache A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.
+#'
 #'
 #' @return A \code{\link{character}} vector. If neither \code{local} nor \code{bioc} are
 #' \code{TRUE}, vector contains all packages available currently on CRAN. If \code{bioc} is

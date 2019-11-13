@@ -15,15 +15,15 @@ Depends:
     R (>= 3.2.0)
 Imports:
     cranlogs,
-    ggforce,
+    httr,
+    jsonlite,
+    igraph,
     ggplot2,
     ggraph,
-    graphlayouts,
-    httr,
-    igraph,
-    jsonlite,
-    stringi
+    ggforce,
+    graphlayouts
 Suggests: 
+    stringi,
     BiocManager,
     covr,
     knitr,

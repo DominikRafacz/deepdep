@@ -8,16 +8,15 @@ get_description(package, bioc = FALSE, local = FALSE,
   reset_cache = FALSE)
 }
 \arguments{
-\item{package}{A \code{character}. Name of the package that is on CRAN.}
+\item{package}{A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
+See \code{bioc} and \code{local} arguments.}
 
-\item{bioc}{A \code{logical} value. Should Bioconductor dependencies descriptions be red from
-Bioconductor repository? For this option to work properly, \code{BiocManager} package needs to be
-installed.}
+\item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.}
 
-\item{local}{A \code{logical} value. Should only already installed packages be checked?}
+\item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
-\item{reset_cache}{A \code{logical} value. Should cache be cleared before obtaining the
-list of packages?}
+\item{reset_cache}{A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.}
 }
 \value{
 An object of \code{package_description} class.

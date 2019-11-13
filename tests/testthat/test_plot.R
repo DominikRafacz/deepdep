@@ -22,6 +22,6 @@ test_that("Type checks", {
 })
 
 test_that("Tree graph test", {
-  plt2 <- plot_dependencies(deps, plot_type = "tree")
+  plt2 <- plot_dependencies(deps, type = "tree")
   expect_s3_class(plt2, "ggraph")
 })

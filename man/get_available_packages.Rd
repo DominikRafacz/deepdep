@@ -8,15 +8,12 @@ get_available_packages(bioc = FALSE, local = FALSE,
   reset_cache = FALSE)
 }
 \arguments{
-\item{bioc}{A \code{logical} value. Should only packages from Bioconductor repositories
-be listed? For this option to work properly, \code{BiocManager} package needs to be
-installed.}
+\item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.}
 
-\item{local}{A \code{logical} value. Should only local packages (installed packages) be
-listed?}
+\item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
-\item{reset_cache}{A \code{logical} value. Should cache be cleared before obtaining the
-list of packages?}
+\item{reset_cache}{A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.}
 }
 \value{
 A \code{\link{character}} vector. If neither \code{local} nor \code{bioc} are
