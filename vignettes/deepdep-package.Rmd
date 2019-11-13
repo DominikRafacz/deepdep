@@ -85,6 +85,16 @@ get_description("a4", bioc = TRUE)
 
 Result of this function is also cached (for more details, see *Caching* section of this vignette).
 
+## get_downloads
+
+This package allows you obtaining information on how many times specified package was downloaded. However, it works only with CRAN packages.
+
+```{r get_downloads}
+get_downloads("ggplot2")
+```
+
+Results of this function is not cached.
+
 ## get_dependencies
 
 After parsing description file, you can now create a `data.frame` which will describe dependencies between given package and others. You do it by using this function:
@@ -93,9 +103,9 @@ After parsing description file, you can now create a `data.frame` which will des
 get_dependencies("ggplot2")
 ```
 
-As with previous two functions, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
+As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
 
-The first one is parameter `downloads` -- should number of downloads of packages be included?
+The first one is parameter `downloads` -- should number of downloads of packages be included? It uses `get_downloads` and works only with CRAN packages.
 
 Another, more important parameter is `deps_types`. You can specify how detailed should be list of dependencies. Default value is `c("Depends", "Imports")`, but you can chose any combination of those and additionally `"Suggests", "Enhances", "LinkingTo"`.
 
@@ -103,15 +113,30 @@ Another, more important parameter is `deps_types`. You can specify how detailed 
 get_dependencies("ggplot2", downloads = FALSE, deps_types = c("Imports", "Suggests", "Enhances"))
 ```
 
-## Data 
+Result of this function is not cached (at least yet).
 
-# Comparison to other packages
+## deepdep
+
+The main function of the package -- it is simply wrapper around `get_dependencies`, that allows you getting not only dependencies, but also dependencies of the dependencies iteratively! (Now you know, why we called it **deep**dep).
+
+Parameters are the same as in `get_dependencies`, but additionally you can specify `depth` parameter, which describes how many iterations it function should perform. If `depth` equals 1, it's simply the same as calling `get_dependencies`.
+
+```{r deepdep}
+deepdep("ggplot2", depth = 2)
+```
 
 
+## plot_dependencies
 
+As famous quote says,
 
+> A picture is worth more than a thousand words.
 
+That's why we have `plot_dependencies` function. It allows visualizing easilly what are dependencies of specified package.
 
+The function is generic, and currently supports two types of object -- you can pass a `deepdep` object, result of the calling the `deepdep` function.
 
-
-
+```{r plot_dependencies}
+dd <- deepdep("tibble", 2)
+plot_dependencies(dd)
+```
