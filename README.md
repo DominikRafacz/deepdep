@@ -55,7 +55,7 @@ dd2 <- deepdep("ggplot2", depth = 2)
 plot_dependencies(dd2, "circular")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 -----
 

@@ -25,7 +25,7 @@ devtools::install_github("DominikRafacz/deepdep")
 ## Demo
 
 ```{r set-options, echo=FALSE, cache=FALSE}
-options(width = 800)
+options(width = 700)
 ```
 
 ```{r message=FALSE, warning=FALSE, fig.width=8, fig.height=4}
@@ -36,7 +36,8 @@ dd1 <- deepdep("ggplot2", downloads = TRUE)
 head(dd1)
 
 plot_dependencies(dd1, "tree")
-
+```
+```{r message=FALSE, warning=FALSE, fig.width=8, fig.height=6}
 dd2 <- deepdep("ggplot2", depth = 2)
 
 plot_dependencies(dd2, "circular")
