@@ -21,7 +21,7 @@ test_that("Bioc packages work", {
 })
 
 test_that("Local packages work", {
-  deps4 <- get_dependencies("deepdep", local = TRUE, downloads = FALSE, deps_types = c("Depends", "Suggests", "Imports"))
+  deps4 <- get_dependencies("deepdep", local = TRUE, downloads = FALSE, deps_types = c("Depends", "Imports"))
   expect_is(deps4, "package_dependencies")
 })
 
