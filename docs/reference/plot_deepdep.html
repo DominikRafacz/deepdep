@@ -125,6 +125,10 @@ available</p>
 <span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
 
+<span class='co'># S3 method for character</span>
+<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
+
 <span class='co'># S3 method for deepdep</span>
 <span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>plot_type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)</pre>
@@ -164,7 +168,8 @@ displayed).</p></td>
 <span class='no'>dd</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='deepdep.html'>deepdep</a></span>(<span class='st'>"stringr"</span>)
 <span class='fu'>plot_dependencies</span>(<span class='no'>dd</span>, <span class='st'>"tree"</span>)</div><div class='img'><img src='plot_deepdep-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='no'>dd2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='deepdep.html'>deepdep</a></span>(<span class='st'>"cranlogs"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='fu'>plot_dependencies</span>(<span class='no'>dd2</span>, <span class='st'>"circular"</span>)</div><div class='img'><img src='plot_deepdep-2.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>plot_dependencies</span>(<span class='no'>dd2</span>, <span class='st'>"circular"</span>)</div><div class='img'><img src='plot_deepdep-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot_dependencies</span>(<span class='st'>"mice"</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>0.3</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot_deepdep-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Acquire the dependencies of the package on any depth level. — deepdep • deepdep</title>
+<title>Acquire the dependencies of the package on any depth level — deepdep • deepdep</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
 
 
-<meta property="og:title" content="Acquire the dependencies of the package on any depth level. — deepdep" />
+<meta property="og:title" content="Acquire the dependencies of the package on any depth level — deepdep" />
 
 <meta property="og:description" content="This function is an ultimate wrapper for get_dependencies. It inherits all of the arguments and
 allows to recursively search for the dependencies at the higher level of depth." />
@@ -104,7 +104,7 @@ allows to recursively search for the dependencies at the higher level of depth."
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Acquire the dependencies of the package on any depth level.</h1>
+    <h1>Acquire the dependencies of the package on any depth level</h1>
     <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/deepdep.R'><code>R/deepdep.R</code></a></small>
     <div class="hidden name"><code>deepdep.Rd</code></div>
     </div>
@@ -146,8 +146,8 @@ Bioconductor repository. For this option to work properly, <code>BiocManager</co
     </tr>
     <tr>
       <th>deps_types</th>
-      <td><p>A <code>character</code> vector. Types of dependencies that should be sought.
-Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"</code>. By default it's <code>"Depends","Imports"</code>.</p></td>
+      <td><p>A <code>character</code> vector. Types of the dependencies that should be sought.
+Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"</code>. By default it's <code>"Depends", "Imports"</code>.</p></td>
     </tr>
     </table>
     
@@ -164,19 +164,19 @@ Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingT
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
 <span class='no'>dd</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"stringr"</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-<span class='no'>dd</span></div><div class='output co'>#&gt;           origin     name  version    type last_day last_week last_month
-#&gt; imports1 stringr     glue &gt;= 1.2.0 Imports    15676    183834     789981
-#&gt; imports2 stringr magrittr     &lt;NA&gt; Imports   113881    840456    3430942
-#&gt; imports3 stringr  stringi &gt;= 1.1.7 Imports    14818    164986     693655
-#&gt;          last_quarter last_half grand_total
-#&gt; imports1      2372075   4431625    14326922
-#&gt; imports2     10297405  15821253    30093579
-#&gt; imports3      2082935   3642208    21420843</div><div class='input'>
+<span class='no'>dd</span></div><div class='output co'>#&gt;    origin     name  version    type last_day last_week last_month last_quarter
+#&gt; 1 stringr     glue &gt;= 1.2.0 Imports    32056    185008     804415      2382273
+#&gt; 2 stringr magrittr     &lt;NA&gt; Imports   125719    870568    3456838     10329762
+#&gt; 3 stringr  stringi &gt;= 1.1.7 Imports    26182    163911     704681      2089746
+#&gt;   last_half grand_total
+#&gt; 1   4433353    14358978
+#&gt; 2  15923545    30219298
+#&gt; 3   3643934    21447025</div><div class='input'>
 <span class='no'>dd2</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"stringr"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='no'>dd2</span></div><div class='output co'>#&gt;           origin     name  version    type
-#&gt; imports1 stringr     glue &gt;= 1.2.0 Imports
-#&gt; imports2 stringr magrittr     &lt;NA&gt; Imports
-#&gt; imports3 stringr  stringi &gt;= 1.1.7 Imports</div><div class='input'>
+<span class='no'>dd2</span></div><div class='output co'>#&gt;    origin     name  version    type
+#&gt; 1 stringr     glue &gt;= 1.2.0 Imports
+#&gt; 2 stringr magrittr     &lt;NA&gt; Imports
+#&gt; 3 stringr  stringi &gt;= 1.1.7 Imports</div><div class='input'>
 <span class='no'>dd3</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in check_package_name(package, bioc, local): ggplot2 is not installed</span></div><div class='input'><span class='no'>dd3</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): nie znaleziono obiektu 'dd3'</span></div><div class='input'>
 </div></pre>
   </div>

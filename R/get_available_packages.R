@@ -1,9 +1,9 @@
-#' @title Get the list of available packages.
+#' @title Get the list of available packages
 #'
 #' @description Get names of packages that you have locally installed or that are available to be installed.
 #'
 #' @param bioc A \code{logical} value. Should only packages from Bioconductor repositories
-#' be listed? For this option to work properly, \code{\link{BiocManager}} package needs to be
+#' be listed? For this option to work properly, \code{BiocManager} package needs to be
 #' installed.
 #' @param local A \code{logical} value. Should only local packages (installed packages) be
 #' listed?
@@ -20,6 +20,13 @@
 #' file.
 #'
 #' Arguments \code{bioc} and \code{local} cannot be \code{TRUE} simultaneously.
+#'
+#' @return A list of \code{character} values.
+#'
+#' @examples
+#' library(deepdep)
+#'
+#' get_available_packages()
 #'
 #' @export
 get_available_packages <- function(bioc = FALSE, local = FALSE, reset_cache = FALSE) {

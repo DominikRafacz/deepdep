@@ -2,14 +2,14 @@
 % Please edit documentation in R/get_available_packages.R
 \name{get_available_packages}
 \alias{get_available_packages}
-\title{Get the list of available packages.}
+\title{Get the list of available packages}
 \usage{
 get_available_packages(bioc = FALSE, local = FALSE,
   reset_cache = FALSE)
 }
 \arguments{
 \item{bioc}{A \code{logical} value. Should only packages from Bioconductor repositories
-be listed? For this option to work properly, \code{\link{BiocManager}} package needs to be
+be listed? For this option to work properly, \code{BiocManager} package needs to be
 installed.}
 
 \item{local}{A \code{logical} value. Should only local packages (installed packages) be
@@ -23,6 +23,8 @@ A \code{\link{character}} vector. If neither \code{local} nor \code{bioc} are
 \code{TRUE}, vector contains all packages available currently on CRAN. If \code{bioc} is
 \code{TRUE}, vector contains all packages available currently via Bioconductor. If
 \code{local} is \code{TRUE}, vactor contains all packages that are currently installed.
+
+A list of \code{character} values.
 }
 \description{
 Get names of packages that you have locally installed or that are available to be installed.
@@ -33,4 +35,10 @@ objects are then saved locally in temporary file and further usages loads needed
 file.
 
 Arguments \code{bioc} and \code{local} cannot be \code{TRUE} simultaneously.
+}
+\examples{
+library(deepdep)
+
+get_available_packages()
+
 }

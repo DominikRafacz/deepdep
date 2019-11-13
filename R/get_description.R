@@ -9,6 +9,7 @@
 #' @param local A \code{logical} value. Should only already installed packages be checked?
 #' @param reset_cache A \code{logical} value. Should cache be cleared before obtaining the
 #' list of packages?
+#'
 #' @return An object of \code{package_description} class.
 #'
 #'

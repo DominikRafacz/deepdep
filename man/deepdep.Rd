@@ -2,7 +2,7 @@
 % Please edit documentation in R/deepdep.R
 \name{deepdep}
 \alias{deepdep}
-\title{Acquire the dependencies of the package on any depth level.}
+\title{Acquire the dependencies of the package on any depth level}
 \usage{
 deepdep(package, depth = 1, downloads = FALSE, bioc = FALSE,
   local = FALSE, deps_types = c("Depends", "Imports"))
@@ -16,12 +16,12 @@ See \code{bioc} and \code{local} arguments.}
 \item{downloads}{A \code{logical}. If \code{TRUE} add dependency downloads data. By default it's \code{FALSE}.}
 
 \item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
-Bioconductor repository. For this option to work properly, \code{\link{BiocManager}} package needs to be installed.}
+Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.}
 
 \item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
-\item{deps_types}{A \code{character} vector. Types of dependencies that should be sought.
-Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends","Imports"}.}
+\item{deps_types}{A \code{character} vector. Types of the dependencies that should be sought.
+Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends", "Imports"}.}
 }
 \value{
 An object of \code{deepdep} class.
