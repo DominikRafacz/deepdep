@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Acquire and Visualize Deep Dependencies of R packages ">
-<meta property="og:description" content="Something something CRAN, http://crandb.r-pkg.org, https://cranlogs.r-pkg.org/ .">
+<meta property="og:description" content="Explore package dependencies. This tool helps to scrap and visualise deeper dependencies of a given package. It also adds some popularity measures for the packages e.g. in the form of download count. We use official data from CRAN Data Base and API.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -46,6 +46,21 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/deepdep-comparison.html">Comparison of deepdep to similar packages</a>
+    </li>
+    <li>
+      <a href="articles/deepdep-package.html">deepdep package</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
@@ -77,6 +92,7 @@
 
 <!-- badges: end -->
 <p>Acquire and Visualise Deep Dependiences of R packages.</p>
+<p><a href="https://github.com/DominikRafacz/deepdep/blob/master/images/cheatsheet.pdf">Cheatsheet</a></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -92,12 +108,12 @@
 <a class="sourceLine" id="cb2-4" title="4"></a>
 <a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dd1)</a></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">##    origin     name  version    type last_day last_week last_month last_quarter last_half grand_total</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co">## 1 ggplot2   digest     &lt;NA&gt; Imports    33628    220886    1016882      2709067   4667194    21943008</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co">## 2 ggplot2   gtable &gt;= 0.1.1 Imports    17972    118317     505575      1486543   2677447    14220311</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co">## 3 ggplot2 lazyeval     &lt;NA&gt; Imports    21899    139851     617251      1770373   3061854    15000128</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 ggplot2     MASS     &lt;NA&gt; Imports     5046     32509     128859       346953    694407     5355621</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5 ggplot2     mgcv     &lt;NA&gt; Imports     8502     48164     171209       363180    565222     4396963</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6 ggplot2 reshape2     &lt;NA&gt; Imports    31767    158810     682173      1924473   3243632    17543856</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">## 1 ggplot2   digest     &lt;NA&gt; Imports    38127    216843    1037046      2723101   4678559    21981135</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">## 2 ggplot2   gtable &gt;= 0.1.1 Imports    21452    117458     517523      1492998   2678144    14241763</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">## 3 ggplot2 lazyeval     &lt;NA&gt; Imports    25111    139651     629231      1775422   3065808    15025239</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 ggplot2     MASS     &lt;NA&gt; Imports     6334     33620     132721       348586    694901     5361955</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5 ggplot2     mgcv     &lt;NA&gt; Imports     8635     49032     177350       368702    570441     4405598</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6 ggplot2 reshape2     &lt;NA&gt; Imports    27118    158796     694046      1934162   3249457    17570974</span></a></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd1, <span class="st">"tree"</span>)</a></code></pre></div>
 <p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png"><!-- --></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">dd2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">depth =</span> <span class="dv">2</span>)</a>

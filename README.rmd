@@ -15,7 +15,7 @@ output: github_document
 
 Acquire and Visualise Deep Dependiences of R packages.
 
-[Cheatsheet](https://github.com/ModelOriented/auditor/blob/master/images/auditor_cheatsheet.pdf)
+[Cheatsheet](https://github.com/DominikRafacz/deepdep/blob/master/images/cheatsheet.pdf)
 
 ## Installation
 

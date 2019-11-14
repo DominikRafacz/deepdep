@@ -19,7 +19,7 @@ status](https://ci.appveyor.com/api/projects/status/github/DominikRafacz/deepdep
 Acquire and Visualise Deep Dependiences of R
 packages.
 
-[Cheatsheet](https://github.com/ModelOriented/auditor/blob/master/images/auditor_cheatsheet.pdf)
+[Cheatsheet](https://github.com/DominikRafacz/deepdep/blob/master/images/cheatsheet.pdf)
 
 ## Installation
 
