@@ -69,7 +69,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE,
   }
 
   # mark vertices to label
-  pkg_downloads <- unlist(x[["grand_total"]])
+  pkg_downloads <- unlist(x[!duplicated(x[["name"]]), "grand_total"])
   # central node should always be labeled
   V(G)$labeled <- c(TRUE, pkg_downloads >= quantile(pkg_downloads, probs = 1 - label_percentage))
   labels <- levels(factor(E(G)$type))
