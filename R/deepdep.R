@@ -7,7 +7,7 @@
 #' See \code{bioc} and \code{local} arguments.
 #' @param depth An \code{integer}. Maximum depth level of the dependency. By default it's \code{1}.
 #' @param downloads A \code{logical}. If \code{TRUE} add dependency downloads data. By default it's \code{FALSE}.
-#' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+#' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from the
 #' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
 #' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
 #' @param deps_types A \code{character} vector. Types of the dependencies that should be sought.

@@ -2,7 +2,7 @@
 #'
 #' @description Get names of packages that you have locally installed or that are available to be installed.
 #'
-#' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+#' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from the
 #' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
 #' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
 #' @param reset_cache A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.

@@ -4,13 +4,8 @@
 \alias{get_dependencies}
 \title{Acquire the dependencies of the package}
 \usage{
-get_dependencies(
-  package,
-  downloads = TRUE,
-  bioc = FALSE,
-  local = FALSE,
-  deps_types = c("Depends", "Imports")
-)
+get_dependencies(package, downloads = TRUE, bioc = FALSE,
+  local = FALSE, deps_types = c("Depends", "Imports"))
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
@@ -18,7 +13,7 @@ See \code{bioc} and \code{local} arguments.}
 
 \item{downloads}{A \code{logical}. If \code{TRUE} add package downloads data. By default it's \code{TRUE}.}
 
-\item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
+\item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from the
 Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.}
 
 \item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}

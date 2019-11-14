@@ -16,7 +16,10 @@ status](https://ci.appveyor.com/api/projects/status/github/DominikRafacz/deepdep
 
 <!-- badges: end -->
 
-Acquire and Visualise Deep Dependiences of R packages.
+Acquire and Visualise Deep Dependiences of R
+packages.
+
+[Cheatsheet](https://github.com/ModelOriented/auditor/blob/master/images/auditor_cheatsheet.pdf)
 
 ## Installation
 
@@ -36,12 +39,12 @@ head(dd1)
 ```
 
     ##    origin     name  version    type last_day last_week last_month last_quarter last_half grand_total
-    ## 1 ggplot2   digest     <NA> Imports    33628    220886    1016882      2709067   4667194    21943008
-    ## 2 ggplot2   gtable >= 0.1.1 Imports    17972    118317     505575      1486543   2677447    14220311
-    ## 3 ggplot2 lazyeval     <NA> Imports    21899    139851     617251      1770373   3061854    15000128
-    ## 4 ggplot2     MASS     <NA> Imports     5046     32509     128859       346953    694407     5355621
-    ## 5 ggplot2     mgcv     <NA> Imports     8502     48164     171209       363180    565222     4396963
-    ## 6 ggplot2 reshape2     <NA> Imports    31767    158810     682173      1924473   3243632    17543856
+    ## 1 ggplot2   digest     <NA> Imports    38127    216843    1037046      2723101   4678559    21981135
+    ## 2 ggplot2   gtable >= 0.1.1 Imports    21452    117458     517523      1492998   2678144    14241763
+    ## 3 ggplot2 lazyeval     <NA> Imports    25111    139651     629231      1775422   3065808    15025239
+    ## 4 ggplot2     MASS     <NA> Imports     6334     33620     132721       348586    694901     5361955
+    ## 5 ggplot2     mgcv     <NA> Imports     8635     49032     177350       368702    570441     4405598
+    ## 6 ggplot2 reshape2     <NA> Imports    27118    158796     694046      1934162   3249457    17570974
 
 ``` r
 plot_dependencies(dd1, "tree")
