@@ -1,5 +1,5 @@
 ---
-title: "Comparison of deepdep to simillar packages"
+title: "Comparison of deepdep to similar packages"
 author: "Dominik Rafacz"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 # Comparison to other packages
 
-There are a few already existing solutions to the problem of visualizing dependenices. In this last section, we will compare `deepdep` to those solutions.
+There are a few already existing solutions to the problem of visualizing dependencies. In this last section, we will compare `deepdep` to those solutions.
 
 This solutions are (with links to their GitHub repositories):
 
@@ -52,7 +52,7 @@ This package allows creating interactive graphs (using `visNetwork`) to visualiz
 * Interactivity is a great feature.
 * Possibility of visualizing dependencies between functions.
 * You can add multiple packages instead of one.
-* Returned object is kept in a quite popular and easilly modifiable format.
+* Returned object is kept in a quite popular and easily modifiable format.
 * You can run shiny app with the result.
 
 ### Disadvantages:
@@ -78,7 +78,7 @@ plot(dep)
 Tool for obtaining information on specified package, especially plotting network of package and function dependencies.
 
 ### Advantages
-* It has a fantastic function to automatically generating whole raport or vignette on one package.
+* It has a fantastic function to automatically generating whole report or vignette on one package.
 * Interactive graphs -- again using `visNetwork`.
 * It is very convenient and verbose...
 
@@ -131,13 +131,13 @@ the RCurl package is available, estimating the download size required
 to install a given package and its dependencies.
 
 ### Advantages:
-* You can pass URL of any repositories, on the contray to our function, which allows only CRAN, Bioconductor or locally installed packages, but as other reposetories are not as commonly used. 
+* You can pass URL of any repositories, on the contrary to our function, which allows only CRAN, Bioconductor or locally installed packages, but as other repositories are not as commonly used. 
 
 ### Disadvantages:
 * There is no possibility of downloading only a part of the packages. Each time you have to wait for the whole repository to be downloaded.
 * You cannot choose type of dependencies "Enhances".
 * Storage format is `graphNEL` -- not very commonly used and thus not so obvious to modify or adjust.
-* This package is pretty outdated. It was created when R was not so popular (and its repositories were quite small) and not modificated much since then.
+* This package is pretty outdated. It was created when R was not so popular (and its repositories were quite small) and not modified much since then.
 
 ```{r pkgDepTools, eval = FALSE}
 #> code not evaluated due to very long execution time

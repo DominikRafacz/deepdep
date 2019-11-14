@@ -15,3 +15,5 @@
 ^cran-comments\.md$
 ^images.*$
 README_files
+^doc$
+^Meta$
