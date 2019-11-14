@@ -6,7 +6,7 @@ Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
              person("Hubert", "Baniecki", role = c("aut")),
              person("Szymon", "Maksymiuk", role = c("aut")),
              person("Mateusz", "Bakala", role = c("aut")))
-Description: Explore package dependencies. This tool helps to scrap and visualise deeper dependencies of a given package. It also adds some popularity measures for the packages e.g. in the form of download count. We use official data from CRAN Data Base and API.
+Description: Explore package dependencies. This tool helps to scrap and visualize deeper dependencies of a given package. It also adds some popularity measures for the packages e.g. in the form of download count. We use official data from CRAN Data Base and API.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -25,9 +25,10 @@ Imports:
 Suggests: 
     BiocManager,
     covr,
-    DependenciesGraphs,
+    devtools,
     knitr,
     miniCRAN,
+    plyr,
     rmarkdown,
     spelling,
     stringi,
