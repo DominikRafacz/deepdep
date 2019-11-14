@@ -61,7 +61,7 @@ This package allows creating interactive graphs (using `visNetwork`) to visualiz
 * Graph can get very messy easilly and there is no built-in options to prevent it.
 * There is no differentiation between levels of dependencies.
 
-```{r DependenciesGraphs, eval=FALSE}
+```{r DependenciesGraphs}
 #> an example from the website on github.io
 library(DependenciesGraphs, quietly = TRUE)
 
@@ -105,11 +105,11 @@ From README.md on Github:
 * You can visualize multiple packages at once.
 
 ### Disadvantages:
-* No built-in package support for other plots than base.
+* No built-in package support for other plots than base. Which are not very pretty.
 
-```{r miniCRAN, eval=FALSE}
+```{r miniCRAN}
 #> an example from official vignette
-library(miniCRAN)
+library(miniCRAN, quietly = TRUE)
 
 tags <- "chron"
 pkgDep(tags, availPkgs = cranJuly2014)

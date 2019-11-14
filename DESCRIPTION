@@ -25,7 +25,9 @@ Imports:
 Suggests: 
     BiocManager,
     covr,
+    DependenciesGraphs,
     knitr,
+    miniCRAN,
     rmarkdown,
     spelling,
     stringi,

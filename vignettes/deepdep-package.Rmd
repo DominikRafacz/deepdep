@@ -166,6 +166,14 @@ You can also make use of numbers of downloads you obtained. There is an option t
 plot_dependencies("tidyverse", type = "circular", label_percentage = 0.2, downloads = TRUE, depth = 3)
 ```
 
+Finally, returned object is a `ggplot` object, so you can easily manipulate them with syntax known from `ggplot2` package. We also use `ggraph` enhancement for plotting graphs.
+
+```{r plot_dependencies5, fig.align='center', fig.width=7, fig.height=6}
+plot_dependencies(dd) +
+  ggplot2::scale_fill_manual(values = c("#462CF8", "#F23A90", "#AF1023")) +
+  ggraph::scale_edge_color_manual(values = "black") 
+```
+
 # Caching
 
 As we notoriously indicated in the text, we are using caching to make everything a little bit faster. Functions that operate on the lowest level, after scrapping information from the repositories, store them in temporary files on the local machine. As a consequence, calling function the second time with the same set of parameters, should be faster.
