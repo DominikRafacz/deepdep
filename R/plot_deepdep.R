@@ -1,66 +1,65 @@
-#' @title Plot dependency data
+#' @title Main plot function for a \code{deepdep} object
 #'
-#' @description Visualize dependency data passed as \code{deepdep} object using
-#' \code{ggplot2} and \code{ggraph} packages. Several tree-like layouts are
-#' available
+#' @description Visualize dependency data from a \code{deepdep} object using
+#' \code{ggplot2} and \code{ggraph} packages. Several tree-like layouts are available.
 #'
-#' @param x A \code{\link{deepdep}} object.
-#' @param plot_type A \code{character}. Possible values are \code{circular} and \code{tree}.
-#' @param same_level A \code{boolean}. Whether to plot links between dependencies on the same
-#' level.
-#' @param label_percentage An \code{integer} or \code{boolean}. Should all labels be displayed
-#' or only a fraction? Uses boolean casting to allow boolean use. Defaults to 1 (all labels
-#' displayed).
-#' @param ... Other arguments passed to plotting function.
+#' @param x A \code{\link{deepdep}} object or a \code{character} package name.
+#' @param type A \code{character}. Possible values are \code{circular} and \code{tree}.
+#' @param same_level A \code{logical}. If \code{TRUE} links between dependencies on the same
+#' level will be added. By default it's \code{FALSE}.
+#' @param label_percentage A \code{numeric} value between \code{0} and \code{1}. A fraction
+#' of labels to be displayed. By default it's \code{1} (all labels displayed).
+#' @param ... Other arguments passed to the \code{deepdep} function.
+#'
+#' @return A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
 #'
 #' @examples
 #' library(deepdep)
 #'
-#' dd <- deepdep("stringr")
+#' dd <- deepdep("ggplot2")
 #' plot_dependencies(dd, "tree")
 #'
-#' dd2 <- deepdep("cranlogs", depth = 2)
+#' dd2 <- deepdep("ggplot2", depth = 2)
 #' plot_dependencies(dd2, "circular")
 #'
-#' plot_dependencies("mice", label_percentage = 0.3, downloads = TRUE)
+#' \dontrun{
+#' plot_dependencies("deepdep", label_percentage = 0.5, depth = 2, local = TRUE)
+#' }
+#'
+#' @importFrom ggforce geom_circle
+#' @importFrom graphlayouts draw_circle
+#' @importFrom stats quantile
+#' @import ggplot2
+#' @import ggraph
+#' @import igraph
+#'
 #' @rdname plot_deepdep
 #' @export
-plot_dependencies <- function(x, plot_type = "circular", same_level = FALSE,
+plot_dependencies <- function(x, type = "circular", same_level = FALSE,
                               label_percentage = 1, ...) {
   UseMethod("plot_dependencies")
 }
 
 #' @rdname plot_deepdep
-#' @exportMethod plot_dependencies default
 #' @export
-plot_dependencies.default <- function(x, plot_type = "circular", same_level = FALSE,
+plot_dependencies.default <- function(x, type = "circular", same_level = FALSE,
                                       label_percentage = 1, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
 }
 
 #' @rdname plot_deepdep
-#' @exportMethod plot_dependencies character
 #' @export
-plot_dependencies.character <- function(x, plot_type = "circular", same_level = FALSE,
+plot_dependencies.character <- function(x, type = "circular", same_level = FALSE,
                                       label_percentage = 1, ...) {
   dd <- deepdep(x, ...)
-  plot_dependencies(dd, plot_type, same_level, label_percentage, ...)
+  plot_dependencies(dd, type, same_level, label_percentage, ...)
 }
 
 #' @rdname plot_deepdep
-#' @importFrom ggforce geom_circle
-#' @importFrom igraph V
-#' @importFrom igraph graph_from_data_frame
-#' @importFrom graphlayouts draw_circle
-#' @importFrom stats quantile
-#' @import ggplot2
-#' @import ggraph
-#' @exportMethod plot_dependencies deepdep
 #' @export
-plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FALSE,
+plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE,
                                       label_percentage = 1, ...) {
-  # Due to NSE inside of the function, we have to decleare "to" and "from" as NULL to prevent check fail
-  type <- NULL
+  # Due to NSE inside of the function, we have to decleare "labeled" as NULL to prevent check fail
   labeled <- NULL
 
   G <- graph_from_data_frame(x)
@@ -75,7 +74,7 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
   V(G)$labeled <- c(TRUE, pkg_downloads >= quantile(pkg_downloads, probs = 1 - label_percentage))
   labels <- levels(factor(E(G)$type))
 
-  switch (plot_type,
+  switch (type,
     circular = {
       g <- ggraph(graph = G, layout = "focus", focus = 1) +
         draw_circle(use = "focus", max.circle = max(V(G)$layer - 1)) +
@@ -97,24 +96,25 @@ plot_dependencies.deepdep <- function(x, plot_type = "circular", same_level = FA
         theme_void()
     }
   )
+
+  class(g) <- c(class(g), "deepdep_plot")
+
   g
 }
 
-# some private functions
-
 #' @title Add layer property to graph vertices
+#' @noRd
 #'
-#' @param G An \code{igraph} object
-#' @import igraph
+#' @param G An \code{igraph} object.
 add_layers_to_vertices <- function(G) {
   V(G)$layer <- distances(G, v = V(G)[1]) + 1
   G
 }
 
 #' @title Remove edges on the same level
+#' @noRd
 #'
-#' @param G An \code{igraph} object
-#' @import igraph
+#' @param G An \code{igraph} object.
 delete_edges_within_layer <- function(G) {
   edges_to_delete <- E(G)[
     head_of(G, E(G))$layer == tail_of(G, E(G))$layer]

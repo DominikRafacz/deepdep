@@ -1,0 +1,179 @@
+---
+title: "deepdep package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{deepdep package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+Package `deepdep` was created to acquire and visualize information on dependencies of R packages in a smart and convenient way. Most of its functionality is contained in two functions: `deepdep` -- to get a `data.frame` with dependencies described and `plot_dependencies` -- visualize this `data.frame`.
+
+```{r setup}
+library(deepdep)
+```
+
+## Use case
+
+Suppose you're creating an R package and you want to include graph of its dependencies to your vignette, `README.md` file on your git repostiory or article on your package. With `deepdep` you simply need to type one line:
+
+```{r use_case, eval=FALSE}
+plot_deepdep("YourPackageName")
+```
+
+But before we describe how this function works in detail, let's see what are other functionalities of the package.
+
+# Features
+
+`deepdep` package exports the following functions:
+
+* `get_available_packages`,
+* `get_description`,
+* `get_dependencies`,
+* `get_downloads`,
+* `deepdep`,
+* `plot_dependencies`.
+
+Those functions rely on each other and are ordered from the least to the most top-leveled.
+We'll describe what they exactly do and how on examples.
+
+## get_available_packages
+
+This function lists, as the name indicates, available packages. The default behaviour is listing all CRAN packages.
+
+```{r get_ava_pkg1}
+t <- get_available_packages()
+head(t, 100)
+```
+
+However, if you want to check if package is present in a little wider range -- on CRAN or Bioconductor repositories, you simply need to set argument `bioc = TRUE`. In this case function is simply wrapper around `BiocManager::available()` and to use it you need to have `BiocManager` package (available via CRAN) installed.
+
+```{r get_ava_pkg2}
+t <- get_available_packages(bioc = TRUE)
+head(t, 100)
+```
+
+Another possibility is checking what packages are installed -- you do it by adding `local = TRUE` parameter.
+
+```{r get_ava_pkg3}
+t <- get_available_packages(local = TRUE)
+head(t, 100)
+```
+
+Result of this function is cached (for more details, see *Caching* section of this vignette).
+
+## get_description
+
+When you know, that given package is available, you may want to obtain DESCRIPTION of this package, at least the most essential parts of it, especially dependencies. You can do it by calling:
+
+```{r get_description1}
+get_description("DALEXtra")
+```
+
+Again, you can pass `bioc = TRUE` if you want to check for this package in Bioconductor repository. Notice that if package is not found there, it will be searched for on CRAN. The reason behind this type of behaviour is the fact that packages present on Bioconductor are updated more often than on CRAN and not all of them are present here. Option `local = TRUE` for only installed packages is also possible. If a package is not available in a given source, the function will return `NULL` value:
+
+```{r get_description2}
+get_description("a4")
+get_description("a4", bioc = TRUE)
+```
+
+Result of this function is also cached (for more details, see *Caching* section of this vignette).
+
+## get_downloads
+
+This package allows you obtaining information on how many times specified package was downloaded. However, it works only with CRAN packages.
+
+```{r get_downloads}
+get_downloads("ggplot2")
+```
+
+Results of this function is not cached.
+
+## get_dependencies
+
+After parsing description file, you can now create a `data.frame` which will describe dependencies between given package and others. You do it by using this function:
+
+```{r get_dependencies1}
+get_dependencies("ggplot2")
+```
+
+As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
+
+The first one is parameter `downloads` -- should number of downloads of packages be included? It uses `get_downloads` and works only with CRAN packages.
+
+Another, more important parameter is `deps_types`. You can specify how detailed should be list of dependencies. Default value is `c("Depends", "Imports")`, but you can chose any combination of those and additionally `"Suggests", "Enhances", "LinkingTo"`.
+
+```{r get_dependencies2}
+get_dependencies("ggplot2", downloads = FALSE, deps_types = c("Imports", "Suggests", "Enhances"))
+```
+
+Result of this function is not cached (at least yet).
+
+## deepdep
+
+The main function of the package -- it is simply wrapper around `get_dependencies`, that allows you getting not only dependencies, but also dependencies of the dependencies iteratively! (Now you know, why we called it **deep**dep).
+
+Parameters are the same as in `get_dependencies`, but additionally you can specify `depth` parameter, which describes how many iterations it function should perform. If `depth` equals 1, it's simply the same as calling `get_dependencies`.
+
+```{r deepdep}
+deepdep("ggplot2", depth = 2)
+```
+
+
+## plot_dependencies
+
+As famous quote says,
+
+> A picture is worth more than a thousand words.
+
+That's why we have `plot_dependencies` function. It allows visualizing easilly what are dependencies of specified package.
+
+The function is generic, and currently supports two types of object -- you can pass a `deepdep` object, result of the calling the `deepdep` function or just type name of the package. With the latter option you can also pass arguments to `get_dependencies` as additional parameters.
+
+```{r plot_dependencies1, fig.align='center', fig.width=7, fig.height=6}
+dd <- deepdep("tibble", 2)
+plot_dependencies(dd)
+plot_dependencies("DT", depth = 2, deps_types = c("Imports", "Depends", "Suggests"))
+```
+
+
+In each of the plots you can see one package name in the center and two circles of packages gathered around them. These are depdendencies of the first and second level.
+
+Default plot type is circular, as you can see on the examples presented above. However, you can set `plot_type` parameter to `tree`.
+
+```{r plot_dependencies2, fig.align='center', fig.width=7, fig.height=6}
+plot_dependencies(dd, type = "tree")
+```
+
+Not all dependencies are plotted. To increase readibility, dependencies on the same level are hidden, but you can change this behaviour
+
+```{r plot_dependencies3, fig.align='center', fig.width=7, fig.height=6}
+plot_dependencies(dd, same_level = TRUE)
+```
+
+You can also make use of numbers of downloads you obtained. There is an option to add labels to only certain percentage of most downloaded packages among those that are about to be plotted. This is meant to increase readability of the plot.
+
+```{r plot_dependencies4, fig.align='center', fig.width=7, fig.height=6, warning=FALSE}
+plot_dependencies("tidyverse", type = "circular", label_percentage = 0.2, downloads = TRUE, depth = 3)
+```
+
+# Caching
+
+As we notoriously indicated in the text, we are using caching to make everything a little bit faster. Functions that operate on the lowest level, after scrapping information from the repositories, store them in temporary files on the local machine. As a consequence, calling function the second time with the same set of parameters, should be faster.
+
+State is also refreshed every 20 minutes to make sure you don't miss any major update.
+
+To make sure that you have the most recent data, you need to call `get_available_packages` and `get_description` with parameter `reset_cache = TRUE`.
+
+```{r caches, eval=FALSE}
+get_available_packages(reset_cache = TRUE)
+```

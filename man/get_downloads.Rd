@@ -13,12 +13,13 @@ get_downloads(package)
 An object of \code{package_downloads} class.
 }
 \description{
-Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)
+This function uses \href{https://github.com/r-hub/cranlogs}{\bold{API}} of
+\href{http://cran-logs.rstudio.com/}{\bold{CRAN Logs}} to scrap the download logs of the package.
 }
 \examples{
 library(deepdep)
 
-downloads <- get_downloads("stringr")
+downloads <- get_downloads("ggplot2")
 downloads
 
 

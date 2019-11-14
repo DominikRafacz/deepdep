@@ -1,6 +1,6 @@
 Package: deepdep
-Title: Acquire and Visualise Deep Dependiences of R packages 
-Version: 0.0.1
+Title: Acquire and Visualize Deep Dependencies of R packages 
+Version: 0.1.0
 Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
                   role = c("aut", "cre")),
              person("Hubert", "Baniecki", role = c("aut")),
@@ -10,7 +10,7 @@ Description: Something something CRAN, http://crandb.r-pkg.org, https://cranlogs
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.0
 Depends: 
     R (>= 3.2.0)
 Imports:
@@ -21,14 +21,16 @@ Imports:
     graphlayouts,
     httr,
     igraph,
-    jsonlite,
-    stringi
+    jsonlite
 Suggests: 
     BiocManager,
     covr,
     knitr,
     rmarkdown,
+    spelling,
+    stringi,
     testthat (>= 2.1.0)
 VignetteBuilder: knitr
 URL: https://github.com/DominikRafacz/deepdep
 BugReports: https://github.com/DominikRafacz/deepdep/issues
+Language: en-US

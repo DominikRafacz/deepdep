@@ -2,9 +2,16 @@
 ^\.Rproj\.user$
 ^misc.*$
 ^.travis.yml$
+^appveyor.yml$
 ^docs.*$
 ^.*README.*$
 ^_pkgdown\.yml$
 ^codecov\.yml$
 ^pkgdown.*$
 ^\.circleci/config\.yml$
+^LICENSE.md
+^CONTRIBUTING.md
+^CRAN-RELEASE$
+^cran-comments\.md$
+^images.*$
+README_files

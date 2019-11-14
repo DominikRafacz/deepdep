@@ -1,6 +1,6 @@
-#' @title Acquire the dependencies of the package on any depth level.
+#' @title Acquire the dependencies of the package on any depth level
 #'
-#' @description This function is an ultimate wrapper for \code{get_dependencies}. It inherits all of the arguments and
+#' @description This function is an ultimate wrapper for \code{\link{get_dependencies}}. It inherits all of the arguments and
 #' allows to recursively search for the dependencies at the higher level of \code{depth}.
 #'
 #' @param package A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
@@ -8,26 +8,29 @@
 #' @param depth An \code{integer}. Maximum depth level of the dependency. By default it's \code{1}.
 #' @param downloads A \code{logical}. If \code{TRUE} add dependency downloads data. By default it's \code{FALSE}.
 #' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.
-#' Bioconductor repository. For this option to work properly, \code{\link{BiocManager}} package needs to be installed.
+#' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
 #' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
-#' @param deps_types A \code{character} vector. Types of dependencies that should be sought.
-#' Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends","Imports"}.
+#' @param deps_types A \code{character} vector. Types of the dependencies that should be sought.
+#' Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends", "Imports"}.
 #'
 #' @return An object of \code{deepdep} class.
 #'
-#' @seealso \code{get_dependencies}
+#' @seealso \code{\link{get_dependencies}}
 #'
 #' @examples
 #' library(deepdep)
 #'
-#' dd <- deepdep("stringr", downloads = TRUE)
-#' dd
+#' dd_downloads <- deepdep("ggplot2", downloads = TRUE)
+#' head(dd_downloads)
 #'
-#' dd2 <- deepdep("stringr", depth = 2)
-#' dd2
+#' dd_2 <- deepdep("ggplot2", depth = 2)
+#' plot_dependencies(dd_2, "circular")
 #'
-#' dd3 <- deepdep("ggplot2", local = TRUE)
-#' dd3
+#' \dontrun{
+#' dd_local <- deepdep("deepdep", local = TRUE)
+#' plot_dependencies(dd_local)
+#' }
+#'
 #'
 #' @export
 deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local = FALSE,
@@ -69,7 +72,7 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
   ret
 }
 
-#' @title Print function for an object of \code{deepdep} class.
+#' @title Print function for an object of \code{deepdep} class
 #'
 #' @param x An object of \code{deepdep} class.
 #' @param ... other

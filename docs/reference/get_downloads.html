@@ -34,7 +34,8 @@
 
 <meta property="og:title" content="Scrap the download data of the package — get_downloads" />
 
-<meta property="og:description" content="Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)" />
+<meta property="og:description" content="This function uses API of
+CRAN Logs to scrap the download logs of the package." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -66,7 +67,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -80,6 +81,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -110,7 +114,8 @@
 
     <div class="ref-description">
     
-    <p>Download logs from the RStudio CRAN mirror through  [API](https://github.com/r-hub/cranlogs) [CRAN Logs](http://cran-logs.rstudio.com/)</p>
+    <p>This function uses <a href='https://github.com/r-hub/cranlogs'><b>API</b></a> of
+<a href='http://cran-logs.rstudio.com/'><b>CRAN Logs</b></a> to scrap the download logs of the package.</p>
     
     </div>
 
@@ -133,9 +138,9 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='no'>downloads</span> <span class='kw'>&lt;-</span> <span class='fu'>get_downloads</span>(<span class='st'>"stringr"</span>)
+<span class='no'>downloads</span> <span class='kw'>&lt;-</span> <span class='fu'>get_downloads</span>(<span class='st'>"ggplot2"</span>)
 <span class='no'>downloads</span></div><div class='output co'>#&gt;   last_day last_week last_month last_quarter last_half grand_total
-#&gt; 1    15183    176074     751277      2216095   3850224    21660092</div><div class='input'>
+#&gt; 1    34894    220127     965857      2834162   4991824    25707403</div><div class='input'>
 
 </div></pre>
   </div>

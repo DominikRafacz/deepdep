@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acquire and Visualise Deep Dependiences of R packages  • deepdep</title>
+<title>Acquire and Visualize Deep Dependencies of R packages  • deepdep</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Acquire and Visualise Deep Dependiences of R packages ">
+<script src="pkgdown.js"></script><meta property="og:title" content="Acquire and Visualize Deep Dependencies of R packages ">
 <meta property="og:description" content="Something something CRAN, http://crandb.r-pkg.org, https://cranlogs.r-pkg.org/ .">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -45,6 +45,9 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -68,18 +71,41 @@
   <div class="contents col-md-9">
 <div id="deepdep-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#deepdep-" class="anchor"></a>deepdep <img src="inst/logo.png" align="right" height="250">
+<a href="#deepdep-" class="anchor"></a>deepdep <img src="images/logo.png" align="right" height="250">
 </h1></div>
 <!-- badges: start -->
 
+<!-- badges: end -->
 <p>Acquire and Visualise Deep Dependiences of R packages.</p>
-<hr>
-<p>This package was made during <code>1120-DS000-ISP-0500</code><a href="https://github.com/mini-pw/2020Z-ProgramowanieWR">Advanced Programming in R</a> course at Warsaw University of Technology.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>To install the package, use the following code:</p>
-<pre class="{r}"><code><a href="https://rdrr.io/pkg/devtools/man/reexports.html">devtools::install_github("DominikRafacz/deepdep")</a></code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Install the development version from GitHub:</span></a>
+<a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/reexports.html">install_github</a></span>(<span class="st">"DominikRafacz/deepdep"</span>)</a></code></pre></div>
+</div>
+<div id="demo" class="section level2">
+<h2 class="hasAnchor">
+<a href="#demo" class="anchor"></a>Demo</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(deepdep)</a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3">dd1 &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">downloads =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dd1)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">##    origin     name  version    type last_day last_week last_month last_quarter last_half grand_total</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">## 1 ggplot2   digest     &lt;NA&gt; Imports    33628    220886    1016882      2709067   4667194    21943008</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">## 2 ggplot2   gtable &gt;= 0.1.1 Imports    17972    118317     505575      1486543   2677447    14220311</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">## 3 ggplot2 lazyeval     &lt;NA&gt; Imports    21899    139851     617251      1770373   3061854    15000128</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 ggplot2     MASS     &lt;NA&gt; Imports     5046     32509     128859       346953    694407     5355621</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5 ggplot2     mgcv     &lt;NA&gt; Imports     8502     48164     171209       363180    565222     4396963</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6 ggplot2 reshape2     &lt;NA&gt; Imports    31767    158810     682173      1924473   3243632    17543856</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd1, <span class="st">"tree"</span>)</a></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png"><!-- --></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">dd2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">depth =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd2, <span class="st">"circular"</span>)</a></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-3-1.png"><!-- --></p>
+<hr>
+<p>This package was made during <code>1120-DS000-ISP-0500</code><a href="https://github.com/mini-pw/2020Z-ProgramowanieWR">Advanced Programming in R</a> course at Warsaw University of Technology.</p>
 </div>
 </div>
   </div>
@@ -97,7 +123,8 @@
 <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li>GPL (&gt;= 2)</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
 </ul>
 </div>
 <div class="developers">
@@ -113,9 +140,11 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
+<li><a href="https://codecov.io/gh/DominikRafacz/deepdep?branch=master"><img src="https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://travis-ci.org/DominikRafacz/deepdep"><img src="https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://circleci.com/gh/DominikRafacz/deepdep"><img src="https://circleci.com/gh/DominikRafacz/deepdep.svg?style=svg" alt="CircleCI build status"></a></li>
-<li><a href="https://codecov.io/gh/DominikRafacz/deepdep?branch=master"><img src="https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://ci.appveyor.com/project/DominikRafacz/deepdep"><img src="https://ci.appveyor.com/api/projects/status/github/DominikRafacz/deepdep?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 </ul>
 </div>
 </div>

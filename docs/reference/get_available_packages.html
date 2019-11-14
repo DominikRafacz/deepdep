@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get the list of available packages. — get_available_packages • deepdep</title>
+<title>Get the list of available packages — get_available_packages • deepdep</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
 
 
-<meta property="og:title" content="Get the list of available packages. — get_available_packages" />
+<meta property="og:title" content="Get the list of available packages — get_available_packages" />
 
 <meta property="og:description" content="Get names of packages that you have locally installed or that are available to be installed." />
 <meta name="twitter:card" content="summary" />
@@ -66,7 +66,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -80,6 +80,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -103,7 +106,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get the list of available packages.</h1>
+    <h1>Get the list of available packages</h1>
     <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/get_available_packages.R'><code>R/get_available_packages.R</code></a></small>
     <div class="hidden name"><code>get_available_packages.Rd</code></div>
     </div>
@@ -122,37 +125,41 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>bioc</th>
-      <td><p>A <code>logical</code> value. Should only packages from Bioconductor repositories
-be listed? For this option to work properly, <code>BiocManager</code> package needs to be
-installed.</p></td>
+      <td><p>A <code>logical</code> value. If <code>TRUE</code> the Bioconductor dependencies data will be taken from.
+Bioconductor repository. For this option to work properly, <code>BiocManager</code> package needs to be installed.</p></td>
     </tr>
     <tr>
       <th>local</th>
-      <td><p>A <code>logical</code> value. Should only local packages (installed packages) be
-listed?</p></td>
+      <td><p>A <code>logical</code> value. If <code>TRUE</code> only data of locally installed packages will be used (without API usage).</p></td>
     </tr>
     <tr>
       <th>reset_cache</th>
-      <td><p>A <code>logical</code> value. Should cache be cleared before obtaining the
-list of packages?</p></td>
+      <td><p>A <code>logical</code> value. If <code>TRUE</code> the cache will be cleared before obtaining the list of packages.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character</a></code> vector. If neither <code>local</code> nor <code>bioc</code> are
-<code>TRUE</code>, vector contains all packages available currently on CRAN. If <code>bioc</code> is
-<code>TRUE</code>, vector contains all packages available currently via Bioconductor. If
-<code>local</code> is <code>TRUE</code>, vactor contains all packages that are currently installed.</p>
+    <p>A <code>character</code> vector.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Function uses caching - only the first usage scraps information from servers. Those
-objects are then saved locally in temporary file and further usages loads needed data from the
-file.</p>
-<p>Arguments <code>bioc</code> and <code>local</code> cannot be <code>TRUE</code> simultaneously.</p>
+objects are then saved locally in temporary file and further usages loads needed data from the file.</p>
+<p>Arguments <code>bioc</code> and <code>local</code> cannot be <code>TRUE</code> simultaneously.
+If neither <code>local</code> nor <code>bioc</code> are <code>TRUE</code>, vector contains all packages available
+currently on CRAN. If <code>bioc</code> is <code>TRUE</code>, vector contains all packages available currently
+on CRAN and via Bioconductor. If <code>local</code> is <code>TRUE</code>, vactor contains all of the packages
+that are currently installed.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
+
+<span class='no'>av</span> <span class='kw'>&lt;-</span> <span class='fu'>get_available_packages</span>()
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>av</span>)</div><div class='output co'>#&gt;         A3      aaSEA     ABACUS     abbyyR        abc   abc.data 
+#&gt;       "A3"    "aaSEA"   "ABACUS"   "abbyyR"      "abc" "abc.data" </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -162,7 +169,9 @@ file.</p>
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

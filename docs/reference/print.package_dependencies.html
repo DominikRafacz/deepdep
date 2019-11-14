@@ -66,7 +66,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -80,6 +80,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -134,15 +137,31 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='no'>dependencies</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_dependencies.html'>get_dependencies</a></span>(<span class='st'>"stringr"</span>)
-<span class='no'>dependencies</span></div><div class='output co'>#&gt;              name  version    type last_day last_week last_month last_quarter
-#&gt; imports1     glue &gt;= 1.2.0 Imports    15676    183834     789981      2372075
-#&gt; imports2 magrittr     &lt;NA&gt; Imports   113881    840456    3430942     10297405
-#&gt; imports3  stringi &gt;= 1.1.7 Imports    14818    164986     693655      2082935
-#&gt;          last_half grand_total
-#&gt; imports1   4431625    14326922
-#&gt; imports2  15821253    30093579
-#&gt; imports3   3642208    21420843</div><div class='input'>
+<span class='no'>dependencies</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_dependencies.html'>get_dependencies</a></span>(<span class='st'>"ggplot2"</span>)
+<span class='no'>dependencies</span></div><div class='output co'>#&gt;           name  version    type last_day last_week last_month last_quarter
+#&gt; 1       digest     &lt;NA&gt; Imports    33628    220886    1016882      2709067
+#&gt; 2       gtable &gt;= 0.1.1 Imports    17972    118317     505575      1486543
+#&gt; 3     lazyeval     &lt;NA&gt; Imports    21899    139851     617251      1770373
+#&gt; 4         MASS     &lt;NA&gt; Imports     5046     32509     128859       346953
+#&gt; 5         mgcv     &lt;NA&gt; Imports     8502     48164     171209       363180
+#&gt; 6     reshape2     &lt;NA&gt; Imports    31767    158810     682173      1924473
+#&gt; 7        rlang &gt;= 0.3.0 Imports    55447    342173    1449239      3784293
+#&gt; 8       scales &gt;= 0.5.0 Imports    24115    151870     678346      1907930
+#&gt; 9       tibble     &lt;NA&gt; Imports    34379    204082     876364      2587534
+#&gt; 10 viridisLite     &lt;NA&gt; Imports    17473    115090     491375      1439327
+#&gt; 11       withr &gt;= 2.0.0 Imports    17830    118356     501084      1501235
+#&gt;    last_half grand_total
+#&gt; 1    4667194    21943008
+#&gt; 2    2677447    14220311
+#&gt; 3    3061854    15000128
+#&gt; 4     694407     5355621
+#&gt; 5     565222     4396963
+#&gt; 6    3243632    17543856
+#&gt; 7    6635753    20850540
+#&gt; 8    3270169    17591818
+#&gt; 9    4874999    19895012
+#&gt; 10   2559825     9965738
+#&gt; 11   2720027    10648519</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
