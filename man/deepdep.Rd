@@ -4,8 +4,14 @@
 \alias{deepdep}
 \title{Acquire the dependencies of the package on any depth level}
 \usage{
-deepdep(package, depth = 1, downloads = FALSE, bioc = FALSE,
-  local = FALSE, deps_types = c("Depends", "Imports"))
+deepdep(
+  package,
+  depth = 1,
+  downloads = FALSE,
+  bioc = FALSE,
+  local = FALSE,
+  deps_types = c("Depends", "Imports")
+)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.

@@ -4,8 +4,13 @@
 \alias{get_dependencies}
 \title{Acquire the dependencies of the package}
 \usage{
-get_dependencies(package, downloads = TRUE, bioc = FALSE,
-  local = FALSE, deps_types = c("Depends", "Imports"))
+get_dependencies(
+  package,
+  downloads = TRUE,
+  bioc = FALSE,
+  local = FALSE,
+  deps_types = c("Depends", "Imports")
+)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.

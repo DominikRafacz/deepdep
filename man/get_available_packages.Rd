@@ -4,8 +4,7 @@
 \alias{get_available_packages}
 \title{Get the list of available packages}
 \usage{
-get_available_packages(bioc = FALSE, local = FALSE,
-  reset_cache = FALSE)
+get_available_packages(bioc = FALSE, local = FALSE, reset_cache = FALSE)
 }
 \arguments{
 \item{bioc}{A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from.

@@ -7,17 +7,37 @@
 \alias{plot_dependencies.deepdep}
 \title{Main plot function for a \code{deepdep} object}
 \usage{
-plot_dependencies(x, type = "circular", same_level = FALSE,
-  label_percentage = 1, ...)
+plot_dependencies(
+  x,
+  type = "circular",
+  same_level = FALSE,
+  label_percentage = 1,
+  ...
+)
 
-\method{plot_dependencies}{default}(x, type = "circular",
-  same_level = FALSE, label_percentage = 1, ...)
+\method{plot_dependencies}{default}(
+  x,
+  type = "circular",
+  same_level = FALSE,
+  label_percentage = 1,
+  ...
+)
 
-\method{plot_dependencies}{character}(x, type = "circular",
-  same_level = FALSE, label_percentage = 1, ...)
+\method{plot_dependencies}{character}(
+  x,
+  type = "circular",
+  same_level = FALSE,
+  label_percentage = 1,
+  ...
+)
 
-\method{plot_dependencies}{deepdep}(x, type = "circular",
-  same_level = FALSE, label_percentage = 1, ...)
+\method{plot_dependencies}{deepdep}(
+  x,
+  type = "circular",
+  same_level = FALSE,
+  label_percentage = 1,
+  ...
+)
 }
 \arguments{
 \item{x}{A \code{\link{deepdep}} object or a \code{character} package name.}
