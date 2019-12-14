@@ -59,7 +59,7 @@ plot_dependencies.character <- function(x, type = "circular", same_level = FALSE
 #' @export
 plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE,
                                       label_percentage = 1, ...) {
-  # Due to NSE inside of the function, we have to decleare "labeled" as NULL to prevent check fail
+  # Due to NSE inside of the function, we have to declare "labeled" as NULL to prevent check fail
   labeled <- NULL
 
   G <- graph_from_data_frame(x)
