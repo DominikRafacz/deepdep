@@ -10,7 +10,7 @@ Description: Explore package dependencies. This tool helps to scrap and visualiz
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.0
+RoxygenNote: 7.0.2
 Depends: 
     R (>= 3.2.0)
 Imports:
@@ -21,7 +21,8 @@ Imports:
     graphlayouts,
     httr,
     igraph,
-    jsonlite
+    jsonlite,
+    shiny
 Suggests: 
     BiocManager,
     covr,

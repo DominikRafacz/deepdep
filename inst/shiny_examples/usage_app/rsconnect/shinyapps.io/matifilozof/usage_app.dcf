@@ -1,0 +1,12 @@
+name: usage_app
+title: usage_app
+username:
+account: matifilozof
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1601160
+bundleId: 2669171
+url: https://matifilozof.shinyapps.io/usage_app/
+when: 1576415937.5559
+asMultiple: FALSE
+asStatic: FALSE
