@@ -7,22 +7,40 @@
 #    http://shiny.rstudio.com/
 #
 
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
-  # Application title
   titlePanel("Deepdep Usage Example"),
-  # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
-       sliderInput("bins",
-                   "Number of bins:",
-                   min = 1,
-                   max = 50,
-                   value = 30)
+      textInput("package",
+                "Package to visualize:",
+                placeholder = "package name"),
+      radioButtons("type",
+                   "Plot type:",
+                   choices = c("Circular", "Tree"),
+                   selected = "Circular"),
+      sliderInput("label_percentage",
+                  "Percentage of labels:",
+                  min = 0,
+                  max = 1,
+                  value = 1),
+      sliderInput("depth",
+                  "Depth:",
+                  min = 1,
+                  max = 5,
+                  value = 1,
+                  step = 1),
+      checkboxGroupInput("deps_types",
+                         "Types of dependencies:",
+                         choices = c("Depends", "Imports", "Suggests", "Enhances", "LinkingTo"),
+                         selected = c("Depends", "Imports")),
+      selectInput("options",
+                  "Additional options:",
+                  choices = list(Bioconductor = "bioc", Local = "local"),
+                  multiple = TRUE),
+      submitButton(text = "Generate deepdep plot")
     ),
-    # Show a plot of the generated distribution
     mainPanel(
-       plotOutput("distPlot")
+      shinycssloaders::withSpinner(plotOutput("depPlot"))
     )
   )
 ))

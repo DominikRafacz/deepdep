@@ -22,7 +22,8 @@ Imports:
     httr,
     igraph,
     jsonlite,
-    shiny
+    shiny,
+    shinycssloaders
 Suggests: 
     BiocManager,
     covr,
