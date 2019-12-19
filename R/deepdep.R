@@ -41,7 +41,8 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
   pkg_dep <- get_dependencies(package, downloads, bioc, local, deps_types)
   pkg_dep_names <- pkg_dep$name
 
-  ret <- data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep)
+  ret <- data.frame(origin = if(nrow(pkg_dep) > 0) attr(pkg_dep, "package_name")
+                    else NULL, pkg_dep)
 
   pkg_dep_dep_names <- c()
   already_computed_names <- c(package)
