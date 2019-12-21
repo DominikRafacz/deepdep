@@ -41,7 +41,12 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
   pkg_dep <- get_dependencies(package, downloads, bioc, local, deps_types)
   pkg_dep_names <- pkg_dep$name
 
-  ret <- data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep)
+  # check if there are any dependencies
+  if (length(pkg_dep_names)) {
+    ret <- data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep)
+  } else {
+    ret <- data.frame(origin = character(), pkg_dep)
+  }
 
   pkg_dep_dep_names <- c()
   already_computed_names <- c(package)
@@ -54,7 +59,14 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
         if (length(pkg_dep_dep$name) != 0) {
           # find all unique dependency names (for next depth level)
           pkg_dep_dep_names <- union(pkg_dep_dep_names, pkg_dep_dep$name)
-          ret <- rbind(ret, cbind(origin = attr(pkg_dep_dep, "package_name"), pkg_dep_dep))
+
+          if (length(pkg_dep_dep_names)) {
+            temp <- data.frame(origin = attr(pkg_dep_dep, "package_name"), pkg_dep_dep)
+          } else {
+            temp <- data.frame(origin = character(), pkg_dep_dep)
+          }
+
+          ret <- rbind(ret, temp)
         }
       }
 

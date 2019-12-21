@@ -21,11 +21,11 @@ Imports:
     graphlayouts,
     httr,
     igraph,
-    jsonlite,
-    shiny,
-    shinycssloaders
+    jsonlite
 Suggests: 
     BiocManager,
+    shiny,
+    shinycssloaders,
     covr,
     devtools,
     knitr,
