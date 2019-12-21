@@ -60,12 +60,12 @@ This package allows creating interactive graphs (using `visNetwork`) to visualiz
 * You have to have installed the package you want to visualize. It is not a great issue, because mostly you visualize your own packages, but if you would like to create some bigger example, including a lot of packages you haven't installed, it may make a problem.
 * Graph can get very messy easily and there is no built-in options to prevent it.
 * There is no differentiation between levels of dependencies.
+* It is available only on GitHub
 
 ```{r DependenciesGraphs}
 #> an example from the website on github.io
 library(devtools, quietly = TRUE)
 install_github("datastorm-open/DependenciesGraphs")
-library(DependenciesGraphs, quietly = TRUE)
 
 # you mus first loaded the target package using library
 library(plyr,quietly = TRUE)
