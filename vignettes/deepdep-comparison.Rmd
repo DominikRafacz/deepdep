@@ -62,7 +62,7 @@ This package allows creating interactive graphs (using `visNetwork`) to visualiz
 * There is no differentiation between levels of dependencies.
 * It is available only on GitHub
 
-```{r DependenciesGraphs eval = FALSE}
+```{r DependenciesGraphs, eval = FALSE}
 #> an example from the website on github.io
 library(devtools, quietly = TRUE)
 install_github("datastorm-open/DependenciesGraphs")
