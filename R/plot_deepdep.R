@@ -7,6 +7,8 @@
 #' @param type A \code{character}. Possible values are \code{circular} and \code{tree}.
 #' @param same_level A \code{logical}. If \code{TRUE} links between dependencies on the same
 #' level will be added. By default it's \code{FALSE}.
+#' @param reverse A \code{logical}. If \code{TRUE} links between dependencies pointing from
+#' deeper level to more shallow level will be added. By default it's \code{FALSE}.
 #' @param label_percentage A \code{numeric} value between \code{0} and \code{1}. A fraction
 #' of labels to be displayed. By default it's \code{1} (all labels displayed).
 #' @param ... Other arguments passed to the \code{deepdep} function.
@@ -57,7 +59,7 @@ plot_dependencies.character <- function(x, type = "circular", same_level = FALSE
 
 #' @rdname plot_deepdep
 #' @export
-plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE,
+plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                       label_percentage = 1, ...) {
   # Due to NSE inside of the function, we have to declare "labeled" as NULL to prevent check fail
   labeled <- NULL
@@ -67,6 +69,9 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE,
   if (!same_level) {
     G <- delete_edges_within_layer(G)
   }
+  if (!reverse) {
+    G <- delete_reverse_edges(G)
+  }
 
   # mark vertices to label
   pkg_downloads <- unlist(x[!duplicated(x[["name"]]), "grand_total"])
@@ -74,31 +79,32 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE,
   V(G)$labeled <- c(TRUE, pkg_downloads >= quantile(pkg_downloads, probs = 1 - label_percentage))
   labels <- levels(factor(E(G)$type))
 
-  switch (type,
-    circular = {
-      g <- ggraph(graph = G, layout = "focus", focus = 1) +
-        draw_circle(use = "focus", max.circle = max(V(G)$layer - 1)) +
-        geom_edge_link(aes_string(colour = "type"), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
-        geom_node_point(aes(fill = factor(layer)), size = 3, shape = 21, show.legend = FALSE) +
-        geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
-                        show.legend = FALSE, repel = TRUE) +
-        scale_edge_colour_brewer(labels = labels, palette = "Set1", name = "type") +
-        coord_fixed() +
-        theme_void()
-    },
-    tree = {
-      g <- ggraph(G, "tree") +
-        geom_edge_link(aes_string(colour = "type"), arrow = arrow(angle = 16.6, ends = "first", type = "closed")) +
-        geom_node_point(aes(colour = factor(layer)), size = 3, show.legend = FALSE) +
-        geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
-                        show.legend = FALSE, repel = TRUE) +
-        scale_edge_colour_brewer(labels = labels, palette = "Set1", name = "type") +
-        theme_void()
-    }
-  )
+  g <- switch (type,
+    tree = ggraph(G, "tree"),
+    circular = ggraph(graph = G, layout = "focus", focus = 1) +
+      draw_circle(use = "focus", max.circle = max(V(G)$layer - 1), col = "#252525"))
+
+  g <- g + geom_edge_link(aes(end_cap = label_rect(node2.name),
+                         start_cap = label_rect(node1.name),
+                         edge_width = type,
+                         edge_linetype = type),
+                     arrow = arrow(length = unit(0.5, 'lines'),
+                                   ends = "first",
+                                   type = "closed",
+                                   angle = 16.6),
+                     color = "#1f271b") +
+    geom_node_point(aes(fill = factor(layer)), size = 3, shape = 21, show.legend = FALSE) +
+    geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
+                    show.legend = FALSE,
+                    label.padding = unit(0.28, "lines")) +
+    scale_fill_manual(values = get_nodefill_default_scale()) +
+    scale_edge_linetype_manual(values = get_edgelinetype_default_scale()) +
+    scale_edge_width_manual(values = get_edgewidth_default_scale()) +
+    coord_fixed() +
+    theme_void() +
+    theme(legend.key.width = unit(3, "lines"))
 
   class(g) <- c(class(g), "deepdep_plot")
-
   g
 }
 
@@ -119,4 +125,38 @@ delete_edges_within_layer <- function(G) {
   edges_to_delete <- E(G)[
     head_of(G, E(G))$layer == tail_of(G, E(G))$layer]
   delete_edges(G, edges_to_delete)
+}
+
+#' @title Remove edges that points from vertice on lower to higher level
+#' @noRd
+#'
+#' @param G An \code{igraph} object.
+delete_reverse_edges <- function(G) {
+  edges_to_delete <- E(G)[
+    head_of(G, E(G))$layer < tail_of(G, E(G))$layer]
+  delete_edges(G, edges_to_delete)
+}
+
+get_edgewidth_default_scale <- function() {
+  c(Depends = unit(0.8, "lines"),
+    Imports = unit(0.8, "lines"),
+    Enhances = unit(0.5, "lines"),
+    Suggests = unit(0.35, "lines"),
+    LinkingTo = unit(0.55, "lines"))
+}
+
+get_edgelinetype_default_scale <- function() {
+  c(Depends = "solid",
+    Imports = "F1",
+    Enhances = "longdash",
+    Suggests = "dotted",
+    LinkingTo = "dotdash")
+}
+
+get_nodefill_default_scale <- function() {
+  c("#5fc8f4",
+    "#a1ce40",
+    "#fde74c",
+    "#ff8330",
+    "#e55934")
 }

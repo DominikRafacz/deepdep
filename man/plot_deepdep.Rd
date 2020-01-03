@@ -35,6 +35,7 @@ plot_dependencies(
   x,
   type = "circular",
   same_level = FALSE,
+  reverse = FALSE,
   label_percentage = 1,
   ...
 )
@@ -51,6 +52,9 @@ level will be added. By default it's \code{FALSE}.}
 of labels to be displayed. By default it's \code{1} (all labels displayed).}
 
 \item{...}{Other arguments passed to the \code{deepdep} function.}
+
+\item{reverse}{A \code{logical}. If \code{TRUE} links between dependencies pointing from
+deeper level to more shallow level will be added. By default it's \code{FALSE}.}
 }
 \value{
 A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
