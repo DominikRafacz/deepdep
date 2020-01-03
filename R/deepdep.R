@@ -10,7 +10,7 @@
 #' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from the
 #' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
 #' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
-#' @param deps_types A \code{character} vector. Types of the dependencies that should be sought.
+#' @param dependency_type A \code{character} vector. Types of the dependencies that should be sought.
 #' Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends", "Imports"}.
 #'
 #' @return An object of \code{deepdep} class.
@@ -34,15 +34,19 @@
 #'
 #' @export
 deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local = FALSE,
-                    deps_types = c("Depends", "Imports")) {
+                    dependency_type = c("Depends", "Imports")) {
 
   check_package_name(package, bioc, local)
 
-  pkg_dep <- get_dependencies(package, downloads, bioc, local, deps_types)
+  pkg_dep <- get_dependencies(package, downloads, bioc, local, dependency_type)
   pkg_dep_names <- pkg_dep$name
 
-  ret <- data.frame(origin = if(nrow(pkg_dep) > 0) attr(pkg_dep, "package_name")
-                    else NULL, pkg_dep)
+  # check if there are any dependencies
+  if (length(pkg_dep_names)) {
+    ret <- data.frame(origin = attr(pkg_dep, "package_name"), pkg_dep)
+  } else {
+    ret <- data.frame(origin = character(), pkg_dep)
+  }
 
   pkg_dep_dep_names <- c()
   already_computed_names <- c(package)
@@ -50,12 +54,19 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
   if (depth > 1) {
     for (i in 2:depth) {
       for (name in pkg_dep_names) {
-        pkg_dep_dep <- get_dependencies(name, downloads, bioc, local, deps_types)
+        pkg_dep_dep <- get_dependencies(name, downloads, bioc, local, dependency_type)
 
         if (length(pkg_dep_dep$name) != 0) {
           # find all unique dependency names (for next depth level)
           pkg_dep_dep_names <- union(pkg_dep_dep_names, pkg_dep_dep$name)
-          ret <- rbind(ret, cbind(origin = attr(pkg_dep_dep, "package_name"), pkg_dep_dep))
+
+          if (length(pkg_dep_dep_names)) {
+            temp <- data.frame(origin = attr(pkg_dep_dep, "package_name"), pkg_dep_dep)
+          } else {
+            temp <- data.frame(origin = character(), pkg_dep_dep)
+          }
+
+          ret <- rbind(ret, temp)
         }
       }
 

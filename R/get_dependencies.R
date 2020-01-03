@@ -9,7 +9,7 @@
 #' @param bioc A \code{logical} value. If \code{TRUE} the Bioconductor dependencies data will be taken from the
 #' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
 #' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
-#' @param deps_types A \code{character} vector. Types of the dependencies that should be sought.
+#' @param dependency_type A \code{character} vector. Types of the dependencies that should be sought.
 #' Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends", "Imports"}.
 #'
 #' @return An object of \code{package_dependencies} class.
@@ -30,28 +30,28 @@
 #'
 #' @export
 get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FALSE,
-                             deps_types = c("Depends", "Imports")) {
+                             dependency_type = c("Depends", "Imports")) {
 
   if (downloads && (local || bioc)) stop("If you use downloads, you cannot use",
                                          " neither bioc nor local")
 
   possible_types <- c("Depends", "Imports", "Suggests", "Enhances", "LinkingTo")
 
-  deps_types <- unique(deps_types)
-  if (!all(deps_types %in% possible_types) || length(deps_types) < 1)
-    stop("'deps_types' should specify which types of dependencies should be included")
+  dependency_type <- unique(dependency_type)
+  if (!all(dependency_type %in% possible_types) || length(dependency_type) < 1)
+    stop("'dependency_type' should specify which types of dependencies should be included")
 
-  l_deps_types <- tolower(deps_types)
-  names(deps_types) <- l_deps_types
+  l_dependency_type <- tolower(dependency_type)
+  names(dependency_type) <- l_dependency_type
 
   description <- get_description(package, bioc, local)
 
-  deps <- description[l_deps_types]
+  deps <- description[l_dependency_type]
 
   package_names <- unlist(sapply(deps, names), use.names = FALSE)
   package_versions <- unlist(deps, use.names = FALSE)
   package_types <- unlist(sapply(names(deps), function(dep_type)
-    rep(deps_types[dep_type], length(deps[[dep_type]]))), use.names = FALSE)
+    rep(dependency_type[dep_type], length(deps[[dep_type]]))), use.names = FALSE)
 
   if (!is.null(package_names)) {
     downloads_df <- NULL

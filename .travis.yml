@@ -16,6 +16,11 @@ os:
   - linux
   - osx
 
+matrix:
+  exclude:
+    - os: osx
+      r: devel
+
 notifications:
   email: false
 

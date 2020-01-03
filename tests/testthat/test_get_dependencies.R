@@ -1,7 +1,7 @@
 context("get_dependencies")
 
 test_that("Check for dependencies", {
-  expect_error(get_dependencies("DALEX", deps_types = c("Nonallowedtype", "Depends")))
+  expect_error(get_dependencies("DALEX", dependency_type = c("Nonallowedtype", "Depends")))
 })
 
 test_that("CRAN packages work", {
@@ -21,7 +21,7 @@ test_that("Bioc packages work", {
 })
 
 test_that("Local packages work", {
-  deps4 <- get_dependencies("deepdep", local = TRUE, downloads = FALSE, deps_types = c("Depends", "Imports"))
+  deps4 <- get_dependencies("deepdep", local = TRUE, downloads = FALSE, dependency_type = c("Depends", "Imports"))
   expect_is(deps4, "package_dependencies")
 })
 

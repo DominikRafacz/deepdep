@@ -10,7 +10,7 @@ deepdep(
   downloads = FALSE,
   bioc = FALSE,
   local = FALSE,
-  deps_types = c("Depends", "Imports")
+  dependency_type = c("Depends", "Imports")
 )
 }
 \arguments{
@@ -26,7 +26,7 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 
 \item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
-\item{deps_types}{A \code{character} vector. Types of the dependencies that should be sought.
+\item{dependency_type}{A \code{character} vector. Types of the dependencies that should be sought.
 Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends", "Imports"}.}
 }
 \value{

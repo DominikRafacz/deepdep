@@ -110,10 +110,10 @@ As with two previously described functions - `get_available_packages` and `get_d
 
 The first one is parameter `downloads` -- should number of downloads of packages be included? It uses `get_downloads` and works only with CRAN packages.
 
-Another, more important parameter is `deps_types`. You can specify how detailed should be list of dependencies. Default value is `c("Depends", "Imports")`, but you can chose any combination of those and additionally `"Suggests", "Enhances", "LinkingTo"`.
+Another, more important parameter is `dependency_type`. You can specify how detailed should be list of dependencies. Default value is `c("Depends", "Imports")`, but you can chose any combination of those and additionally `"Suggests", "Enhances", "LinkingTo"`.
 
 ```{r get_dependencies2}
-get_dependencies("ggplot2", downloads = FALSE, deps_types = c("Imports", "Suggests", "Enhances"))
+get_dependencies("ggplot2", downloads = FALSE, dependency_type = c("Imports", "Suggests", "Enhances"))
 ```
 
 Result of this function is not cached (at least yet).
@@ -142,7 +142,7 @@ The function is generic, and currently supports two types of object -- you can p
 ```{r plot_dependencies1, fig.align='center', fig.width=7, fig.height=6}
 dd <- deepdep("tibble", 2)
 plot_dependencies(dd)
-plot_dependencies("DT", depth = 2, deps_types = c("Imports", "Depends", "Suggests"))
+plot_dependencies("DT", depth = 2, dependency_type = c("Imports", "Depends", "Suggests"))
 ```
 
 
