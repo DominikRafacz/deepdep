@@ -22,7 +22,7 @@ test_that("Error check",{
   expect_error(deepdep("ggforce", downloads = TRUE, local =  TRUE, bioc = FALSE, depth = 2, dependency_type = c("Depends", "Imports")))
 })
 
-test_that("Print works", {
-  dd <- deepdep("RcppArmadillo", downloads = TRUE, depth = 1, dependency_type = c("Depends", "Imports", "Enhances", "LinkingTo"))
-  expect_error(print(dd), NA)
+test_that("Packages with no dependencies give empty deepdep object in result", {
+  dd <- deepdep("rlang")
+  expect_equal(nrow(dd), 0)
 })

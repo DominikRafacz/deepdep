@@ -25,3 +25,12 @@ test_that("Tree graph test", {
   plt2 <- plot_dependencies(deps, type = "tree")
   expect_s3_class(plt2, "ggraph")
 })
+
+test_that("Plotting deepdep object with no rows works correctly", {
+  plt <- plot_dependencies("rlang")
+  expect_s3_class(plt$layers[[1]]$geom, "GeomPoint")
+  expect_s3_class(plt$layers[[1]]$stat, "StatFilter")
+  expect_s3_class(plt$layers[[2]]$geom, "GeomLabel")
+  expect_s3_class(plt$layers[[2]]$stat, "StatFilter")
+
+})

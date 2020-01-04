@@ -64,7 +64,14 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   # Due to NSE inside of the function, we have to declare "labeled" as NULL to prevent check fail
   labeled <- NULL
 
-  G <- graph_from_data_frame(x)
+  if (nrow(x) == 0) {
+    G <- make_graph(edges = c(), n = 1)
+    G <- set_vertex_attr(G, "name", value = attr(x, "package_name"))
+    type <- "tree"
+  } else {
+    G <- graph_from_data_frame(x)
+  }
+
   G <- add_layers_to_vertices(G)
   if (!same_level) {
     G <- delete_edges_within_layer(G)
@@ -73,36 +80,41 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     G <- delete_reverse_edges(G)
   }
 
+
   # mark vertices to label
   pkg_downloads <- unlist(x[!duplicated(x[["name"]]), "grand_total"])
   # central node should always be labeled
   V(G)$labeled <- c(TRUE, pkg_downloads >= quantile(pkg_downloads, probs = 1 - label_percentage))
   labels <- levels(factor(E(G)$type))
 
-  g <- switch (type,
+  g <- switch(type,
     tree = ggraph(G, "tree"),
     circular = ggraph(graph = G, layout = "focus", focus = 1) +
       draw_circle(use = "focus", max.circle = max(V(G)$layer - 1), col = "#252525"))
 
-  g <- g + geom_edge_link(aes(end_cap = label_rect(node2.name),
-                         start_cap = label_rect(node1.name),
-                         edge_width = type,
-                         edge_linetype = type),
-                     arrow = arrow(length = unit(0.5, 'lines'),
-                                   ends = "first",
-                                   type = "closed",
-                                   angle = 16.6),
-                     color = "#1f271b") +
-    geom_node_point(aes(fill = factor(layer)), size = 3, shape = 21, show.legend = FALSE) +
+  if (nrow(x) != 0) {
+    g <- g + geom_edge_link(aes(end_cap = label_rect(node2.name),
+                                start_cap = label_rect(node1.name),
+                                edge_width = type,
+                                edge_linetype = type),
+                            arrow = arrow(length = unit(0.5, 'lines'),
+                                          ends = "first",
+                                          type = "closed",
+                                          angle = 16.6),
+                            color = "#1f271b") +
+    scale_edge_linetype_manual(values = get_edgelinetype_default_scale()) +
+    scale_edge_width_manual(values = get_edgewidth_default_scale()) +
+    theme(legend.key.width = unit(3, "lines"))
+  }
+
+  g <- g + geom_node_point(aes(fill = factor(layer)),
+                           size = 3, shape = 21, show.legend = FALSE) +
     geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
                     show.legend = FALSE,
                     label.padding = unit(0.28, "lines")) +
     scale_fill_manual(values = get_nodefill_default_scale()) +
-    scale_edge_linetype_manual(values = get_edgelinetype_default_scale()) +
-    scale_edge_width_manual(values = get_edgewidth_default_scale()) +
     coord_fixed() +
-    theme_void() +
-    theme(legend.key.width = unit(3, "lines"))
+    theme_void()
 
   class(g) <- c(class(g), "deepdep_plot")
   g
