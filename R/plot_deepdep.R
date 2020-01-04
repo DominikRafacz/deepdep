@@ -11,6 +11,8 @@
 #' deeper level to more shallow level will be added. By default it's \code{FALSE}.
 #' @param label_percentage A \code{numeric} value between \code{0} and \code{1}. A fraction
 #' of labels to be displayed. By default it's \code{1} (all labels displayed).
+#' @param version A \code{logical}. If \code{TRUE} required version of package will be
+#' displayed below package name. Defaults to \code{FALSE}.
 #' @param ... Other arguments passed to the \code{deepdep} function.
 #'
 #' @return A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
@@ -38,29 +40,29 @@
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                              label_percentage = 1, ...) {
+                              label_percentage = 1, version = FALSE, ...) {
   UseMethod("plot_dependencies")
 }
 
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies.default <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                                      label_percentage = 1, ...) {
+                                      label_percentage = 1, version = FALSE, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
 }
 
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies.character <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                                      label_percentage = 1, ...) {
+                                      label_percentage = 1, version = FALSE, ...) {
   dd <- deepdep(x, ...)
-  plot_dependencies(dd, type, same_level, label_percentage, ...)
+  plot_dependencies(dd, type, same_level, reverse, label_percentage, version, ...)
 }
 
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                                      label_percentage = 1, ...) {
+                                      label_percentage = 1, version = FALSE, ...) {
   # Due to NSE inside of the function, we have to declare "labeled" as NULL to prevent check fail
   labeled <- NULL
 
@@ -69,6 +71,9 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     G <- set_vertex_attr(G, "name", value = attr(x, "package_name"))
     type <- "tree"
   } else {
+    if (version) {
+      x <- add_version_to_name(x)
+    }
     G <- graph_from_data_frame(x)
   }
 
@@ -171,4 +176,12 @@ get_nodefill_default_scale <- function() {
     "#fde74c",
     "#ff8330",
     "#e55934")
+}
+
+add_version_to_name <- function(x) {
+   tmp <- x[!duplicated(x$name), c("name", "version")]
+   nv <- ifelse(is.na(tmp$version), tmp$name, paste0(tmp$name, "\n(", tmp$version, ")"))
+   names(nv) <- tmp$name
+   x$name <- nv[x$name]
+   x
 }

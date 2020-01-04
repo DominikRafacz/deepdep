@@ -11,7 +11,9 @@ plot_dependencies(
   x,
   type = "circular",
   same_level = FALSE,
+  reverse = FALSE,
   label_percentage = 1,
+  version = FALSE,
   ...
 )
 
@@ -19,7 +21,9 @@ plot_dependencies(
   x,
   type = "circular",
   same_level = FALSE,
+  reverse = FALSE,
   label_percentage = 1,
+  version = FALSE,
   ...
 )
 
@@ -27,7 +31,9 @@ plot_dependencies(
   x,
   type = "circular",
   same_level = FALSE,
+  reverse = FALSE,
   label_percentage = 1,
+  version = FALSE,
   ...
 )
 
@@ -37,6 +43,7 @@ plot_dependencies(
   same_level = FALSE,
   reverse = FALSE,
   label_percentage = 1,
+  version = FALSE,
   ...
 )
 }
@@ -48,13 +55,16 @@ plot_dependencies(
 \item{same_level}{A \code{logical}. If \code{TRUE} links between dependencies on the same
 level will be added. By default it's \code{FALSE}.}
 
+\item{reverse}{A \code{logical}. If \code{TRUE} links between dependencies pointing from
+deeper level to more shallow level will be added. By default it's \code{FALSE}.}
+
 \item{label_percentage}{A \code{numeric} value between \code{0} and \code{1}. A fraction
 of labels to be displayed. By default it's \code{1} (all labels displayed).}
 
-\item{...}{Other arguments passed to the \code{deepdep} function.}
+\item{version}{A \code{logical}. If \code{TRUE} required version of package will be
+displayed below package name. Defaults to \code{FALSE}.}
 
-\item{reverse}{A \code{logical}. If \code{TRUE} links between dependencies pointing from
-deeper level to more shallow level will be added. By default it's \code{FALSE}.}
+\item{...}{Other arguments passed to the \code{deepdep} function.}
 }
 \value{
 A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
