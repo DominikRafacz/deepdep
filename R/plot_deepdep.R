@@ -37,21 +37,21 @@
 #'
 #' @rdname plot_deepdep
 #' @export
-plot_dependencies <- function(x, type = "circular", same_level = FALSE,
+plot_dependencies <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                               label_percentage = 1, ...) {
   UseMethod("plot_dependencies")
 }
 
 #' @rdname plot_deepdep
 #' @export
-plot_dependencies.default <- function(x, type = "circular", same_level = FALSE,
+plot_dependencies.default <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                       label_percentage = 1, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
 }
 
 #' @rdname plot_deepdep
 #' @export
-plot_dependencies.character <- function(x, type = "circular", same_level = FALSE,
+plot_dependencies.character <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                       label_percentage = 1, ...) {
   dd <- deepdep(x, ...)
   plot_dependencies(dd, type, same_level, label_percentage, ...)
