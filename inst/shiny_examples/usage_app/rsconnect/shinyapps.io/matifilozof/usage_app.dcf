@@ -5,8 +5,8 @@ account: matifilozof
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1601160
-bundleId: 2669171
+bundleId: 2673327
 url: https://matifilozof.shinyapps.io/usage_app/
-when: 1576415937.5559
+when: 1576531355.41313
 asMultiple: FALSE
 asStatic: FALSE

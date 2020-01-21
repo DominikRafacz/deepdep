@@ -37,10 +37,13 @@ shinyUI(fluidPage(
                   "Additional options:",
                   choices = list(Bioconductor = "bioc", Local = "local"),
                   multiple = TRUE),
-      submitButton(text = "Generate deepdep plot")
+      actionButton("generate_plot",
+                   "Generate deepdep plot"),
+      downloadButton("download",
+                     "Download plot")
     ),
     mainPanel(
-      shinycssloaders::withSpinner(plotOutput("depPlot"))
+      shinycssloaders::withSpinner(plotOutput("depPlot", click = "plot_click"))
     )
   )
 ))

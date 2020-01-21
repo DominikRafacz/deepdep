@@ -7,17 +7,44 @@
 #    http://shiny.rstudio.com/
 #
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
+  dependency_plot <- eventReactive(c(
+    input[["generate_plot"]],
+    input[["plot_click"]]
+  ), {
+    plot_dependencies(input[["package"]],
+                      type = tolower(input[["type"]]),
+                      label_percentage = input[["label_percentage"]],
+                      depth = input[["depth"]],
+                      downloads = input[["label_percentage"]] != 1,
+                      bioc = "bioc" %in% input[["options"]],
+                      local = "local" %in% input[["options"]],
+                      deps_types = input[["deps_types"]])
+  })
+  # Maybe use `need` or `validate` here?
   output[["depPlot"]] <- renderPlot({
-    if (isTruthy(input[["package"]])) {
-      plot_dependencies(input[["package"]],
-                        type = tolower(input[["type"]]),
-                        label_percentage = input[["label_percentage"]],
-                        depth = input[["depth"]],
-                        downloads = input[["label_percentage"]] != 1,
-                        bioc = "bioc" %in% input[["options"]],
-                        local = "local" %in% input[["options"]],
-                        deps_types = input[["deps_types"]])
-    }
+    validate(
+      need(input[["package"]], "Please pass package name.")
+    )
+    dependency_plot()
+  })
+  # Could we use ggsave here?
+  output[["download"]] <- invisible(downloadHandler(
+    filename = function() {
+      "deepdep.png"
+    },
+    content = function(file) {
+      plotPNG({
+        dependency_plot()
+      }, file)
+    },
+    contentType = "image/png"
+  ))
+  # Plot click listener
+  observeEvent(input[["plot_click"]], {
+    adjacency_df <- nearPoints(dependency_plot()[["data"]], input[["plot_click"]],
+                               "x", "y", addDist = TRUE, allRows = TRUE)
+    new_package <- adjacency_df[which.min(adjacency_df[["dist_"]]), "name"]
+    updateTextInput(session, "package", value = new_package)
   })
 })
