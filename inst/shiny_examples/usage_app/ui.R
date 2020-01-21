@@ -29,7 +29,7 @@ shinyUI(fluidPage(
                   max = 5,
                   value = 1,
                   step = 1),
-      checkboxGroupInput("deps_types",
+      checkboxGroupInput("dependency_type",
                          "Types of dependencies:",
                          choices = c("Depends", "Imports", "Suggests", "Enhances", "LinkingTo"),
                          selected = c("Depends", "Imports")),

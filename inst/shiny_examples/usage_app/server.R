@@ -19,7 +19,7 @@ shinyServer(function(input, output, session) {
                       downloads = input[["label_percentage"]] != 1,
                       bioc = "bioc" %in% input[["options"]],
                       local = "local" %in% input[["options"]],
-                      deps_types = input[["deps_types"]])
+                      dependency_type = input[["dependency_type"]])
   })
   # Maybe use `need` or `validate` here?
   output[["depPlot"]] <- renderPlot({
@@ -31,14 +31,13 @@ shinyServer(function(input, output, session) {
   # Could we use ggsave here?
   output[["download"]] <- invisible(downloadHandler(
     filename = function() {
-      "deepdep.png"
+      paste0(input[["package"]], "_depth", input[["depth"]], ".png")
     },
     content = function(file) {
-      plotPNG({
-        dependency_plot()
-      }, file)
-    },
-    contentType = "image/png"
+      png(file)
+      print(dependency_plot())
+      dev.off()
+    }
   ))
   # Plot click listener
   observeEvent(input[["plot_click"]], {
