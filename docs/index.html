@@ -123,12 +123,14 @@
 <a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 ggplot2     MASS     &lt;NA&gt; Imports     5362     35342     128418       379084    705599     5642553</span></a>
 <a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5 ggplot2     mgcv     &lt;NA&gt; Imports     2449     16403      57414       347689    617739     4609430</span></a>
 <a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6 ggplot2 reshape2     &lt;NA&gt; Imports    20973    145371     488143      1785842   3530723    18852059</span></a></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd1, <span class="st">"tree"</span>)</a></code></pre></div>
-<p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png"><!-- --></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd1, <span class="st">"tree"</span>, <span class="dt">show_downloads =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">dd2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">depth =</span> <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb5-2" title="2"></a>
 <a class="sourceLine" id="cb5-3" title="3"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd2, <span class="st">"circular"</span>)</a></code></pre></div>
-<p><img src="README_files/figure-gfm/unnamed-chunk-3-1.png"><!-- --></p>
+<p><img src="README_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(<span class="st">"bayes4psy"</span>, <span class="dt">show_version =</span> <span class="ot">TRUE</span>, <span class="dt">dependency_type =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Depends"</span>, <span class="st">"Imports"</span>, <span class="st">"Suggests"</span>, <span class="st">"LinkingTo"</span>))</a></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;"></p>
 <!------------------------
 
 This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.-->
@@ -166,11 +168,11 @@ This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](ht
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
-<li><a href="https://codecov.io/gh/DominikRafacz/deepdep?branch=master"><img src="https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://travis-ci.org/DominikRafacz/deepdep"><img src="https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://circleci.com/gh/DominikRafacz/deepdep"><img src="https://circleci.com/gh/DominikRafacz/deepdep.svg?style=svg" alt="CircleCI build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/DominikRafacz/deepdep"><img src="https://ci.appveyor.com/api/projects/status/github/DominikRafacz/deepdep?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
+<li><a href="https://codecov.io/gh/DominikRafacz/deepdep?branch=master"><img src="https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
 </ul>
 </div>
 </div>

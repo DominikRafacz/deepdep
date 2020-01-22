@@ -34,7 +34,7 @@ nice **deepdep plot**.
 ## Installation
 
 ``` r
-# Install from CRAN:
+# Install from CRAN: 
 install.packages("deepdep")
 
 # Install the development version from GitHub:

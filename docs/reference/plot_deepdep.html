@@ -140,7 +140,8 @@ ggplot2 and ggraph packages. Several tree-like layouts are available." />
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='no'>...</span>
 )
 
@@ -151,7 +152,8 @@ ggplot2 and ggraph packages. Several tree-like layouts are available." />
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='no'>...</span>
 )
 
@@ -162,7 +164,8 @@ ggplot2 and ggraph packages. Several tree-like layouts are available." />
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='no'>...</span>
 )
 
@@ -173,7 +176,8 @@ ggplot2 and ggraph packages. Several tree-like layouts are available." />
   <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>show_downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='no'>...</span>
 )</pre>
     
@@ -204,9 +208,14 @@ deeper level to more shallow level will be added. By default it's <code>FALSE</c
 of labels to be displayed. By default it's <code>1</code> (all labels displayed).</p></td>
     </tr>
     <tr>
-      <th>version</th>
+      <th>show_version</th>
       <td><p>A <code>logical</code>. If <code>TRUE</code> required version of package will be
 displayed below package name. Defaults to <code>FALSE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>show_downloads</th>
+      <td><p>A <code>logical</code>. If <code>TRUE</code> total number of downloads of packages
+will be displayed below package names. Defauls to <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
