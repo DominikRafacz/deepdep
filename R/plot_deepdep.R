@@ -11,8 +11,10 @@
 #' deeper level to more shallow level will be added. By default it's \code{FALSE}.
 #' @param label_percentage A \code{numeric} value between \code{0} and \code{1}. A fraction
 #' of labels to be displayed. By default it's \code{1} (all labels displayed).
-#' @param version A \code{logical}. If \code{TRUE} required version of package will be
+#' @param show_version A \code{logical}. If \code{TRUE} required version of package will be
 #' displayed below package name. Defaults to \code{FALSE}.
+#' @param show_downloads A \code{logical}. If \code{TRUE} total number of downloads of packages
+#' will be displayed below package names. Defauls to \code{FALSE}.
 #' @param ... Other arguments passed to the \code{deepdep} function.
 #'
 #' @return A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
@@ -41,39 +43,48 @@
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                              label_percentage = 1, version = FALSE, ...) {
+                              label_percentage = 1, show_version = FALSE, show_downloads = FALSE, ...) {
   UseMethod("plot_dependencies")
 }
 
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies.default <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                                      label_percentage = 1, version = FALSE, ...) {
+                                      label_percentage = 1, show_version = FALSE, show_downloads = FALSE, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
 }
 
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies.character <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                                      label_percentage = 1, version = FALSE, ...) {
-  dd <- deepdep(x, ...)
-  plot_dependencies(dd, type, same_level, reverse, label_percentage, version, ...)
+                                      label_percentage = 1, show_version = FALSE, show_downloads = FALSE, ...) {
+  if (show_downloads == TRUE)
+    dd <- deepdep(x, downloads = TRUE, ...)
+  else dd <- deepdep(x, ...)
+  plot_dependencies(dd, type, same_level, reverse, label_percentage, show_version, show_downloads)
 }
 
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
-                                      label_percentage = 1, version = FALSE, ...) {
+                                      label_percentage = 1, show_version = FALSE, show_downloads = FALSE, ...) {
   # Due to NSE inside of the function, we have to declare "labeled" as NULL to prevent check fail
   labeled <- NULL
+
+  if ((label_percentage < 1 || show_downloads == TRUE) && !("grand_total" %in% colnames(x)))
+    stop("When you use 'label_percentage' or 'show_downloads'",
+         " you have to pass deepdep object with 'grand_total' column")
 
   if (nrow(x) == 0) {
     G <- make_graph(edges = c(), n = 1)
     G <- set_vertex_attr(G, "name", value = attr(x, "package_name"))
     type <- "tree"
   } else {
-    if (version) {
+    if (show_version) {
       x <- add_version_to_name(x)
+    }
+    if (show_downloads) {
+      x <- add_downloads_to_name(x)
     }
     G <- graph_from_data_frame(x)
   }
@@ -187,6 +198,14 @@ get_nodefill_default_scale <- function() {
 add_version_to_name <- function(x) {
    tmp <- x[!duplicated(x$name), c("name", "version")]
    nv <- ifelse(is.na(tmp$version), tmp$name, paste0(tmp$name, "\n(", tmp$version, ")"))
+   names(nv) <- tmp$name
+   x$name <- nv[x$name]
+   x
+}
+
+add_downloads_to_name <- function(x) {
+   tmp <- x[!duplicated(x$name), c("name", "grand_total")]
+   nv <- ifelse(is.na(tmp$grand_total), tmp$name, paste0(tmp$name, "\n", tmp$grand_total))
    names(nv) <- tmp$name
    x$name <- nv[x$name]
    x
