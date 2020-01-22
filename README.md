@@ -3,16 +3,16 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Codecov test
-coverage](https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg)](https://codecov.io/gh/DominikRafacz/deepdep?branch=master)
 [![Build
 Status](https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master)](https://travis-ci.org/DominikRafacz/deepdep)
 [![CircleCI build
 status](https://circleci.com/gh/DominikRafacz/deepdep.svg?style=svg)](https://circleci.com/gh/DominikRafacz/deepdep)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/DominikRafacz/deepdep?branch=master&svg=true)](https://ci.appveyor.com/project/DominikRafacz/deepdep)
+[![Codecov test
+coverage](https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg)](https://codecov.io/gh/DominikRafacz/deepdep?branch=master)
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 
 <!-- badges: end -->
 
@@ -34,7 +34,7 @@ nice **deepdep plot**.
 ## Installation
 
 ``` r
-# Install from CRAN: 
+# Install from CRAN:
 install.packages("deepdep")
 
 # Install the development version from GitHub:
@@ -60,10 +60,10 @@ head(dd1)
     ## 6 ggplot2 reshape2     <NA> Imports    20973    145371     488143      1785842   3530723    18852059
 
 ``` r
-plot_dependencies(dd1, "tree")
+plot_dependencies(dd1, "tree", show_downloads = TRUE)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+<img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 ``` r
 dd2 <- deepdep("ggplot2", depth = 2)
@@ -71,7 +71,13 @@ dd2 <- deepdep("ggplot2", depth = 2)
 plot_dependencies(dd2, "circular")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+<img src="README_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+
+``` r
+plot_dependencies("bayes4psy", show_version = TRUE, dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 <!------------------------
 

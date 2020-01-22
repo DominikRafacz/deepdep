@@ -13,7 +13,8 @@ plot_dependencies(
   same_level = FALSE,
   reverse = FALSE,
   label_percentage = 1,
-  version = FALSE,
+  show_version = FALSE,
+  show_downloads = FALSE,
   ...
 )
 
@@ -23,7 +24,8 @@ plot_dependencies(
   same_level = FALSE,
   reverse = FALSE,
   label_percentage = 1,
-  version = FALSE,
+  show_version = FALSE,
+  show_downloads = FALSE,
   ...
 )
 
@@ -33,7 +35,8 @@ plot_dependencies(
   same_level = FALSE,
   reverse = FALSE,
   label_percentage = 1,
-  version = FALSE,
+  show_version = FALSE,
+  show_downloads = FALSE,
   ...
 )
 
@@ -43,7 +46,8 @@ plot_dependencies(
   same_level = FALSE,
   reverse = FALSE,
   label_percentage = 1,
-  version = FALSE,
+  show_version = FALSE,
+  show_downloads = FALSE,
   ...
 )
 }
@@ -61,8 +65,11 @@ deeper level to more shallow level will be added. By default it's \code{FALSE}.}
 \item{label_percentage}{A \code{numeric} value between \code{0} and \code{1}. A fraction
 of labels to be displayed. By default it's \code{1} (all labels displayed).}
 
-\item{version}{A \code{logical}. If \code{TRUE} required version of package will be
+\item{show_version}{A \code{logical}. If \code{TRUE} required version of package will be
 displayed below package name. Defaults to \code{FALSE}.}
+
+\item{show_downloads}{A \code{logical}. If \code{TRUE} total number of downloads of packages
+will be displayed below package names. Defauls to \code{FALSE}.}
 
 \item{...}{Other arguments passed to the \code{deepdep} function.}
 }
