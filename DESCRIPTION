@@ -1,6 +1,6 @@
 Package: deepdep
 Title: Visualise and Explore the Deep Dependencies of R packages 
-Version: 0.1.1
+Version: 0.2.0
 Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
                   role = c("aut", "cre")),
              person("Hubert", "Baniecki", role = c("aut")),
@@ -26,7 +26,8 @@ Imports:
     graphlayouts,
     httr,
     igraph,
-    jsonlite
+    jsonlite,
+    scales
 Suggests: 
     BiocManager,
     shiny,

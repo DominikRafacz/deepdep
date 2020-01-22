@@ -20,6 +20,7 @@
 #' dd <- deepdep("ggplot2")
 #' plot_downloads(dd)
 #'
+#' @importFrom scales comma
 #' @rdname plot_downloads
 #' @export
 plot_downloads <- function(x, ...) {
