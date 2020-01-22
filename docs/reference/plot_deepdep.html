@@ -67,7 +67,7 @@ ggplot2 and ggraph packages. Several tree-like layouts are available." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -134,20 +134,48 @@ ggplot2 and ggraph packages. Several tree-like layouts are available." />
     
     </div>
 
-    <pre class="usage"><span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>, <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>plot_dependencies</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S3 method for default</span>
-<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
-  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
+<span class='fu'>plot_dependencies</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S3 method for character</span>
-<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
-  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)
+<span class='fu'>plot_dependencies</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S3 method for deepdep</span>
-<span class='fu'>plot_dependencies</span>(<span class='no'>x</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
-  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>plot_dependencies</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"circular"</span>,
+  <span class='kw'>same_level</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>reverse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>label_percentage</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>version</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,9 +194,19 @@ ggplot2 and ggraph packages. Several tree-like layouts are available." />
 level will be added. By default it's <code>FALSE</code>.</p></td>
     </tr>
     <tr>
+      <th>reverse</th>
+      <td><p>A <code>logical</code>. If <code>TRUE</code> links between dependencies pointing from
+deeper level to more shallow level will be added. By default it's <code>FALSE</code>.</p></td>
+    </tr>
+    <tr>
       <th>label_percentage</th>
       <td><p>A <code>numeric</code> value between <code>0</code> and <code>1</code>. A fraction
 of labels to be displayed. By default it's <code>1</code> (all labels displayed).</p></td>
+    </tr>
+    <tr>
+      <th>version</th>
+      <td><p>A <code>logical</code>. If <code>TRUE</code> required version of package will be
+displayed below package name. Defaults to <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>

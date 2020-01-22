@@ -13,13 +13,18 @@ output: github_document
 
 <!-- badges: end -->
 
-Acquire and Visualise Deep Dependiences of R packages.
+Visualise and Explore Deep Dependiences of R packages.
 
-[Cheatsheet](https://github.com/DominikRafacz/deepdep/blob/master/images/cheatsheet.pdf)
+The `deepdep` package provides the tools for exploration of package dependencies. Main `deepdep()` function allows to aquire deep dependencies of any package and plot them in an elegant way. It also adds some popularity measures for the packages e.g. in the form of download count through the cranlogs package. Uses the CRAN metadata database (http://crandb.r-pkg.org) and Bioconductor metadata (http://bioconductor.org). Other data aquire functions are: `get_dependencies()`, `get_downloads()` and `get_description()`. The `deepdep_shiny()` function runs shiny application that helps to produce nice **deepdep plot**. 
+    
+[Cheatsheet](https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html)
 
 ## Installation
 
 ```{r eval = FALSE}
+# Install from CRAN: 
+install.packages("deepdep")
+
 # Install the development version from GitHub:
 devtools::install_github("DominikRafacz/deepdep")
 ```
@@ -45,6 +50,6 @@ dd2 <- deepdep("ggplot2", depth = 2)
 plot_dependencies(dd2, "circular")
 ```
 
-----------------------
+<!------------------------
 
-This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.
+This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.--> 

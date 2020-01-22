@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print function for an object of <code>available_packages</code> class — print.available_packages • deepdep</title>
+<title>Plot download count of CRAN packages. — plot_downloads • deepdep</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,12 @@
 
 
 
-<meta property="og:title" content="Print function for an object of <code>available_packages</code> class — print.available_packages" />
+<meta property="og:title" content="Plot download count of CRAN packages. — plot_downloads" />
 
-<meta property="og:description" content="Print function for an object of available_packages class" />
+<meta property="og:description" content="This function uses API of
+CRAN Logs to scrap the download logs of the packages and
+then plots the data. It works on objects of class character (vector),
+deepdep, package_dependencies and package_downloads." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -121,47 +124,78 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print function for an object of <code>available_packages</code> class</h1>
-    <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/get_available_packages.R'><code>R/get_available_packages.R</code></a></small>
-    <div class="hidden name"><code>print.available_packages.Rd</code></div>
+    <h1>Plot download count of CRAN packages.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/DominikRafacz/deepdep/blob/master/R/plot_downloads.R'><code>R/plot_downloads.R</code></a></small>
+    <div class="hidden name"><code>plot_downloads.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Print function for an object of <code>available_packages</code> class</p>
+    <p>This function uses <a href='https://github.com/r-hub/cranlogs'><b>API</b></a> of
+<a href='http://cran-logs.rstudio.com/'><b>CRAN Logs</b></a> to scrap the download logs of the packages and
+then plots the data. It works on objects of class <code>character</code> (vector),
+<code>deepdep</code>, <code>package_dependencies</code> and <code>package_downloads</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for available_packages</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for deepdep</span>
+<span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>() - <span class='fl'>365</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>(), <span class='no'>...</span>)
+
+<span class='co'># S3 method for package_dependencies</span>
+<span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>() - <span class='fl'>365</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>(), <span class='no'>...</span>)
+
+<span class='co'># S3 method for package_downloads</span>
+<span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>() - <span class='fl'>365</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>(), <span class='no'>...</span>)
+
+<span class='co'># S3 method for character</span>
+<span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>() - <span class='fl'>365</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>(), <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>An object of <code>available_packages</code> class.</p></td>
+      <td><p>A <code>character</code> vector. Names of the packages that are on CRAN.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>other</p></td>
+      <td><p>Ignored.</p></td>
+    </tr>
+    <tr>
+      <th>from</th>
+      <td><p>A <code>Date</code> class object. From which date plot the data. By default it's one year back.</p></td>
+    </tr>
+    <tr>
+      <th>to</th>
+      <td><p>A <code>Date</code> class object. To which date plot the data. By default it's now.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>ggplot2</code> class object.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='no'>av</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_available_packages.html'>get_available_packages</a></span>()
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>av</span>)</div><div class='output co'>#&gt;         A3      aaSEA     ABACUS     abbyyR        abc   abc.data 
-#&gt;       "A3"    "aaSEA"   "ABACUS"   "abbyyR"      "abc" "abc.data" </div><div class='input'>
+<span class='fu'>plot_downloads</span>(<span class='st'>"ggplot2"</span>)</div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='plot_downloads-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='no'>dd</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='deepdep.html'>deepdep</a></span>(<span class='st'>"ggplot2"</span>)
+<span class='fu'>plot_downloads</span>(<span class='no'>dd</span>)</div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='plot_downloads-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

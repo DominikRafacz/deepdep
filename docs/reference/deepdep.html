@@ -67,7 +67,7 @@ allows to recursively search for the dependencies at the higher level of depth."
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -134,8 +134,14 @@ allows to recursively search for the dependencies at the higher level of <code>d
     
     </div>
 
-    <pre class="usage"><span class='fu'>deepdep</span>(<span class='no'>package</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>bioc</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>deps_types</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Depends"</span>, <span class='st'>"Imports"</span>))</pre>
+    <pre class="usage"><span class='fu'>deepdep</span>(
+  <span class='no'>package</span>,
+  <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>bioc</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>dependency_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Depends"</span>, <span class='st'>"Imports"</span>)
+)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,7 +169,7 @@ Bioconductor repository. For this option to work properly, <code>BiocManager</co
       <td><p>A <code>logical</code> value. If <code>TRUE</code> only data of locally installed packages will be used (without API usage).</p></td>
     </tr>
     <tr>
-      <th>deps_types</th>
+      <th>dependency_type</th>
       <td><p>A <code>character</code> vector. Types of the dependencies that should be sought.
 Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"</code>. By default it's <code>"Depends", "Imports"</code>.</p></td>
     </tr>
@@ -183,19 +189,19 @@ Possibilities are: <code>"Imports", "Depends", "Suggests", "Enhances", "LinkingT
 
 <span class='no'>dd_downloads</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>downloads</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>dd_downloads</span>)</div><div class='output co'>#&gt;    origin     name  version    type last_day last_week last_month last_quarter
-#&gt; 1 ggplot2   digest     &lt;NA&gt; Imports    38127    216843    1037046      2723101
-#&gt; 2 ggplot2   gtable &gt;= 0.1.1 Imports    21452    117458     517523      1492998
-#&gt; 3 ggplot2 lazyeval     &lt;NA&gt; Imports    25111    139651     629231      1775422
-#&gt; 4 ggplot2     MASS     &lt;NA&gt; Imports     6334     33620     132721       348586
-#&gt; 5 ggplot2     mgcv     &lt;NA&gt; Imports     8635     49032     177350       368702
-#&gt; 6 ggplot2 reshape2     &lt;NA&gt; Imports    27118    158796     694046      1934162
+#&gt; 1 ggplot2   digest     &lt;NA&gt; Imports    28386    197307     642119      2540192
+#&gt; 2 ggplot2   gtable &gt;= 0.1.1 Imports    15395    103453     319982      1284442
+#&gt; 3 ggplot2 lazyeval     &lt;NA&gt; Imports    19591    135910     475254      1739141
+#&gt; 4 ggplot2     MASS     &lt;NA&gt; Imports     5362     35342     128418       379084
+#&gt; 5 ggplot2     mgcv     &lt;NA&gt; Imports     2449     16403      57414       347689
+#&gt; 6 ggplot2 reshape2     &lt;NA&gt; Imports    20973    145371     488143      1785842
 #&gt;   last_half grand_total
-#&gt; 1   4678559    21981135
-#&gt; 2   2678144    14241763
-#&gt; 3   3065808    15025239
-#&gt; 4    694901     5361955
-#&gt; 5    570441     4405598
-#&gt; 6   3249457    17570974</div><div class='input'>
+#&gt; 1   4934872    23738239
+#&gt; 2   2669634    15152569
+#&gt; 3   3375715    16307093
+#&gt; 4    705599     5642553
+#&gt; 5    617739     4609430
+#&gt; 6   3530723    18852059</div><div class='input'>
 <span class='no'>dd_2</span> <span class='kw'>&lt;-</span> <span class='fu'>deepdep</span>(<span class='st'>"ggplot2"</span>, <span class='kw'>depth</span> <span class='kw'>=</span> <span class='fl'>2</span>)
 <span class='fu'><a href='plot_deepdep.html'>plot_dependencies</a></span>(<span class='no'>dd_2</span>, <span class='st'>"circular"</span>)</div><div class='img'><img src='deepdep-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {

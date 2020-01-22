@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@
       <h1>Comparison of deepdep to similar packages</h1>
                         <h4 class="author">Dominik Rafacz</h4>
             
-            <h4 class="date">2019-11-14</h4>
+            <h4 class="date">2020-01-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/DominikRafacz/deepdep/blob/master/vignettes/deepdep-comparison.Rmd"><code>vignettes/deepdep-comparison.Rmd</code></a></small>
       <div class="hidden name"><code>deepdep-comparison.Rmd</code></div>
@@ -138,17 +138,20 @@
 <a href="#disadvantages" class="anchor"></a>Disadvantages:</h3>
 <ul>
 <li>You have to have installed the package you want to visualize. It is not a great issue, because mostly you visualize your own packages, but if you would like to create some bigger example, including a lot of packages you haven’t installed, it may make a problem.</li>
-<li>Graph can get very messy easilly and there is no built-in options to prevent it.</li>
+<li>Graph can get very messy easily and there is no built-in options to prevent it.</li>
 <li>There is no differentiation between levels of dependencies.</li>
+<li>It is available only on GitHub</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#&gt; an example from the website on github.io</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(DependenciesGraphs, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3"></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="co"># you mus first loaded the target package using library</span></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(plyr,<span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-6" title="6"></a>
-<a class="sourceLine" id="cb1-7" title="7">dep &lt;-<span class="st"> </span><span class="kw">Pck.load.to.vis</span>(<span class="st">"plyr"</span>)</a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(dep)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(devtools, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">install_github</span>(<span class="st">"datastorm-open/DependenciesGraphs"</span>)</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(DependenciesGraphs, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># you mus first loaded the target package using library</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(plyr,<span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9">dep &lt;-<span class="st"> </span><span class="kw">Pck.load.to.vis</span>(<span class="st">"plyr"</span>)</a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(dep)</a></code></pre></div>
 </div>
 </div>
 <div id="pkgnet" class="section level1">
@@ -198,26 +201,28 @@
 <h3 class="hasAnchor">
 <a href="#disadvantages-2" class="anchor"></a>Disadvantages:</h3>
 <ul>
-<li>No built-in package support for other plots than base.</li>
+<li>No built-in package support for other plots than base. Which are not very pretty.</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#&gt; an example from official vignette</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(miniCRAN)</a>
-<a class="sourceLine" id="cb3-3" title="3"></a>
-<a class="sourceLine" id="cb3-4" title="4">tags &lt;-<span class="st"> "chron"</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="kw">pkgDep</span>(tags, <span class="dt">availPkgs =</span> cranJuly2014)</a>
-<a class="sourceLine" id="cb3-6" title="6"></a>
-<a class="sourceLine" id="cb3-7" title="7">dg &lt;-<span class="st"> </span><span class="kw">makeDepGraph</span>(tags, <span class="dt">enhances =</span> <span class="ot">TRUE</span>, <span class="dt">availPkgs =</span> cranJuly2014)</a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(dg, <span class="dt">legendPosition =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">vertex.size =</span> <span class="dv">20</span>)</a></code></pre></div>
-</div>
-</div>
-<div id="pkgdeptools" class="section level1">
-<h1 class="hasAnchor">
-<a href="#pkgdeptools" class="anchor"></a>pkgDepTools</h1>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(miniCRAN, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt; Warning: pakiet 'miniCRAN' został zbudowany w wersji R 3.6.1</span></a>
+<a class="sourceLine" id="cb3-4" title="4"></a>
+<a class="sourceLine" id="cb3-5" title="5">tags &lt;-<span class="st"> "chron"</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="kw">pkgDep</span>(tags, <span class="dt">availPkgs =</span> cranJuly2014)</a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt;  [1] "chron"        "RColorBrewer" "dichromat"    "munsell"     </span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt;  [5] "plyr"         "labeling"     "colorspace"   "Rcpp"        </span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt;  [9] "digest"       "gtable"       "reshape2"     "scales"      </span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; [13] "proto"        "MASS"         "stringr"      "ggplot2"</span></a>
+<a class="sourceLine" id="cb3-11" title="11"></a>
+<a class="sourceLine" id="cb3-12" title="12">dg &lt;-<span class="st"> </span><span class="kw">makeDepGraph</span>(tags, <span class="dt">enhances =</span> <span class="ot">TRUE</span>, <span class="dt">availPkgs =</span> cranJuly2014)</a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(dg, <span class="dt">legendPosition =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">vertex.size =</span> <span class="dv">20</span>)</a></code></pre></div>
+<p><img src="deepdep-comparison_files/figure-html/miniCRAN-1.png" width="672" style="display: block; margin: auto;"> # pkgDepTools</p>
 <p>Description from official vignette:</p>
 <blockquote>
 <p>The <strong>pkgDepTools</strong> package provides tools for computing and analyzing dependency relationships among R packages. With it, you can build a graph-based representation of the dependencies among all packages in a list of CRAN-style package repositories. There are utilities for computing installation order of a given package and, if the RCurl package is available, estimating the download size required to install a given package and its dependencies.</p>
 </blockquote>
+</div>
 <div id="advantages-3" class="section level3">
 <h3 class="hasAnchor">
 <a href="#advantages-3" class="anchor"></a>Advantages:</h3>
@@ -253,7 +258,6 @@
       <li><a href="#dependenciesgraphs">DependenciesGraphs</a></li>
       <li><a href="#pkgnet">pkgnet</a></li>
       <li><a href="#minicran">miniCRAN</a></li>
-      <li><a href="#pkgdeptools">pkgDepTools</a></li>
       </ul>
 </div>
       </div>

@@ -1,6 +1,6 @@
-#' @title Get the description file from CRAN Data Base API
+#' @title Get the description file from CRAN Data Base
 #'
-#' @description [API](https://github.com/r-hub/crandb) [CRAN Data Base](http://crandb.r-pkg.org)
+#' @description [CRAN Data Base](http://crandb.r-pkg.org)
 #'
 #' @param api package name
 #' @param head length of head lines
