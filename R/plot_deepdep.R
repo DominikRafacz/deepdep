@@ -33,6 +33,7 @@
 #' @importFrom ggforce geom_circle
 #' @importFrom graphlayouts draw_circle
 #' @importFrom stats quantile
+#' @importFrom utils packageVersion
 #' @import ggplot2
 #' @import ggraph
 #' @import igraph
@@ -120,7 +121,11 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
                     show.legend = FALSE,
                     label.padding = unit(0.28, "lines")) +
-    scale_fill_manual(values = get_nodefill_default_scale())
+    scale_fill_manual(values = get_nodefill_default_scale()) +
+    labs(caption = paste0("Plot made with deepdep v",
+                          packageVersion("deepdep"),
+                          " on ", format(Sys.time(), usetz = FALSE))
+)
 
   class(g) <- c(class(g), "deepdep_plot")
   g
