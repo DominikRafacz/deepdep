@@ -113,27 +113,35 @@
 <a href="#demo" class="anchor"></a>Demo</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(deepdep)</a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3">dd1 &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">downloads =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb2-3" title="3">dd &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">depth =</span> <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dd1)</a></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">##    origin     name  version    type last_day last_week last_month last_quarter last_half grand_total</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co">## 1 ggplot2   digest     &lt;NA&gt; Imports    28386    197307     642119      2540192   4934872    23738239</span></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co">## 2 ggplot2   gtable &gt;= 0.1.1 Imports    15395    103453     319982      1284442   2669634    15152569</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="co">## 3 ggplot2 lazyeval     &lt;NA&gt; Imports    19591    135910     475254      1739141   3375715    16307093</span></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 ggplot2     MASS     &lt;NA&gt; Imports     5362     35342     128418       379084    705599     5642553</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5 ggplot2     mgcv     &lt;NA&gt; Imports     2449     16403      57414       347689    617739     4609430</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6 ggplot2 reshape2     &lt;NA&gt; Imports    20973    145371     488143      1785842   3530723    18852059</span></a></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd1, <span class="st">"tree"</span>, <span class="dt">show_downloads =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dd)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">##    origin     name  version    type</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">## 1 ggplot2   digest     &lt;NA&gt; Imports</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">## 2 ggplot2   gtable &gt;= 0.1.1 Imports</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">## 3 ggplot2 lazyeval     &lt;NA&gt; Imports</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">## 4 ggplot2     MASS     &lt;NA&gt; Imports</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 5 ggplot2     mgcv     &lt;NA&gt; Imports</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 6 ggplot2 reshape2     &lt;NA&gt; Imports</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd, <span class="st">"circular"</span>)</a></code></pre></div>
 <p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">dd2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">depth =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb5-2" title="2"></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd2, <span class="st">"circular"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(<span class="st">"bayes4psy"</span>, <span class="dt">show_version =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb5-2" title="2">                  <span class="dt">dependency_type =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Depends"</span>, <span class="st">"Imports"</span>, <span class="st">"Suggests"</span>, <span class="st">"LinkingTo"</span>))</a></code></pre></div>
 <p><img src="README_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(<span class="st">"bayes4psy"</span>, <span class="dt">show_version =</span> <span class="ot">TRUE</span>, <span class="dt">dependency_type =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Depends"</span>, <span class="st">"Imports"</span>, <span class="st">"Suggests"</span>, <span class="st">"LinkingTo"</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">dd_xgboost &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"xgboost"</span>, <span class="dt">dependency_type =</span> <span class="st">"Imports"</span>, <span class="dt">downloads =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dd_xgboost)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co">##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co">## 1 xgboost     Matrix &gt;= 1.1-0 Imports     3019     20416      71951       286778    512873     4519559</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="co">## 2 xgboost data.table &gt;= 1.9.6 Imports    18209    124046     414359      1612428   3220026    15729449</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="co">## 3 xgboost   magrittr   &gt;= 1.5 Imports   142632    948345    4123117     11920228  21746128    39676585</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="co">## 4 xgboost    stringi &gt;= 0.5.2 Imports    32340    227984     673806      2125319   4081476    23078784</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw"><a href="reference/plot_downloads.html">plot_downloads</a></span>(dd_xgboost)</a></code></pre></div>
 <p><img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;"></p>
-<!------------------------
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd_xgboost, <span class="st">"tree"</span>, <span class="dt">show_version =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-4-2.png" style="display: block; margin: auto;"><!------------------------
 
-This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.-->
+This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.--></p>
 </div>
 </div>
   </div>

@@ -46,39 +46,55 @@ devtools::install_github("DominikRafacz/deepdep")
 ``` r
 library(deepdep)
 
-dd1 <- deepdep("ggplot2", downloads = TRUE)
+dd <- deepdep("ggplot2", depth = 2)
 
-head(dd1)
+head(dd)
 ```
 
-    ##    origin     name  version    type last_day last_week last_month last_quarter last_half grand_total
-    ## 1 ggplot2   digest     <NA> Imports    28386    197307     642119      2540192   4934872    23738239
-    ## 2 ggplot2   gtable >= 0.1.1 Imports    15395    103453     319982      1284442   2669634    15152569
-    ## 3 ggplot2 lazyeval     <NA> Imports    19591    135910     475254      1739141   3375715    16307093
-    ## 4 ggplot2     MASS     <NA> Imports     5362     35342     128418       379084    705599     5642553
-    ## 5 ggplot2     mgcv     <NA> Imports     2449     16403      57414       347689    617739     4609430
-    ## 6 ggplot2 reshape2     <NA> Imports    20973    145371     488143      1785842   3530723    18852059
+    ##    origin     name  version    type
+    ## 1 ggplot2   digest     <NA> Imports
+    ## 2 ggplot2   gtable >= 0.1.1 Imports
+    ## 3 ggplot2 lazyeval     <NA> Imports
+    ## 4 ggplot2     MASS     <NA> Imports
+    ## 5 ggplot2     mgcv     <NA> Imports
+    ## 6 ggplot2 reshape2     <NA> Imports
 
 ``` r
-plot_dependencies(dd1, "tree", show_downloads = TRUE)
+plot_dependencies(dd, "circular")
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 ``` r
-dd2 <- deepdep("ggplot2", depth = 2)
-
-plot_dependencies(dd2, "circular")
+plot_dependencies("bayes4psy", show_version = TRUE,
+                  dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 ``` r
-plot_dependencies("bayes4psy", show_version = TRUE, dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))
+dd_xgboost <- deepdep("xgboost", dependency_type = "Imports", downloads = TRUE)
+
+head(dd_xgboost)
+```
+
+    ##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total
+    ## 1 xgboost     Matrix >= 1.1-0 Imports     3019     20416      71951       286778    512873     4519559
+    ## 2 xgboost data.table >= 1.9.6 Imports    18209    124046     414359      1612428   3220026    15729449
+    ## 3 xgboost   magrittr   >= 1.5 Imports   142632    948345    4123117     11920228  21746128    39676585
+    ## 4 xgboost    stringi >= 0.5.2 Imports    32340    227984     673806      2125319   4081476    23078784
+
+``` r
+plot_downloads(dd_xgboost)
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
+``` r
+plot_dependencies(dd_xgboost, "tree", show_version = TRUE)
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-4-2.png" style="display: block; margin: auto;" />
 <!------------------------
 
 This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.-->

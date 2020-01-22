@@ -38,21 +38,26 @@ options(width = 700)
 ```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
 library(deepdep)
 
-dd1 <- deepdep("ggplot2", downloads = TRUE)
+dd <- deepdep("ggplot2", depth = 2)
 
-head(dd1)
+head(dd)
 
-plot_dependencies(dd1, "tree", show_downloads = TRUE)
+plot_dependencies(dd, "circular")
 ```
 ```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
-dd2 <- deepdep("ggplot2", depth = 2)
-
-plot_dependencies(dd2, "circular")
+plot_dependencies("bayes4psy", show_version = TRUE,
+                  dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))
 ```
+
 ```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
-plot_dependencies("bayes4psy", show_version = TRUE, dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))
-```
+dd_xgboost <- deepdep("xgboost", dependency_type = "Imports", downloads = TRUE)
 
+head(dd_xgboost)
+
+plot_downloads(dd_xgboost)
+
+plot_dependencies(dd_xgboost, "tree", show_version = TRUE)
+```
 <!------------------------
 
 This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.--> 

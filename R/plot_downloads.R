@@ -36,16 +36,16 @@ plot_downloads.default <- function(x, ...) {
 #' @export
 plot_downloads.deepdep <- function(x, from = Sys.Date()-365, to = Sys.Date(), ...) {
 
-  temp <- c(attr(x, "package_name"), unique(x$name))
-  plot_downloads(temp, from, ...)
+  temp <- c(attr(x, "package_name"), unique(as.character(x$name)))
+  plot_downloads(temp, from, to, ...)
 }
 
 #' @rdname plot_downloads
 #' @export
 plot_downloads.package_dependencies <- function(x, from = Sys.Date()-365, to = Sys.Date(), ...) {
 
-  temp <- c(attr(x, "package_name"), unique(x$name))
-  plot_downloads(temp, from, ...)
+  temp <- c(attr(x, "package_name"), unique(as.character(x$name)))
+  plot_downloads(temp, from, to, ...)
 }
 
 #' @rdname plot_downloads
@@ -53,7 +53,7 @@ plot_downloads.package_dependencies <- function(x, from = Sys.Date()-365, to = S
 plot_downloads.package_downloads <- function(x, from = Sys.Date()-365, to = Sys.Date(), ...) {
 
   temp <- attr(x, "package_name")
-  plot_downloads(temp, from, ...)
+  plot_downloads(temp, from, to, ...)
 }
 
 #' @rdname plot_downloads
@@ -87,12 +87,11 @@ plot_downloads.character <- function(x, from = Sys.Date()-365, to = Sys.Date(), 
 
     downloads <- cranlogs::cran_downloads(package, from = from, to = to)
 
-    # remove zeros from last few days without data
-    downloads_count <- rev(downloads$count)
-    # first two entries are 0
-    downloads_count <- downloads_count[3:length(downloads_count)]
+    # remove zeros from last two days without data
+    l <- length(downloads$count)
+    downloads_count <- downloads$count[-c(l, l-1)]
 
-    data[package] <- rev(downloads_count)
+    data[package] <- downloads_count
   }
 
   # base::reshape is hard
@@ -100,6 +99,12 @@ plot_downloads.character <- function(x, from = Sys.Date()-365, to = Sys.Date(), 
                        times = names(data), timevar = "package_name",
                        v.names = "downloads", idvar = "time")
 
+  data_long$time <- downloads$date[-c(l, l-1)]
+
   ggplot(data_long, aes(time, downloads, color = package_name)) +
-    geom_smooth() + theme(legend.position = "bottom")
+    geom_smooth(se = FALSE) +
+    scale_x_date() + scale_y_continuous(labels = scales::comma) +
+    ylab("daily downloads") + xlab("date") +
+    ggtitle(paste0("Daily downloads for dependencies of the ", x[1], " package")) +
+    theme_minimal() + theme(legend.position = "bottom", legend.title = element_blank())
 }
