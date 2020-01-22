@@ -5,11 +5,11 @@ output: github_document
 # deepdep <img src='images/logo.png' align="right" height="250" />
 
 <!-- badges: start -->
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Codecov test coverage](https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg)](https://codecov.io/gh/DominikRafacz/deepdep?branch=master)
 [![Build Status](https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master)](https://travis-ci.org/DominikRafacz/deepdep)
 [![CircleCI build status](https://circleci.com/gh/DominikRafacz/deepdep.svg?style=svg)](https://circleci.com/gh/DominikRafacz/deepdep)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/DominikRafacz/deepdep?branch=master&svg=true)](https://ci.appveyor.com/project/DominikRafacz/deepdep)
+[![Codecov test coverage](https://codecov.io/gh/DominikRafacz/deepdep/branch/master/graph/badge.svg)](https://codecov.io/gh/DominikRafacz/deepdep?branch=master)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 
 <!-- badges: end -->
 
@@ -30,19 +30,22 @@ devtools::install_github("DominikRafacz/deepdep")
 options(width = 700)
 ```
 
-```{r message=FALSE, warning=FALSE, fig.width=8, fig.height=4}
+```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
 library(deepdep)
 
 dd1 <- deepdep("ggplot2", downloads = TRUE)
 
 head(dd1)
 
-plot_dependencies(dd1, "tree")
+plot_dependencies(dd1, "tree", show_downloads = TRUE)
 ```
-```{r message=FALSE, warning=FALSE, fig.width=8, fig.height=6}
+```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
 dd2 <- deepdep("ggplot2", depth = 2)
 
 plot_dependencies(dd2, "circular")
+```
+```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
+plot_dependencies("bayes4psy", show_version = TRUE, dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))
 ```
 
 ----------------------
