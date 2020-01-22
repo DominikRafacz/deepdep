@@ -96,9 +96,9 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     tree = ggraph(G, "tree") +
       theme_void(),
     circular = ggraph(graph = G, layout = "focus", focus = 1) +
-      draw_circle(use = "focus", max.circle = max(V(G)$layer - 1), col = "#252525")) +
+      draw_circle(use = "focus", max.circle = max(V(G)$layer - 1), col = "#252525") +
       theme_void() +
-      coord_fixed()
+      coord_fixed())
 
   if (nrow(x) != 0) {
     g <- g + geom_edge_link(aes(end_cap = label_rect(node2.name),
