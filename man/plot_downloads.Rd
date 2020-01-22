@@ -24,6 +24,8 @@ plot_downloads(x, ...)
 \arguments{
 \item{x}{A \code{character} vector. Names of the packages that are on CRAN.}
 
+\item{...}{Ignored.}
+
 \item{from}{A \code{Date} class object. From which date plot the data. By default it's one year back.}
 
 \item{to}{A \code{Date} class object. To which date plot the data. By default it's now.}
@@ -36,4 +38,13 @@ This function uses \href{https://github.com/r-hub/cranlogs}{\bold{API}} of
 \href{http://cran-logs.rstudio.com/}{\bold{CRAN Logs}} to scrap the download logs of the packages and
 then plots the data. It works on objects of class \code{character} (vector),
 \code{deepdep}, \code{package_dependencies} and \code{package_downloads}.
+}
+\examples{
+library(deepdep)
+
+plot_downloads("ggplot2")
+
+dd <- deepdep("ggplot2")
+plot_downloads(dd)
+
 }

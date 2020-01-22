@@ -8,6 +8,7 @@
 #' @param x A \code{character} vector. Names of the packages that are on CRAN.
 #' @param from A \code{Date} class object. From which date plot the data. By default it's one year back.
 #' @param to A \code{Date} class object. To which date plot the data. By default it's now.
+#' @param ... Ignored.
 #'
 #' @return A \code{ggplot2} class object.
 #'
