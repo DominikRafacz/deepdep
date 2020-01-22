@@ -93,9 +93,12 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   labels <- levels(factor(E(G)$type))
 
   g <- switch(type,
-    tree = ggraph(G, "tree"),
+    tree = ggraph(G, "tree") +
+      theme_void(),
     circular = ggraph(graph = G, layout = "focus", focus = 1) +
-      draw_circle(use = "focus", max.circle = max(V(G)$layer - 1), col = "#252525"))
+      draw_circle(use = "focus", max.circle = max(V(G)$layer - 1), col = "#252525")) +
+      theme_void() +
+      coord_fixed()
 
   if (nrow(x) != 0) {
     g <- g + geom_edge_link(aes(end_cap = label_rect(node2.name),
@@ -117,9 +120,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
                     show.legend = FALSE,
                     label.padding = unit(0.28, "lines")) +
-    scale_fill_manual(values = get_nodefill_default_scale()) +
-    coord_fixed() +
-    theme_void()
+    scale_fill_manual(values = get_nodefill_default_scale())
 
   class(g) <- c(class(g), "deepdep_plot")
   g
@@ -155,11 +156,11 @@ delete_reverse_edges <- function(G) {
 }
 
 get_edgewidth_default_scale <- function() {
-  c(Depends = unit(0.8, "lines"),
+  c(Depends = unit(1, "lines"),
     Imports = unit(0.8, "lines"),
-    Enhances = unit(0.5, "lines"),
-    Suggests = unit(0.35, "lines"),
-    LinkingTo = unit(0.55, "lines"))
+    Enhances = unit(0.6, "lines"),
+    Suggests = unit(0.4, "lines"),
+    LinkingTo = unit(0.4, "lines"))
 }
 
 get_edgelinetype_default_scale <- function() {
