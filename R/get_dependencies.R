@@ -53,7 +53,7 @@ get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FA
   package_types <- unlist(sapply(names(deps), function(dep_type)
     rep(dependency_type[dep_type], length(deps[[dep_type]]))), use.names = FALSE)
 
-  if (!is.null(package_names)) {
+  if (!is.null(package_names) && length(package_names) > 0) {
     downloads_df <- NULL
     remove_base_or_R <- sapply(package_names,
                                function(pkg_name) is_available(pkg_name, bioc, local))
