@@ -14,7 +14,7 @@
 #' @param show_version A \code{logical}. If \code{TRUE} required version of package will be
 #' displayed below package name. Defaults to \code{FALSE}.
 #' @param show_downloads A \code{logical}. If \code{TRUE} total number of downloads of packages
-#' will be displayed below package names. Defauls to \code{FALSE}.
+#' will be displayed below package names. Defaults to \code{FALSE}.
 #' @param ... Other arguments passed to the \code{deepdep} function.
 #'
 #' @return A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
@@ -34,7 +34,7 @@
 #'
 #' @importFrom ggforce geom_circle
 #' @importFrom graphlayouts draw_circle
-#' @importFrom stats quantile
+#' @importFrom stats quantile reshape
 #' @importFrom utils packageVersion
 #' @import ggplot2
 #' @import ggraph
@@ -58,6 +58,7 @@ plot_dependencies.default <- function(x, type = "circular", same_level = FALSE, 
 #' @export
 plot_dependencies.character <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                       label_percentage = 1, show_version = FALSE, show_downloads = FALSE, ...) {
+  package_name <- NULL
   if (show_downloads == TRUE)
     dd <- deepdep(x, downloads = TRUE, ...)
   else dd <- deepdep(x, ...)
@@ -70,6 +71,9 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
                                       label_percentage = 1, show_version = FALSE, show_downloads = FALSE, ...) {
   # Due to NSE inside of the function, we have to declare "labeled" as NULL to prevent check fail
   labeled <- NULL
+  node1.name <- NULL
+  node2.name <- NULL
+
 
   if ((label_percentage < 1 || show_downloads == TRUE) && !("grand_total" %in% colnames(x)))
     stop("When you use 'label_percentage' or 'show_downloads'",

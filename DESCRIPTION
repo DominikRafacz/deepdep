@@ -1,5 +1,5 @@
 Package: deepdep
-Title: Visualise and Explore the Deep Dependencies of R packages 
+Title: Visualise and Explore the Deep Dependencies of R Packages 
 Version: 0.2.0
 Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
                   role = c("aut", "cre")),
@@ -7,11 +7,11 @@ Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
              person("Szymon", "Maksymiuk", role = c("aut")),
              person("Mateusz", "Bakala", role = c("aut")))
 Description: Provides the tools for exploration of package dependencies. 
-    Main deepdep() function allows to aquire deep dependencies of any package and plot them in an elegant way.
-    It also adds some popularity measures for the packages e.g. in the form of download count through the cranlogs package. 
-    Uses the CRAN metadata database (http://crandb.r-pkg.org) and Bioconductor metadata (http://bioconductor.org).
-    Other data aquire functions are: get_dependencies(), get_downloads() and get_description(). 
-    The deepdep_shiny() function runs shiny application that helps to produce nice deepdep plot. 
+    Main deepdep() function allows to acquire deep dependencies of any package and plot them in an elegant way.
+    It also adds some popularity measures for the packages e.g. in the form of download count through the 'cranlogs' package. 
+    Uses the CRAN metadata database <http://crandb.r-pkg.org> and Bioconductor metadata <http://bioconductor.org>.
+    Other data acquire functions are: get_dependencies(), get_downloads() and get_description(). 
+    The deepdep_shiny() function runs shiny application that helps to produce nice 'deepdep' plot. 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -44,4 +44,4 @@ Suggests:
 VignetteBuilder: knitr
 URL: https://github.com/DominikRafacz/deepdep
 BugReports: https://github.com/DominikRafacz/deepdep/issues
-Language: en-US
+Language: en-GB

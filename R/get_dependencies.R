@@ -19,7 +19,7 @@
 #' @examples
 #' library(deepdep)
 #'
-#' dependencies <- get_dependencies("ggplot2")
+#' dependencies <- get_dependencies("htmltools", downloads = FALSE)
 #' dependencies
 #'
 #' \dontrun{
@@ -90,8 +90,7 @@ get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FA
 #' @examples
 #' library(deepdep)
 #'
-#' dependencies <- get_dependencies("ggplot2")
-#' dependencies
+#' get_dependencies("htmltools", downloads = TRUE)
 #'
 #' @rdname print.package_dependencies
 #' @export

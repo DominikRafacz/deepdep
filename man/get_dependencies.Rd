@@ -36,7 +36,7 @@ to acquire the dependencies of the package (with their downloads).
 \examples{
 library(deepdep)
 
-dependencies <- get_dependencies("ggplot2")
+dependencies <- get_dependencies("htmltools", downloads = FALSE)
 dependencies
 
 \dontrun{

@@ -5,3 +5,5 @@
 *.Rproj
 doc
 Meta
+cran-comments.md
+CRAN-RELEASE

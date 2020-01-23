@@ -69,7 +69,7 @@ of labels to be displayed. By default it's \code{1} (all labels displayed).}
 displayed below package name. Defaults to \code{FALSE}.}
 
 \item{show_downloads}{A \code{logical}. If \code{TRUE} total number of downloads of packages
-will be displayed below package names. Defauls to \code{FALSE}.}
+will be displayed below package names. Defaults to \code{FALSE}.}
 
 \item{...}{Other arguments passed to the \code{deepdep} function.}
 }

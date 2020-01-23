@@ -42,9 +42,11 @@ then plots the data. It works on objects of class \code{character} (vector),
 \examples{
 library(deepdep)
 
-plot_downloads("ggplot2")
+plot_downloads("htmltools")
 
+\dontrun{
 dd <- deepdep("ggplot2")
 plot_downloads(dd)
+}
 
 }

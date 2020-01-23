@@ -17,7 +17,6 @@ Print function for an object of \code{package_dependencies} class
 \examples{
 library(deepdep)
 
-dependencies <- get_dependencies("ggplot2")
-dependencies
+get_dependencies("htmltools", downloads = TRUE)
 
 }

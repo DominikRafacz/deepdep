@@ -15,12 +15,15 @@
 #' @examples
 #' library(deepdep)
 #'
-#' plot_downloads("ggplot2")
+#' plot_downloads("htmltools")
 #'
+#' \dontrun{
 #' dd <- deepdep("ggplot2")
 #' plot_downloads(dd)
+#' }
 #'
 #' @importFrom scales comma
+#' @importFrom stats time
 #' @rdname plot_downloads
 #' @export
 plot_downloads <- function(x, ...) {
@@ -60,6 +63,9 @@ plot_downloads.package_downloads <- function(x, from = Sys.Date()-365, to = Sys.
 #' @rdname plot_downloads
 #' @export
 plot_downloads.character <- function(x, from = Sys.Date()-365, to = Sys.Date(), ...) {
+
+  # Due to NSE inside of the function, we have to declare "package_name" as NULL to prevent check fail
+  package_name <- NULL
 
   # add some x check
 

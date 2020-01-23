@@ -43,7 +43,7 @@ But before we describe how this function works in detail, let's see what are oth
 * `deepdep`,
 * `plot_dependencies`.
 
-Those functions rely on each other and are ordered from the least to the most top-leveled.
+Those functions rely on each other and are ordered from the lowest to the highest level.
 We'll describe what they exactly do and how on examples.
 
 ## get_available_packages
@@ -135,7 +135,7 @@ As famous quote says,
 
 > A picture is worth more than a thousand words.
 
-That's why we have `plot_dependencies` function. It allows visualizing easilly what are dependencies of specified package.
+That's why we have `plot_dependencies` function. It allows visualizing easily what are dependencies of specified package.
 
 The function is generic, and currently supports two types of object -- you can pass a `deepdep` object, result of the calling the `deepdep` function or just type name of the package. With the latter option you can also pass arguments to `get_dependencies` as additional parameters.
 
@@ -146,7 +146,7 @@ plot_dependencies("DT", depth = 2, dependency_type = c("Imports", "Depends", "Su
 ```
 
 
-In each of the plots you can see one package name in the center and two circles of packages gathered around them. These are dependencies of the first and second level.
+In each of the plots you can see one package name in the centre and two circles of packages gathered around them. These are dependencies of the first and second level.
 
 Default plot type is circular, as you can see on the examples presented above. However, you can set `plot_type` parameter to `tree`.
 

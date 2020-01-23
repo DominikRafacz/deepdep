@@ -16,15 +16,15 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 
 <!-- badges: end -->
 
-Visualise and Explore Deep Dependiences of R packages.
+Visualise and Explore Deep Dependencies of R packages.
 
 The `deepdep` package provides the tools for exploration of package
-dependencies. Main `deepdep()` function allows to aquire deep
+dependencies. Main `deepdep()` function allows to acquire deep
 dependencies of any package and plot them in an elegant way. It also
 adds some popularity measures for the packages e.g. in the form of
 download count through the cranlogs package. Uses the CRAN metadata
 database (<http://crandb.r-pkg.org>) and Bioconductor metadata
-(<http://bioconductor.org>). Other data aquire functions are:
+(<http://bioconductor.org>). Other data acquire functions are:
 `get_dependencies()`, `get_downloads()` and `get_description()`. The
 `deepdep_shiny()` function runs shiny application that helps to produce
 nice **deepdep plot**.
@@ -79,10 +79,10 @@ head(dd_xgboost)
 ```
 
     ##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total
-    ## 1 xgboost     Matrix >= 1.1-0 Imports     3019     20416      71951       286778    512873     4519559
-    ## 2 xgboost data.table >= 1.9.6 Imports    18209    124046     414359      1612428   3220026    15729449
-    ## 3 xgboost   magrittr   >= 1.5 Imports   142632    948345    4123117     11920228  21746128    39676585
-    ## 4 xgboost    stringi >= 0.5.2 Imports    32340    227984     673806      2125319   4081476    23078784
+    ## 1 xgboost     Matrix >= 1.1-0 Imports     3729     20400      74187       287040    513665     4523288
+    ## 2 xgboost data.table >= 1.9.6 Imports    23449    125406     429207      1604630   3224335    15752898
+    ## 3 xgboost   magrittr   >= 1.5 Imports   150007    951942    4136796     11948739  21800198    39826592
+    ## 4 xgboost    stringi >= 0.5.2 Imports    40188    224331     703439      2134561   4101211    23118972
 
 ``` r
 plot_downloads(dd_xgboost)

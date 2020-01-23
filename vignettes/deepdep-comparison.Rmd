@@ -4,7 +4,7 @@ author: "Dominik Rafacz"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{deepdep comparison}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -126,7 +126,7 @@ plot(dg, legendPosition = c(-1, 1), vertex.size = 20)
 Description from official vignette:
 
 > The **pkgDepTools** package provides tools for computing and
-analyzing dependency relationships among R packages.  With it, you can
+analysing dependency relationships among R packages.  With it, you can
 build a graph-based representation of the dependencies among all
 packages in a list of CRAN-style package repositories.  There are
 utilities for computing installation order of a given package and, if

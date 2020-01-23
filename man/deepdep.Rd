@@ -39,13 +39,13 @@ allows to recursively search for the dependencies at the higher level of \code{d
 \examples{
 library(deepdep)
 
-dd_downloads <- deepdep("ggplot2", downloads = TRUE)
+dd_downloads <- deepdep("ggplot2")
 head(dd_downloads)
 
-dd_2 <- deepdep("ggplot2", depth = 2)
+\dontrun{
+dd_2 <- deepdep("ggplot2", depth = 2, downloads = TRUE)
 plot_dependencies(dd_2, "circular")
 
-\dontrun{
 dd_local <- deepdep("deepdep", local = TRUE)
 plot_dependencies(dd_local)
 }
