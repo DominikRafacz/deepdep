@@ -44,7 +44,7 @@ library(deepdep)
 
 plot_downloads("htmltools")
 
-\dontrun{
+\donttest{
 dd <- deepdep("ggplot2")
 plot_downloads(dd)
 }

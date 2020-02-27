@@ -19,7 +19,7 @@
 #' description <- get_description("ggplot2")
 #' description
 #'
-#' \dontrun{
+#' \donttest{
 #' description_local <- get_description("deepdep", local = TRUE)
 #' description_local
 #' }

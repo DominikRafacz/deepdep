@@ -28,7 +28,7 @@
 #' dd2 <- deepdep("ggplot2", depth = 2)
 #' plot_dependencies(dd2, "circular")
 #'
-#' \dontrun{
+#' \donttest{
 #' plot_dependencies("deepdep", label_percentage = 0.5, depth = 2, local = TRUE)
 #' }
 #'

@@ -22,7 +22,7 @@
 #' dependencies <- get_dependencies("htmltools", downloads = FALSE)
 #' dependencies
 #'
-#' \dontrun{
+#' \donttest{
 #' dependencies_local <- get_dependencies("deepdep", downloads = FALSE, local = TRUE)
 #' dependencies_local
 #' }
