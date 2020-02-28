@@ -1,3 +1,6 @@
+# deepdep 0.2.0
+* CRAN version
+
 # deepdep 0.1.1
 * renamed `deps_types` argument to `dependency_type`
 * added shiny app that generates `deepdep` plot

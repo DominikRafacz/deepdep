@@ -8,11 +8,13 @@
 
 <title>Plot download count of CRAN packages. — plot_downloads • deepdep</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -32,13 +34,14 @@
 
 
 
-<meta property="og:title" content="Plot download count of CRAN packages. — plot_downloads" />
 
+<meta property="og:title" content="Plot download count of CRAN packages. — plot_downloads" />
 <meta property="og:description" content="This function uses API of
 CRAN Logs to scrap the download logs of the packages and
 then plots the data. It works on objects of class character (vector),
 deepdep, package_dependencies and package_downloads." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -69,7 +72,7 @@ deepdep, package_dependencies and package_downloads." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -103,7 +106,6 @@ deepdep, package_dependencies and package_downloads." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/DominikRafacz/deepdep">
@@ -130,12 +132,10 @@ deepdep, package_dependencies and package_downloads." />
     </div>
 
     <div class="ref-description">
-    
     <p>This function uses <a href='https://github.com/r-hub/cranlogs'><b>API</b></a> of
 <a href='http://cran-logs.rstudio.com/'><b>CRAN Logs</b></a> to scrap the download logs of the packages and
 then plots the data. It works on objects of class <code>character</code> (vector),
 <code>deepdep</code>, <code>package_dependencies</code> and <code>package_downloads</code>.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='no'>...</span>)
@@ -154,7 +154,7 @@ then plots the data. It works on objects of class <code>character</code> (vector
 
 <span class='co'># S3 method for character</span>
 <span class='fu'>plot_downloads</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>() - <span class='fl'>365</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>(), <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -175,27 +175,26 @@ then plots the data. It works on objects of class <code>character</code> (vector
       <td><p>A <code>Date</code> class object. To which date plot the data. By default it's now.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code>ggplot2</code> class object.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>deepdep</span>)
 
-<span class='fu'>plot_downloads</span>(<span class='st'>"ggplot2"</span>)</div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='plot_downloads-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot_downloads</span>(<span class='st'>"htmltools"</span>)</div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='plot_downloads-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='co'># \donttest{</span>
 <span class='no'>dd</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='deepdep.html'>deepdep</a></span>(<span class='st'>"ggplot2"</span>)
-<span class='fu'>plot_downloads</span>(<span class='no'>dd</span>)</div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='plot_downloads-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot_downloads</span>(<span class='no'>dd</span>)</div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</span></div><div class='img'><img src='plot_downloads-2.png' alt='' width='700' height='433' /></div><div class='input'># }
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
