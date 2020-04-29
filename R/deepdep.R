@@ -48,34 +48,22 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
     ret <- data.frame(origin = character(), pkg_dep)
   }
 
-  pkg_dep_dep_names <- c()
-  already_computed_names <- c(package)
-
   if (depth > 1) {
+    already_subdeped <- package
+    to_subdep <- pkg_dep_names
+
     for (i in 2:depth) {
-      for (name in pkg_dep_names) {
-        pkg_dep_dep <- get_dependencies(name, downloads, bioc, local, dependency_type)
+      added <- do.call(rbind, lapply(to_subdep, function(pkg_name) {
+        pkg_subdep <- get_dependencies(pkg_name, downloads, bioc, local, dependency_type)
+        if (length(pkg_subdep$name) > 0)
+          data.frame(origin = attr(pkg_subdep, "package_name"), pkg_subdep)
+        else
+          NULL
+      }))
 
-        if (length(pkg_dep_dep$name) != 0) {
-          # find all unique dependency names (for next depth level)
-          pkg_dep_dep_names <- union(pkg_dep_dep_names, pkg_dep_dep$name)
-
-          if (length(pkg_dep_dep_names)) {
-            temp <- data.frame(origin = attr(pkg_dep_dep, "package_name"), pkg_dep_dep)
-          } else {
-            temp <- data.frame(origin = character(), pkg_dep_dep)
-          }
-
-          ret <- rbind(ret, temp)
-        }
-      }
-
-      # save all package names that were already computed
-      already_computed_names <- union(already_computed_names, pkg_dep_dep_names)
-
-      # find all package names that were not computed yet
-      pkg_dep_names <- intersect(already_computed_names, pkg_dep_dep_names)
-      pkg_dep_dep_names <- c()
+      already_subdeped <- union(already_subdeped, to_subdep)
+      to_subdep <- setdiff(added$name, already_subdeped)
+      ret <- rbind(ret, added)
     }
   }
 
