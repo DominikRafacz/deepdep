@@ -1,5 +1,5 @@
 
-## Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="200" />
+# Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="150" />
 
 <!-- badges: start -->
 
@@ -16,7 +16,7 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 
 <!-- badges: end -->
 
-### Overview
+## Overview
 
 The `deepdep` package provides tools for exploration of package
 dependencies. The main `deepdep()` function allows to acquire deep
@@ -40,7 +40,7 @@ metadata](http://bioconductor.org).
   - `deepdep_shiny()` runs shiny application that helps to produce a
     nice **deepdep plot**
 
-### Installation
+## Installation
 
 ``` r
 # Install from CRAN: 
@@ -50,7 +50,7 @@ install.packages("deepdep")
 devtools::install_github("DominikRafacz/deepdep")
 ```
 
-### Examples [**introduction to the deepdep package**](https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html)
+## Examples [**introduction to the deepdep package**](https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html)
 
 ``` r
 library(deepdep)
