@@ -93,7 +93,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     G <- graph_from_data_frame(x)
   }
 
-  G <- add_layers_to_vertices(G)
+  G <- add_layers_to_vertices(G, x)
   if (!same_level) {
     G <- delete_edges_within_layer(G)
   }
@@ -112,7 +112,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     tree = ggraph(G, "tree") +
       theme_void(),
     circular = ggraph(graph = G, layout = "focus", focus = 1) +
-      draw_circle(use = "focus", max.circle = max(V(G)$layer - 1), col = "#252525") +
+      draw_circle(use = "focus", max.circle = max(V(G)$layer), col = "#252525") +
       theme_void() +
       coord_fixed())
 
@@ -121,6 +121,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
                                 start_cap = label_rect(node1.name),
                                 edge_width = type,
                                 edge_linetype = type),
+                                #edge_color = reverse),
                             arrow = arrow(length = unit(0.5, 'lines'),
                                           ends = "first",
                                           type = "closed",
@@ -150,8 +151,8 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
 #' @noRd
 #'
 #' @param G An \code{igraph} object.
-add_layers_to_vertices <- function(G) {
-  V(G)$layer <- distances(G, v = V(G)[1]) + 1
+add_layers_to_vertices <- function(G, x) {
+  V(G)$layer <- c(0, x[match(V(G)$name[-1], x$name), "dest_level"])
   G
 }
 
@@ -170,9 +171,14 @@ delete_edges_within_layer <- function(G) {
 #'
 #' @param G An \code{igraph} object.
 delete_reverse_edges <- function(G) {
+  # rev_inds <-
+  #   head_of(G, E(G))$layer < tail_of(G, E(G))$layer
   edges_to_delete <- E(G)[
     head_of(G, E(G))$layer < tail_of(G, E(G))$layer]
   delete_edges(G, edges_to_delete)
+  # E(G)$reverse <- FALSE
+  # E(G)$reverse[rev_inds] <- TRUE
+  # G
 }
 
 get_edgewidth_default_scale <- function() {
