@@ -1,6 +1,6 @@
 Package: deepdep
 Title: Visualise and Explore the Deep Dependencies of R Packages 
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
                   role = c("aut", "cre")),
              person("Hubert", "Baniecki", role = c("aut")),
