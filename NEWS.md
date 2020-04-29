@@ -1,6 +1,7 @@
-# deepdep 0.2.1
+# deepdep (development)
 * fixed an error in `deepdep` that caused dependencies of one package to be added to the result many times
 * the way in which dependency layers are created during plotting has been improved
+* ...
 
 # deepdep 0.2.0
 * CRAN version

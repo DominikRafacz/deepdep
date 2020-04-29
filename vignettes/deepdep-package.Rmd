@@ -52,21 +52,21 @@ This function lists, as the name indicates, available packages. The default beha
 
 ```{r get_ava_pkg1}
 t <- get_available_packages()
-head(t, 100)
+head(t, 20)
 ```
 
 However, if you want to check if package is present in a little wider range -- on CRAN or Bioconductor repositories, you simply need to set argument `bioc = TRUE`. In this case function is simply wrapper around `BiocManager::available()` and to use it you need to have `BiocManager` package (available via CRAN) installed.
 
 ```{r get_ava_pkg2}
 t <- get_available_packages(bioc = TRUE)
-head(t, 100)
+head(t, 20)
 ```
 
 Another possibility is checking what packages are installed -- you do it by adding `local = TRUE` parameter.
 
 ```{r get_ava_pkg3}
 t <- get_available_packages(local = TRUE)
-head(t, 100)
+head(t, 20)
 ```
 
 Result of this function is cached (for more details, see *Caching* section of this vignette).

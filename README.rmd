@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# deepdep <img src='images/logo.png' align="right" height="250" />
+## Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="200" />
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master)](https://travis-ci.org/DominikRafacz/deepdep)
@@ -13,13 +13,24 @@ output: github_document
 
 <!-- badges: end -->
 
-Visualise and Explore Deep Dependencies of R packages.
+### Overview
 
-The `deepdep` package provides the tools for exploration of package dependencies. Main `deepdep()` function allows to acquire deep dependencies of any package and plot them in an elegant way. It also adds some popularity measures for the packages e.g. in the form of download count through the cranlogs package. Uses the CRAN metadata database (http://crandb.r-pkg.org) and Bioconductor metadata (http://bioconductor.org). Other data acquire functions are: `get_dependencies()`, `get_downloads()` and `get_description()`. The `deepdep_shiny()` function runs shiny application that helps to produce nice **deepdep plot**. 
-    
-[Cheatsheet](https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html)
+The `deepdep` package provides tools for exploration of package dependencies. The main `deepdep()` function allows to acquire deep dependencies of any package and plot them in an elegant way. It also adds some popularity measures for the packages e.g. in the form of download count through the `cranlogs` package. Uses the [CRAN metadata database](http://crandb.r-pkg.org) and [Bioconductor metadata](http://bioconductor.org). 
 
-## Installation
+**Exploration tools:**
+
+- `deepdep()`
+- `get_dependencies()`
+- `get_downloads()` 
+- `get_description()` 
+
+**Visualisation tools:**
+
+- `plot_dependencies()`
+- `plot_downloads()`
+- `deepdep_shiny()` runs shiny application that helps to produce a nice **deepdep plot**
+
+### Installation
 
 ```{r eval = FALSE}
 # Install from CRAN: 
@@ -29,7 +40,7 @@ install.packages("deepdep")
 devtools::install_github("DominikRafacz/deepdep")
 ```
 
-## Demo
+###  Examples [**introduction to the deepdep package**](https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html)
 
 ```{r set-options, echo=FALSE, cache=FALSE}
 options(width = 700)
@@ -49,15 +60,18 @@ plot_dependencies("bayes4psy", show_version = TRUE,
                   dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))
 ```
 
-```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
+```{r message=FALSE, warning=FALSE, fig.width=8, fig.height=6, fig.align='center'}
 dd_xgboost <- deepdep("xgboost", dependency_type = "Imports", downloads = TRUE)
 
 head(dd_xgboost)
 
 plot_downloads(dd_xgboost)
+```
 
+```{r message=FALSE, warning=FALSE, fig.width=8, fig.height=5, fig.align='center'}
 plot_dependencies(dd_xgboost, "tree", show_version = TRUE)
 ```
+
 <!------------------------
 
 This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.--> 

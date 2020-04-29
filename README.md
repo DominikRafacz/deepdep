@@ -1,5 +1,5 @@
 
-# deepdep <img src='images/logo.png' align="right" height="250" />
+## Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="200" />
 
 <!-- badges: start -->
 
@@ -16,22 +16,31 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 
 <!-- badges: end -->
 
-Visualise and Explore Deep Dependencies of R packages.
+### Overview
 
-The `deepdep` package provides the tools for exploration of package
-dependencies. Main `deepdep()` function allows to acquire deep
+The `deepdep` package provides tools for exploration of package
+dependencies. The main `deepdep()` function allows to acquire deep
 dependencies of any package and plot them in an elegant way. It also
 adds some popularity measures for the packages e.g. in the form of
-download count through the cranlogs package. Uses the CRAN metadata
-database (<http://crandb.r-pkg.org>) and Bioconductor metadata
-(<http://bioconductor.org>). Other data acquire functions are:
-`get_dependencies()`, `get_downloads()` and `get_description()`. The
-`deepdep_shiny()` function runs shiny application that helps to produce
-nice **deepdep plot**.
+download count through the `cranlogs` package. Uses the [CRAN metadata
+database](http://crandb.r-pkg.org) and [Bioconductor
+metadata](http://bioconductor.org).
 
-[Cheatsheet](https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html)
+**Exploration tools:**
 
-## Installation
+  - `deepdep()`
+  - `get_dependencies()`
+  - `get_downloads()`
+  - `get_description()`
+
+**Visualisation tools:**
+
+  - `plot_dependencies()`
+  - `plot_downloads()`
+  - `deepdep_shiny()` runs shiny application that helps to produce a
+    nice **deepdep plot**
+
+### Installation
 
 ``` r
 # Install from CRAN: 
@@ -41,7 +50,7 @@ install.packages("deepdep")
 devtools::install_github("DominikRafacz/deepdep")
 ```
 
-## Demo
+### Examples [**introduction to the deepdep package**](https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html)
 
 ``` r
 library(deepdep)
@@ -51,13 +60,13 @@ dd <- deepdep("ggplot2", depth = 2)
 head(dd)
 ```
 
-    ##    origin     name  version    type
-    ## 1 ggplot2   digest     <NA> Imports
-    ## 2 ggplot2   gtable >= 0.1.1 Imports
-    ## 3 ggplot2 lazyeval     <NA> Imports
-    ## 4 ggplot2     MASS     <NA> Imports
-    ## 5 ggplot2     mgcv     <NA> Imports
-    ## 6 ggplot2 reshape2     <NA> Imports
+    ##    origin    name  version    type origin_level dest_level
+    ## 1 ggplot2  digest     <NA> Imports            0          1
+    ## 2 ggplot2    glue     <NA> Imports            0          1
+    ## 3 ggplot2  gtable >= 0.1.1 Imports            0          1
+    ## 4 ggplot2 isoband     <NA> Imports            0          1
+    ## 5 ggplot2    MASS     <NA> Imports            0          1
+    ## 6 ggplot2    mgcv     <NA> Imports            0          1
 
 ``` r
 plot_dependencies(dd, "circular")
@@ -78,11 +87,11 @@ dd_xgboost <- deepdep("xgboost", dependency_type = "Imports", downloads = TRUE)
 head(dd_xgboost)
 ```
 
-    ##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total
-    ## 1 xgboost     Matrix >= 1.1-0 Imports     3729     20400      74187       287040    513665     4523288
-    ## 2 xgboost data.table >= 1.9.6 Imports    23449    125406     429207      1604630   3224335    15752898
-    ## 3 xgboost   magrittr   >= 1.5 Imports   150007    951942    4136796     11948739  21800198    39826592
-    ## 4 xgboost    stringi >= 0.5.2 Imports    40188    224331     703439      2134561   4101211    23118972
+    ##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total origin_level dest_level
+    ## 1 xgboost     Matrix >= 1.1-0 Imports     3044     19855      73472       255270    544340     4850922            0          1
+    ## 2 xgboost data.table >= 1.9.6 Imports    23964    143005     511457      1584401   3169001    17607178            0          1
+    ## 3 xgboost   magrittr   >= 1.5 Imports   196375   1338204    5097734     14864680  27025906    55832135            0          1
+    ## 4 xgboost    stringi >= 0.5.2 Imports    34102    200767     730874      2509641   4688808    26216128            0          1
 
 ``` r
 plot_downloads(dd_xgboost)
@@ -94,7 +103,8 @@ plot_downloads(dd_xgboost)
 plot_dependencies(dd_xgboost, "tree", show_version = TRUE)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-4-2.png" style="display: block; margin: auto;" />
+<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+
 <!------------------------
 
 This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.-->

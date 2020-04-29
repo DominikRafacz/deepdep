@@ -29,7 +29,11 @@
 #' plot_dependencies(dd2, "circular")
 #'
 #' \donttest{
-#' plot_dependencies("deepdep", label_percentage = 0.5, depth = 2, local = TRUE)
+#' #:# use local packages
+#' plot_dependencies("deepdep", depth = 2, local = TRUE)
+#'
+#' #:# show grand_total download count
+#' plot_dependencies("deepdep", show_downloads = TRUE)
 #' }
 #'
 #' @importFrom ggforce geom_circle

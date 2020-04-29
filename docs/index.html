@@ -6,24 +6,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visualise and Explore the Deep Dependencies of R Packages  • deepdep</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Visualise and Explore the Deep Dependencies of R Packages ">
-<meta property="og:description" content="Provides the tools for exploration of package dependencies. 
-    Main deepdep() function allows to acquire deep dependencies of any package and plot them in an elegant way.
+<meta property="og:description" content="Provides tools for exploration of R package dependencies. 
+    The main deepdep() function allows to acquire deep dependencies of any package and plot them in an elegant way.
     It also adds some popularity measures for the packages e.g. in the form of download count through the cranlogs package. 
     Uses the CRAN metadata database &lt;http://crandb.r-pkg.org&gt; and Bioconductor metadata &lt;http://bioconductor.org&gt;.
     Other data acquire functions are: get_dependencies(), get_downloads() and get_description(). 
-    The deepdep_shiny() function runs shiny application that helps to produce nice deepdep plot. ">
-<meta name="twitter:card" content="summary">
+    The deepdep_shiny() function runs shiny application that helps to produce a nice deepdep plot. ">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -36,7 +36,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -72,7 +72,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/DominikRafacz/deepdep">
+  <a href="https://github.com/DominikRafacz/deepdep/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -89,68 +89,89 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="deepdep-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#deepdep-" class="anchor"></a>deepdep <img src="images/logo.png" align="right" height="250">
-</h1></div>
+<div id="visualise-and-explore-deep-dependencies-of-r-packages-" class="section level2">
+<h2 class="hasAnchor">
+<a href="#visualise-and-explore-deep-dependencies-of-r-packages-" class="anchor"></a>Visualise and Explore Deep Dependencies of R Packages <img src="images/logo.png" align="right" height="200">
+</h2>
 <!-- badges: start -->
 
 <!-- badges: end -->
-<p>Visualise and Explore Deep Dependencies of R packages.</p>
-<p>The <code>deepdep</code> package provides the tools for exploration of package dependencies. Main <code><a href="reference/deepdep.html">deepdep()</a></code> function allows to acquire deep dependencies of any package and plot them in an elegant way. It also adds some popularity measures for the packages e.g. in the form of download count through the cranlogs package. Uses the CRAN metadata database (<a href="http://crandb.r-pkg.org" class="uri">http://crandb.r-pkg.org</a>) and Bioconductor metadata (<a href="http://bioconductor.org" class="uri">http://bioconductor.org</a>). Other data acquire functions are: <code><a href="reference/get_dependencies.html">get_dependencies()</a></code>, <code><a href="reference/get_downloads.html">get_downloads()</a></code> and <code><a href="reference/get_description.html">get_description()</a></code>. The <code><a href="reference/deepdep_shiny.html">deepdep_shiny()</a></code> function runs shiny application that helps to produce nice <strong>deepdep plot</strong>.</p>
-<p><a href="https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html">Cheatsheet</a></p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Install from CRAN: </span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"deepdep"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Install the development version from GitHub:</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"DominikRafacz/deepdep"</span>)</span></code></pre></div>
+<div id="overview" class="section level3">
+<h3 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h3>
+<p>The <code>deepdep</code> package provides tools for exploration of package dependencies. The main <code><a href="reference/deepdep.html">deepdep()</a></code> function allows to acquire deep dependencies of any package and plot them in an elegant way. It also adds some popularity measures for the packages e.g. in the form of download count through the <code>cranlogs</code> package. Uses the <a href="http://crandb.r-pkg.org">CRAN metadata database</a> and <a href="http://bioconductor.org">Bioconductor metadata</a>.</p>
+<p><strong>Exploration tools:</strong></p>
+<ul>
+<li><code><a href="reference/deepdep.html">deepdep()</a></code></li>
+<li><code><a href="reference/get_dependencies.html">get_dependencies()</a></code></li>
+<li><code><a href="reference/get_downloads.html">get_downloads()</a></code></li>
+<li><code><a href="reference/get_description.html">get_description()</a></code></li>
+</ul>
+<p><strong>Visualisation tools:</strong></p>
+<ul>
+<li><code><a href="reference/plot_deepdep.html">plot_dependencies()</a></code></li>
+<li><code><a href="reference/plot_downloads.html">plot_downloads()</a></code></li>
+<li>
+<code><a href="reference/deepdep_shiny.html">deepdep_shiny()</a></code> runs shiny application that helps to produce a nice <strong>deepdep plot</strong>
+</li>
+</ul>
 </div>
-<div id="demo" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demo" class="anchor"></a>Demo</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(deepdep)</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>dd &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="dt">depth =</span> <span class="dv">2</span>)</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dd)</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">##    origin     name  version    type</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co">## 1 ggplot2   digest     &lt;NA&gt; Imports</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co">## 2 ggplot2   gtable &gt;= 0.1.1 Imports</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co">## 3 ggplot2 lazyeval     &lt;NA&gt; Imports</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co">## 4 ggplot2     MASS     &lt;NA&gt; Imports</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co">## 5 ggplot2     mgcv     &lt;NA&gt; Imports</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co">## 6 ggplot2 reshape2     &lt;NA&gt; Imports</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd, <span class="st">"circular"</span>)</span></code></pre></div>
-<p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(<span class="st">"bayes4psy"</span>, <span class="dt">show_version =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb5-2"><a href="#cb5-2"></a>                  <span class="dt">dependency_type =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Depends"</span>, <span class="st">"Imports"</span>, <span class="st">"Suggests"</span>, <span class="st">"LinkingTo"</span>))</span></code></pre></div>
-<p><img src="README_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>dd_xgboost &lt;-<span class="st"> </span><span class="kw"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"xgboost"</span>, <span class="dt">dependency_type =</span> <span class="st">"Imports"</span>, <span class="dt">downloads =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dd_xgboost)</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="co">## 1 xgboost     Matrix &gt;= 1.1-0 Imports     3729     20400      74187       287040    513665     4523288</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co">## 2 xgboost data.table &gt;= 1.9.6 Imports    23449    125406     429207      1604630   3224335    15752898</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co">## 3 xgboost   magrittr   &gt;= 1.5 Imports   150007    951942    4136796     11948739  21800198    39826592</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="co">## 4 xgboost    stringi &gt;= 0.5.2 Imports    40188    224331     703439      2134561   4101211    23118972</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw"><a href="reference/plot_downloads.html">plot_downloads</a></span>(dd_xgboost)</span></code></pre></div>
-<p><img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(dd_xgboost, <span class="st">"tree"</span>, <span class="dt">show_version =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<p><img src="README_files/figure-gfm/unnamed-chunk-4-2.png" style="display: block; margin: auto;"><!------------------------
+<div id="installation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h3>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># Install from CRAN: </span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"deepdep"</span>)
 
-This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.--></p>
+<span class="co"># Install the development version from GitHub:</span>
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"DominikRafacz/deepdep"</span>)</pre></div>
+</div>
+<div id="examples-introduction-to-the-deepdep-package" class="section level3">
+<h3 class="hasAnchor">
+<a href="#examples-introduction-to-the-deepdep-package" class="anchor"></a>Examples <a href="https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html"><strong>introduction to the deepdep package</strong></a>
+</h3>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">deepdep</span>)
+
+<span class="no">dd</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="kw">depth</span> <span class="kw">=</span> <span class="fl">2</span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dd</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">##    origin    name  version    type origin_level dest_level</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co">## 1 ggplot2  digest     &lt;NA&gt; Imports            0          1</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co">## 2 ggplot2    glue     &lt;NA&gt; Imports            0          1</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">## 3 ggplot2  gtable &gt;= 0.1.1 Imports            0          1</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co">## 4 ggplot2 isoband     &lt;NA&gt; Imports            0          1</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">## 5 ggplot2    MASS     &lt;NA&gt; Imports            0          1</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co">## 6 ggplot2    mgcv     &lt;NA&gt; Imports            0          1</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(<span class="no">dd</span>, <span class="st">"circular"</span>)</pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-2-1.png" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(<span class="st">"bayes4psy"</span>, <span class="kw">show_version</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
+                  <span class="kw">dependency_type</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Depends"</span>, <span class="st">"Imports"</span>, <span class="st">"Suggests"</span>, <span class="st">"LinkingTo"</span>))</pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-3-1.png" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="no">dd_xgboost</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"xgboost"</span>, <span class="kw">dependency_type</span> <span class="kw">=</span> <span class="st">"Imports"</span>, <span class="kw">downloads</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dd_xgboost</span>)</pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total origin_level dest_level</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co">## 1 xgboost     Matrix &gt;= 1.1-0 Imports     3044     19855      73472       255270    544340     4850922            0          1</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co">## 2 xgboost data.table &gt;= 1.9.6 Imports    23964    143005     511457      1584401   3169001    17607178            0          1</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">## 3 xgboost   magrittr   &gt;= 1.5 Imports   196375   1338204    5097734     14864680  27025906    55832135            0          1</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co">## 4 xgboost    stringi &gt;= 0.5.2 Imports    34102    200767     730874      2509641   4688808    26216128            0          1</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="reference/plot_downloads.html">plot_downloads</a></span>(<span class="no">dd_xgboost</span>)</pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="reference/plot_deepdep.html">plot_dependencies</a></span>(<span class="no">dd_xgboost</span>, <span class="st">"tree"</span>, <span class="kw">show_version</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></div>
+<p><img src="README_files/figure-gfm/unnamed-chunk-5-1.png" style="display: block; margin: auto;"></p>
+<!------------------------
+
+This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](https://github.com/mini-pw/2020Z-ProgramowanieWR) course at Warsaw University of Technology.-->
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/DominikRafacz/deepdep">https://​github.com/​DominikRafacz/​deepdep</a>
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=deepdep">https://​cloud.r-project.org/​package=deepdep</a>
+</li>
+<li>Browse source code at <br><a href="https://github.com/DominikRafacz/deepdep/">https://​github.com/​DominikRafacz/​deepdep/​</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/DominikRafacz/deepdep/issues">https://​github.com/​DominikRafacz/​deepdep/​issues</a>
 </li>
@@ -192,7 +213,7 @@ This package was made during `1120-DS000-ISP-0500`[Advanced Programming in R](ht
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

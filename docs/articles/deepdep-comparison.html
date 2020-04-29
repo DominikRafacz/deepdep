@@ -6,19 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Comparison of deepdep to similar packages • deepdep</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Comparison of deepdep to similar packages">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="deepdep">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">deepdep</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -67,7 +67,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/DominikRafacz/deepdep">
+  <a href="https://github.com/DominikRafacz/deepdep/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -82,13 +82,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="deepdep-comparison_files/header-attrs-2.1.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Comparison of deepdep to similar packages</h1>
+      <h1 data-toc-skip>Comparison of deepdep to similar packages</h1>
                         <h4 class="author">Dominik Rafacz</h4>
             
-            <h4 class="date">2020-01-22</h4>
+            <h4 class="date">2020-04-29</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/DominikRafacz/deepdep/blob/master/vignettes/deepdep-comparison.Rmd"><code>vignettes/deepdep-comparison.Rmd</code></a></small>
       <div class="hidden name"><code>deepdep-comparison.Rmd</code></div>
@@ -142,16 +142,16 @@
 <li>There is no differentiation between levels of dependencies.</li>
 <li>It is available only on GitHub</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#&gt; an example from the website on github.io</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(devtools, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">install_github</span>(<span class="st">"datastorm-open/DependenciesGraphs"</span>)</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(DependenciesGraphs, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-5" title="5"></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="co"># you mus first loaded the target package using library</span></a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(plyr,<span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-8" title="8"></a>
-<a class="sourceLine" id="cb1-9" title="9">dep &lt;-<span class="st"> </span><span class="kw">Pck.load.to.vis</span>(<span class="st">"plyr"</span>)</a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(dep)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="co">#&gt; an example from the website on github.io</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">devtools</span>, <span class="kw">quietly</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"datastorm-open/DependenciesGraphs"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">DependenciesGraphs</span>, <span class="kw">quietly</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+
+<span class="co"># you mus first loaded the target package using library</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">plyr</span>,<span class="kw">quietly</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+
+<span class="no">dep</span> <span class="kw">&lt;-</span> <span class="fu">Pck.load.to.vis</span>(<span class="st">"plyr"</span>)
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="no">dep</span>)</pre></body></html></div>
 </div>
 </div>
 <div id="pkgnet" class="section level1">
@@ -175,9 +175,9 @@
 <li>You cannot do it with small steps – you get all information at once, if you want only one specific thing, you need to dig through a lot of other informations.</li>
 <li>You have to install the package to get info on it.</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co">#&gt; opens a report</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(pkgnet)</a>
-<a class="sourceLine" id="cb2-3" title="3">result &lt;-<span class="st"> </span><span class="kw">CreatePackageReport</span>(<span class="st">'ggplot2'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="co">#&gt; opens a report</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">pkgnet</span>)
+<span class="no">result</span> <span class="kw">&lt;-</span> <span class="fu">CreatePackageReport</span>(<span class="st">'ggplot2'</span>)</pre></body></html></div>
 </div>
 </div>
 <div id="minicran" class="section level1">
@@ -203,24 +203,23 @@
 <ul>
 <li>No built-in package support for other plots than base. Which are not very pretty.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#&gt; an example from official vignette</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(miniCRAN, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt; Warning: pakiet 'miniCRAN' został zbudowany w wersji R 3.6.1</span></a>
-<a class="sourceLine" id="cb3-4" title="4"></a>
-<a class="sourceLine" id="cb3-5" title="5">tags &lt;-<span class="st"> "chron"</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="kw">pkgDep</span>(tags, <span class="dt">availPkgs =</span> cranJuly2014)</a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt;  [1] "chron"        "RColorBrewer" "dichromat"    "munsell"     </span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt;  [5] "plyr"         "labeling"     "colorspace"   "Rcpp"        </span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt;  [9] "digest"       "gtable"       "reshape2"     "scales"      </span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; [13] "proto"        "MASS"         "stringr"      "ggplot2"</span></a>
-<a class="sourceLine" id="cb3-11" title="11"></a>
-<a class="sourceLine" id="cb3-12" title="12">dg &lt;-<span class="st"> </span><span class="kw">makeDepGraph</span>(tags, <span class="dt">enhances =</span> <span class="ot">TRUE</span>, <span class="dt">availPkgs =</span> cranJuly2014)</a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(dg, <span class="dt">legendPosition =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="dt">vertex.size =</span> <span class="dv">20</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co">#&gt; an example from official vignette</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">miniCRAN</span>, <span class="kw">quietly</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+
+<span class="no">tags</span> <span class="kw">&lt;-</span> <span class="st">"chron"</span>
+<span class="fu"><a href="https://rdrr.io/pkg/miniCRAN/man/pkgDep.html">pkgDep</a></span>(<span class="no">tags</span>, <span class="kw">availPkgs</span> <span class="kw">=</span> <span class="no">cranJuly2014</span>)
+<span class="co">#&gt;  [1] "chron"        "RColorBrewer" "dichromat"    "munsell"      "plyr"        </span>
+<span class="co">#&gt;  [6] "labeling"     "colorspace"   "Rcpp"         "digest"       "gtable"      </span>
+<span class="co">#&gt; [11] "reshape2"     "scales"       "proto"        "MASS"         "stringr"     </span>
+<span class="co">#&gt; [16] "ggplot2"</span>
+
+<span class="no">dg</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/miniCRAN/man/makeDepGraph.html">makeDepGraph</a></span>(<span class="no">tags</span>, <span class="kw">enhances</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">availPkgs</span> <span class="kw">=</span> <span class="no">cranJuly2014</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">1</span>)
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="no">dg</span>, <span class="kw">legendPosition</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">1</span>, <span class="fl">1</span>), <span class="kw">vertex.size</span> <span class="kw">=</span> <span class="fl">20</span>)</pre></body></html></div>
 <p><img src="deepdep-comparison_files/figure-html/miniCRAN-1.png" width="672" style="display: block; margin: auto;"> # pkgDepTools</p>
 <p>Description from official vignette:</p>
 <blockquote>
-<p>The <strong>pkgDepTools</strong> package provides tools for computing and analyzing dependency relationships among R packages. With it, you can build a graph-based representation of the dependencies among all packages in a list of CRAN-style package repositories. There are utilities for computing installation order of a given package and, if the RCurl package is available, estimating the download size required to install a given package and its dependencies.</p>
+<p>The <strong>pkgDepTools</strong> package provides tools for computing and analysing dependency relationships among R packages. With it, you can build a graph-based representation of the dependencies among all packages in a list of CRAN-style package repositories. There are utilities for computing installation order of a given package and, if the RCurl package is available, estimating the download size required to install a given package and its dependencies.</p>
 </blockquote>
 </div>
 <div id="advantages-3" class="section level3">
@@ -239,28 +238,20 @@
 <li>Storage format is <code>graphNEL</code> – not very commonly used and thus not so obvious to modify or adjust.</li>
 <li>This package is pretty outdated. It was created when R was not so popular (and its repositories were quite small) and not modified much since then.</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co">#&gt; code not evaluated due to very long execution time</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(pkgDepTools)</a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(Rgraphviz)</a>
-<a class="sourceLine" id="cb4-4" title="4">graph &lt;-<span class="st"> </span><span class="kw">makeDepGraph</span>(<span class="st">"http://cran.fhcrc.org"</span>, <span class="dt">type=</span><span class="st">"source"</span>) </a>
-<a class="sourceLine" id="cb4-5" title="5"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(graph)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="co">#&gt; code not evaluated due to very long execution time</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">pkgDepTools</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">Rgraphviz</span>)
+<span class="no">graph</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/miniCRAN/man/makeDepGraph.html">makeDepGraph</a></span>(<span class="st">"http://cran.fhcrc.org"</span>, <span class="kw">type</span><span class="kw">=</span><span class="st">"source"</span>)
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="no">graph</span>)</pre></body></html></div>
 </div>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#comparison-to-other-packages">Comparison to other packages</a></li>
-      <li><a href="#general-advantages-of-deepdep">General advantages of deepdep</a></li>
-      <li><a href="#dependenciesgraphs">DependenciesGraphs</a></li>
-      <li><a href="#pkgnet">pkgnet</a></li>
-      <li><a href="#minicran">miniCRAN</a></li>
-      </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
@@ -271,7 +262,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
