@@ -1,5 +1,5 @@
 
-# Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="150" />
+# Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="180" />
 
 <!-- badges: start -->
 

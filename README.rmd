@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="150" />
+# Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="180" />
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master)](https://travis-ci.org/DominikRafacz/deepdep)
@@ -55,6 +55,7 @@ head(dd)
 
 plot_dependencies(dd, "circular")
 ```
+
 ```{r message=FALSE, warning=FALSE, fig.width=10, fig.height=7, fig.align='center'}
 plot_dependencies("bayes4psy", show_version = TRUE,
                   dependency_type = c("Depends", "Imports", "Suggests", "LinkingTo"))

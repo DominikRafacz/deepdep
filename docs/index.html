@@ -89,16 +89,16 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="visualise-and-explore-deep-dependencies-of-r-packages-" class="section level2">
-<h2 class="hasAnchor">
-<a href="#visualise-and-explore-deep-dependencies-of-r-packages-" class="anchor"></a>Visualise and Explore Deep Dependencies of R Packages <img src="images/logo.png" align="right" height="200">
-</h2>
+<div id="visualise-and-explore-deep-dependencies-of-r-packages-" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#visualise-and-explore-deep-dependencies-of-r-packages-" class="anchor"></a>Visualise and Explore Deep Dependencies of R Packages <img src="images/logo.png" align="right" height="180">
+</h1></div>
 <!-- badges: start -->
 
 <!-- badges: end -->
-<div id="overview" class="section level3">
-<h3 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h3>
+<div id="overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h2>
 <p>The <code>deepdep</code> package provides tools for exploration of package dependencies. The main <code><a href="reference/deepdep.html">deepdep()</a></code> function allows to acquire deep dependencies of any package and plot them in an elegant way. It also adds some popularity measures for the packages e.g. in the form of download count through the <code>cranlogs</code> package. Uses the <a href="http://crandb.r-pkg.org">CRAN metadata database</a> and <a href="http://bioconductor.org">Bioconductor metadata</a>.</p>
 <p><strong>Exploration tools:</strong></p>
 <ul>
@@ -116,19 +116,19 @@
 </li>
 </ul>
 </div>
-<div id="installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="co"># Install from CRAN: </span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"deepdep"</span>)
 
 <span class="co"># Install the development version from GitHub:</span>
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"DominikRafacz/deepdep"</span>)</pre></div>
 </div>
-<div id="examples-introduction-to-the-deepdep-package" class="section level3">
-<h3 class="hasAnchor">
+<div id="examples-introduction-to-the-deepdep-package" class="section level2">
+<h2 class="hasAnchor">
 <a href="#examples-introduction-to-the-deepdep-package" class="anchor"></a>Examples <a href="https://dominikrafacz.github.io/deepdep/articles/deepdep-package.html"><strong>introduction to the deepdep package</strong></a>
-</h3>
+</h2>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">deepdep</span>)
 
 <span class="no">dd</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/deepdep.html">deepdep</a></span>(<span class="st">"ggplot2"</span>, <span class="kw">depth</span> <span class="kw">=</span> <span class="fl">2</span>)
