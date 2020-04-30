@@ -41,11 +41,11 @@ get_downloads <- function(package) {
   grand_total <- sum(downloads_count)
 
 
-  ret <- list("last_day" = last_day, "last_week" = last_week, "last_month" = last_month,
-              "last_quarter" = last_quarter, "last_half" = last_half, "grand_total" = grand_total)
+  ret <- c("last_day" = last_day, "last_week" = last_week, "last_month" = last_month,
+           "last_quarter" = last_quarter, "last_half" = last_half, "grand_total" = grand_total)
 
   attr(ret, "package_name") <- package
-  class(ret) <- c("package_downloads", "list")
+  class(ret) <- c("package_downloads", "numeric")
   ret
 }
 

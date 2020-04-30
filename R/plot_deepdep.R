@@ -138,7 +138,8 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
 
   g <- g + geom_node_point(aes(fill = factor(layer)),
                            size = 3, shape = 21, show.legend = FALSE) +
-    geom_node_label(aes(label = ifelse(labeled, names(V(G)), ""), fill = factor(layer)),
+    geom_node_label(data = function(g) g[g[, "labeled"], ],
+                    aes(label = name, fill = factor(layer)),
                     show.legend = FALSE,
                     label.padding = unit(0.28, "lines")) +
     scale_fill_manual(values = get_nodefill_default_scale()) +

@@ -10,7 +10,7 @@ test_that("deepdep executes with local = FALSE", {
 })
 
 
- test_that("deepdep exacutes with bio = TRUE", {
+ test_that("deepdep executes with bio = TRUE", {
    dd2 <- deepdep("les", downloads = FALSE, bioc = TRUE, depth = 1, dependency_type = c("Depends", "Imports", "Enhances", "LinkingTo"))
    expect_is(dd2, "deepdep")
 })
