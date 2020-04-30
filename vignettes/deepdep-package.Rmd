@@ -163,7 +163,7 @@ plot_dependencies(dd, same_level = TRUE)
 You can also make use of numbers of downloads you obtained. There is an option to add labels to only certain percentage of most downloaded packages among those that are about to be plotted. This is meant to increase readability of the plot.
 
 ```{r plot_dependencies4, fig.align='center', fig.width=7, fig.height=6, warning=FALSE}
-plot_dependencies("tidyverse", type = "circular", label_percentage = 0.2, downloads = TRUE, depth = 3)
+plot_dependencies("tidyverse", type = "circular", label_percentage = 0.2, depth = 3)
 ```
 
 Finally, returned object is a `ggplot` object, so you can easily manipulate them with syntax known from `ggplot2` package. We also use `ggraph` enhancement for plotting graphs.
