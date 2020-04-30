@@ -63,7 +63,7 @@ plot_dependencies.default <- function(x, type = "circular", same_level = FALSE, 
 plot_dependencies.character <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                       label_percentage = 1, show_version = FALSE, show_downloads = FALSE, ...) {
   package_name <- NULL
-  if (show_downloads == TRUE)
+  if (show_downloads == TRUE || label_percentage < 1)
     dd <- deepdep(x, downloads = TRUE, ...)
   else dd <- deepdep(x, ...)
   plot_dependencies(dd, type, same_level, reverse, label_percentage, show_version, show_downloads)
