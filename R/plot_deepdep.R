@@ -142,7 +142,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
                     aes(label = name, fill = factor(layer)),
                     show.legend = FALSE,
                     label.padding = unit(0.28, "lines")) +
-    scale_fill_manual(values = get_nodefill_default_scale()) +
+    default_nodefill_scale(length(levels(factor(V(G)$layer)))) +
     labs(caption = paste0("Plot made with deepdep v",
                           packageVersion("deepdep"),
                           " on ", format(Sys.time(), usetz = FALSE))
@@ -202,12 +202,16 @@ get_edgelinetype_default_scale <- function() {
     LinkingTo = "dotdash")
 }
 
-get_nodefill_default_scale <- function() {
-  c("#5fc8f4",
-    "#a1ce40",
-    "#fde74c",
-    "#ff8330",
-    "#e55934")
+default_nodefill_scale <- function(num_colors) {
+  if (num_colors <= 7)
+    scale_fill_manual(values = c("#5fc8f4",
+                                 "#a1ce40",
+                                 "#fde74c",
+                                 "#ff8330",
+                                 "#e55934",
+                                 "#7b5e7b",
+                                 "#664e4c"))
+  else scale_fill_discrete()
 }
 
 add_version_to_name <- function(x) {
