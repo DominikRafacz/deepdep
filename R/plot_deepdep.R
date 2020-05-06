@@ -77,6 +77,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   labeled <- NULL
   node1.name <- NULL
   node2.name <- NULL
+  name <- NULL
 
 
   if ((label_percentage < 1 || show_downloads == TRUE) && !("grand_total" %in% colnames(x)))
