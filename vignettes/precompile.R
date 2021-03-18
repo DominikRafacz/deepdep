@@ -1,0 +1,6 @@
+library(knitr)
+knit("vignettes/deepdep-comparison.Rmd.orig", "vignettes/deepdep-comparison.Rmd")
+knit("vignettes/deepdep-package.Rmd.orig", "vignettes/deepdep-package.Rmd")
+file.remove(list.files("vignettes/figure", full.names = TRUE))
+file.remove("vignettes/figure")
+file.rename("figure", "vignettes/figure")
