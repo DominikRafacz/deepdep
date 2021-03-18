@@ -19,3 +19,6 @@ README_files
 ^doc$
 ^Meta$
 ^.github.*$
+^vignettes/precompile\.R$
+^vignettes/.*\.Rmd\.orig$
+^vignettes/figure$
