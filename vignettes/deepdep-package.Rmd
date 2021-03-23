@@ -51,14 +51,12 @@ This function lists, as the name indicates, available packages. The default beha
 ```r
 t <- get_available_packages()
 head(t, 20)
-#>            A3         aaSEA      AATtools        ABACUS        abbyyR 
-#>          "A3"       "aaSEA"    "AATtools"      "ABACUS"      "abbyyR" 
-#>           abc      abc.data       ABC.RAP        abcADM   ABCanalysis 
-#>         "abc"    "abc.data"     "ABC.RAP"      "abcADM" "ABCanalysis" 
-#>      abcdeFBA      ABCoptim         ABCp2         abcrf       abcrlda 
-#>    "abcdeFBA"    "ABCoptim"       "ABCp2"       "abcrf"     "abcrlda" 
-#>      abctools           abd         abdiv           abe          abf2 
-#>    "abctools"         "abd"       "abdiv"         "abe"        "abf2"
+#>            A3         aaSEA      AATtools        ABACUS        abbyyR           abc      abc.data 
+#>          "A3"       "aaSEA"    "AATtools"      "ABACUS"      "abbyyR"         "abc"    "abc.data" 
+#>       ABC.RAP        abcADM   ABCanalysis      abcdeFBA      ABCoptim         ABCp2         abcrf 
+#>     "ABC.RAP"      "abcADM" "ABCanalysis"    "abcdeFBA"    "ABCoptim"       "ABCp2"       "abcrf" 
+#>       abcrlda      abctools           abd         abdiv           abe          abf2 
+#>     "abcrlda"    "abctools"         "abd"       "abdiv"         "abe"        "abf2"
 ```
 
 However, if you want to check if package is present in a little wider range -- on CRAN or Bioconductor repositories, you simply need to set argument `bioc = TRUE`. In this case function is simply wrapper around `BiocManager::available()` and to use it you need to have `BiocManager` package (available via CRAN) installed.
@@ -67,11 +65,10 @@ However, if you want to check if package is present in a little wider range -- o
 ```r
 t <- get_available_packages(bioc = TRUE)
 head(t, 20)
-#>  [1] "A3"            "a4"            "a4Base"        "a4Classif"    
-#>  [5] "a4Core"        "a4Preproc"     "a4Reporting"   "aaSEA"        
-#>  [9] "AATtools"      "ABACUS"        "ABAData"       "ABAEnrichment"
-#> [13] "ABarray"       "abbyyR"        "abc"           "abc.data"     
-#> [17] "ABC.RAP"       "abcADM"        "ABCanalysis"   "abcdeFBA"
+#>  [1] "A3"            "a4"            "a4Base"        "a4Classif"     "a4Core"        "a4Preproc"    
+#>  [7] "a4Reporting"   "aaSEA"         "AATtools"      "ABACUS"        "ABAData"       "ABAEnrichment"
+#> [13] "ABarray"       "abbyyR"        "abc"           "abc.data"      "ABC.RAP"       "abcADM"       
+#> [19] "ABCanalysis"   "abcdeFBA"
 ```
 
 Another possibility is checking what packages are installed -- you do it by adding `local = TRUE` parameter.
@@ -80,16 +77,13 @@ Another possibility is checking what packages are installed -- you do it by addi
 ```r
 t <- get_available_packages(local = TRUE)
 head(t, 20)
-#>  [1] "abind"                    "acepack"                 
-#>  [3] "ade4"                     "AmpGram"                 
-#>  [5] "AmpGramModel"             "AmyloGram"               
-#>  [7] "AnnotationDbi"            "AnotherRandomRcppProject"
-#>  [9] "ape"                      "arrangements"            
-#> [11] "askpass"                  "assertthat"              
-#> [13] "auprc"                    "backports"               
-#> [15] "base64enc"                "base64url"               
-#> [17] "bazar"                    "BBmisc"                  
-#> [19] "bbotk"                    "berryFunctions"
+#>  [1] "abind"                    "acepack"                  "ade4"                    
+#>  [4] "AmpGram"                  "AmpGramModel"             "ampir"                   
+#>  [7] "AmyloGram"                "AnnotationDbi"            "AnotherRandomRcppProject"
+#> [10] "ape"                      "arrangements"             "askpass"                 
+#> [13] "assertthat"               "auprc"                    "backports"               
+#> [16] "base64enc"                "base64url"                "bazar"                   
+#> [19] "BBmisc"                   "bbotk"
 ```
 
 Result of this function is cached (for more details, see *Caching* section of this vignette).
@@ -154,12 +148,12 @@ This package allows you obtaining information on how many times specified packag
 ```r
 get_downloads("ggplot2")
 #>                     x
-#> last_day        74519
-#> last_week      406671
-#> last_month    1366107
-#> last_quarter  3378182
-#> last_half     8204906
-#> grand_total  48226711
+#> last_day        77263
+#> last_week      521411
+#> last_month    1609424
+#> last_quarter  3675542
+#> last_half     8333834
+#> grand_total  48673603
 ```
 
 Results of this function is not cached.
@@ -171,28 +165,17 @@ After parsing description file, you can now create a `data.frame` which will des
 
 ```r
 get_dependencies("ggplot2")
-#>       name  version    type last_day last_week last_month last_quarter
-#> 1   digest     <NA> Imports    37170    212793     876892      2356697
-#> 2     glue     <NA> Imports    51536    294677    1226501      3310583
-#> 3   gtable >= 0.1.1 Imports    22095    127315     517877      1348523
-#> 4  isoband     <NA> Imports    35345    202493     796846      2059208
-#> 5     MASS     <NA> Imports     9652     54714     246620       509780
-#> 6     mgcv     <NA> Imports     4605     28691     151436       283272
-#> 7    rlang >= 0.3.0 Imports    84136    480130    2009643      5437725
-#> 8   scales >= 0.5.0 Imports    26083    151144     626505      1754662
-#> 9   tibble     <NA> Imports    56694    330394    1433708      3860252
-#> 10   withr >= 2.0.0 Imports    45912    254947    1091487      2715329
-#>    last_half grand_total
-#> 1    5228828    36219897
-#> 2    7179557    31759804
-#> 3    2880808    21876306
-#> 4    4128958     9415042
-#> 5    1028102     7991698
-#> 6     585320     5845820
-#> 7   11199632    49102727
-#> 8    3651093    28249058
-#> 9    7880617    39152763
-#> 10   5076602    21654926
+#>       name  version    type last_day last_week last_month last_quarter last_half grand_total
+#> 1   digest     <NA> Imports    33279    206981     871818      2391172   5227403    36389708
+#> 2     glue     <NA> Imports    46109    285995    1216485      3352366   7144613    31994263
+#> 3   gtable >= 0.1.1 Imports    20107    124882     518975      1375950   2878096    21979093
+#> 4  isoband     <NA> Imports    29625    187309     814826      2101868   4132320     9567006
+#> 5     MASS     <NA> Imports     9084     54520     234814       530995   1033603     8036566
+#> 6     mgcv     <NA> Imports     4292     26514     138153       292460    583202     5867729
+#> 7    rlang >= 0.3.0 Imports    75778    471157    1991897      5527569  11223092    49489748
+#> 8   scales >= 0.5.0 Imports    24442    150230     622998      1784458   3638156    28373205
+#> 9   tibble     <NA> Imports    49698    311167    1419595      3919084   7867608    39407236
+#> 10   withr >= 2.0.0 Imports    39740    247354    1065311      2796406   5130131    21856368
 ```
 
 As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
@@ -299,13 +282,13 @@ dd <- deepdep("tibble", 2)
 plot_dependencies(dd)
 ```
 
-<img src="figure/plot_dependencies1-1.png" title="plot of chunk plot_dependencies1" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
+<img src="plot_dependencies1-1.png" title="plot of chunk plot_dependencies1" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
 
 ```r
 plot_dependencies("DT", depth = 2, dependency_type = c("Imports", "Depends", "Suggests"))
 ```
 
-<img src="figure/plot_dependencies1-2.png" title="plot of chunk plot_dependencies1" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
+<img src="plot_dependencies1-2.png" title="plot of chunk plot_dependencies1" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
 
 
 In each of the plots you can see one package name in the centre and two circles of packages gathered around them. These are dependencies of the first and second level.
@@ -317,7 +300,7 @@ Default plot type is circular, as you can see on the examples presented above. H
 plot_dependencies(dd, type = "tree")
 ```
 
-<img src="figure/plot_dependencies2-1.png" title="plot of chunk plot_dependencies2" alt="plot of chunk plot_dependencies2" style="display: block; margin: auto;" />
+<img src="plot_dependencies2-1.png" title="plot of chunk plot_dependencies2" alt="plot of chunk plot_dependencies2" style="display: block; margin: auto;" />
 
 Not all dependencies are plotted. To increase readability, dependencies on the same level are hidden, but you can change this behaviour
 
@@ -326,7 +309,7 @@ Not all dependencies are plotted. To increase readability, dependencies on the s
 plot_dependencies(dd, same_level = TRUE)
 ```
 
-<img src="figure/plot_dependencies3-1.png" title="plot of chunk plot_dependencies3" alt="plot of chunk plot_dependencies3" style="display: block; margin: auto;" />
+<img src="plot_dependencies3-1.png" title="plot of chunk plot_dependencies3" alt="plot of chunk plot_dependencies3" style="display: block; margin: auto;" />
 
 You can also make use of numbers of downloads you obtained. There is an option to add labels to only certain percentage of most downloaded packages among those that are about to be plotted. This is meant to increase readability of the plot.
 
@@ -335,7 +318,7 @@ You can also make use of numbers of downloads you obtained. There is an option t
 plot_dependencies("tidyverse", type = "circular", label_percentage = 0.2, depth = 3)
 ```
 
-<img src="figure/plot_dependencies4-1.png" title="plot of chunk plot_dependencies4" alt="plot of chunk plot_dependencies4" style="display: block; margin: auto;" />
+<img src="plot_dependencies4-1.png" title="plot of chunk plot_dependencies4" alt="plot of chunk plot_dependencies4" style="display: block; margin: auto;" />
 
 Finally, returned object is a `ggplot` object, so you can easily manipulate them with syntax known from `ggplot2` package. We also use `ggraph` enhancement for plotting graphs.
 
@@ -344,11 +327,11 @@ Finally, returned object is a `ggplot` object, so you can easily manipulate them
 plot_dependencies(dd) +
   ggplot2::scale_fill_manual(values = c("#462CF8", "#F23A90", "#AF1023")) +
   ggraph::scale_edge_color_manual(values = "black") 
-#> Scale for 'fill' is already present. Adding another scale for 'fill', which
-#> will replace the existing scale.
+#> Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the
+#> existing scale.
 ```
 
-<img src="figure/plot_dependencies5-1.png" title="plot of chunk plot_dependencies5" alt="plot of chunk plot_dependencies5" style="display: block; margin: auto;" />
+<img src="plot_dependencies5-1.png" title="plot of chunk plot_dependencies5" alt="plot of chunk plot_dependencies5" style="display: block; margin: auto;" />
 
 # Caching
 
