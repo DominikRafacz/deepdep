@@ -31,9 +31,13 @@ on CRAN and via Bioconductor. If \code{local} is \code{TRUE}, vactor contains al
 that are currently installed.
 }
 \examples{
+\donttest{
+
 library(deepdep)
 
 av <- get_available_packages()
 head(av)
+
+}
 
 }

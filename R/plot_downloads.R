@@ -13,11 +13,12 @@
 #' @return A \code{ggplot2} class object.
 #'
 #' @examples
+#'
+#' \donttest{
 #' library(deepdep)
 #'
 #' plot_downloads("htmltools")
 #'
-#' \donttest{
 #' dd <- deepdep("ggplot2")
 #' plot_downloads(dd)
 #' }

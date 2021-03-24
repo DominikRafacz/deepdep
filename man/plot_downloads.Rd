@@ -40,11 +40,12 @@ then plots the data. It works on objects of class \code{character} (vector),
 \code{deepdep}, \code{package_dependencies} and \code{package_downloads}.
 }
 \examples{
+
+\donttest{
 library(deepdep)
 
 plot_downloads("htmltools")
 
-\donttest{
 dd <- deepdep("ggplot2")
 plot_downloads(dd)
 }

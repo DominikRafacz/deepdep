@@ -19,10 +19,14 @@
 #' that are currently installed.
 #'
 #' @examples
+#' \donttest{
+#'
 #' library(deepdep)
 #'
 #' av <- get_available_packages()
 #' head(av)
+#'
+#' }
 #'
 #' @export
 get_available_packages <- function(bioc = FALSE, local = FALSE, reset_cache = FALSE) {

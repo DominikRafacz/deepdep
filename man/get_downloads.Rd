@@ -17,10 +17,12 @@ This function uses \href{https://github.com/r-hub/cranlogs}{\bold{API}} of
 \href{http://cran-logs.rstudio.com/}{\bold{CRAN Logs}} to scrap the download logs of the package.
 }
 \examples{
+\donttest{
 library(deepdep)
 
 downloads <- get_downloads("ggplot2")
 downloads
+}
 
 
 }

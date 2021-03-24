@@ -4,10 +4,12 @@
 #' @param ... other
 #'
 #' @examples
+#' \donttest{
 #' library(deepdep)
 #'
 #' description <- get_description("ggplot2")
 #' description
+#' }
 #'
 #' @rdname print.package_description
 #' @export

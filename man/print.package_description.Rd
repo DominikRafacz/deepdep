@@ -15,9 +15,11 @@
 Print function for an object of \code{package_description} class
 }
 \examples{
+\donttest{
 library(deepdep)
 
 description <- get_description("ggplot2")
 description
+}
 
 }

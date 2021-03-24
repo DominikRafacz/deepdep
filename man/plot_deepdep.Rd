@@ -81,17 +81,18 @@ Visualize dependency data from a \code{deepdep} object using
 \code{ggplot2} and \code{ggraph} packages. Several tree-like layouts are available.
 }
 \examples{
+
+\donttest{
 library(deepdep)
+
+#:# use local packages
+plot_dependencies("deepdep", depth = 2, local = TRUE)
 
 dd <- deepdep("ggplot2")
 plot_dependencies(dd, "tree")
 
 dd2 <- deepdep("ggplot2", depth = 2)
 plot_dependencies(dd2, "circular")
-
-\donttest{
-#:# use local packages
-plot_dependencies("deepdep", depth = 2, local = TRUE)
 
 #:# show grand_total download count
 plot_dependencies("deepdep", show_downloads = TRUE)

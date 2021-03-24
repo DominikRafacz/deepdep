@@ -18,12 +18,13 @@
 #' @seealso \code{\link{get_dependencies}}
 #'
 #' @examples
+#'
+#' \donttest{
 #' library(deepdep)
 #'
 #' dd_downloads <- deepdep("ggplot2")
 #' head(dd_downloads)
 #'
-#' \donttest{
 #' dd_2 <- deepdep("ggplot2", depth = 2, downloads = TRUE)
 #' plot_dependencies(dd_2, "circular")
 #'

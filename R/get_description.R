@@ -16,13 +16,13 @@
 #' @examples
 #' library(deepdep)
 #'
+#' \donttest{
 #' description <- get_description("ggplot2")
 #' description
+#' }
 #'
-#' \donttest{
 #' description_local <- get_description("deepdep", local = TRUE)
 #' description_local
-#' }
 #'
 #'
 #' @export

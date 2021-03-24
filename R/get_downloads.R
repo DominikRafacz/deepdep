@@ -9,10 +9,12 @@
 #'
 #'
 #' @examples
+#' \donttest{
 #' library(deepdep)
 #'
 #' downloads <- get_downloads("ggplot2")
 #' downloads
+#' }
 #'
 #'
 #' @export

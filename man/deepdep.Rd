@@ -37,12 +37,13 @@ This function is an ultimate wrapper for \code{\link{get_dependencies}}. It inhe
 allows to recursively search for the dependencies at the higher level of \code{depth}.
 }
 \examples{
+
+\donttest{
 library(deepdep)
 
 dd_downloads <- deepdep("ggplot2")
 head(dd_downloads)
 
-\donttest{
 dd_2 <- deepdep("ggplot2", depth = 2, downloads = TRUE)
 plot_dependencies(dd_2, "circular")
 
