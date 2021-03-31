@@ -40,7 +40,8 @@ Suggests:
     rmarkdown,
     spelling,
     stringi,
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    vcr
 VignetteBuilder: knitr
 URL: https://dominikrafacz.github.io/deepdep/, https://github.com/DominikRafacz/deepdep
 BugReports: https://github.com/DominikRafacz/deepdep/issues
