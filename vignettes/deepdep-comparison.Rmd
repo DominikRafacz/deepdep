@@ -1,7 +1,7 @@
 ---
 title: "Comparison of deepdep to similar packages"
 author: "Dominik Rafacz"
-date: "2021-03-24"
+date: "2021-03-31"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Comparison of deepdep to similar packages}
@@ -111,9 +111,9 @@ library(miniCRAN, quietly = TRUE)
 
 tags <- "chron"
 pkgDep(tags, availPkgs = cranJuly2014)
-#>  [1] "chron"        "RColorBrewer" "dichromat"    "munsell"      "plyr"         "labeling"    
-#>  [7] "colorspace"   "Rcpp"         "digest"       "gtable"       "reshape2"     "scales"      
-#> [13] "proto"        "MASS"         "stringr"      "ggplot2"
+#>  [1] "chron"        "RColorBrewer" "dichromat"    "munsell"      "plyr"         "labeling"     "colorspace"  
+#>  [8] "Rcpp"         "digest"       "gtable"       "reshape2"     "scales"       "proto"        "MASS"        
+#> [15] "stringr"      "ggplot2"
 
 dg <- makeDepGraph(tags, enhances = TRUE, availPkgs = cranJuly2014)
 set.seed(1)

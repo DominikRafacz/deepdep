@@ -64,6 +64,10 @@ However, if you want to check if package is present in a little wider range -- o
 
 ```r
 t <- get_available_packages(bioc = TRUE)
+#> 'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
+#> 
+#> replacement repositories:
+#>     CRAN: https://cran.rstudio.com/
 head(t, 20)
 #>  [1] "A3"            "a4"            "a4Base"        "a4Classif"     "a4Core"        "a4Preproc"    
 #>  [7] "a4Reporting"   "aaSEA"         "AATtools"      "ABACUS"        "ABAData"       "ABAEnrichment"
@@ -148,12 +152,12 @@ This package allows you obtaining information on how many times specified packag
 ```r
 get_downloads("ggplot2")
 #>                     x
-#> last_day        77263
-#> last_week      521411
-#> last_month    1609424
-#> last_quarter  3675542
-#> last_half     8333834
-#> grand_total  48673603
+#> last_day        59308
+#> last_week      400582
+#> last_month    1755015
+#> last_quarter  3913778
+#> last_half     8336197
+#> grand_total  49074185
 ```
 
 Results of this function is not cached.
@@ -166,16 +170,16 @@ After parsing description file, you can now create a `data.frame` which will des
 ```r
 get_dependencies("ggplot2")
 #>       name  version    type last_day last_week last_month last_quarter last_half grand_total
-#> 1   digest     <NA> Imports    33279    206981     871818      2391172   5227403    36389708
-#> 2     glue     <NA> Imports    46109    285995    1216485      3352366   7144613    31994263
-#> 3   gtable >= 0.1.1 Imports    20107    124882     518975      1375950   2878096    21979093
-#> 4  isoband     <NA> Imports    29625    187309     814826      2101868   4132320     9567006
-#> 5     MASS     <NA> Imports     9084     54520     234814       530995   1033603     8036566
-#> 6     mgcv     <NA> Imports     4292     26514     138153       292460    583202     5867729
-#> 7    rlang >= 0.3.0 Imports    75778    471157    1991897      5527569  11223092    49489748
-#> 8   scales >= 0.5.0 Imports    24442    150230     622998      1784458   3638156    28373205
-#> 9   tibble     <NA> Imports    49698    311167    1419595      3919084   7867608    39407236
-#> 10   withr >= 2.0.0 Imports    39740    247354    1065311      2796406   5130131    21856368
+#> 1   digest     <NA> Imports    28763    189927     865107      2462855   5191958    36579635
+#> 2     glue     <NA> Imports    43244    266449    1203643      3445272   7091471    32260712
+#> 3   gtable >= 0.1.1 Imports    19243    115182     518204      1430260   2864115    22094275
+#> 4  isoband     <NA> Imports    27416    167035     818573      2139137   4124599     9734041
+#> 5     MASS     <NA> Imports     8266     51209     229202       563599   1038930     8087775
+#> 6     mgcv     <NA> Imports     4031     25600     123252       306797    578043     5893329
+#> 7    rlang >= 0.3.0 Imports    71170    436806    1971183      5652586  11220176    49926554
+#> 8   scales >= 0.5.0 Imports    23249    138495     621420      1804666   3615190    28511700
+#> 9   tibble     <NA> Imports    45814    282435    1370308      3983493   7820728    39689671
+#> 10   withr >= 2.0.0 Imports    37188    223602    1037288      2913665   5126586    22079970
 ```
 
 As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
@@ -327,8 +331,7 @@ Finally, returned object is a `ggplot` object, so you can easily manipulate them
 plot_dependencies(dd) +
   ggplot2::scale_fill_manual(values = c("#462CF8", "#F23A90", "#AF1023")) +
   ggraph::scale_edge_color_manual(values = "black") 
-#> Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the
-#> existing scale.
+#> Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the existing scale.
 ```
 
 <img src="plot_dependencies5-1.png" title="plot of chunk plot_dependencies5" alt="plot of chunk plot_dependencies5" style="display: block; margin: auto;" />
