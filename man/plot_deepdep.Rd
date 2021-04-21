@@ -95,7 +95,7 @@ dd2 <- deepdep("ggplot2", depth = 2)
 plot_dependencies(dd2, "circular")
 
 #:# show grand_total download count
-plot_dependencies("deepdep", show_downloads = TRUE)
+plot_dependencies("shiny", show_downloads = TRUE)
 }
 
 }

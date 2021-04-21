@@ -15,13 +15,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 31 Mar 2021 21:06:35 GMT
+      date: Thu, 01 Apr 2021 08:52:06 GMT
       content-type: application/json
       content-length: '1850'
       connection: keep-alive
       etag: '"FPTASBT3KUDKH25QEN4PIXT7"'
       vary: Accept
-      x-couch-request-id: 0040149fd9
+      x-couch-request-id: ed3de20269
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -45,5 +45,5 @@ http_interactions:
         Collet [cph] (Author of the embedded xxHash library),\u000aRStudio [cph]","Maintainer":"Lionel
         Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2020-12-30
         15:00:02 UTC","crandb_file_date":"2020-12-30 19:59:36","MD5sum":"9d220113da67a44c7dfb382cddfcddee","date":"2020-12-30T14:00:02+00:00","releases":[]}'
-  recorded_at: 2021-03-31 21:03:30 GMT
+  recorded_at: 2021-04-01 08:49:00 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0

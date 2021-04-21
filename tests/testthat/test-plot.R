@@ -1,4 +1,6 @@
-deps <- deepdep("deepdep", local = TRUE, depth = 2)
+vcr::use_cassette("plot-1", {
+  deps <- deepdep("shiny", depth = 2)
+})
 
 test_that("dependencies plot has correct layers and objects", {
   plt <- plot_dependencies(deps)
@@ -18,7 +20,7 @@ test_that("incorrect object type results in an error", {
 })
 
 
-vcr::use_cassette("plot-1", {
+vcr::use_cassette("plot-2", {
   test_that("plotting deepdep object with no rows results in less layers", {
     plt <- plot_dependencies("rlang")
     expect_s3_class(plt$layers[[1]]$geom, "GeomPoint")

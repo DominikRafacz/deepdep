@@ -34,7 +34,7 @@
 #' plot_dependencies(dd2, "circular")
 #'
 #' #:# show grand_total download count
-#' plot_dependencies("deepdep", show_downloads = TRUE)
+#' plot_dependencies("shiny", show_downloads = TRUE)
 #' }
 #'
 #' @importFrom ggforce geom_circle

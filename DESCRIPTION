@@ -1,8 +1,9 @@
 Package: deepdep
 Title: Visualise and Explore the Deep Dependencies of R Packages 
-Version: 0.2.1
+Version: 0.2.4
 Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
-                  role = c("aut", "cre")),
+                  role = c("aut", "cre"),
+                  comment = c(ORCID = "0000-0003-0925-1909")),
              person("Hubert", "Baniecki", role = c("aut")),
              person("Szymon", "Maksymiuk", role = c("aut")),
              person("Mateusz", "Bakala", role = c("aut")))
@@ -14,7 +15,7 @@ Description: Provides tools for exploration of R package dependencies.
     The deepdep_shiny() function runs shiny application that helps to produce a nice 'deepdep' plot. 
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 RoxygenNote: 7.1.1
 Depends: 
     R (>= 3.2.0)
