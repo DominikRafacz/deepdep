@@ -1,3 +1,10 @@
+# deepdep 0.2.5
+* wrapped `deepdep` in tests with `tryCatch` in case of R-devel and Bioc-devel versions mismatch
+* marked all non-local examples with "donttest"
+
+# deepdep 0.2.2 -- 0.2.4 
+* this versions are attempts to eliminating all possible errors during checks associated with problems with internet connection:  this consists of marking time-consuming examples by "donttest" in the documentation, using the `vcr` package to mock up api queries and creating pre-compiled vignettes
+
 # deepdep 0.2.1
 * fixed an error in `deepdep` that caused dependencies of one package to be added to the result many times
 * the way in which dependency layers are created during plotting has been improved
