@@ -58,10 +58,12 @@ get_downloads <- function(package) {
 #'
 #'
 #' @examples
+#' \donttest{
 #' library(deepdep)
 #'
 #' desc <- get_downloads("stringr")
 #' desc
+#' }
 #'
 #' @rdname print.package_downloads
 #' @export

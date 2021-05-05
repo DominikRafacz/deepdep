@@ -88,10 +88,12 @@ deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local =
 #'
 #'
 #' @examples
+#' \donttest{
 #' library(deepdep)
 #'
 #' dd <- deepdep("stringr")
 #' dd
+#' }
 #'
 #' @rdname print.deepdep
 #' @export

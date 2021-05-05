@@ -63,10 +63,12 @@ get_available_packages_cached <- function(repo) {
 #' @param ... other
 #'
 #' @examples
+#' \donttest{
 #' library(deepdep)
 #'
 #' av <- get_available_packages()
 #' head(av)
+#' }
 #'
 #' @rdname print.available_packages
 #' @export

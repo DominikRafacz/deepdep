@@ -88,9 +88,11 @@ get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FA
 #'
 #'
 #' @examples
+#' \donttest{
 #' library(deepdep)
 #'
 #' get_dependencies("htmltools", downloads = TRUE)
+#' }
 #'
 #' @rdname print.package_dependencies
 #' @export
