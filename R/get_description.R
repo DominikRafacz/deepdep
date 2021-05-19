@@ -19,11 +19,10 @@
 #' \donttest{
 #' description <- get_description("ggplot2")
 #' description
-#' }
 #'
 #' description_local <- get_description("deepdep", local = TRUE)
 #' description_local
-#'
+#' }
 #'
 #' @export
 get_description <- function(package, bioc = FALSE, local = FALSE, reset_cache = FALSE) {
