@@ -1,3 +1,7 @@
+reset_cached_files("ava")
+reset_cached_files("deps")
+reset_cached_files("desc")
+
 vcr::use_cassette("plot-1", {
   deps <- deepdep("shiny", depth = 2)
 })
@@ -19,6 +23,9 @@ test_that("incorrect object type results in an error", {
   expect_error(plot_dependencies("Wrong type"))
 })
 
+reset_cached_files("ava")
+reset_cached_files("deps")
+reset_cached_files("desc")
 
 vcr::use_cassette("plot-2", {
   test_that("plotting deepdep object with no rows results in less layers", {
