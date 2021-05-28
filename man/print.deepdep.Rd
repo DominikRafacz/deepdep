@@ -15,9 +15,11 @@
 Print function for an object of \code{deepdep} class
 }
 \examples{
+\donttest{
 library(deepdep)
 
 dd <- deepdep("stringr")
 dd
+}
 
 }

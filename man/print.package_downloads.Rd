@@ -15,9 +15,11 @@
 Print function for an object of \code{package_downloads} class
 }
 \examples{
+\donttest{
 library(deepdep)
 
 desc <- get_downloads("stringr")
 desc
+}
 
 }

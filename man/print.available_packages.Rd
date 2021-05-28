@@ -15,9 +15,11 @@
 Print function for an object of \code{available_packages} class
 }
 \examples{
+\donttest{
 library(deepdep)
 
 av <- get_available_packages()
 head(av)
+}
 
 }

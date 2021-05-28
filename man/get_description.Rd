@@ -30,10 +30,9 @@ library(deepdep)
 \donttest{
 description <- get_description("ggplot2")
 description
-}
 
 description_local <- get_description("deepdep", local = TRUE)
 description_local
-
+}
 
 }

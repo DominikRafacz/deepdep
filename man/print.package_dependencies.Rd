@@ -15,8 +15,10 @@
 Print function for an object of \code{package_dependencies} class
 }
 \examples{
+\donttest{
 library(deepdep)
 
 get_dependencies("htmltools", downloads = TRUE)
+}
 
 }
