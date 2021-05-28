@@ -15,13 +15,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:38 GMT
+      date: Thu, 27 May 2021 15:49:14 GMT
       content-type: application/json
       content-length: '8511'
       connection: keep-alive
       etag: '"EIY629K192GN9ZNFDOI64MF6K"'
       vary: Accept
-      x-couch-request-id: 5b3f39e937
+      x-couch-request-id: 34afec5c2a
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -123,8 +123,8 @@ http_interactions:
         library),\u000aR Core Team [ctb, cph] (tar implementation from R)","Maintainer":"Winston
         Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-01-25
         21:50:02 UTC","crandb_file_date":"2021-01-25 23:20:40","MD5sum":"ff4f16b164b9d86b671832f7bebde6c8","date":"2021-01-25T20:50:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/httpuv
@@ -141,19 +141,19 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:39 GMT
+      date: Thu, 27 May 2021 15:49:15 GMT
       content-type: application/json
       content-length: '2584'
       connection: keep-alive
-      etag: '"AOZDAAAIK08F1FFVX25OWC4XB"'
+      etag: '"EWAJZDSG9WRDQ5W1QNP0MZO01"'
       vary: Accept
-      x-couch-request-id: 23569dbd34
+      x-couch-request-id: 641e0c4113
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
       file: no
       string: '{"Package":"httpuv","Type":"Package","Encoding":"UTF-8","Title":"HTTP
-        and WebSocket Server Library","Version":"1.6.0","Authors@R":"c(\u000aperson(\"Joe\",
+        and WebSocket Server Library","Version":"1.6.1","Authors@R":"c(\u000aperson(\"Joe\",
         \"Cheng\", role = c(\"aut\"), email = \"joe@rstudio.com\"),\u000aperson(\"Winston\",
         \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@rstudio.com\"),\u000aperson(family
         = \"RStudio, PBC\", role = \"cph\"),\u000aperson(\"Hector\", \"Corrada Bravo\",
@@ -175,14 +175,14 @@ http_interactions:
         (>= 2) | file LICENSE","Depends":{"R":">= 2.15.1"},"Imports":{"Rcpp":">= 0.11.0","utils":"*","R6":"*","promises":"*","later":">=
         0.8.0"},"LinkingTo":{"Rcpp":"*","later":"*"},"URL":"https://github.com/rstudio/httpuv","SystemRequirements":"GNU
         make, C++11","RoxygenNote":"7.1.1","Suggests":{"testthat":"*","callr":"*","curl":"*","websocket":"*"},"Collate":"''RcppExports.R''
-        ''httpuv.R'' ''random_port.R'' ''server.R''\u000a''static_paths.R'' ''utils.R''","NeedsCompilation":"yes","Packaged":"2021-04-23
-        17:53:30 UTC; winston","Author":"Joe Cheng [aut],\u000aWinston Chang [aut,
+        ''httpuv.R'' ''random_port.R'' ''server.R''\u000a''static_paths.R'' ''utils.R''","NeedsCompilation":"yes","Packaged":"2021-05-06
+        23:41:39 UTC; winston","Author":"Joe Cheng [aut],\u000aWinston Chang [aut,
         cre],\u000aRStudio, PBC [cph],\u000aHector Corrada Bravo [ctb],\u000aJeroen
         Ooms [ctb],\u000aAndrzej Krzemienski [cph] (optional.hpp)","Maintainer":"Winston
-        Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-23
-        18:50:02 UTC","crandb_file_date":"2021-04-23 19:56:31","MD5sum":"9b477371098542ecfa7dc8ce9bef6c85","date":"2021-04-23T17:50:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+        Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-05-07
+        04:50:02 UTC","crandb_file_date":"2021-05-07 06:02:33","MD5sum":"b200ef00e3bef497b08a170b90834e86","date":"2021-05-07T03:50:02+00:00","releases":[]}'
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/mime
@@ -199,13 +199,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:39 GMT
+      date: Thu, 27 May 2021 15:49:15 GMT
       content-type: application/json
       content-length: '1112'
       connection: keep-alive
       etag: '"E4ZRR60XFJ364SENAHX8D8VP9"'
       vary: Accept
-      x-couch-request-id: 1dca776d96
+      x-couch-request-id: 333366edd7
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -219,8 +219,8 @@ http_interactions:
         21:48:56 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aJeffrey
         Horner [ctb],\u000aBeilei Bian [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2021-02-13
         07:30:02 UTC","crandb_file_date":"2021-02-13 08:56:31","MD5sum":"cb703197ad3a35cd8fee75d8f29ee327","date":"2021-02-13T06:30:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/jsonlite
@@ -237,13 +237,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:40 GMT
+      date: Thu, 27 May 2021 15:49:16 GMT
       content-type: application/json
       content-length: '1896'
       connection: keep-alive
       etag: '"BK6I8CZL4ZWG0RJHMEK2NCZGO"'
       vary: Accept
-      x-couch-request-id: 3ff3277c59
+      x-couch-request-id: e0bfa8de98
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -266,8 +266,8 @@ http_interactions:
         13:54:18 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aDuncan
         Temple Lang [ctb],\u000aLloyd Hilaiel [cph] (author of bundled libyajl)","Repository":"CRAN","Date/Publication":"2020-12-09
         17:40:03 UTC","crandb_file_date":"2020-12-09 18:32:36","MD5sum":"6131e916e7a678552f6debecf620ccb1","date":"2020-12-09T16:40:03+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/xtable
@@ -284,13 +284,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:40 GMT
+      date: Thu, 27 May 2021 15:49:16 GMT
       content-type: application/json
       content-length: '2988'
       connection: keep-alive
       etag: '"345F64C7G4OMAC738M4SQCANF"'
       vary: Accept
-      x-couch-request-id: d98f0dec80
+      x-couch-request-id: ae1f9f5a65
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -325,8 +325,8 @@ http_interactions:
         Stigler [ctb],\u000aRobert Castelo [ctb],\u000aSeth Falcon [ctb],\u000aStefan
         Edwards [ctb],\u000aSven Garbade [ctb],\u000aUwe Ligges [ctb]","Date/Publication":"2019-04-21
         12:20:03 UTC","crandb_file_date":"2019-04-21 13:20:26","MD5sum":"0a7da6c3b34b2974110a7d00fe9afa79","date":"2019-04-21T11:20:03+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/digest
@@ -343,13 +343,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:40 GMT
+      date: Thu, 27 May 2021 15:49:16 GMT
       content-type: application/json
       content-length: '1725'
       connection: keep-alive
       etag: '"EULA8OQ1R2IIRAW5YEN781JM1"'
       vary: Accept
-      x-couch-request-id: 2ff96d3117
+      x-couch-request-id: 3016f7c59a
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -371,8 +371,8 @@ http_interactions:
         3.3.0"},"Imports":{"utils":"*"},"License":"GPL (>= 2)","Suggests":{"tinytest":"*","knitr":"*","rmarkdown":"*","minidown":"*"},"VignetteBuilder":"knitr","NeedsCompilation":"yes","Packaged":"2020-10-20
         13:03:32 UTC; edd","Repository":"CRAN","Date/Publication":"2020-10-24 22:10:06
         UTC","crandb_file_date":"2020-10-24 23:26:33","MD5sum":"dcc54f1e72a44f14da3662eeecdf9c2f","date":"2020-10-24T21:10:06+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/htmltools
@@ -389,13 +389,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:41 GMT
+      date: Thu, 27 May 2021 15:49:17 GMT
       content-type: application/json
       content-length: '1739'
       connection: keep-alive
       etag: '"EEOTEQ31NH98WS8E3H7XGH413"'
       vary: Accept
-      x-couch-request-id: c0935694d1
+      x-couch-request-id: 61f221705f
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -417,8 +417,8 @@ http_interactions:
         Xie [aut],\u000aJeff Allen [aut],\u000aRStudio [cph]","Maintainer":"Carson
         Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-01-22
         22:40:02 UTC","crandb_file_date":"2021-01-23 00:32:37","MD5sum":"c2c34a72d7012a249c63450466d5857c","date":"2021-01-22T21:40:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/R6
@@ -435,13 +435,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:41 GMT
+      date: Thu, 27 May 2021 15:49:17 GMT
       content-type: application/json
       content-length: '1270'
       connection: keep-alive
       etag: '"1ECKW932K0N84EUT02H0H84C2"'
       vary: Accept
-      x-couch-request-id: b19a479d58
+      x-couch-request-id: b39f9aba62
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -458,8 +458,8 @@ http_interactions:
         18:30:05 UTC; winston","Author":"Winston Chang [aut, cre]","Maintainer":"Winston
         Chang <winston@stdout.org>","Repository":"CRAN","Date/Publication":"2020-10-28
         19:30:02 UTC","crandb_file_date":"2020-10-28 21:08:39","MD5sum":"463898e53d64b48716e695f20db423f4","date":"2020-10-28T18:30:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/sourcetools
@@ -476,13 +476,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:42 GMT
+      date: Thu, 27 May 2021 15:49:17 GMT
       content-type: application/json
       content-length: '918'
       connection: keep-alive
       etag: '"BC3KSAS6E0XWNNGKFH7N5R2RG"'
       vary: Accept
-      x-couch-request-id: 29352d034f
+      x-couch-request-id: e3bccf8ca3
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -496,8 +496,8 @@ http_interactions:
         3.0.2"},"Suggests":{"testthat":"*"},"RoxygenNote":"5.0.1","BugReports":"https://github.com/kevinushey/sourcetools/issues","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2018-04-25
         03:19:22 UTC; kevin","Repository":"CRAN","Date/Publication":"2018-04-25 03:38:09
         UTC","crandb_file_date":"2018-04-25 03:44:19","MD5sum":"04284c2d78a9626fe5f219942836c530","date":"2018-04-25T02:38:09+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/later
@@ -514,13 +514,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:42 GMT
+      date: Thu, 27 May 2021 15:49:17 GMT
       content-type: application/json
       content-length: '1752'
       connection: keep-alive
       etag: '"CDQWL64WINRMUPG3WWRT1SU7I"'
       vary: Accept
-      x-couch-request-id: e0778454c7
+      x-couch-request-id: 16aaa1cdf7
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -542,8 +542,8 @@ http_interactions:
         Nemerson [ctb, cph] (TinyCThread library,\u000ahttps://tinycthread.github.io/)","Maintainer":"Winston
         Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-23
         15:20:02 UTC","crandb_file_date":"2021-04-23 16:56:31","MD5sum":"31808276729dc0734b4c35bdcd0c7c2b","date":"2021-04-23T14:20:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/promises
@@ -560,13 +560,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:42 GMT
+      date: Thu, 27 May 2021 15:49:18 GMT
       content-type: application/json
       content-length: '1567'
       connection: keep-alive
       etag: '"2Y2UV7DPTY3U6C99LKI7P6OCJ"'
       vary: Accept
-      x-couch-request-id: 2ddf1a2295
+      x-couch-request-id: 6b5aff5240
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -584,8 +584,8 @@ http_interactions:
         18:18:47 UTC; barret","Author":"Joe Cheng [aut, cre],\u000aRStudio [cph, fnd]","Maintainer":"Joe
         Cheng <joe@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-02-11
         19:00:02 UTC","crandb_file_date":"2021-02-11 20:02:42","MD5sum":"adba783866d5496080f8a4e77576817b","date":"2021-02-11T18:00:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/crayon
@@ -602,13 +602,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:43 GMT
+      date: Thu, 27 May 2021 15:49:18 GMT
       content-type: application/json
       content-length: '1655'
       connection: keep-alive
       etag: '"9RWP4QFRAV8CXTC9K2H7SV6AA"'
       vary: Accept
-      x-couch-request-id: 84bb5b5e81
+      x-couch-request-id: 0a6c4edd6b
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -628,8 +628,55 @@ http_interactions:
         18:57:04 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre],\u000aBrodie
         Gaslam [ctb]","Maintainer":"Gábor Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-02-08
         19:50:02 UTC","crandb_file_date":"2021-02-08 20:26:31","MD5sum":"fcf099ef68a838a2ff7311f0eb7585eb","date":"2021-02-08T18:50:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/rlang
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Thu, 27 May 2021 15:49:18 GMT
+      content-type: application/json
+      content-length: '1832'
+      connection: keep-alive
+      etag: '"1B4RUFSB6CPX0RTR6H4L09QT1"'
+      vary: Accept
+      x-couch-request-id: '4005709887'
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"rlang","Version":"0.4.11","Title":"Functions for Base Types
+        and Core R and ''Tidyverse'' Features","Description":"A toolbox for working
+        with base types, core R features\u000alike the condition system, and core
+        ''Tidyverse'' features like tidy\u000aevaluation.","Authors@R":"c(\u000aperson(\"Lionel\",
+        \"Henry\", ,\"lionel@rstudio.com\", c(\"aut\", \"cre\")),\u000aperson(\"Hadley\",
+        \"Wickham\", ,\"hadley@rstudio.com\", \"aut\"),\u000aperson(given = \"mikefc\",\u000aemail
+        = \"mikefc@coolbutuseless.com\",\u000arole = \"cph\",\u000acomment = \"Hash
+        implementation based on Mike''s xxhashlite\"),\u000aperson(given = \"Yann\",\u000afamily
+        = \"Collet\",\u000arole = \"cph\",\u000acomment = \"Author of the embedded
+        xxHash library\"),\u000aperson(\"RStudio\", role = \"cph\")\u000a)","License":"MIT
+        + file LICENSE","ByteCompile":"true","Biarch":"true","Depends":{"R":">= 3.3.0"},"Imports":{"utils":"*"},"Suggests":{"cli":"*","covr":"*","crayon":"*","glue":"*","magrittr":"*","methods":"*","pak":"*","pillar":"*","rmarkdown":"*","testthat":">=
+        3.0.0","vctrs":">= 0.2.3","withr":"*"},"Enhances":{"winch":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.1","URL":"https://rlang.r-lib.org,
+        https://github.com/r-lib/rlang","BugReports":"https://github.com/r-lib/rlang/issues","Config/testthat/edition":"3","NeedsCompilation":"yes","Packaged":"2021-04-29
+        14:15:00 UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham
+        [aut],\u000amikefc [cph] (Hash implementation based on Mike''s xxhashlite),\u000aYann
+        Collet [cph] (Author of the embedded xxHash library),\u000aRStudio [cph]","Maintainer":"Lionel
+        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-30
+        23:20:02 UTC","crandb_file_date":"2021-05-01 00:50:36","MD5sum":"61dbdb2d911537d33571ba1f7b17627f","date":"2021-04-30T22:20:02+00:00","releases":[]}'
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/fastmap
@@ -646,13 +693,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:43 GMT
+      date: Thu, 27 May 2021 15:49:19 GMT
       content-type: application/json
       content-length: '1481'
       connection: keep-alive
       etag: '"79AGJ5DC4XEY3VKFUZKOJU7BH"'
       vary: Accept
-      x-couch-request-id: b64629a43e
+      x-couch-request-id: 21b7e7f3c5
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -673,8 +720,8 @@ http_interactions:
         fnd],\u000aTessil [cph] (hopscotch_map library)","Maintainer":"Winston Chang
         <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-01-25
         21:00:02 UTC","crandb_file_date":"2021-01-25 21:50:55","MD5sum":"0a13d52751d2f910ab907d3b44756108","date":"2021-01-25T20:00:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/withr
@@ -691,13 +738,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:44 GMT
+      date: Thu, 27 May 2021 15:49:19 GMT
       content-type: application/json
       content-length: '2474'
       connection: keep-alive
       etag: '"6R5LWHUVZRYC2X0MKHS9VNI37"'
       vary: Accept
-      x-couch-request-id: 0190301aa5
+      x-couch-request-id: cf83755f25
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -730,8 +777,8 @@ http_interactions:
         [aut],\u000aJennifer Bryan [ctb],\u000aRichard Cotton [ctb],\u000aRStudio
         [cph]","Maintainer":"Jim Hester <jim.hester@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-18
         10:20:02 UTC","crandb_file_date":"2021-04-18 11:38:30","MD5sum":"b96c13fa18540190b29f17a28eccc201","date":"2021-04-18T09:20:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/commonmark
@@ -748,13 +795,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:44 GMT
+      date: Thu, 27 May 2021 15:49:19 GMT
       content-type: application/json
       content-length: '1401'
       connection: keep-alive
       etag: '"7E46MFBNY33YD3PBYZXQ08IKZ"'
       vary: Accept
-      x-couch-request-id: 891852c734
+      x-couch-request-id: d13d443ea0
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -773,8 +820,8 @@ http_interactions:
         11:57:14 UTC; jeroen","Author":"Jeroen Ooms [aut, cre],\u000aJohn MacFarlane
         [cph] (Author of cmark)","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2018-12-01
         12:30:03 UTC","crandb_file_date":"2018-12-01 12:32:27","MD5sum":"48bf2251862a494d8ee3acde02dce385","date":"2018-12-01T11:30:03+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/glue
@@ -791,13 +838,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:44 GMT
+      date: Thu, 27 May 2021 15:49:20 GMT
       content-type: application/json
       content-length: '1468'
       connection: keep-alive
       etag: '"8W80X6F7J1RN1MAAU8I1JGMRQ"'
       vary: Accept
-      x-couch-request-id: 4806fc6b86
+      x-couch-request-id: dfb36df07c
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -814,8 +861,8 @@ http_interactions:
         17:24:06 UTC; jhester","Author":"Jim Hester [aut, cre]","Maintainer":"Jim
         Hester <james.f.hester@gmail.com>","Repository":"CRAN","Date/Publication":"2020-08-27
         13:50:06 UTC","crandb_file_date":"2020-08-27 14:56:38","MD5sum":"0193cf06363f9334b313a7e5503b27e6","date":"2020-08-27T12:50:06+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/bslib
@@ -832,48 +879,49 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:45 GMT
+      date: Thu, 27 May 2021 15:49:20 GMT
       content-type: application/json
-      content-length: '2664'
+      content-length: '2744'
       connection: keep-alive
-      etag: '"1Y2WS77X675C6IMY9ADNZ92TT"'
+      etag: '"49GORAUTEPU4DFS24J1UACJ3Q"'
       vary: Accept
-      x-couch-request-id: e38c17f91f
+      x-couch-request-id: 8eaae8b0f3
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
       file: no
       string: '{"Package":"bslib","Title":"Custom ''Bootstrap'' ''Sass'' Themes for
-        ''shiny'' and ''rmarkdown''","Version":"0.2.4","Authors@R":"c(\u000aperson(\"Carson\",
-        \"Sievert\", role = c(\"aut\", \"cre\"), email = \"carson@rstudio.com\"),\u000aperson(\"Joe\",
-        \"Cheng\", role = \"aut\", email = \"joe@rstudio.com\"),\u000aperson(family
-        = \"RStudio\", role = \"cph\"),\u000aperson(family = \"Bootstrap contributors\",
-        role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(family
-        = \"Twitter, Inc\", role = \"cph\",\u000acomment = \"Bootstrap library\"),\u000aperson(\"Javi\",
-        \"Aguilar\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Bootstrap colorpicker
-        library\"),\u000aperson(\"Thomas\", \"Park\", role = c(\"ctb\", \"cph\"),\u000acomment
-        = \"Bootswatch library\"),\u000aperson(family = \"PayPal\", role = c(\"ctb\",
-        \"cph\"),\u000acomment = \"Bootstrap accessibility plugin\")\u000a)","Description":"Simplifies
-        custom ''CSS'' styling of both ''shiny'' and ''rmarkdown'' via ''Bootstrap''
-        ''Sass''. Supports both ''Bootstrap'' 3 and 4 as well as their various ''Bootswatch''
-        themes. An interactive widget is also provided for previewing themes in real
-        time.","Depends":{"R":">= 2.10"},"Imports":{"grDevices":"*","htmltools":">=
-        0.5.1","jsonlite":"*","sass":">= 0.3.0","digest":">= 0.6.25","jquerylib":">=
-        0.1.3","rlang":"*","magrittr":"*"},"Suggests":{"shiny":"*","rmarkdown":"*","knitr":"*","testthat":"*","withr":"*","rappdirs":"*","curl":"*"},"License":"MIT
-        + file LICENSE","Encoding":"UTF-8","LazyData":"true","RoxygenNote":"7.1.1","Collate":"''bootswatch.R''
+        ''shiny'' and ''rmarkdown''","Version":"0.2.5.1","Authors@R":"c(\u000aperson(\"Carson\",
+        \"Sievert\", role = c(\"aut\", \"cre\"), email = \"carson@rstudio.com\", comment
+        = c(ORCID = \"0000-0002-4958-2844\")),\u000aperson(\"Joe\", \"Cheng\", role
+        = \"aut\", email = \"joe@rstudio.com\"),\u000aperson(family = \"RStudio\",
+        role = \"cph\"),\u000aperson(family = \"Bootstrap contributors\", role = \"ctb\",\u000acomment
+        = \"Bootstrap library\"),\u000aperson(family = \"Twitter, Inc\", role = \"cph\",\u000acomment
+        = \"Bootstrap library\"),\u000aperson(\"Javi\", \"Aguilar\", role = c(\"ctb\",
+        \"cph\"),\u000acomment = \"Bootstrap colorpicker library\"),\u000aperson(\"Thomas\",
+        \"Park\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Bootswatch library\"),\u000aperson(family
+        = \"PayPal\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Bootstrap accessibility
+        plugin\")\u000a)","Description":"Simplifies custom ''CSS'' styling of both
+        ''shiny'' and ''rmarkdown'' via ''Bootstrap'' ''Sass''. Supports both ''Bootstrap''
+        3 and 4 as well as their various ''Bootswatch'' themes. An interactive widget
+        is also provided for previewing themes in real time.","Depends":{"R":">= 2.10"},"Imports":{"grDevices":"*","htmltools":">=
+        0.5.1","jsonlite":"*","sass":">= 0.4.0","jquerylib":">= 0.1.3","rlang":"*","magrittr":"*"},"Suggests":{"shiny":">=
+        1.6.0","rmarkdown":">= 2.7","thematic":"*","knitr":"*","testthat":"*","withr":"*","rappdirs":"*","curl":"*"},"License":"MIT
+        + file LICENSE","Encoding":"UTF-8","RoxygenNote":"7.1.1","Config/testthat/edition":"3","Collate":"''bootswatch.R''
         ''bs-current-theme.R'' ''bs-dependencies.R''\u000a''bs-global.R'' ''bs-remove.R''
         ''bs-theme-layers.R'' ''utils.R''\u000a''bs-theme-preview.R'' ''bs-theme-update.R''
-        ''bs-theme.R''\u000a''deprecated.R'' ''files.R'' ''fonts.R'' ''imports.R''
-        ''onLoad.R''\u000a''precompiled.R'' ''shiny-devmode.R'' ''version-default.R''\u000a''versions.R''
-        ''web-font.R''","URL":"https://rstudio.github.io/bslib/, https://github.com/rstudio/bslib","BugReports":"https://github.com/rstudio/bslib/issues","NeedsCompilation":"no","Packaged":"2021-01-20
-        15:08:19 UTC; cpsievert","Author":"Carson Sievert [aut, cre],\u000aJoe Cheng
-        [aut],\u000aRStudio [cph],\u000aBootstrap contributors [ctb] (Bootstrap library),\u000aTwitter,
-        Inc [cph] (Bootstrap library),\u000aJavi Aguilar [ctb, cph] (Bootstrap colorpicker
-        library),\u000aThomas Park [ctb, cph] (Bootswatch library),\u000aPayPal [ctb,
-        cph] (Bootstrap accessibility plugin)","Maintainer":"Carson Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-01-25
-        08:00:02 UTC","crandb_file_date":"2021-01-25 09:20:42","MD5sum":"2a705091215aa51aaa542e9f5c77ec32","date":"2021-01-25T07:00:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+        ''bs-theme.R''\u000a''deprecated.R'' ''files.R'' ''imports.R'' ''onLoad.R''
+        ''precompiled.R''\u000a''shiny-devmode.R'' ''version-default.R'' ''versions.R''","URL":"https://rstudio.github.io/bslib/,
+        https://github.com/rstudio/bslib","BugReports":"https://github.com/rstudio/bslib/issues","NeedsCompilation":"no","Packaged":"2021-05-18
+        14:17:35 UTC; cpsievert","Author":"Carson Sievert [aut, cre] (<https://orcid.org/0000-0002-4958-2844>),\u000aJoe
+        Cheng [aut],\u000aRStudio [cph],\u000aBootstrap contributors [ctb] (Bootstrap
+        library),\u000aTwitter, Inc [cph] (Bootstrap library),\u000aJavi Aguilar [ctb,
+        cph] (Bootstrap colorpicker library),\u000aThomas Park [ctb, cph] (Bootswatch
+        library),\u000aPayPal [ctb, cph] (Bootstrap accessibility plugin)","Maintainer":"Carson
+        Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-05-18
+        15:00:02 UTC","crandb_file_date":"2021-05-18 16:26:35","MD5sum":"02dd9a55476c6b331c251457b3033141","date":"2021-05-18T14:00:02+00:00","releases":[]}'
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/cachem
@@ -890,29 +938,29 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:45 GMT
+      date: Thu, 27 May 2021 15:49:20 GMT
       content-type: application/json
-      content-length: '1088'
+      content-length: '1070'
       connection: keep-alive
-      etag: '"DFA0SEFRKDBIQTAG5RROIL5NI"'
+      etag: '"64N7WJFXX4D3CTI46XKP4CNNC"'
       vary: Accept
-      x-couch-request-id: dbef1c2100
+      x-couch-request-id: dd5ddb1e19
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
       file: no
-      string: '{"Package":"cachem","Version":"1.0.4","Title":"Cache R Objects with
+      string: '{"Package":"cachem","Version":"1.0.5","Title":"Cache R Objects with
         Automatic Pruning","Description":"Key-value stores with automatic pruning.
         Caches can limit\u000aeither their total size or the age of the oldest object
         (or both),\u000aautomatically pruning objects to maintain the constraints.","Authors@R":"c(\u000aperson(\"Winston\",
         \"Chang\", , \"winston@rstudio.com\", c(\"aut\", \"cre\")),\u000aperson(family
-        = \"RStudio\", role = c(\"cph\", \"fnd\")))","License":"MIT + file LICENSE","Encoding":"UTF-8","LazyData":"true","ByteCompile":"true","URL":"https://cachem.r-lib.org/,
-        https://github.com/r-lib/cachem","Imports":{"rlang":"*","fastmap":"*"},"Suggests":{"testthat":"*"},"RoxygenNote":"7.1.1","NeedsCompilation":"yes","Packaged":"2021-02-12
-        18:28:56 UTC; winston","Author":"Winston Chang [aut, cre],\u000aRStudio [cph,
-        fnd]","Maintainer":"Winston Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-02-13
-        07:30:05 UTC","crandb_file_date":"2021-02-13 08:56:30","MD5sum":"45fbbaf962340f4526ee09086cc8ea44","date":"2021-02-13T06:30:05+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+        = \"RStudio\", role = c(\"cph\", \"fnd\")))","License":"MIT + file LICENSE","Encoding":"UTF-8","ByteCompile":"true","URL":"https://cachem.r-lib.org/,
+        https://github.com/r-lib/cachem","Imports":{"rlang":"*","fastmap":"*"},"Suggests":{"testthat":"*"},"RoxygenNote":"7.1.1","NeedsCompilation":"yes","Packaged":"2021-05-14
+        22:15:11 UTC; winston","Author":"Winston Chang [aut, cre],\u000aRStudio [cph,
+        fnd]","Maintainer":"Winston Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-05-15
+        06:20:37 UTC","crandb_file_date":"2021-05-15 07:38:33","MD5sum":"f3c745ecb9da6472032561a17512f780","date":"2021-05-15T05:20:37+00:00","releases":[]}'
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/ellipsis
@@ -929,13 +977,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:46 GMT
+      date: Thu, 27 May 2021 15:49:21 GMT
       content-type: application/json
       content-length: '1175'
       connection: keep-alive
       etag: '"62O6G97F30NCJYHY39P4096FA"'
       vary: Accept
-      x-couch-request-id: 89629cf5fc
+      x-couch-request-id: 96cb7fb095
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -952,8 +1000,8 @@ http_interactions:
         12:06:44 UTC; lionel","Author":"Hadley Wickham [aut, cre],\u000aRStudio [cph]","Maintainer":"Hadley
         Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-29
         12:40:02 UTC","crandb_file_date":"2021-04-29 13:56:33","MD5sum":"c453b4514da3717af5d5b97f0e3d2415","date":"2021-04-29T11:40:02+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/lifecycle
@@ -970,13 +1018,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Wed, 05 May 2021 19:08:46 GMT
+      date: Thu, 27 May 2021 15:49:21 GMT
       content-type: application/json
       content-length: '1515'
       connection: keep-alive
       etag: '"CW8R6E2TOHM6RMTTLAU0GJC7K"'
       vary: Accept
-      x-couch-request-id: c52adb82f7
+      x-couch-request-id: 1f2e1ed115
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -996,5 +1044,5 @@ http_interactions:
         [aut] (<https://orcid.org/0000-0003-4757-117X>),\u000aRStudio [cph]","Maintainer":"Lionel
         Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-02-15
         15:20:06 UTC","crandb_file_date":"2021-02-15 17:38:33","MD5sum":"183308b5bd86feedb41d34e741f6c67b","date":"2021-02-15T14:20:06+00:00","releases":[]}'
-  recorded_at: 2021-05-05 19:05:32 GMT
-  recorded_with: vcr/0.6.0, webmockr/0.8.0
+  recorded_at: 2021-05-27 15:46:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
