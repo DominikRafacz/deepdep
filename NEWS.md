@@ -1,6 +1,7 @@
 # deepdep 0.2.5
 * wrapped `deepdep` in tests with `tryCatch` in case of R-devel and Bioc-devel versions mismatch
 * marked all non-local examples with "donttest"
+* adjusted to new version of the `vcr` package
 
 # deepdep 0.2.2 -- 0.2.4 
 * this versions are attempts to eliminating all possible errors during checks associated with problems with internet connection:  this consists of marking time-consuming examples by "donttest" in the documentation, using the `vcr` package to mock up api queries and creating pre-compiled vignettes
