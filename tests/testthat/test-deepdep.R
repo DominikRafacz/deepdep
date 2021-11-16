@@ -2,7 +2,7 @@
 deepdep_wrapped <- function(...) {
   tryCatch(deepdep(...),
            error = function(err) {
-             if (grepl("Bioconductor version '[0-9\\.]*' requires R version '[0-9\\.]*'; R version is too new;.*",
+             if (grepl("Bioconductor version '[0-9\\.]*' requires R version '[0-9\\.]*'",
                        err$message) ||
                  grepl("Bioconductor does not yet build and check packages for R version [0-9\\.]*",
                        err$message))
