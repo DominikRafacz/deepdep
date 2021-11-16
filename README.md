@@ -28,16 +28,16 @@ metadata](http://bioconductor.org).
 
 **Exploration tools:**
 
-  - `deepdep()`
-  - `get_dependencies()`
-  - `get_downloads()`
-  - `get_description()`
+-   `deepdep()`
+-   `get_dependencies()`
+-   `get_downloads()`
+-   `get_description()`
 
 **Visualisation tools:**
 
-  - `plot_dependencies()`
-  - `plot_downloads()`
-  - `deepdep_shiny()` runs shiny application that helps to produce a
+-   `plot_dependencies()`
+-   `plot_downloads()`
+-   `deepdep_shiny()` runs shiny application that helps to produce a
     nice **deepdep plot**
 
 ## Installation
@@ -88,10 +88,9 @@ head(dd_xgboost)
 ```
 
     ##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total origin_level dest_level
-    ## 1 xgboost     Matrix >= 1.1-0 Imports     3044     19855      73472       255270    544340     4850922            0          1
-    ## 2 xgboost data.table >= 1.9.6 Imports    23964    143005     511457      1584401   3169001    17607178            0          1
-    ## 3 xgboost   magrittr   >= 1.5 Imports   196375   1338204    5097734     14864680  27025906    55832135            0          1
-    ## 4 xgboost    stringi >= 0.5.2 Imports    34102    200767     730874      2509641   4688808    26216128            0          1
+    ## 1 xgboost     Matrix >= 1.1-0 Imports     1861     29118     116069       314379    715420     6726824            0          1
+    ## 2 xgboost data.table >= 1.9.6 Imports    18594    205828     890362      2556360   4586475    30727748            0          1
+    ## 3 xgboost   jsonlite   >= 1.0 Imports    21610    234767     990987      3494965   6879236    50867651            0          1
 
 ``` r
 plot_downloads(dd_xgboost)
