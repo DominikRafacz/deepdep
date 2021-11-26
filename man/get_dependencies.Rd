@@ -9,7 +9,7 @@ get_dependencies(
   downloads = TRUE,
   bioc = FALSE,
   local = FALSE,
-  dependency_type = c("Depends", "Imports")
+  dependency_type = "strong"
 )
 }
 \arguments{

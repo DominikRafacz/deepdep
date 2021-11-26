@@ -29,16 +29,12 @@
 #'
 #' @export
 get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FALSE,
-                             dependency_type = c("Depends", "Imports")) {
+                             dependency_type = "strong") {
 
   if (downloads && (local || bioc)) stop("If you use downloads, you cannot use",
                                          " neither bioc nor local")
 
-  possible_types <- c("Depends", "Imports", "Suggests", "Enhances", "LinkingTo")
-
-  dependency_type <- unique(dependency_type)
-  if (!all(dependency_type %in% possible_types) || length(dependency_type) < 1)
-    stop("'dependency_type' should specify which types of dependencies should be included")
+  dependency_type <- match_dependency_type(dependency_type)
 
   l_dependency_type <- tolower(dependency_type)
   names(dependency_type) <- l_dependency_type
@@ -97,4 +93,22 @@ get_dependencies <- function(package, downloads = TRUE, bioc = FALSE, local = FA
 #' @export
 print.package_dependencies <- function(x, ...) {
   print.data.frame(x)
+}
+
+#' Match vector of dependency types
+#'
+#' @inheritParams get_dependencies
+#'
+#' Based on `tools:::.expand_dependency_type_spec`, according to the suggestion of Dirk Eddelbuettel
+#'
+#' @noRd
+match_dependency_type <- function(dependency_type) {
+  possible_types <- c("Depends", "Imports", "LinkingTo", "Suggests", "Enhances")
+
+  if (identical(dependency_type, "strong")) possible_types[1:3]
+  else if (identical(dependency_type, "most")) possible_types[1:4]
+  else if (identical(dependency_type, "all")) possible_types
+  else if (!all(dependency_type %in% possible_types) || length(dependency_type) < 1)
+    stop("'dependency_type' should specify which types of dependencies should be included")
+  else dependency_type
 }
