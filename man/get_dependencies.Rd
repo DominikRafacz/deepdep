@@ -25,7 +25,7 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 
 \item{dependency_type}{A \code{character} vector. Types of the dependencies that should be sought, a subset of
 \code{c("Imports", "Depends", "LinkingTo", "Suggests", "Enhances")}. Other possibilities are: character string
-\code{"all"}, a shorthand for that vector; character string \code{"most"} for the same vector without \code{"Enhances"};
+\code{"all"}, a shorthand for the whole vector; character string \code{"most"} for the same vector without \code{"Enhances"};
 character string \code{"strong"} (default) for the first three elements of that vector. Works analogously to
 \code{\link[tools]{package_dependencies}}.}
 }
