@@ -17,3 +17,11 @@ test_that("incorrect word results in an error", {
   expect_error(match_dependency_type("randomword"), "'dependency_type' should specify which types of dependencies should be included")
   expect_error(match_dependency_type(c("Imports", "Depends", "Enchants")), "'dependency_type' should specify which types of dependencies should be included")
 })
+
+test_that("cannot mix shorthands with dependency types", {
+  expect_error(match_dependency_type(c("strong", "Enhances")), "'dependency_type' should specify which types of dependencies should be included")
+})
+
+test_that("multiple shorthands result in an error", {
+  expect_error(match_dependency_type(c("all", "most")), "'dependency_type' should specify which types of dependencies should be included")
+})
