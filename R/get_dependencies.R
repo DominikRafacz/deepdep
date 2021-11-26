@@ -13,7 +13,7 @@
 #' \code{c("Imports", "Depends", "LinkingTo", "Suggests", "Enhances")}. Other possibilities are: character string
 #' \code{"all"}, a shorthand for that vector; character string \code{"most"} for the same vector without \code{"Enhances"};
 #' character string \code{"strong"} (default) for the first three elements of that vector. Works analogously to
-#' \code{\link{tools::package_dependencies}}.
+#' \code{\link[tools]{package_dependencies}}.
 #'
 #' @return An object of \code{package_dependencies} class.
 #'
