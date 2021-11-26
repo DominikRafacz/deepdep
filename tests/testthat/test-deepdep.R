@@ -18,7 +18,7 @@ test_that("obtaining local dependencies returns objects of correct types", {
 
 test_that("using shorthand parameters returns the same result", {
   dd <- deepdep("deepdep", local = TRUE, depth = 1, dependency_type = c("Depends", "Imports", "LinkingTo", "Suggests"))
-  dd2 <- deepdep("deepdep", local = TRUE, depth = 1, dependency_type = c("most"))
+  dd2 <- deepdep("deepdep", local = TRUE, depth = 1, dependency_type = "most")
   expect_identical(dd, dd2)
 })
 
