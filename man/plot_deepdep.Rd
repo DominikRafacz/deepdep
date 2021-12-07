@@ -15,6 +15,7 @@ plot_dependencies(
   label_percentage = 1,
   show_version = FALSE,
   show_downloads = FALSE,
+  show_stamp = TRUE,
   ...
 )
 
@@ -26,6 +27,7 @@ plot_dependencies(
   label_percentage = 1,
   show_version = FALSE,
   show_downloads = FALSE,
+  show_stamp = TRUE,
   ...
 )
 
@@ -37,6 +39,7 @@ plot_dependencies(
   label_percentage = 1,
   show_version = FALSE,
   show_downloads = FALSE,
+  show_stamp = TRUE,
   ...
 )
 
@@ -48,6 +51,7 @@ plot_dependencies(
   label_percentage = 1,
   show_version = FALSE,
   show_downloads = FALSE,
+  show_stamp = TRUE,
   ...
 )
 }
@@ -70,6 +74,9 @@ displayed below package name. Defaults to \code{FALSE}.}
 
 \item{show_downloads}{A \code{logical}. If \code{TRUE} total number of downloads of packages
 will be displayed below package names. Defaults to \code{FALSE}.}
+
+\item{show_stamp}{A \code{logical}. If \code{TRUE} (the default) the package version and
+plot creation time will be added}
 
 \item{...}{Other arguments passed to the \code{deepdep} function.}
 }
