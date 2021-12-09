@@ -88,9 +88,9 @@ head(dd_xgboost)
 ```
 
     ##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total origin_level dest_level
-    ## 1 xgboost     Matrix >= 1.1-0 Imports     5292     24255     116117       319444    699620     6763598            0          1
-    ## 2 xgboost data.table >= 1.9.6 Imports    30322    172075     873893      2604813   4602894    31003939            0          1
-    ## 3 xgboost   jsonlite   >= 1.0 Imports    36532    205945     995455      3505752   6779668    51193351            0          1
+    ## 1 xgboost     Matrix >= 1.1-0 Imports     4454     24384     120814       335932    676904     6818520            0          1
+    ## 2 xgboost data.table >= 1.9.6 Imports    35829    203788     847404      2665713   4659980    31369324            0          1
+    ## 3 xgboost   jsonlite   >= 1.0 Imports    36025    246923    1005752      3362575   6707399    51638636            0          1
 
 ``` r
 plot_downloads(dd_xgboost)
