@@ -28,6 +28,7 @@ Imports:
     graphlayouts,
     httr,
     igraph,
+    pkgsearch,
     jsonlite,
     scales
 Suggests: 

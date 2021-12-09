@@ -49,10 +49,10 @@ get_desc_cached <- function(package, repo) {
   descs[[package]]
 }
 
+#' @importFrom pkgsearch cran_package
 append_desc_CRAN <- function(package, descs) {
   # get the description
-  json_as_string <- DB(package)
-  description <- jsonlite::fromJSON(json_as_string)
+  description <- cran_package(package, version = NULL)
 
   # prettify the description
   names(description) <- tolower(names(description))
