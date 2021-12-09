@@ -1,7 +1,7 @@
 ---
 title: "Comparison of deepdep to similar packages"
 author: "Dominik Rafacz"
-date: "2021-11-11"
+date: "2021-12-09"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Comparison of deepdep to similar packages}

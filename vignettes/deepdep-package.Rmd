@@ -152,12 +152,12 @@ This package allows you obtaining information on how many times specified packag
 ```r
 get_downloads("ggplot2")
 #>                     x
-#> last_day            0
-#> last_week      522861
-#> last_month    3006182
-#> last_quarter  8471688
-#> last_half    14297088
-#> grand_total  66079081
+#> last_day        94810
+#> last_week      631421
+#> last_month    3042223
+#> last_quarter  9439810
+#> last_half    15512021
+#> grand_total  69121304
 ```
 
 Results of this function is not cached.
@@ -170,23 +170,23 @@ After parsing description file, you can now create a `data.frame` which will des
 ```r
 get_dependencies("ggplot2")
 #>       name   version    type last_day last_week last_month last_quarter last_half grand_total
-#> 1   digest      <NA> Imports        0    146499     888879      2609540   4657874    42228742
-#> 2     glue      <NA> Imports        0    220543    1250176      3664383   6758641    40606261
-#> 3   gtable  >= 0.1.1 Imports        0    110066     640653      1809222   3152733    25941419
-#> 4  isoband      <NA> Imports        0    131742     762584      2276478   4275144    15035620
-#> 5     MASS      <NA> Imports        0     21197     129978       392302    844885     9222620
-#> 6     mgcv      <NA> Imports        0     19643     149225       382311    703284     6764818
-#> 7    rlang >= 0.4.10 Imports        0    348917    2161098      6144583  11707882    64392027
-#> 8   scales  >= 0.5.0 Imports        0    124399     728321      2092431   3707265    33059782
-#> 9   tibble      <NA> Imports        0    223126    1349665      4212678   8058305    49686835
-#> 10   withr  >= 2.0.0 Imports        0    166170     995159      2989090   5702601    29297142
+#> 1   digest      <NA> Imports    39734    295190     995673      2941841   4988225    43224415
+#> 2     glue      <NA> Imports    55459    390593    1652555      4284721   7411447    42258816
+#> 3   gtable  >= 0.1.1 Imports    24433    152491     684326      2050314   3375243    26625745
+#> 4  isoband      <NA> Imports    27553    176789     802812      2448518   4406815    15838432
+#> 5     MASS      <NA> Imports     6850     37460     150506       431312    816957     9373126
+#> 6     mgcv      <NA> Imports     3886     22288     123961       429766    718016     6888779
+#> 7    rlang >= 0.4.10 Imports    75505    484385    2119851      6551779  12013867    66511878
+#> 8   scales  >= 0.5.0 Imports    27837    173072     772476      2340499   3924153    33832258
+#> 9   tibble      <NA> Imports    50150    332048    1537875      4530182   8258738    51224710
+#> 10   withr  >= 2.0.0 Imports    42283    296370    1103823      3278159   5859910    30400965
 ```
 
 As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
 
 The first one is parameter `downloads` -- should number of downloads of packages be included? It uses `get_downloads` and works only with CRAN packages.
 
-Another, more important parameter is `dependency_type`. You can specify how detailed should be list of dependencies. Default value is `c("Depends", "Imports")`, but you can chose any combination of those and additionally `"Suggests", "Enhances", "LinkingTo"`.
+Another, more important parameter is `dependency_type`. You can specify how detailed should be list of dependencies. Default value is `"strong"`, which is a shorthand for `c("Depends", "Imports", "LinkingTo")`, but you can chose any combination of those and additionally `"Suggests", "Enhances"`.
 
 
 ```r
@@ -333,7 +333,7 @@ Finally, returned object is a `ggplot` object, so you can easily manipulate them
 ```r
 plot_dependencies(dd) +
   ggplot2::scale_fill_manual(values = c("#462CF8", "#F23A90", "#AF1023")) +
-  ggraph::scale_edge_color_manual(values = "black") 
+  ggraph::scale_edge_color_manual(values = "black")
 #> Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the
 #> existing scale.
 ```

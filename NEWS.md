@@ -1,3 +1,7 @@
+# deepdep 0.3.0
+* adjusted `dependency_type` argument to be consistent with `tools` package (issue #19)
+* added `show_stamp` parameter for plot function (issue #20)
+
 # deepdep 0.2.5
 * wrapped `deepdep` in tests with `tryCatch` in case of R-devel and Bioc-devel versions mismatch
 * marked all non-local examples with "donttest"
