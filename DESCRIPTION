@@ -29,7 +29,6 @@ Imports:
     httr,
     igraph,
     pkgsearch,
-    jsonlite,
     scales
 Suggests: 
     BiocManager,
