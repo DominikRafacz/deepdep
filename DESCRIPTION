@@ -6,7 +6,8 @@ Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
                   comment = c(ORCID = "0000-0003-0925-1909")),
              person("Hubert", "Baniecki", role = c("aut")),
              person("Szymon", "Maksymiuk", role = c("aut")),
-             person("Laura", "Bakala", role = c("aut")))
+             person("Laura", "Bakala", role = c("aut")),
+             person("Dirk", "Eddelbuettel", role = c("ctb")))
 Description: Provides tools for exploration of R package dependencies. 
     The main deepdep() function allows to acquire deep dependencies of any package and plot them in an elegant way.
     It also adds some popularity measures for the packages e.g. in the form of download count through the 'cranlogs' package. 
