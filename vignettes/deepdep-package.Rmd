@@ -66,8 +66,8 @@ However, if you want to check if package is present in a little wider range -- o
 
 ```r
 t <- get_available_packages(bioc = TRUE)
-#> 'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for
-#> details
+#> 'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories'
+#> for details
 #> 
 #> replacement repositories:
 #>     CRAN: https://cran.rstudio.com/
@@ -84,10 +84,10 @@ Another possibility is checking what packages are installed -- you do it by addi
 ```r
 t <- get_available_packages(local = TRUE)
 head(t, 20)
-#>  [1] "ade4"         "AmyloGraph"   "ape"          "askpass"      "backports"    "base64enc"   
-#>  [7] "BBmisc"       "BH"           "BiocGenerics" "BiocManager"  "BiocVersion"  "biogram"     
-#> [13] "bioseq"       "Biostrings"   "bit"          "bit64"        "bitops"       "blob"        
-#> [19] "brew"         "brio"
+#>  [1] "AmyloGraph"  "askpass"     "assertthat"  "attempt"     "backports"   "base64enc"  
+#>  [7] "BiocManager" "bit"         "bit64"       "brew"        "brio"        "bslib"      
+#> [13] "cachem"      "callr"       "checkmate"   "cli"         "clipr"       "colorspace" 
+#> [19] "commonmark"  "config"
 ```
 
 Result of this function is cached (for more details, see *Caching* section of this vignette).
@@ -152,12 +152,12 @@ This package allows you obtaining information on how many times specified packag
 ```r
 get_downloads("ggplot2")
 #>                     x
-#> last_day        94810
-#> last_week      631421
-#> last_month    3042223
-#> last_quarter  9439810
-#> last_half    15512021
-#> grand_total  69121304
+#> last_day        96188
+#> last_week      626638
+#> last_month    3033011
+#> last_quarter  9431512
+#> last_half    15537309
+#> grand_total  69217492
 ```
 
 Results of this function is not cached.
@@ -169,17 +169,28 @@ After parsing description file, you can now create a `data.frame` which will des
 
 ```r
 get_dependencies("ggplot2")
-#>       name   version    type last_day last_week last_month last_quarter last_half grand_total
-#> 1   digest      <NA> Imports    39734    295190     995673      2941841   4988225    43224415
-#> 2     glue      <NA> Imports    55459    390593    1652555      4284721   7411447    42258816
-#> 3   gtable  >= 0.1.1 Imports    24433    152491     684326      2050314   3375243    26625745
-#> 4  isoband      <NA> Imports    27553    176789     802812      2448518   4406815    15838432
-#> 5     MASS      <NA> Imports     6850     37460     150506       431312    816957     9373126
-#> 6     mgcv      <NA> Imports     3886     22288     123961       429766    718016     6888779
-#> 7    rlang >= 0.4.10 Imports    75505    484385    2119851      6551779  12013867    66511878
-#> 8   scales  >= 0.5.0 Imports    27837    173072     772476      2340499   3924153    33832258
-#> 9   tibble      <NA> Imports    50150    332048    1537875      4530182   8258738    51224710
-#> 10   withr  >= 2.0.0 Imports    42283    296370    1103823      3278159   5859910    30400965
+#>       name   version    type last_day last_week last_month last_quarter last_half
+#> 1   digest      <NA> Imports    40118    280344     998778      2946767   4999386
+#> 2     glue      <NA> Imports    57487    368681    1622243      4292363   7426334
+#> 3   gtable  >= 0.1.1 Imports    25966    152202     682907      2052183   3381201
+#> 4  isoband      <NA> Imports    29594    175889     799871      2447000   4408503
+#> 5     MASS      <NA> Imports     5365     37135     150078       431082    814860
+#> 6     mgcv      <NA> Imports     5930     22923     125990       432545    718016
+#> 7    rlang >= 0.4.10 Imports    75335    478059    2104980      6542990  12011815
+#> 8   scales  >= 0.5.0 Imports    29913    173077     771297      2339874   3929950
+#> 9   tibble      <NA> Imports    52234    328894    1505198      4522001   8256585
+#> 10   withr  >= 2.0.0 Imports    44466    283089    1106321      3281612   5865575
+#>    grand_total
+#> 1     43264533
+#> 2     42316303
+#> 3     26651711
+#> 4     15868026
+#> 5      9378491
+#> 6      6894709
+#> 7     66587213
+#> 8     33862171
+#> 9     51276944
+#> 10    30445431
 ```
 
 As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
@@ -334,8 +345,8 @@ Finally, returned object is a `ggplot` object, so you can easily manipulate them
 plot_dependencies(dd) +
   ggplot2::scale_fill_manual(values = c("#462CF8", "#F23A90", "#AF1023")) +
   ggraph::scale_edge_color_manual(values = "black")
-#> Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the
-#> existing scale.
+#> Scale for 'fill' is already present. Adding another scale for 'fill', which will
+#> replace the existing scale.
 ```
 
 <img src="plot_dependencies5-1.png" title="plot of chunk plot_dependencies5" alt="plot of chunk plot_dependencies5" style="display: block; margin: auto;" />
