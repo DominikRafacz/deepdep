@@ -10,7 +10,7 @@ deepdep(
   downloads = FALSE,
   bioc = FALSE,
   local = FALSE,
-  dependency_type = c("Depends", "Imports")
+  dependency_type = "strong"
 )
 }
 \arguments{
@@ -26,8 +26,11 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 
 \item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
-\item{dependency_type}{A \code{character} vector. Types of the dependencies that should be sought.
-Possibilities are: \code{"Imports", "Depends", "Suggests", "Enhances", "LinkingTo"}. By default it's \code{"Depends", "Imports"}.}
+\item{dependency_type}{A \code{character} vector. Types of the dependencies that should be sought, a subset of
+\code{c("Imports", "Depends", "LinkingTo", "Suggests", "Enhances")}. Other possibilities are: character string
+\code{"all"}, a shorthand for the whole vector; character string \code{"most"} for the same vector without \code{"Enhances"};
+character string \code{"strong"} (default) for the first three elements of that vector. Works analogously to
+\code{\link[tools]{package_dependencies}}.}
 }
 \value{
 An object of \code{deepdep} class.
