@@ -56,11 +56,11 @@ get_desc_cached <- function(package, repo, version = NULL) {
 #' @importFrom pkgsearch cran_package
 update_descs_CRAN <- function(package, descs, version = NULL) {
   check_package_version(package, version)
-  descs[[package]] <- cran_package(package, version = version) |>
-    select_fields() |>
-    remove_whitespace() |>
-    replace_missing_dep_versions() |>
-    split_URL() |>
+  descs[[package]] <- cran_package(package, version = version) %p%
+    select_fields() %p%
+    remove_whitespace() %p%
+    replace_missing_dep_versions() %p%
+    split_URL() %p%
     add_class_to_desc("CRAN")
   descs
 }
@@ -74,16 +74,16 @@ update_descs_bioc <- function(descs) {
   if (!attr(descs, "new")) descs
   
   # Actual working code now
-  bioc_descs <- BiocPkgTools::biocPkgList() |>
+  bioc_descs <- BiocPkgTools::biocPkgList() %p%
     select_fields()
   for (index in seq_len(nrow(bioc_descs))) {
-    descs[[bioc_descs[[index, "package"]]]] <- bioc_descs[index, ] |>
-      as.list() |>
-      remove_empty_dependencies() |>
-      reformat_dependencies() |>
-      remove_whitespace() |>
-      paste_maintainer() |>
-      split_URL() |>
+    descs[[bioc_descs[[index, "package"]]]] <- bioc_descs[index, ] %p%
+      as.list() %p%
+      remove_empty_dependencies() %p%
+      reformat_dependencies() %p%
+      remove_whitespace() %p%
+      paste_maintainer() %p%
+      split_URL() %p%
       add_class_to_desc("Bioconductor")
   }
   
@@ -94,13 +94,13 @@ update_descs_bioc <- function(descs) {
 
 #' @importFrom utils packageDescription
 update_descs_local <- function(package, descs) {
-  descs[[package]] <- packageDescription(package) |>
-    select_fields() |>
-    remove_whitespace() |>
-    split_dependencies() |>
-    reformat_dependencies() |>
-    paste_maintainer() |>
-    split_URL() |>
+  descs[[package]] <- packageDescription(package) %p%
+    select_fields() %p%
+    remove_whitespace() %p%
+    split_dependencies() %p%
+    reformat_dependencies() %p%
+    paste_maintainer() %p%
+    split_URL() %p%
     add_class_to_desc("local")
   descs
 }
@@ -161,9 +161,9 @@ remove_whitespace <- function(desc) {
 split_URL <- function(desc) {
   # Extract a vector of URLs from comma-split text
   if (!is.null(desc[["url"]])) {
-    desc[["url"]] <- desc[["url"]] |>
-      strsplit(",") |>
-      unlist() |>
+    desc[["url"]] <- desc[["url"]] %p%
+      strsplit(",") %p%
+      unlist() %p%
       trimws()
   }
   desc
