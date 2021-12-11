@@ -60,9 +60,25 @@ update_descs_CRAN <- function(package, descs) {
   descs
 }
 
+update_descs_bioc <- function(descs) {
+  bioc_descs <- BiocPkgTools::biocPkgList() |>
+    select_fields()
+  for (index in seq_len(nrow(bioc_descs))) {
+    descs[[bioc_descs[[index, "package"]]]] <- bioc_descs[index, ] |>
+      as.list() |>
+      reformat_dependencies() |>
+      remove_whitespace() |>
+      paste_maintainer() |>
+      split_URL() |>
+      add_class_to_desc()
+  }
+  descs
+}
+
 select_fields <- function(desc) {
   fields <- c("package", "title", "maintainer", "description", "url", "license",
               "depends", "imports", "suggests", "linkingto", "enhances", "crandb_file_date")
+  # TODO: use date/publication instead of crandb_file_date to include Bioconductor?
   names(desc) <- tolower(names(desc))
   desc[fields[fields %in% names(desc)]]
 }
@@ -81,6 +97,24 @@ replace_missing_dep_versions <- function(desc) {
   desc
 }
 
+reformat_dependencies <- function(desc) {
+  dep_types <- c("depends", "imports", "suggests", "enhances", "linkingto")
+  # Remove empty dependencies
+  # Maybe return empty list instead?
+  is_empty_dep_type <- vapply(desc[dep_types], \(x) all(is.na(x[[1]])), logical(1))
+  desc[dep_types[is_empty_dep_type]] <- NULL
+  # Remove no longer existing dependency types
+  dep_types <- dep_types[dep_types %in% names(desc)]
+  # Separate and reformat names and versions of packages
+  desc[dep_types] <- lapply(desc[dep_types], \(dep_type) {
+    search_res <- lapply(dep_type[[1]], \(x) {
+      stringi::stri_match_all_regex(x, "([^(]*)(?>\\((.*)\\))?")[[1]][-2, -1]
+    })
+    setNames(lapply(search_res, `[`, 2), lapply(search_res, `[`, 1))
+  })
+  desc
+}
+
 split_URL <- function(desc) {
   # Extract a vector of URLs from comma-split text
   if (!is.null(desc[["url"]])) {
@@ -95,6 +129,14 @@ split_URL <- function(desc) {
 add_class_to_desc <- function(desc) {
   attr(desc, "package_name") <- desc[["package"]]
   class(desc) <- c("package_description", "list")
+  desc
+}
+
+paste_maintainer <- function(desc) {
+  # Combine a vector of strings into one comma-separated string
+  if (!is.null(desc[["maintainer"]])) {
+    desc[["maintainer"]] <- paste0(desc[["maintainer"]], collapse = ", ")
+  }
   desc
 }
 
