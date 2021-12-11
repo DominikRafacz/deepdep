@@ -61,11 +61,20 @@ update_descs_CRAN <- function(package, descs) {
 }
 
 update_descs_bioc <- function(descs) {
+  # Whatever the line below means, caching could use some simplifying.
+  # Actually, it doesn't even do anything, because there is no return.
+  # Keeping it just as a reminder that there was some idea about this.
+  
+  # if file is not new, it means package is not available via bioc
+  if (!attr(descs, "new")) descs
+  
+  # Actual working code now
   bioc_descs <- BiocPkgTools::biocPkgList() |>
     select_fields()
   for (index in seq_len(nrow(bioc_descs))) {
     descs[[bioc_descs[[index, "package"]]]] <- bioc_descs[index, ] |>
       as.list() |>
+      remove_empty_dependencies() |>
       reformat_dependencies() |>
       remove_whitespace() |>
       paste_maintainer() |>
