@@ -26,12 +26,12 @@ Imports:
     ggplot2,
     ggraph,
     graphlayouts,
-    httr,
     igraph,
     pkgsearch,
     scales
 Suggests: 
     BiocManager,
+    BiocPkgTools,
     shiny,
     shinycssloaders,
     covr,
