@@ -87,12 +87,17 @@ update_descs_bioc <- function(descs) {
   descs
 }
 
-select_fields <- function(desc) {
-  fields <- c("package", "title", "maintainer", "description", "url", "license",
-              "depends", "imports", "suggests", "linkingto", "enhances", "crandb_file_date")
-  # TODO: use date/publication instead of crandb_file_date to include Bioconductor?
-  names(desc) <- tolower(names(desc))
-  desc[fields[fields %in% names(desc)]]
+#' @importFrom utils packageDescription
+update_descs_local <- function(package, descs) {
+  descs[[package]] <- packageDescription(package) |>
+    select_fields() |>
+    remove_whitespace() |>
+    split_dependencies() |>
+    reformat_dependencies() |>
+    paste_maintainer() |>
+    split_URL() |>
+    add_class_to_desc("local")
+  descs
 }
 
 # Dependency related functions ----
@@ -133,6 +138,15 @@ reformat_dependencies <- function(desc) {
     setNames(lapply(search_res, `[`, 3), lapply(search_res, `[`, 2))
   })
   desc
+}
+
+# Other processing functions ----
+select_fields <- function(desc) {
+  fields <- c("package", "title", "maintainer", "description", "url", "license",
+              "depends", "imports", "suggests", "linkingto", "enhances", "crandb_file_date")
+  # TODO: use date/publication instead of crandb_file_date to include Bioconductor and local?
+  names(desc) <- tolower(names(desc))
+  desc[fields[fields %in% names(desc)]]
 }
 
 remove_whitespace <- function(desc) {
