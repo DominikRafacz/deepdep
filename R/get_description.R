@@ -42,8 +42,8 @@ get_desc_cached <- function(package, repo) {
     return(descs[[package]])
   descs <- switch(repo,
                   CRAN = update_descs_CRAN(package, descs),
-                  bioc = get_all_desc_bioc(descs),
-                  local = get_desc_local(package, descs))
+                  bioc = update_descs_bioc(descs),
+                  local = update_descs_local(package, descs))
   attr(descs, "new") <- FALSE
   save_cache(descs)
   descs[[package]]
