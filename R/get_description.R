@@ -86,28 +86,36 @@ select_fields <- function(desc) {
   desc[fields[fields %in% names(desc)]]
 }
 
-remove_whitespace <- function(desc) {
-  rapply(desc, \(x) gsub("\n", " ", x, fixed = TRUE), how = "list")
+# Dependency related functions ----
+filter_dep_types <- function(desc) {
+  dep_types <- c("depends", "imports", "suggests", "enhances", "linkingto")
+  dep_types[dep_types %in% names(desc)]
 }
 
 replace_missing_dep_versions <- function(desc) {
+  dep_types <- filter_dep_types(desc)
   # If dependency version is not specified (marked by "*"), replace with NA
-  dep_types <- c("depends", "imports", "suggests", "enhances", "linkingto")
-  dep_types <- dep_types[dep_types %in% names(desc)]
   desc[dep_types] <- lapply(desc[dep_types], \(dep_type) {
     lapply(dep_type, \(x) ifelse(x == "*", NA, x))
   })
   desc
 }
 
-reformat_dependencies <- function(desc) {
+split_dependencies <- function(desc) {
+  dep_types <- filter_dep_types(desc)
+  desc[dep_types] <- lapply(desc[dep_types], strsplit, ",")
+  desc
+}
+
+remove_empty_dependencies <- function(desc) {
   dep_types <- c("depends", "imports", "suggests", "enhances", "linkingto")
-  # Remove empty dependencies
-  # Maybe return empty list instead?
   is_empty_dep_type <- vapply(desc[dep_types], \(x) all(is.na(x[[1]])), logical(1))
   desc[dep_types[is_empty_dep_type]] <- NULL
-  # Remove no longer existing dependency types
-  dep_types <- dep_types[dep_types %in% names(desc)]
+  desc
+}
+
+reformat_dependencies <- function(desc) {
+  dep_types <- filter_dep_types(desc)
   # Separate and reformat names and versions of packages
   desc[dep_types] <- lapply(desc[dep_types], \(dep_type) {
     search_res <- lapply(dep_type[[1]], \(x) {
@@ -116,6 +124,10 @@ reformat_dependencies <- function(desc) {
     setNames(lapply(search_res, `[`, 3), lapply(search_res, `[`, 2))
   })
   desc
+}
+
+remove_whitespace <- function(desc) {
+  rapply(desc, \(x) gsub("\n", " ", x, fixed = TRUE), how = "list")
 }
 
 split_URL <- function(desc) {
