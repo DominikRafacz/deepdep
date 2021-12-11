@@ -4,7 +4,13 @@
 \alias{get_description}
 \title{Scrap the DESCRIPTION file and CRAN metadata of the package}
 \usage{
-get_description(package, bioc = FALSE, local = FALSE, reset_cache = FALSE)
+get_description(
+  package,
+  bioc = FALSE,
+  local = FALSE,
+  reset_cache = FALSE,
+  version = NULL
+)
 }
 \arguments{
 \item{package}{A \code{character}. Name of the package that is on CRAN, Bioconductor repository or locally installed.
@@ -16,6 +22,9 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 \item{local}{A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).}
 
 \item{reset_cache}{A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.}
+
+\item{version}{A \code{character}. Name of the version published on CRAN that should be retrieved.
+Does not work for Bioconductor or local packages. Defaults to \code{NULL} which means 'get the latest version available'.}
 }
 \value{
 An object of \code{package_description} class.

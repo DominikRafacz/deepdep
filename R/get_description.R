@@ -9,6 +9,8 @@
 #' Bioconductor repository. For this option to work properly, \code{BiocManager} package needs to be installed.
 #' @param local A \code{logical} value. If \code{TRUE} only data of locally installed packages will be used (without API usage).
 #' @param reset_cache A \code{logical} value. If \code{TRUE} the cache will be cleared before obtaining the list of packages.
+#' @param version A \code{character}. Name of the version published on CRAN that should be retrieved.
+#' Does not work for Bioconductor or local packages. Defaults to \code{NULL} which means 'get the latest version available'.
 #'
 #' @return An object of \code{package_description} class.
 #'
@@ -25,23 +27,25 @@
 #' }
 #'
 #' @export
-get_description <- function(package, bioc = FALSE, local = FALSE, reset_cache = FALSE) {
+get_description <- function(package, bioc = FALSE, local = FALSE,
+                            reset_cache = FALSE, version = NULL) {
   if (local && bioc) stop("You cannot use both 'local' and 'bioc' options at once.")
+  if (local && !is.null(version)) stop("You cannot specify version for local package.")
   if (reset_cache) reset_cached_files("desc")
   if (!is_available(package, bioc, local)) return(NULL)
   if (local) return(get_desc_cached(package, "local"))
   desc <- NULL
   if (bioc) desc <- get_desc_cached(package, "bioc")
-  if (is.null(desc)) desc <- get_desc_cached(package, "CRAN")
+  if (is.null(desc)) desc <- get_desc_cached(package, "CRAN", version)
   desc
 }
 
-get_desc_cached <- function(package, repo) {
+get_desc_cached <- function(package, repo, version = NULL) {
   descs <- get_cached_obj("desc", repo)
   if (package %in% names(descs))
     return(descs[[package]])
   descs <- switch(repo,
-                  CRAN = update_descs_CRAN(package, descs),
+                  CRAN = update_descs_CRAN(package, descs, version),
                   bioc = update_descs_bioc(descs),
                   local = update_descs_local(package, descs))
   attr(descs, "new") <- FALSE
