@@ -87,8 +87,9 @@ update_descs_bioc <- function(descs) {
   descs
 }
 
+#' @importFrom utils packageDescription
 update_descs_local <- function(package, descs) {
-  descs[[package]] <- utils::packageDescription(package) |>
+  descs[[package]] <- packageDescription(package) |>
     select_fields() |>
     remove_whitespace() |>
     split_dependencies() |>
