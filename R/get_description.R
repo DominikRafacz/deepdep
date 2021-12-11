@@ -56,7 +56,7 @@ update_descs_CRAN <- function(package, descs) {
     remove_whitespace() |>
     replace_missing_dep_versions() |>
     split_URL() |>
-    add_class_to_desc()
+    add_class_to_desc("CRAN")
   descs
 }
 
@@ -70,8 +70,11 @@ update_descs_bioc <- function(descs) {
       remove_whitespace() |>
       paste_maintainer() |>
       split_URL() |>
-      add_class_to_desc()
+      add_class_to_desc("Bioconductor")
   }
+  
+  attr(descs, "type") <- "desc"
+  attr(descs, "repo") <- "bioc"
   descs
 }
 
@@ -126,17 +129,19 @@ split_URL <- function(desc) {
   desc
 }
 
-add_class_to_desc <- function(desc) {
-  attr(desc, "package_name") <- desc[["package"]]
-  class(desc) <- c("package_description", "list")
-  desc
-}
-
 paste_maintainer <- function(desc) {
   # Combine a vector of strings into one comma-separated string
   if (!is.null(desc[["maintainer"]])) {
     desc[["maintainer"]] <- paste0(desc[["maintainer"]], collapse = ", ")
   }
+  desc
+}
+
+# 
+add_class_to_desc <- function(desc, source) {
+  attr(desc, "package_name") <- desc[["package"]]
+  attr(desc, "source") <- source
+  class(desc) <- c("package_description", "list")
   desc
 }
 
