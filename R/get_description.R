@@ -108,9 +108,9 @@ reformat_dependencies <- function(desc) {
   # Separate and reformat names and versions of packages
   desc[dep_types] <- lapply(desc[dep_types], \(dep_type) {
     search_res <- lapply(dep_type[[1]], \(x) {
-      stringi::stri_match_all_regex(x, "([^(]*)(?>\\((.*)\\))?")[[1]][-2, -1]
+      stringi::stri_match_all_regex(x, "([^(]*)(?:\\((.*)\\))?")[[1]][-2, ]
     })
-    setNames(lapply(search_res, `[`, 2), lapply(search_res, `[`, 1))
+    setNames(lapply(search_res, `[`, 3), lapply(search_res, `[`, 2))
   })
   desc
 }
