@@ -41,7 +41,7 @@ get_desc_cached <- function(package, repo) {
   if (package %in% names(descs))
     return(descs[[package]])
   descs <- switch(repo,
-                  CRAN = append_desc_CRAN(package, descs),
+                  CRAN = update_descs_CRAN(package, descs),
                   bioc = get_all_desc_bioc(descs),
                   local = get_desc_local(package, descs))
   attr(descs, "new") <- FALSE
@@ -50,52 +50,50 @@ get_desc_cached <- function(package, repo) {
 }
 
 #' @importFrom pkgsearch cran_package
-append_desc_CRAN <- function(package, descs) {
-  # get the description
-  description <- cran_package(package, version = NULL)
-
-  # prettify the description
-  names(description) <- tolower(names(description))
-
-  # authors is a vector of "person" class objects (named character)
-  description$author <- NULL
-  names(description)[names(description) == "authors@r"] <- "authors"
-
-  # gsub("\n") did not remove all backslashes
-  # gsub("\\") dit no work
-  # this apparently works with '\n' in input
-  # this below was very optimistic
-  # description$authors <- eval(parse(text = description$authors))
-  # this below was very optimistic too
-  # description$description <- gsub("\n", "", x = description$description, fixed = TRUE)
-
-  # add NA if a version of the dependency is not specified (instead of "*")
-  for (dep_type in c("depends", "imports", "suggests", "enhances", "linkingto")) {
-    if (!is.null(description[[dep_type]]))
-      description[[dep_type]] <-
-        lapply(description[[dep_type]], function(x) ifelse(x == "*", NA, x))
-  }
-
-  # change url to the vector of properl urls
-  if (!is.null(description$url)) {
-    description$url <- gsub("\n", "", x = description$url, fixed = TRUE)
-    description$url <- unlist(strsplit(description$url, ","))
-  }
-
-  names(description)[names(description) == "date/publication"] <- "publication_date"
-
-  # what is date?
-  description$date <- NULL
-
-  # what is releases?
-  description$releases <- NULL
-
-  ret <- description
-
-  attr(ret, "package_name") <- package
-  class(ret) <- c("package_description", "list")
-  descs[[package]] <- ret
+update_descs_CRAN <- function(package, descs) {
+  descs[[package]] <- cran_package(package, version = NULL) |>
+    select_fields_CRAN() |>
+    remove_whitespace() |>
+    replace_missing_dep_versions() |>
+    split_URL() |>
+    add_class_to_desc()
   descs
+}
+
+select_fields_CRAN <- function(desc) {
+  fields <- c("package", "title", "maintainer", "description", "url", "license",
+              "depends", "imports", "suggests", "linkingto", "enhances", "crandb_file_date")
+  names(desc) <- tolower(names(desc))
+  desc[fields[fields %in% names(desc)]]
+}
+
+remove_whitespace <- function(desc) {
+  rapply(desc, \(x) gsub("\n", " ", x, fixed = TRUE), how = "list")
+}
+
+replace_missing_dep_versions <- function(desc) {
+  # If dependency version is not specified (marked by "*"), replace with NA
+  dep_types <- c("depends", "imports", "suggests", "enhances", "linkingto")
+  dep_types <- dep_types[dep_types %in% names(desc)]
+  desc[dep_types] <- lapply(desc[dep_types], \(dep_type) {
+    lapply(dep_type, \(x) ifelse(x == "*", NA, x))
+  })
+  desc
+}
+
+split_URL <- function(desc) {
+  # Extract a vector of URLs from comma-split text
+  desc[["url"]] <- desc[["url"]] |>
+    strsplit(",") |>
+    unlist() |>
+    trimws()
+  desc
+}
+
+add_class_to_desc <- function(desc) {
+  attr(desc, "package_name") <- desc[["package"]]
+  class(desc) <- c("package_description", "list")
+  desc
 }
 
 #' @importFrom httr GET content
