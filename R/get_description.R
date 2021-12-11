@@ -83,10 +83,12 @@ replace_missing_dep_versions <- function(desc) {
 
 split_URL <- function(desc) {
   # Extract a vector of URLs from comma-split text
-  desc[["url"]] <- desc[["url"]] |>
-    strsplit(",") |>
-    unlist() |>
-    trimws()
+  if (!is.null(desc[["url"]])) {
+    desc[["url"]] <- desc[["url"]] |>
+      strsplit(",") |>
+      unlist() |>
+      trimws()
+  }
   desc
 }
 
@@ -192,6 +194,17 @@ get_desc_local <- function(package, descs) {
   descs[[package]] <- ret
   descs
 }
+
+# # Attach input list for easier references
+# attach(desc)
+# list(
+#   package = Package,
+#   title = Title,
+#   maintainer = Maintainer,
+#   description = Description,
+#   depends = Depends,
+#   crandb_file_date = crandb_file_date
+# )
 
 check_if_valid_depend <- function(char) {
   grepl("Depends", char, fixed = TRUE) |
