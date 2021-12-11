@@ -55,6 +55,7 @@ get_desc_cached <- function(package, repo, version = NULL) {
 
 #' @importFrom pkgsearch cran_package
 update_descs_CRAN <- function(package, descs, version = NULL) {
+  check_package_version(package, version)
   descs[[package]] <- cran_package(package, version = version) |>
     select_fields() |>
     remove_whitespace() |>
