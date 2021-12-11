@@ -52,7 +52,7 @@ get_desc_cached <- function(package, repo) {
 #' @importFrom pkgsearch cran_package
 update_descs_CRAN <- function(package, descs) {
   descs[[package]] <- cran_package(package, version = NULL) |>
-    select_fields_CRAN() |>
+    select_fields() |>
     remove_whitespace() |>
     replace_missing_dep_versions() |>
     split_URL() |>
@@ -60,7 +60,7 @@ update_descs_CRAN <- function(package, descs) {
   descs
 }
 
-select_fields_CRAN <- function(desc) {
+select_fields <- function(desc) {
   fields <- c("package", "title", "maintainer", "description", "url", "license",
               "depends", "imports", "suggests", "linkingto", "enhances", "crandb_file_date")
   names(desc) <- tolower(names(desc))
