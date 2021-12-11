@@ -87,9 +87,8 @@ update_descs_bioc <- function(descs) {
   descs
 }
 
-#' @importFrom utils packageDescription
 update_descs_local <- function(package, descs) {
-  descs[[package]] <- packageDescription(package) |>
+  descs[[package]] <- utils::packageDescription(package) |>
     select_fields() |>
     remove_whitespace() |>
     split_dependencies() |>
@@ -172,126 +171,9 @@ paste_maintainer <- function(desc) {
   desc
 }
 
-# 
 add_class_to_desc <- function(desc, source) {
   attr(desc, "package_name") <- desc[["package"]]
   attr(desc, "source") <- source
   class(desc) <- c("package_description", "list")
   desc
-}
-
-#' @importFrom httr GET content
-get_all_desc_bioc <- function(descs) {
-  # if file is not new, it means package is not available via bioc
-  if (!attr(descs, "new")) descs
-
-  # get all descriptions from bioconductor repository
-  tmp <- GET("http://bioconductor.org/packages/release/bioc/VIEWS")
-  tmp <- content(tmp, as = "text", encoding = "UTF-8")
-
-  pkgs <- prepeare_descs(tmp)
-  # name pakcages
-  names(pkgs) <- lapply(pkgs, function(pkg) pkg$Package)
-
-  # convert strings of dependencies into vectors
-  descs <- lapply(pkgs, ajust_desc_file)
-
-  attr(descs, "type") <- "desc"
-  attr(descs, "repo") <- "bioc"
-  descs
-}
-
-prepeare_descs <- function(raw_desc) {
-  mat <- stringi::stri_match_all_regex(raw_desc, "(.*):(?> |\\n)((?>.|\\n        )*)\\n")[[1]][, -1]
-  n <- nrow(mat)
-  mat[,2] <- stringi::stri_replace_all_regex(mat[, 2], "(\\n)?        |\\n", " ")
-  pkg_begs <- (1:n)[mat[, 1] == "Package"]
-  pkg_ends <- c((pkg_begs - 1)[-1], n)
-
-  # transform two-column matrix into a list
-  lapply(1:length(pkg_begs), function(i) {
-    ret <- as.list(mat[pkg_begs[i]:pkg_ends[i], 2])
-    names(ret) <- mat[pkg_begs[i]:pkg_ends[i], 1]
-    ret
-  }) -> pkgs
-  pkgs
-}
-
-ajust_desc_file <- function(pkg) {
-  nms <- tolower(names(pkg))
-  names(pkg) <- nms
-  for (dep_type in c("depends", "imports", "suggests", "linkingto", "enhances")) {
-    if (dep_type %in% nms) {
-      deps <- stringi::stri_match_all_regex(
-        pkg[[dep_type]],
-        "(?>\\s*)([^,\\(]+)(?>(?> \\()(\\>\\=[^)]+)(?>\\)))?(?>,|$)")[[1]]
-      pkg[[dep_type]] <- deps[,3]
-      names(pkg[[dep_type]]) <- deps[,2]
-    }
-  }
-  attr(pkg, "package_name") <- pkg$Package
-  class(pkg) <- c("package_description", "list")
-  pkg
-}
-
-get_desc_local <- function(package, descs) {
-  # get path to DESCRIPTION file of the package
-  path <- paste(.libPaths()[1], package, "DESCRIPTION", sep = "/")
-  # get the description
-  raw_desc <- readLines(path)
-
-  # prepeare DESCRIPTION so same function as for bioconductor can be used. Packages has to be listed in one line.
-  merge <- list()
-  counter <- 0
-  for (i in 1:length(raw_desc)) {
-    if (check_if_valid_depend(raw_desc[i])) {
-      start <- i
-    }
-    if (counter > 0) {
-      if (!grepl(":", raw_desc[i], fixed = TRUE)) {
-        counter <- counter + 1
-        if (grepl(":", raw_desc[i + 1], fixed = TRUE)) {
-          merge[[i]] <- c(start, counter)
-          counter <- 0
-        }
-      }
-    }
-  }
-
-  for (vec in merge) {
-    if(is.null(vec)) next()
-    raw_desc[vec[1]] <-  paste0(raw_desc[vec[1]:(vec[1]+vec[2]-1)], collapse = " ")
-    raw_desc[(vec[1]+1):(vec[1] + vec[2]-1)] <- ""
-  }
-
-  raw_desc <- paste0(raw_desc, collapse = "\n")
-
-  # Change raw desc to list
-  pkg <- prepeare_descs(raw_desc)[[1]]
-
-  ret <- ajust_desc_file(pkg)
-
-  attr(ret, "package_name") <- package
-  class(ret) <- c("package_description", "list")
-  descs[[package]] <- ret
-  descs
-}
-
-# # Attach input list for easier references
-# attach(desc)
-# list(
-#   package = Package,
-#   title = Title,
-#   maintainer = Maintainer,
-#   description = Description,
-#   depends = Depends,
-#   crandb_file_date = crandb_file_date
-# )
-
-check_if_valid_depend <- function(char) {
-  grepl("Depends", char, fixed = TRUE) |
-    grepl("Imports", char, fixed = TRUE) |
-    grepl("Suggests", char, fixed = TRUE) |
-    grepl("Enhances", char, fixed = TRUE) |
-    grepl("LinkingTo", char, fixed = TRUE)
 }
