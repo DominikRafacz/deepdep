@@ -15,6 +15,8 @@
 #' \code{"all"}, a shorthand for the whole vector; character string \code{"most"} for the same vector without \code{"Enhances"};
 #' character string \code{"strong"} (default) for the first three elements of that vector. Works analogously to
 #' \code{\link[tools]{package_dependencies}}.
+#' @param version A \code{character}. Name of the version published on CRAN that should be retrieved.
+#' Does not work for Bioconductor or local packages. Defaults to \code{NULL} which means 'get the latest version available'.
 #'
 #' @return An object of \code{deepdep} class.
 #'
@@ -38,11 +40,11 @@
 #'
 #' @export
 deepdep <- function(package, depth = 1, downloads = FALSE, bioc = FALSE, local = FALSE,
-                    dependency_type = "strong") {
+                    dependency_type = "strong", version = NULL) {
 
   check_package_name(package, bioc, local)
 
-  pkg_dep <- get_dependencies(package, downloads, bioc, local, dependency_type)
+  pkg_dep <- get_dependencies(package, downloads, bioc, local, dependency_type, version)
 
   # check if there are any dependencies
   if (length(pkg_dep$name) > 0) {

@@ -10,7 +10,8 @@ deepdep(
   downloads = FALSE,
   bioc = FALSE,
   local = FALSE,
-  dependency_type = "strong"
+  dependency_type = "strong",
+  version = NULL
 )
 }
 \arguments{
@@ -31,6 +32,9 @@ Bioconductor repository. For this option to work properly, \code{BiocManager} pa
 \code{"all"}, a shorthand for the whole vector; character string \code{"most"} for the same vector without \code{"Enhances"};
 character string \code{"strong"} (default) for the first three elements of that vector. Works analogously to
 \code{\link[tools]{package_dependencies}}.}
+
+\item{version}{A \code{character}. Name of the version published on CRAN that should be retrieved.
+Does not work for Bioconductor or local packages. Defaults to \code{NULL} which means 'get the latest version available'.}
 }
 \value{
 An object of \code{deepdep} class.
