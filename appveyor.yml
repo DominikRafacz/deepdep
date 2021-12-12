@@ -24,7 +24,7 @@ environment:
 
 build_script:
   - travis-tool.sh install_deps
-  - Rscript -e 'remotes::install_deps(dependencies = TRUE, repos = c(getOption("repos"), remotes::bioc_install_repos()))'
+  - Rscript -e 'library("devtools"); options(repos=c(CRAN="http://cran.rstudio.com", remotes::bioc_install_repos())); install_deps(dependencies = TRUE)'
 
 test_script:
   - travis-tool.sh run_tests
