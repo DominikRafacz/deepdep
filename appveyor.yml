@@ -24,7 +24,7 @@ environment:
 
 build_script:
   - travis-tool.sh install_deps
-  - travis-tool.sh install_bioc_deps
+  - Rscript -e 'remotes::install_deps(dependencies = TRUE, repos = c(getOption("repos"), remotes::bioc_install_repos()))'
 
 test_script:
   - travis-tool.sh run_tests
