@@ -16,7 +16,7 @@
 print.package_description <- function(x, ...) {
   # TODO: Maybe make use of default packageDescription class by collapsing
   #  dependency, maintainer and URL fields into comma-separated strings?
-  cat(x$package, ": ", x$title, "\n", sep = "")
+  cat(x$package, " (v", x$version, "): ", x$title, "\n", sep = "")
   cat("Maintainer:", x$maintainer, "\n")
   cat("Description: \n", x$description, "\n")
   cat("Depends:", names(x$depends), "\n")
