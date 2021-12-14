@@ -31,32 +31,52 @@ get_description <- function(package, bioc = FALSE, local = FALSE,
                             reset_cache = FALSE, version = NULL) {
   if (local && bioc) stop("You cannot use both 'local' and 'bioc' options at once.")
   if (local && !is.null(version)) stop("You cannot specify version for local package.")
+  
   if (reset_cache) reset_cached_files("desc")
   if (!is_available(package, bioc, local)) return(NULL)
+  
   if (local) return(get_desc_cached(package, "local"))
   desc <- NULL
   if (bioc) desc <- get_desc_cached(package, "bioc")
-  if (is.null(desc)) desc <- get_desc_cached(package, "CRAN", version)
+  if (is.null(desc)) {
+    version <- check_package_version(package, version)
+    desc <- get_desc_cached(package, "CRAN", version)
+  }
   desc
 }
 
 get_desc_cached <- function(package, repo, version = NULL) {
   descs <- get_cached_obj("desc", repo)
-  if (package %in% names(descs))
-    return(descs[[package]])
-  descs <- switch(repo,
-                  CRAN = update_descs_CRAN(package, descs, version),
-                  bioc = update_descs_bioc(descs),
-                  local = update_descs_local(package, descs))
-  attr(descs, "new") <- FALSE
-  save_cache(descs)
-  descs[[package]]
+  ret <- extract_package_version(descs, package, version)
+  if (is.null(ret)) {
+    descs <- switch(repo,
+                    CRAN = update_descs_CRAN(package, descs, version),
+                    bioc = update_descs_bioc(descs),
+                    local = update_descs_local(package, descs))
+    attr(descs, "new") <- FALSE
+    save_cache(descs)
+    ret <- extract_package_version(descs, package, version)
+  }
+  ret
 }
 
+extract_package_version <- function(descs, package, version) {
+  if (!package %in% names(descs))
+    return(NULL)
+  desc <- descs[[package]]
+  
+  # If version is null, extract alphabetically last element.
+  if (is.null(version))
+    version <- sort(names(desc), decreasing = TRUE)[1]
+  else if (!version %in% names(desc))
+    return(NULL)
+  desc[[version]]
+}
+
+# Dependency updating functions ----
 #' @importFrom pkgsearch cran_package
-update_descs_CRAN <- function(package, descs, version = NULL) {
-  check_package_version(package, version)
-  descs[[package]] <- cran_package(package, version = version) %p%
+update_descs_CRAN <- function(package, descs, version) {
+  descs[[package]][[version]] <- cran_package(package, version = version) %p%
     select_fields() %p%
     remove_whitespace() %p%
     replace_missing_dep_versions() %p%
@@ -77,7 +97,7 @@ update_descs_bioc <- function(descs) {
   bioc_descs <- BiocPkgTools::biocPkgList() %p%
     select_fields()
   for (index in seq_len(nrow(bioc_descs))) {
-    descs[[bioc_descs[[index, "package"]]]] <- bioc_descs[index, ] %p%
+    ret <- bioc_descs[index, ] %p%
       as.list() %p%
       remove_empty_dependencies() %p%
       reformat_dependencies() %p%
@@ -85,6 +105,7 @@ update_descs_bioc <- function(descs) {
       paste_maintainer() %p%
       split_URL() %p%
       add_class_to_desc("Bioconductor")
+    descs[[bioc_descs[[index, "package"]]]][[ret[["version"]]]] <- ret
   }
   
   attr(descs, "type") <- "desc"
@@ -94,7 +115,7 @@ update_descs_bioc <- function(descs) {
 
 #' @importFrom utils packageDescription
 update_descs_local <- function(package, descs) {
-  descs[[package]] <- packageDescription(package) %p%
+  ret <- packageDescription(package) %p%
     select_fields() %p%
     remove_whitespace() %p%
     split_dependencies() %p%
@@ -102,6 +123,7 @@ update_descs_local <- function(package, descs) {
     paste_maintainer() %p%
     split_URL() %p%
     add_class_to_desc("local")
+  descs[[package]][[ret[["version"]]]] <- ret
   descs
 }
 
@@ -147,7 +169,7 @@ reformat_dependencies <- function(desc) {
 
 # Other processing functions ----
 select_fields <- function(desc) {
-  fields <- c("package", "title", "maintainer", "description", "url", "license",
+  fields <- c("package", "title", "maintainer", "description", "url", "license", "version",
               "depends", "imports", "suggests", "linkingto", "enhances", "crandb_file_date")
   # TODO: use date/publication instead of crandb_file_date to include Bioconductor and local?
   names(desc) <- tolower(names(desc))

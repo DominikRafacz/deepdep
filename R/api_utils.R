@@ -24,9 +24,13 @@ check_package_name <- function(package, bioc, local) {
 #' 
 #' @importFrom pkgsearch cran_package_history
 check_package_version <- function(package, version) {
-  if (!is.null(version) && 
-      !version %in% cran_package_history(package)[["Version"]])
+  # The order doesn't matter, and reversing makes it easier to access the latest version.
+  versions <- rev(cran_package_history(package)[["Version"]])
+  if (is.null(version))
+    version <- versions[1]
+  if (!version %in% versions)
     stop(paste0("No version named '", version, "' for package ", package, " available on CRAN."))
+  version
 }
 
 is_available <- function(package, bioc = FALSE, local = FALSE) {
