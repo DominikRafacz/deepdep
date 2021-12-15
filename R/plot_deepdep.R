@@ -17,6 +17,9 @@
 #' will be displayed below package names. Defaults to \code{FALSE}.
 #' @param show_stamp A \code{logical}. If \code{TRUE} (the default) the package version and
 #' plot creation time will be added
+#' @param declutter A \code{logical}. If \code{TRUE} then all layers beyond the first one
+#' ignore non-strong dependencies (i.e. "Suggests" and "Enhances"). This visualizes the
+#' so-called "hard costs of weak suggests".
 #' @param ... Other arguments passed to the \code{deepdep} function.
 #'
 #' @return A \code{ggplot2, gg, ggraph, deepdep_plot} class object.
@@ -51,7 +54,7 @@
 #' @export
 plot_dependencies <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                               label_percentage = 1, show_version = FALSE, show_downloads = FALSE,
-                              show_stamp = TRUE, ...) {
+                              show_stamp = TRUE, declutter = FALSE, ...) {
   UseMethod("plot_dependencies")
 }
 
@@ -59,7 +62,7 @@ plot_dependencies <- function(x, type = "circular", same_level = FALSE, reverse 
 #' @export
 plot_dependencies.default <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                       label_percentage = 1, show_version = FALSE, show_downloads = FALSE,
-                                      show_stamp = TRUE, ...) {
+                                      show_stamp = TRUE, declutter = FALSE, ...) {
   stop("This type of object does not have implemented method for 'plot_dependencies'")
 }
 
@@ -67,19 +70,19 @@ plot_dependencies.default <- function(x, type = "circular", same_level = FALSE, 
 #' @export
 plot_dependencies.character <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                         label_percentage = 1, show_version = FALSE, show_downloads = FALSE,
-                                        show_stamp = TRUE, ...) {
+                                        show_stamp = TRUE, declutter = FALSE, ...) {
   package_name <- NULL
   if (show_downloads == TRUE || label_percentage < 1)
     dd <- deepdep(x, downloads = TRUE, ...)
   else dd <- deepdep(x, ...)
-  plot_dependencies(dd, type, same_level, reverse, label_percentage, show_version, show_downloads, show_stamp)
+  plot_dependencies(dd, type, same_level, reverse, label_percentage, show_version, show_downloads, show_stamp, declutter)
 }
 
 #' @rdname plot_deepdep
 #' @export
 plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, reverse = FALSE,
                                       label_percentage = 1, show_version = FALSE, show_downloads = FALSE,
-                                      show_stamp = TRUE, ...) {
+                                      show_stamp = TRUE, declutter = FALSE, ...) {
   # Due to NSE inside of the function, we have to declare "labeled" as NULL to prevent check fail
   labeled <- NULL
   node1.name <- NULL
@@ -101,6 +104,10 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     }
     if (show_downloads) {
       x <- add_downloads_to_name(x)
+    }
+    if (declutter) {
+      x <- x[x[["origin"]] == x[[1, "origin"]] |
+               x[["type"]] %in% match_dependency_type("strong"), ]
     }
     G <- graph_from_data_frame(x)
   }

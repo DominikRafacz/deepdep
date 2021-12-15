@@ -16,6 +16,7 @@ plot_dependencies(
   show_version = FALSE,
   show_downloads = FALSE,
   show_stamp = TRUE,
+  declutter = FALSE,
   ...
 )
 
@@ -28,6 +29,7 @@ plot_dependencies(
   show_version = FALSE,
   show_downloads = FALSE,
   show_stamp = TRUE,
+  declutter = FALSE,
   ...
 )
 
@@ -40,6 +42,7 @@ plot_dependencies(
   show_version = FALSE,
   show_downloads = FALSE,
   show_stamp = TRUE,
+  declutter = FALSE,
   ...
 )
 
@@ -52,6 +55,7 @@ plot_dependencies(
   show_version = FALSE,
   show_downloads = FALSE,
   show_stamp = TRUE,
+  declutter = FALSE,
   ...
 )
 }
@@ -77,6 +81,10 @@ will be displayed below package names. Defaults to \code{FALSE}.}
 
 \item{show_stamp}{A \code{logical}. If \code{TRUE} (the default) the package version and
 plot creation time will be added}
+
+\item{declutter}{A \code{logical}. If \code{TRUE} then all layers beyond the first one
+ignore non-strong dependencies (i.e. "Suggests" and "Enhances"). This visualizes the
+so-called "hard costs of weak suggests".}
 
 \item{...}{Other arguments passed to the \code{deepdep} function.}
 }
