@@ -1,3 +1,7 @@
+# deepdep of the future
+* added `version` parameter for `deepdep()`, `get_dependencies()`, and `get_description()` functions (issue #17); working for CRAN packages only
+* simplified and modularized DESCRIPTION reading code
+
 # deepdep 0.3.0
 * adjusted `dependency_type` argument to be consistent with `tools` package (issue #19)
 * added `show_stamp` parameter for plot function (issue #20)
