@@ -52,18 +52,16 @@ test_that("decluttering removes all Suggests and Enhances packages from outer la
   vcr::use_cassette("deepdep-3", {
     dd <- deepdep("data.table", depth = 2, dependency_type = "all")
   })
-  vcr::use_cassette("plot-3", {
-    plt <- plot_dependencies("data.table", depth = 2, declutter = TRUE,
-                             dependency_type = "all")
-  })
+  plt <- plot_dependencies(dd, depth = 2, declutter = TRUE,
+                           dependency_type = "all")
   
   filtered_dd <- dd[dd$origin_level == 0 | !dd$type %in% c("Suggests", "Enhances"), ]
   packages_plotted <- unique(c(filtered_dd$origin, filtered_dd$name))
   
-  expect_setequal(packages_plotted, plt$name)
+  expect_setequal(packages_plotted, plt$data$name)
   
   edge_attrs <- igraph::edge_attr(attr(plt$data, "graph"))
   expect_true(
-    all(edge_attrs$origin_level[edge_attrs$type %in% c("Suggests", "Enhances")] == 1)
+    all(edge_attrs$origin_level[edge_attrs$type %in% c("Suggests", "Enhances")] == 0)
   )
 })
