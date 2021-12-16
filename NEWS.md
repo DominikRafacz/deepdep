@@ -4,6 +4,9 @@
 * added `declutter` parameter for `plot_dependencies()` that allows for ignoring non-strong dependencies of Suggests while plotting (issue #27)
 * `vcr` package is now optional for running tests (pull request #26)
 
+# deepdep 0.3.1
+* adjusted parameter of `deepdep` function similarly to `get_dependencies` (issue #24)
+
 # deepdep 0.3.0
 * adjusted `dependency_type` argument to be consistent with `tools` package (issue #19)
 * added `show_stamp` parameter for plot function (issue #20)

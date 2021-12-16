@@ -15,13 +15,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:37 GMT
+      date: Fri, 10 Dec 2021 09:16:26 GMT
       content-type: application/json
       content-length: '8758'
       connection: keep-alive
       etag: '"4Y20K96SKFCZU2MZUGFVKGNPS"'
       vary: Accept
-      x-couch-request-id: 070b094e54
+      x-couch-request-id: 02553fc643
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -125,8 +125,8 @@ http_interactions:
         library),\u000aR Core Team [ctb, cph] (tar implementation from R)","Maintainer":"Winston
         Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-02
         04:30:02 UTC","crandb_file_date":"2021-10-02 05:38:33","MD5sum":"884b76c45eeaf4cc9054e127f9a980c4","date":"2021-10-02T03:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/httpuv
@@ -143,13 +143,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:37 GMT
+      date: Fri, 10 Dec 2021 09:16:27 GMT
       content-type: application/json
       content-length: '2583'
       connection: keep-alive
       etag: '"1BQB3SRKMNXSSD3Y8YLMLTU8G"'
       vary: Accept
-      x-couch-request-id: 21d6e0c88d
+      x-couch-request-id: ddcd720c3a
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -183,8 +183,8 @@ http_interactions:
         Ooms [ctb],\u000aAndrzej Krzemienski [cph] (optional.hpp)","Maintainer":"Winston
         Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-09-09
         20:30:02 UTC","crandb_file_date":"2021-09-09 21:32:32","MD5sum":"055e526227338cc0851b5597c790ad3c","date":"2021-09-09T19:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/mime
@@ -201,13 +201,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:38 GMT
+      date: Fri, 10 Dec 2021 09:16:27 GMT
       content-type: application/json
       content-length: '1094'
       connection: keep-alive
       etag: '"3HC4015OA1RRNY3NVDPKLKG0"'
       vary: Accept
-      x-couch-request-id: 7da4585f94
+      x-couch-request-id: 36848f956b
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -221,8 +221,8 @@ http_interactions:
         02:06:04 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aJeffrey
         Horner [ctb],\u000aBeilei Bian [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2021-09-28
         05:00:05 UTC","crandb_file_date":"2021-09-28 06:32:44","MD5sum":"7314f3b57f70474d9b4d2b831d6bb59d","date":"2021-09-28T04:00:05+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/jsonlite
@@ -239,13 +239,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:38 GMT
+      date: Fri, 10 Dec 2021 09:16:27 GMT
       content-type: application/json
       content-length: '1896'
       connection: keep-alive
       etag: '"BK6I8CZL4ZWG0RJHMEK2NCZGO"'
       vary: Accept
-      x-couch-request-id: 1d9803816b
+      x-couch-request-id: 2659ed598d
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -268,8 +268,8 @@ http_interactions:
         13:54:18 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aDuncan
         Temple Lang [ctb],\u000aLloyd Hilaiel [cph] (author of bundled libyajl)","Repository":"CRAN","Date/Publication":"2020-12-09
         17:40:03 UTC","crandb_file_date":"2020-12-09 18:32:36","MD5sum":"6131e916e7a678552f6debecf620ccb1","date":"2020-12-09T16:40:03+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/xtable
@@ -286,13 +286,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:38 GMT
+      date: Fri, 10 Dec 2021 09:16:27 GMT
       content-type: application/json
       content-length: '2988'
       connection: keep-alive
       etag: '"345F64C7G4OMAC738M4SQCANF"'
       vary: Accept
-      x-couch-request-id: b7cae62654
+      x-couch-request-id: 024bd997c3
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -327,8 +327,8 @@ http_interactions:
         Stigler [ctb],\u000aRobert Castelo [ctb],\u000aSeth Falcon [ctb],\u000aStefan
         Edwards [ctb],\u000aSven Garbade [ctb],\u000aUwe Ligges [ctb]","Date/Publication":"2019-04-21
         12:20:03 UTC","crandb_file_date":"2019-04-21 13:20:26","MD5sum":"0a7da6c3b34b2974110a7d00fe9afa79","date":"2019-04-21T11:20:03+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/fontawesome
@@ -345,13 +345,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:38 GMT
+      date: Fri, 10 Dec 2021 09:16:28 GMT
       content-type: application/json
       content-length: '1911'
       connection: keep-alive
       etag: '"3D4PZEJJ84LSKS1L8FM64ICVY"'
       vary: Accept
-      x-couch-request-id: a702d01283
+      x-couch-request-id: 229f5dbde9
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -375,8 +375,8 @@ http_interactions:
         [ctb],\u000aDave Gandy [ctb, cph] (Font-Awesome font),\u000aRStudio [cph,
         fnd]","Maintainer":"Richard Iannone <rich@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-07-02
         18:50:02 UTC","crandb_file_date":"2021-07-02 20:02:33","MD5sum":"c693ad3dcba043ac4a403d82b14cc507\u000a","date":"2021-07-02T17:50:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/htmltools
@@ -393,13 +393,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:39 GMT
+      date: Fri, 10 Dec 2021 09:16:28 GMT
       content-type: application/json
       content-length: '2079'
       connection: keep-alive
       etag: '"3S8Q2L0334X82E6UDZGA5KQ2T"'
       vary: Accept
-      x-couch-request-id: 1660b22e82
+      x-couch-request-id: de6ba55cf2
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -425,8 +425,8 @@ http_interactions:
         Xie [aut],\u000aJeff Allen [aut],\u000aRStudio [cph]","Maintainer":"Carson
         Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-08-25
         13:50:02 UTC","crandb_file_date":"2021-08-25 14:50:39","MD5sum":"162af3d4892ff23c984645c78f50daea","date":"2021-08-25T12:50:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/R6
@@ -443,13 +443,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:39 GMT
+      date: Fri, 10 Dec 2021 09:16:28 GMT
       content-type: application/json
       content-length: '1192'
       connection: keep-alive
       etag: '"DARDUTEE3DSRZX5NFMDBGQ3SL"'
       vary: Accept
-      x-couch-request-id: ab257622cf
+      x-couch-request-id: 250d01540b
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -466,8 +466,8 @@ http_interactions:
         20:18:46 UTC; winston","Author":"Winston Chang [aut, cre]","Maintainer":"Winston
         Chang <winston@stdout.org>","Repository":"CRAN","Date/Publication":"2021-08-19
         14:00:05 UTC","crandb_file_date":"2021-08-19 14:44:39","MD5sum":"e84fd376e246738402e5529b6d52e101","date":"2021-08-19T13:00:05+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/sourcetools
@@ -484,13 +484,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:39 GMT
+      date: Fri, 10 Dec 2021 09:16:29 GMT
       content-type: application/json
       content-length: '918'
       connection: keep-alive
       etag: '"BC3KSAS6E0XWNNGKFH7N5R2RG"'
       vary: Accept
-      x-couch-request-id: 841b26ec44
+      x-couch-request-id: 8cc64cf2d2
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -504,8 +504,8 @@ http_interactions:
         3.0.2"},"Suggests":{"testthat":"*"},"RoxygenNote":"5.0.1","BugReports":"https://github.com/kevinushey/sourcetools/issues","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2018-04-25
         03:19:22 UTC; kevin","Repository":"CRAN","Date/Publication":"2018-04-25 03:38:09
         UTC","crandb_file_date":"2018-04-25 03:44:19","MD5sum":"04284c2d78a9626fe5f219942836c530","date":"2018-04-25T02:38:09+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/later
@@ -522,13 +522,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:39 GMT
+      date: Fri, 10 Dec 2021 09:16:29 GMT
       content-type: application/json
       content-length: '1770'
       connection: keep-alive
       etag: '"2HACH0V6POLAMM7NKO4B9J035"'
       vary: Accept
-      x-couch-request-id: d3de8b514b
+      x-couch-request-id: c16c63abd5
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -550,8 +550,8 @@ http_interactions:
         Nemerson [ctb, cph] (TinyCThread library,\u000ahttps://tinycthread.github.io/)","Maintainer":"Winston
         Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-08-18
         16:30:06 UTC","crandb_file_date":"2021-08-18 18:26:36","MD5sum":"87b6dae5e7c3f822dd86a20b3a52059f","date":"2021-08-18T15:30:06+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/promises
@@ -568,13 +568,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:40 GMT
+      date: Fri, 10 Dec 2021 09:16:29 GMT
       content-type: application/json
       content-length: '1567'
       connection: keep-alive
       etag: '"2Y2UV7DPTY3U6C99LKI7P6OCJ"'
       vary: Accept
-      x-couch-request-id: d2b69a3eaa
+      x-couch-request-id: dc78bea51e
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -592,8 +592,8 @@ http_interactions:
         18:18:47 UTC; barret","Author":"Joe Cheng [aut, cre],\u000aRStudio [cph, fnd]","Maintainer":"Joe
         Cheng <joe@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-02-11
         19:00:02 UTC","crandb_file_date":"2021-02-11 20:02:42","MD5sum":"adba783866d5496080f8a4e77576817b","date":"2021-02-11T18:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/crayon
@@ -610,13 +610,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:40 GMT
+      date: Fri, 10 Dec 2021 09:16:29 GMT
       content-type: application/json
       content-length: '1683'
       connection: keep-alive
       etag: '"3XQDAIZD76AGD413N3SKYFYWT"'
       vary: Accept
-      x-couch-request-id: 89552abac8
+      x-couch-request-id: 9aabf50472
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -636,8 +636,8 @@ http_interactions:
         12:16:51 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre],\u000aBrodie
         Gaslam [ctb]","Maintainer":"Gábor Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-10-29
         23:20:02 UTC","crandb_file_date":"2021-10-30 00:56:29","MD5sum":"38eb751b269bc21e9f5cc2f9f9a1a299","date":"2021-10-29T22:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/rlang
@@ -654,13 +654,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:40 GMT
+      date: Fri, 10 Dec 2021 09:16:30 GMT
       content-type: application/json
       content-length: '1832'
       connection: keep-alive
       etag: '"41SAAZE9GL5PH2PZK3CO8R69Y"'
       vary: Accept
-      x-couch-request-id: 24a61f42d7
+      x-couch-request-id: 164d92e70a
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -683,8 +683,8 @@ http_interactions:
         Collet [cph] (Author of the embedded xxHash library),\u000aRStudio [cph]","Maintainer":"Lionel
         Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-18
         23:00:02 UTC","crandb_file_date":"2021-10-19 00:14:38","MD5sum":"08b32904d41f5fcb5d33188f0004f91b","date":"2021-10-18T22:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/fastmap
@@ -701,13 +701,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:40 GMT
+      date: Fri, 10 Dec 2021 09:16:30 GMT
       content-type: application/json
       content-length: '1481'
       connection: keep-alive
       etag: '"79AGJ5DC4XEY3VKFUZKOJU7BH"'
       vary: Accept
-      x-couch-request-id: 89e833e2e6
+      x-couch-request-id: 6ce02f5648
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -728,8 +728,8 @@ http_interactions:
         fnd],\u000aTessil [cph] (hopscotch_map library)","Maintainer":"Winston Chang
         <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-01-25
         21:00:02 UTC","crandb_file_date":"2021-01-25 21:50:55","MD5sum":"0a13d52751d2f910ab907d3b44756108","date":"2021-01-25T20:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/withr
@@ -746,13 +746,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:41 GMT
+      date: Fri, 10 Dec 2021 09:16:30 GMT
       content-type: application/json
       content-length: '2627'
       connection: keep-alive
       etag: '"2A8L3UJJGK2TC0ISQ3NB9KBZD"'
       vary: Accept
-      x-couch-request-id: 9c10308b92
+      x-couch-request-id: d0d9f01cc7
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -786,8 +786,8 @@ http_interactions:
         [aut],\u000aWinston Chang [aut],\u000aJennifer Bryan [ctb],\u000aRichard Cotton
         [ctb],\u000aRStudio [cph]","Maintainer":"Lionel Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-11-30
         14:20:02 UTC","crandb_file_date":"2021-11-30 15:14:38","MD5sum":"4170be236f864a2ed346667f7e244662","date":"2021-11-30T13:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/commonmark
@@ -804,13 +804,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:41 GMT
+      date: Fri, 10 Dec 2021 09:16:30 GMT
       content-type: application/json
       content-length: '1401'
       connection: keep-alive
       etag: '"7E46MFBNY33YD3PBYZXQ08IKZ"'
       vary: Accept
-      x-couch-request-id: 95e1277b2d
+      x-couch-request-id: 5f1f6c5995
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -829,8 +829,8 @@ http_interactions:
         11:57:14 UTC; jeroen","Author":"Jeroen Ooms [aut, cre],\u000aJohn MacFarlane
         [cph] (Author of cmark)","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2018-12-01
         12:30:03 UTC","crandb_file_date":"2018-12-01 12:32:27","MD5sum":"48bf2251862a494d8ee3acde02dce385","date":"2018-12-01T11:30:03+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/glue
@@ -847,13 +847,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:41 GMT
+      date: Fri, 10 Dec 2021 09:16:30 GMT
       content-type: application/json
       content-length: '1907'
       connection: keep-alive
       etag: '"5VPNZN4KGJEIMJGUQB6U7I4LJ"'
       vary: Accept
-      x-couch-request-id: dfccdd0f53
+      x-couch-request-id: 1aabcf7ea5
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -874,8 +874,8 @@ http_interactions:
         Bryan [aut, cre] (<https://orcid.org/0000-0002-6983-2759>),\u000aRStudio [cph,
         fnd]","Maintainer":"Jennifer Bryan <jenny@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-11-30
         09:50:07 UTC","crandb_file_date":"2021-11-30 10:50:29","MD5sum":"33310c9ac6984e67113cda008faec453","date":"2021-11-30T08:50:07+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/bslib
@@ -892,13 +892,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:41 GMT
+      date: Fri, 10 Dec 2021 09:16:31 GMT
       content-type: application/json
       content-length: '2930'
       connection: keep-alive
       etag: '"9QHJRS848E6R2JCHYUBDXCBRD"'
       vary: Accept
-      x-couch-request-id: 78e14986e3
+      x-couch-request-id: 60c22e1427
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -935,8 +935,8 @@ http_interactions:
         library),\u000aPayPal [ctb, cph] (Bootstrap accessibility plugin)","Maintainer":"Carson
         Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-06
         15:10:05 UTC","crandb_file_date":"2021-10-06 16:20:32","MD5sum":"ae47d103100bfdfa16051832e2d8bf86","date":"2021-10-06T14:10:05+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/cachem
@@ -953,13 +953,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:42 GMT
+      date: Fri, 10 Dec 2021 09:16:31 GMT
       content-type: application/json
       content-length: '1069'
       connection: keep-alive
       etag: '"DNJNRT8PMUQWIBY9E2BBT46NQ"'
       vary: Accept
-      x-couch-request-id: b4fd983e99
+      x-couch-request-id: 851bb062ae
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -974,8 +974,8 @@ http_interactions:
         21:07:46 UTC; barret","Author":"Winston Chang [aut, cre],\u000aRStudio [cph,
         fnd]","Maintainer":"Winston Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-08-19
         21:30:02 UTC","crandb_file_date":"2021-08-19 23:14:33","MD5sum":"dda8ecf0d6c2b287134bb926824f3551","date":"2021-08-19T20:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/ellipsis
@@ -992,13 +992,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:42 GMT
+      date: Fri, 10 Dec 2021 09:16:31 GMT
       content-type: application/json
       content-length: '1175'
       connection: keep-alive
       etag: '"62O6G97F30NCJYHY39P4096FA"'
       vary: Accept
-      x-couch-request-id: 4083a6a61b
+      x-couch-request-id: 6365b9fd83
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -1015,8 +1015,8 @@ http_interactions:
         12:06:44 UTC; lionel","Author":"Hadley Wickham [aut, cre],\u000aRStudio [cph]","Maintainer":"Hadley
         Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-29
         12:40:02 UTC","crandb_file_date":"2021-04-29 13:56:33","MD5sum":"c453b4514da3717af5d5b97f0e3d2415","date":"2021-04-29T11:40:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
 - request:
     method: get
     uri: http://crandb.r-pkg.org/lifecycle
@@ -1033,13 +1033,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 09 Dec 2021 17:48:42 GMT
+      date: Fri, 10 Dec 2021 09:16:32 GMT
       content-type: application/json
       content-length: '1549'
       connection: keep-alive
       etag: '"2LB7583ALTJ1Z1OP1YDXBYHVA"'
       vary: Accept
-      x-couch-request-id: 6f682cc7fe
+      x-couch-request-id: 3e7ab420fd
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -1059,5 +1059,5 @@ http_interactions:
         [aut] (<https://orcid.org/0000-0003-4757-117X>),\u000aRStudio [cph]","Maintainer":"Lionel
         Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-09-24
         15:30:02 UTC","crandb_file_date":"2021-09-24 16:26:30","MD5sum":"e9f7135a17ff300c2ab6a9e6b72e3810","date":"2021-09-24T14:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-09 17:48:13 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2021-12-10 08:16:01 GMT
+  recorded_with: vcr/1.0.0, webmockr/0.8.0
