@@ -23,8 +23,7 @@ Depends:
 Imports:
     cranlogs,
     httr,
-    jsonlite,
-    scales
+    jsonlite
 Suggests: 
     BiocManager,
     covr,
@@ -37,6 +36,7 @@ Suggests:
     miniCRAN,
     plyr,
     rmarkdown,
+    scales,
     shiny,
     shinycssloaders,
     spelling,
