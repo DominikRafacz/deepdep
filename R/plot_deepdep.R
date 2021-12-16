@@ -42,7 +42,6 @@
 #' plot_dependencies("shiny", show_downloads = TRUE)
 #' }
 #'
-#' @importFrom ggforce geom_circle
 #' @importFrom graphlayouts draw_circle
 #' @importFrom stats quantile reshape
 #' @importFrom utils packageVersion

@@ -22,7 +22,6 @@ Depends:
     R (>= 3.2.0)
 Imports:
     cranlogs,
-    ggforce,
     ggplot2,
     ggraph,
     graphlayouts,
