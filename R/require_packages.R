@@ -21,6 +21,8 @@ is_pkg_installed <- function(pkg) {
   !inherits(check_pkg, "try-error")
 }
 
+#' @importFrom utils menu install.packages
+#' @importFrom stats setNames
 install_prompt <- function(pkg, use_case = "access some functions") {
   if (!getOption(paste0(pkg, "_suppress_prompt"), default = FALSE)) {
     response <- menu(
