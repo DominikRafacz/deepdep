@@ -51,14 +51,12 @@ This function lists, as the name indicates, available packages. The default beha
 ```r
 t <- get_available_packages()
 head(t, 20)
-#>            A3         aaSEA      AATtools        ABACUS        abbyyR           abc 
-#>          "A3"       "aaSEA"    "AATtools"      "ABACUS"      "abbyyR"         "abc" 
-#>      abc.data       ABC.RAP        abcADM   ABCanalysis      abcdeFBA      ABCoptim 
-#>    "abc.data"     "ABC.RAP"      "abcADM" "ABCanalysis"    "abcdeFBA"    "ABCoptim" 
+#>            A3         aaSEA      AATtools           aba        ABACUS    abbreviate        abbyyR 
+#>          "A3"       "aaSEA"    "AATtools"         "aba"      "ABACUS"  "abbreviate"      "abbyyR" 
+#>           abc      abc.data       ABC.RAP        abcADM   ABCanalysis      abcdeFBA      ABCoptim 
+#>         "abc"    "abc.data"     "ABC.RAP"      "abcADM" "ABCanalysis"    "abcdeFBA"    "ABCoptim" 
 #>         ABCp2         abcrf       abcrlda      abctools           abd         abdiv 
-#>       "ABCp2"       "abcrf"     "abcrlda"    "abctools"         "abd"       "abdiv" 
-#>           abe         abess 
-#>         "abe"       "abess"
+#>       "ABCp2"       "abcrf"     "abcrlda"    "abctools"         "abd"       "abdiv"
 ```
 
 However, if you want to check if package is present in a little wider range -- on CRAN or Bioconductor repositories, you simply need to set argument `bioc = TRUE`. In this case function is simply wrapper around `BiocManager::available()` and to use it you need to have `BiocManager` package (available via CRAN) installed.
@@ -66,16 +64,15 @@ However, if you want to check if package is present in a little wider range -- o
 
 ```r
 t <- get_available_packages(bioc = TRUE)
-#> 'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories'
-#> for details
+#> 'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
 #> 
 #> replacement repositories:
 #>     CRAN: https://cran.rstudio.com/
 head(t, 20)
-#>  [1] "A3"            "a4"            "a4Base"        "a4Classif"     "a4Core"       
-#>  [6] "a4Preproc"     "a4Reporting"   "aaSEA"         "AATtools"      "ABACUS"       
-#> [11] "ABAData"       "ABAEnrichment" "ABarray"       "abbyyR"        "abc"          
-#> [16] "abc.data"      "ABC.RAP"       "abcADM"        "ABCanalysis"   "abcdeFBA"
+#>  [1] "A3"            "a4"            "a4Base"        "a4Classif"     "a4Core"        "a4Preproc"    
+#>  [7] "a4Reporting"   "aaSEA"         "AATtools"      "aba"           "ABACUS"        "ABAData"      
+#> [13] "ABAEnrichment" "ABarray"       "abbreviate"    "abbyyR"        "abc"           "abc.data"     
+#> [19] "ABC.RAP"       "abcADM"
 ```
 
 Another possibility is checking what packages are installed -- you do it by adding `local = TRUE` parameter.
@@ -84,10 +81,10 @@ Another possibility is checking what packages are installed -- you do it by addi
 ```r
 t <- get_available_packages(local = TRUE)
 head(t, 20)
-#>  [1] "AmyloGraph"  "askpass"     "assertthat"  "attempt"     "backports"   "base64enc"  
-#>  [7] "BiocManager" "bit"         "bit64"       "brew"        "brio"        "bslib"      
-#> [13] "cachem"      "callr"       "checkmate"   "cli"         "clipr"       "colorspace" 
-#> [19] "commonmark"  "config"
+#>  [1] "abind"         "ada"           "adabag"        "ade4"          "AmyloGram"     "AmyloGraph"   
+#>  [7] "ape"           "askpass"       "assertthat"    "auprc"         "backports"     "base64enc"    
+#> [13] "base64url"     "BBmisc"        "bench"         "BH"            "binman"        "Biobase"      
+#> [19] "BiocFileCache" "BiocGenerics"
 ```
 
 Result of this function is cached (for more details, see *Caching* section of this vignette).
@@ -152,12 +149,12 @@ This package allows you obtaining information on how many times specified packag
 ```r
 get_downloads("ggplot2")
 #>                     x
-#> last_day        96188
-#> last_week      626638
-#> last_month    3033011
-#> last_quarter  9431512
-#> last_half    15537309
-#> grand_total  69217492
+#> last_day        89171
+#> last_week      624984
+#> last_month    2907449
+#> last_quarter  9372953
+#> last_half    15718347
+#> grand_total  69842476
 ```
 
 Results of this function is not cached.
@@ -169,28 +166,17 @@ After parsing description file, you can now create a `data.frame` which will des
 
 ```r
 get_dependencies("ggplot2")
-#>       name   version    type last_day last_week last_month last_quarter last_half
-#> 1   digest      <NA> Imports    40118    280344     998778      2946767   4999386
-#> 2     glue      <NA> Imports    57487    368681    1622243      4292363   7426334
-#> 3   gtable  >= 0.1.1 Imports    25966    152202     682907      2052183   3381201
-#> 4  isoband      <NA> Imports    29594    175889     799871      2447000   4408503
-#> 5     MASS      <NA> Imports     5365     37135     150078       431082    814860
-#> 6     mgcv      <NA> Imports     5930     22923     125990       432545    718016
-#> 7    rlang >= 0.4.10 Imports    75335    478059    2104980      6542990  12011815
-#> 8   scales  >= 0.5.0 Imports    29913    173077     771297      2339874   3929950
-#> 9   tibble      <NA> Imports    52234    328894    1505198      4522001   8256585
-#> 10   withr  >= 2.0.0 Imports    44466    283089    1106321      3281612   5865575
-#>    grand_total
-#> 1     43264533
-#> 2     42316303
-#> 3     26651711
-#> 4     15868026
-#> 5      9378491
-#> 6      6894709
-#> 7     66587213
-#> 8     33862171
-#> 9     51276944
-#> 10    30445431
+#>       name   version    type last_day last_week last_month last_quarter last_half grand_total
+#> 1   digest      <NA> Imports    31140    223957    1004201      2961775   5063707    43488490
+#> 2     glue      <NA> Imports    46782    332596    1548055      4326287   7518526    42648899
+#> 3   gtable  >= 0.1.1 Imports    20523    148076     663740      2045040   3419183    26799787
+#> 4  isoband      <NA> Imports    23337    171581     774985      2424963   4424341    16039607
+#> 5     MASS      <NA> Imports     4435     29420     144260       429820    807077     9407911
+#> 6     mgcv      <NA> Imports     3043     28380     122902       443119    717887     6923089
+#> 7    rlang >= 0.4.10 Imports    67589    466036    2058064      6522618  12041457    67053249
+#> 8   scales  >= 0.5.0 Imports    23543    167897     750848      2325292   3967248    34030068
+#> 9   tibble      <NA> Imports    43815    321630    1432768      4492491   8275469    51598574
+#> 10   withr  >= 2.0.0 Imports    36177    249480    1108858      3278829   5898847    30694911
 ```
 
 As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
@@ -345,8 +331,8 @@ Finally, returned object is a `ggplot` object, so you can easily manipulate them
 plot_dependencies(dd) +
   ggplot2::scale_fill_manual(values = c("#462CF8", "#F23A90", "#AF1023")) +
   ggraph::scale_edge_color_manual(values = "black")
-#> Scale for 'fill' is already present. Adding another scale for 'fill', which will
-#> replace the existing scale.
+#> Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the
+#> existing scale.
 ```
 
 <img src="plot_dependencies5-1.png" title="plot of chunk plot_dependencies5" alt="plot of chunk plot_dependencies5" style="display: block; margin: auto;" />
