@@ -35,6 +35,30 @@ test_that("deepdep plot has correct layers and objects", {
   expect_s3_class(plt_shiny$layers[[4]]$stat, "StatFilter")
 })
 
+test_that("deepdep plot has a caption by default", {
+  plt_shiny <- plot_dependencies(dd_shiny)
+  
+  expect_match(
+    plt_shiny$labels$caption,
+    "Plot made with deepdep v[\\d.]+ on \\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}",
+    perl = TRUE
+  )
+  
+  plt_shiny <- plot_dependencies(dd_shiny, show_stamp = TRUE)
+  
+  expect_match(
+    plt_shiny$labels$caption,
+    "Plot made with deepdep v[\\d.]+ on \\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}",
+    perl = TRUE
+  )
+})
+
+test_that("deepdep plot has no caption when specified", {
+  plt_shiny <- plot_dependencies(dd_shiny, show_stamp = FALSE)
+  
+  expect_null(plt_shiny$labels$caption)
+})
+
 test_that("deepdep plot with no dependencies has only a subset of layers", {
   # No circles, no edges
   # 1st layer is node points
