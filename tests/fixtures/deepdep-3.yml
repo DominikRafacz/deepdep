@@ -15,13 +15,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:17 GMT
+      date: Fri, 17 Dec 2021 01:05:53 GMT
       content-type: application/json
       content-length: '6300'
       connection: keep-alive
       etag: '"9S3SGXILX2GWLSJDJ7UL209ON"'
       vary: Accept
-      x-couch-request-id: 88f5979782
+      x-couch-request-id: 009197d183
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -59,7 +59,7 @@ http_interactions:
         [ctb],\u000aVaclav Tlapak [ctb],\u000aKevin Ushey [ctb],\u000aDirk Eddelbuettel
         [ctb],\u000aBen Schwen [ctb]","Maintainer":"Matt Dowle <mattjdowle@gmail.com>","Repository":"CRAN","Date/Publication":"2021-09-27
         16:30:02 UTC","crandb_file_date":"2021-09-27 17:50:33","MD5sum":"a9ab8e430b59adab832e5bde0acd66a2","date":"2021-09-27T15:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:47 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -77,13 +77,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:17 GMT
+      date: Fri, 17 Dec 2021 01:05:54 GMT
       content-type: application/json
       content-length: '1666'
       connection: keep-alive
       etag: '"4R9RJ2RY7FLE1MZSQ0VOGNZYT"'
       vary: Accept
-      x-couch-request-id: 98930b4a37
+      x-couch-request-id: 928d99270b
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -105,7 +105,7 @@ http_interactions:
         | GPL-3","LazyLoad":"yes","ByteCompile":"yes","URL":"https://github.com/truecluster/bit64","Encoding":"UTF-8","Repository":"CRAN","Repository/R-Forge/Project":"ff","Repository/R-Forge/Revision":"177","Repository/R-Forge/DateTimeStamp":"2018-08-17
         17:45:18","Date/Publication":"2020-08-30 07:20:02 UTC","NeedsCompilation":"yes","Packaged":"2020-08-29
         10:56:45 UTC; jo","crandb_file_date":"2020-08-30 08:02:34","MD5sum":"bdccc76b8505827a6f295181de2b308a","date":"2020-08-30T06:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -123,13 +123,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:18 GMT
+      date: Fri, 17 Dec 2021 01:05:55 GMT
       content-type: application/json
       content-length: '1185'
       connection: keep-alive
       etag: '"74TY4UAE8J1FS3GUKI1X9G5PR"'
       vary: Accept
-      x-couch-request-id: 459e64718d
+      x-couch-request-id: cce52c07bc
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -147,7 +147,7 @@ http_interactions:
         rmarkdown","RoxygenNote":"7.1.0.9000","NeedsCompilation":"yes","Packaged":"2020-08-03
         12:14:34 UTC; jo","Repository":"CRAN","Date/Publication":"2020-08-04 04:20:08
         UTC","crandb_file_date":"2020-08-04 05:02:30","MD5sum":"241d0a106bdf4a3ce26e1a2551f48409","date":"2020-08-04T03:20:08+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -165,13 +165,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:18 GMT
+      date: Fri, 17 Dec 2021 01:05:55 GMT
       content-type: application/json
       content-length: '2025'
       connection: keep-alive
       etag: '"DSVVZW3ECYPGS4PITI57NO9VK"'
       vary: Accept
-      x-couch-request-id: 6e52a4c1ed
+      x-couch-request-id: 79a9ac2b23
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -197,7 +197,7 @@ http_interactions:
         11:39:40 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aHadley
         Wickham [ctb],\u000aRStudio [cph]","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2021-06-23
         07:00:06 UTC","crandb_file_date":"2021-06-23 08:20:41","MD5sum":"fc65b8a0f730784d6ece4ae8893eae12","date":"2021-06-23T06:00:06+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -215,13 +215,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:18 GMT
+      date: Fri, 17 Dec 2021 01:05:56 GMT
       content-type: application/json
       content-length: '963'
       connection: keep-alive
       etag: '"A78OYG48EJKAITYJRYL41HASK"'
       vary: Accept
-      x-couch-request-id: e3b6a9a606
+      x-couch-request-id: 550438c83c
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -235,7 +235,7 @@ http_interactions:
         (>= 2.1)","LazyLoad":"TRUE","URL":"https://github.com/HenrikBengtsson/R.utils","BugReports":"https://github.com/HenrikBengtsson/R.utils/issues","NeedsCompilation":"no","Packaged":"2021-09-26
         07:18:48 UTC; hb","Repository":"CRAN","Date/Publication":"2021-09-26 08:30:02
         UTC","crandb_file_date":"2021-09-26 10:02:33","MD5sum":"9d963157a7ae827fc31336fb1f689aaf","date":"2021-09-26T07:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -253,13 +253,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:19 GMT
+      date: Fri, 17 Dec 2021 01:05:57 GMT
       content-type: application/json
       content-length: '1466'
       connection: keep-alive
       etag: '"3UUUDUBCV7AZK7DH7Y0Y42UVF"'
       vary: Accept
-      x-couch-request-id: a98e857d3c
+      x-couch-request-id: 7734d05d1c
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -277,7 +277,7 @@ http_interactions:
         [cre, aut],\u000aRoss Bennett [ctb],\u000aCorwin Joy [ctb]","Maintainer":"Joshua
         M. Ulrich <josh.m.ulrich@gmail.com>","Repository":"CRAN","Date/Publication":"2020-09-09
         16:40:03 UTC","crandb_file_date":"2020-09-09 18:32:31","MD5sum":"3f6c769b8839196569c1cd05a33b648d","date":"2020-09-09T15:40:03+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -295,13 +295,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:19 GMT
+      date: Fri, 17 Dec 2021 01:05:58 GMT
       content-type: application/json
       content-length: '1296'
       connection: keep-alive
       etag: '"8GWF9LWOD9ZD0XNRW8VCB6ZPD"'
       vary: Accept
-      x-couch-request-id: 751b53f1ef
+      x-couch-request-id: 6fb38dd2d8
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -318,7 +318,7 @@ http_interactions:
         ''nanoival.R'' ''nanoduration.R'' ''nanoperiod.R''\u000a''RcppExports.R''","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2021-12-14
         13:29:33 UTC; edd","Repository":"CRAN","Date/Publication":"2021-12-15 03:50:11
         UTC","crandb_file_date":"2021-12-15 05:44:22","MD5sum":"d0b98ea17a93ef61e79dc49a816356f8","date":"2021-12-15T02:50:11+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -336,13 +336,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:20 GMT
+      date: Fri, 17 Dec 2021 01:05:58 GMT
       content-type: application/json
       content-length: '2055'
       connection: keep-alive
       etag: '"32IKX80QZZHQT5DCX4OLXQKQK"'
       vary: Accept
-      x-couch-request-id: e60e80000b
+      x-couch-request-id: 054aa34e3a
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -366,7 +366,7 @@ http_interactions:
         Grothendieck [aut],\u000aJeffrey A. Ryan [aut],\u000aJoshua M. Ulrich [ctb],\u000aFelix
         Andrews [ctb]","Maintainer":"Achim Zeileis <Achim.Zeileis@R-project.org>","Repository":"CRAN","Date/Publication":"2021-03-09
         16:20:02 UTC","crandb_file_date":"2021-03-09 18:14:39","MD5sum":"0dd205b0da555bb152b9c3898f609d71","date":"2021-03-09T15:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -384,13 +384,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:20 GMT
+      date: Fri, 17 Dec 2021 01:06:00 GMT
       content-type: application/json
       content-length: '971'
       connection: keep-alive
       etag: '"530Q6Q6D1U8GKJNF4NL6MYGVK"'
       vary: Accept
-      x-couch-request-id: 2eae0e238d
+      x-couch-request-id: c5dfc14edb
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -405,7 +405,7 @@ http_interactions:
         for R.","URL":"https://github.com/viking/r-yaml/","BugReports":"https://github.com/viking/r-yaml/issues","NeedsCompilation":"yes","Packaged":"2020-01-30
         20:29:56 UTC; stephej1","Repository":"CRAN","Date/Publication":"2020-02-01
         05:50:02 UTC","crandb_file_date":"2020-02-01 07:50:27","MD5sum":"ab6c7315d898dbd0848542bcbe5f335b","date":"2020-02-01T04:50:02+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -423,19 +423,19 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:20 GMT
+      date: Fri, 17 Dec 2021 01:06:00 GMT
       content-type: application/json
       content-length: '10876'
       connection: keep-alive
-      etag: '"4PO3A8XQ2930RDDOGYJPMFTXW"'
+      etag: '"6QPCTFQVA9PISB8EQGDEC4XTG"'
       vary: Accept
-      x-couch-request-id: 3d29a05515
+      x-couch-request-id: ba4ffa3436
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
       file: no
       string: '{"Package":"knitr","Type":"Package","Title":"A General-Purpose Package
-        for Dynamic Report Generation in R","Version":"1.36","Authors@R":"c(\u000aperson(\"Yihui\",
+        for Dynamic Report Generation in R","Version":"1.37","Authors@R":"c(\u000aperson(\"Yihui\",
         \"Xie\", role = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment =
         c(ORCID = \"0000-0003-0645-5666\")),\u000aperson(\"Abhraneel\", \"Sarma\",
         role = \"ctb\"),\u000aperson(\"Adam\", \"Vogt\", role = \"ctb\"),\u000aperson(\"Alastair\",
@@ -505,7 +505,7 @@ http_interactions:
         \"Foster\", role = \"ctb\")\u000a)","Description":"Provides a general-purpose
         tool for dynamic report generation in R\u000ausing Literate Programming techniques.","Depends":{"R":">=
         3.2.3"},"Imports":{"evaluate":">= 0.10","highr":"*","methods":"*","stringr":">=
-        0.6","yaml":">=\u000a2.1.19","xfun":">= 0.21","tools":"*"},"Suggests":{"markdown":"*","formatR":"*","testit":"*","digest":"*","rgl":">=
+        0.6","yaml":">=\u000a2.1.19","xfun":">= 0.27","tools":"*"},"Suggests":{"markdown":"*","formatR":"*","testit":"*","digest":"*","rgl":">=
         0.95.1201","codetools":"*","rmarkdown":"*","htmlwidgets":">= 0.7","webshot":"*","tikzDevice":">=
         0.10","tinytex":"*","reticulate":">= 1.4","JuliaCall":">= 0.11.1","magick":"*","png":"*","jpeg":"*","gifski":"*","xml2":">=
         1.2.0","httr":"*","DBI":">=\u000a0.4-1","showtext":"*","tibble":"*","sass":"*","bslib":"*","ragg":"*","styler":">=
@@ -518,8 +518,8 @@ http_interactions:
         ''hooks-md.R'' ''hooks-rst.R''\u000a''hooks-textile.R'' ''hooks.R'' ''output.R''
         ''package.R'' ''pandoc.R''\u000a''params.R'' ''parser.R'' ''pattern.R'' ''rocco.R''
         ''spin.R'' ''table.R''\u000a''template.R'' ''utils-conversion.R'' ''utils-rd2html.R''\u000a''utils-sweave.R''
-        ''utils-upload.R'' ''utils-vignettes.R'' ''zzz.R''","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-09-29
-        05:49:18 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aAbhraneel
+        ''utils-upload.R'' ''utils-vignettes.R'' ''zzz.R''","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-12-16
+        04:57:48 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aAbhraneel
         Sarma [ctb],\u000aAdam Vogt [ctb],\u000aAlastair Andrew [ctb],\u000aAlex Zvoleff
         [ctb],\u000aAndre Simon [ctb] (the CSS files under inst/themes/ were derived
         from\u000athe Highlight package http://www.andre-simon.de),\u000aAron Atkins
@@ -555,9 +555,9 @@ http_interactions:
         Assus [ctb],\u000aThibaut Lamadon [ctb],\u000aThomas Leeper [ctb],\u000aTim
         Mastny [ctb],\u000aTom Torsney-Weir [ctb],\u000aTrevor Davis [ctb],\u000aViktoras
         Veitas [ctb],\u000aWeicheng Zhu [ctb],\u000aWush Wu [ctb],\u000aZachary Foster
-        [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2021-09-29
-        10:20:02 UTC","crandb_file_date":"2021-09-29 11:02:34","MD5sum":"7b89ebe55b06dbcd5d6b925631ff9267","date":"2021-09-29T09:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+        [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2021-12-16
+        18:00:02 UTC","crandb_file_date":"2021-12-16 19:20:24","MD5sum":"28ea89bf739a0ce53925f91050cad936","date":"2021-12-16T17:00:02+00:00","releases":[]}'
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
 - request:
     method: get
@@ -575,13 +575,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.4.6 (Ubuntu)
-      date: Thu, 16 Dec 2021 00:00:21 GMT
+      date: Fri, 17 Dec 2021 01:06:02 GMT
       content-type: application/json
       content-length: '7559'
       connection: keep-alive
       etag: '"6K7V0OQ4R6ZKOEMQ5AFXGGR69"'
       vary: Accept
-      x-couch-request-id: ce9e6bb6a1
+      x-couch-request-id: 9c1dcadede
       x-couchdb-body-time: '0'
     body:
       encoding: UTF-8
@@ -671,5 +671,5 @@ http_interactions:
         Jonsson [ctb, cph] (pagebreak Lua filter),\u000aAlbert Krewinkel [ctb, cph]
         (pagebreak Lua filter)","Repository":"CRAN","Date/Publication":"2021-09-14
         14:10:02 UTC","crandb_file_date":"2021-09-14 16:38:36","MD5sum":"21b076c2a4ae224c0be720a980a2b9f7","date":"2021-09-14T13:10:02+00:00","releases":[]}'
-  recorded_at: 2021-12-15 23:59:48 GMT
+  recorded_at: 2021-12-17 01:05:28 GMT
   recorded_with: vcr/1.0.2, webmockr/0.8.0
