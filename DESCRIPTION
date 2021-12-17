@@ -1,6 +1,6 @@
 Package: deepdep
 Title: Visualise and Explore the Deep Dependencies of R Packages 
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: c(person("Dominik", "Rafacz", email = "dominikrafacz@gmail.com",
                   role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0003-0925-1909")),
@@ -22,24 +22,23 @@ Depends:
     R (>= 3.2.0)
 Imports:
     cranlogs,
-    ggforce,
+    httr,
+    jsonlite
+Suggests: 
+    BiocManager,
+    covr,
+    devtools,
     ggplot2,
     ggraph,
     graphlayouts,
-    httr,
     igraph,
-    jsonlite,
-    scales
-Suggests: 
-    BiocManager,
-    shiny,
-    shinycssloaders,
-    covr,
-    devtools,
     knitr,
     miniCRAN,
     plyr,
     rmarkdown,
+    scales,
+    shiny,
+    shinycssloaders,
     spelling,
     stringi,
     testthat (>= 2.1.0),
