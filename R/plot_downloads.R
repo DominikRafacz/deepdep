@@ -66,7 +66,8 @@ plot_downloads.character <- function(x, from = Sys.Date() - 365, to = Sys.Date()
   # Due to NSE inside of the function, we have to declare "package_name" as NULL to prevent check fail
   package_name <- NULL
   
-  if (!require_packages(c("ggplot2", "scales")))
+  if (!require_packages(c("ggplot2", "scales"),
+                        use_case = "plot download statistics"))
     stop("Missing necessary packages.")
   
   # add some x check

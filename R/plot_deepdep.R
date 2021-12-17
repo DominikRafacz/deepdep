@@ -83,9 +83,11 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   node1.name <- NULL
   node2.name <- NULL
   name <- NULL
+  layer <- NULL
   
   # TODO: add boolean returns to check if packages are available
-  if (!require_packages(c("ggplot2", "ggraph", "igraph", "graphlayouts")))
+  if (!require_packages(c("ggplot2", "ggraph", "igraph", "graphlayouts"),
+                        use_case = "plot package dependencies"))
     stop("Missing necessary packages.")
   
   if ((label_percentage < 1 || show_downloads == TRUE) && !("grand_total" %in% colnames(x)))
