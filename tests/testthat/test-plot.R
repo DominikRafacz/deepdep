@@ -1,6 +1,11 @@
+test_that("incorrect object type results in an error", {
+  expect_error(plot_dependencies("Wrong type"))
+})
+
+# Tests below make HTTP calls, so we use vcr to record them
+skip_if_not_installed("vcr")
+
 test_that("dependencies plot has correct layers and objects", {
-  skip_if_not_installed("vcr")
-  
   reset_cached_files("ava")
   reset_cached_files("deps")
   reset_cached_files("desc")
@@ -21,13 +26,7 @@ test_that("dependencies plot has correct layers and objects", {
   expect_s3_class(plt$layers[[4]]$stat, "StatFilter")
 })
 
-test_that("incorrect object type results in an error", {
-  expect_error(plot_dependencies("Wrong type"))
-})
-
 test_that("plotting deepdep object with no rows results in less layers", {
-  skip_if_not_installed("vcr")
-  
   reset_cached_files("ava")
   reset_cached_files("deps")
   reset_cached_files("desc")
@@ -43,8 +42,6 @@ test_that("plotting deepdep object with no rows results in less layers", {
 })
 
 test_that("decluttering removes all Suggests and Enhances packages from outer layers", {
-  skip_if_not_installed("vcr")
-  
   reset_cached_files("ava")
   reset_cached_files("deps")
   reset_cached_files("desc")
