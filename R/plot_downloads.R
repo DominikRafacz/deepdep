@@ -71,7 +71,7 @@ plot_downloads.character <- function(x, from = Sys.Date() - 365, to = Sys.Date()
   
   # add some x check
   
-  ind <- integer()
+  ind <- NULL
   
   for (i in seq_along(x)) {
     tryCatch(check_package_name(x[i], FALSE, FALSE),
@@ -87,7 +87,7 @@ plot_downloads.character <- function(x, from = Sys.Date() - 365, to = Sys.Date()
   n <- to - from - 1
   if (n <= 0) stop("'to' argument is not greater than 'from'")
   
-  data <- data.frame(matrix(NA, ncol = , nrow = n))
+  data <- data.frame(matrix(NA, ncol = length(x), nrow = n))
   colnames(data) <- x
   
   for (i in seq_along(x)) {
