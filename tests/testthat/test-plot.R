@@ -1,7 +1,9 @@
+# OFFLINE TESTS ----
 test_that("incorrect object type results in an error", {
   expect_error(plot_dependencies("Wrong type"))
 })
 
+# SETUP ----
 # Tests below make HTTP calls, so we use vcr to record them
 skip_if_not_installed("vcr")
 
@@ -17,6 +19,7 @@ vcr::use_cassette("plot-dd-datatable", {
   dd_dt <- deepdep("data.table", depth = 2, dependency_type = "all")
 })
 
+# LAYER CLASSES ----
 test_that("deepdep plot has correct layers and objects", {
   plt_shiny <- plot_dependencies(dd_shiny)
   
@@ -35,6 +38,7 @@ test_that("deepdep plot has correct layers and objects", {
   expect_s3_class(plt_shiny$layers[[4]]$stat, "StatFilter")
 })
 
+# CAPTION ----
 test_that("deepdep plot has a caption by default", {
   plt_shiny <- plot_dependencies(dd_shiny)
   
@@ -59,6 +63,7 @@ test_that("deepdep plot has no caption when specified", {
   expect_null(plt_shiny$labels$caption)
 })
 
+# NO DEPENDENCIES ----
 test_that("deepdep plot with no dependencies has only a subset of layers", {
   # No circles, no edges
   # 1st layer is node points
@@ -69,6 +74,7 @@ test_that("deepdep plot with no dependencies has only a subset of layers", {
   expect_s3_class(plt_rlang$layers[[2]]$stat, "StatFilter")
 })
 
+# DECLUTTER ----
 test_that("declutter removes all Suggests and Enhances packages from outer layers", {
   plt_dt <- plot_dependencies(dd_dt, declutter = TRUE)
   
