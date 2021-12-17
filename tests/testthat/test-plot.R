@@ -5,10 +5,6 @@ test_that("incorrect object type results in an error", {
 # Tests below make HTTP calls, so we use vcr to record them
 skip_if_not_installed("vcr")
 
-reset_cached_files("ava")
-reset_cached_files("deps")
-reset_cached_files("desc")
-
 # Write cassettes first
 vcr::use_cassette("plot-dd-shiny", {
   dd_shiny <- deepdep("shiny", depth = 2)
