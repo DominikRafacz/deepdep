@@ -30,9 +30,11 @@ test_that("obtaining Bioc dependencies returns objects of correct types", {
   reset_cached_files("desc")
   
   vcr::use_cassette("deepdep-1", {
-    dd <- deepdep_wrapped("les", downloads = FALSE, bioc = TRUE, depth = 1, dependency_type = c("Depends", "Imports", "Enhances", "LinkingTo"))
-    expect_is(dd, "deepdep")
-  })
+    dd <- deepdep_wrapped("les", downloads = FALSE, bioc = TRUE, depth = 1,
+                          dependency_type = c("Depends", "Imports", "Enhances", "LinkingTo"))
+  }, serialize_with = "json")
+  
+  expect_is(dd, "deepdep")
 })
 
 test_that("incorrect combination of parameters results in error",{
