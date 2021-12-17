@@ -3,6 +3,8 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/deepdep)](https://CRAN.R-project.org/package=deepdep)
 [![Build
 Status](https://travis-ci.org/DominikRafacz/deepdep.svg?branch=master)](https://travis-ci.org/DominikRafacz/deepdep)
 [![CircleCI build
