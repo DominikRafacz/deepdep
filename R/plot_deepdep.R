@@ -99,12 +99,6 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     G <- igraph::set_vertex_attr(G, "name", value = attr(x, "package_name"))
     type <- "tree"
   } else {
-    if (show_version) {
-      x <- add_version_to_name(x)
-    }
-    if (show_downloads) {
-      x <- add_downloads_to_name(x)
-    }
     if (declutter) {
       x <- x[x[["origin"]] == x[[1, "origin"]] |
                x[["type"]] %in% match_dependency_type("strong"), ]
@@ -114,6 +108,12 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     }
     if (!reverse) {
       x <- x[(x$origin_level <= x$dest_level), ]
+    }
+    if (show_version) {
+      x <- add_version_to_name(x)
+    }
+    if (show_downloads) {
+      x <- add_downloads_to_name(x)
     }
     G <- igraph::graph_from_data_frame(x)
   }
