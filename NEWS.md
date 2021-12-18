@@ -1,3 +1,5 @@
+# deepdep (development version)
+
 # deepdep 0.4.0
 * removed hard dependencies on plotting-related packages; `ggplot2`, `ggraph`, `graphlayouts`, `igraph`, and `scales` are now Suggests instead of Imports (issue #32)
 * removed unused dependency on `ggforce`
