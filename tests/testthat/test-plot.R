@@ -8,7 +8,10 @@ test_that("incorrect object type results in an error", {
 skip_if_not_installed("vcr")
 
 # Write cassettes first
-vcr::use_cassette("plot-dd-shiny", {
+vcr::use_cassette("plot-dd-shiny-1", {
+  dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
+})
+vcr::use_cassette("plot-dd-shiny-2", {
   dd_shiny <- deepdep("shiny", depth = 2)
 })
 vcr::use_cassette("plot-dd-rlang", {
@@ -99,6 +102,48 @@ test_that("deepdep plot has no caption when specified", {
   plt_shiny <- plot_dependencies(dd_shiny, show_stamp = FALSE)
   
   expect_null(plt_shiny$labels$caption)
+})
+
+# VERSION & DOWNLOADS ----
+test_that("no version or download count by default (resulting in one-line label)", {
+  plt_shiny_1 <- plot_dependencies(dd_shiny_1)
+  
+  expect_match(
+    plt_shiny_1$data$label,
+    "^[^\\n]+$",
+    perl = TRUE
+  )
+})
+
+test_that("version code is placed in another line within braces", {
+  plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_version = TRUE)
+  
+  # Labels may or may not contain version code
+  expect_match(
+    plt_shiny_1$data$label,
+    "^[^\\n]+(\\n\\(.+\\))?$",
+    perl = TRUE
+  )
+})
+
+test_that("download count is placed in the last line", {
+  plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_downloads = TRUE)
+  
+  # Download count is always shown
+  expect_match(
+    plt_shiny_1$data$label,
+    "^[^\\n]+\\n\\d+$",
+    perl = TRUE
+  )
+  
+  plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_version = TRUE, show_downloads = TRUE)
+  
+  # Labels may or may not contain version code
+  expect_match(
+    plt_shiny_1$data$label,
+    "^[^\\n]+(\\n\\(.+\\))?\\n\\d+$",
+    perl = TRUE
+  )
 })
 
 # NO DEPENDENCIES ----
