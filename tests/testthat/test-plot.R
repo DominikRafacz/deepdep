@@ -49,6 +49,36 @@ test_that("deepdep plot omits same level and reverse dependencies", {
   expect_true(all(edge_attrs$origin_level == edge_attrs$dest_level - 1))
 })
 
+test_that("deepdep plot can keep same level dependencies", {
+  plt_dt <- plot_dependencies(dd_dt, same_level = TRUE)
+  
+  edge_attrs <- igraph::edge_attr(plt_dt$plot_env$G)
+  # Origin level isn't greater than target level
+  expect_true(all(edge_attrs$origin_level <= edge_attrs$dest_level))
+  # Not always true - if deepdep has no same-level dependencies
+  expect_true(any(edge_attrs$origin_level == edge_attrs$dest_level))
+})
+
+test_that("deepdep plot can keep reverse dependencies", {
+  plt_dt <- plot_dependencies(dd_dt, reverse = TRUE)
+  
+  edge_attrs <- igraph::edge_attr(plt_dt$plot_env$G)
+  # Origin level isn't equal to target level
+  expect_true(all(edge_attrs$origin_level != edge_attrs$dest_level))
+  # Not always true - if deepdep has no reverse dependencies
+  expect_true(any(edge_attrs$origin_level > edge_attrs$dest_level))
+})
+
+test_that("deepdep plot can keep all dependencies", {
+  plt_dt <- plot_dependencies(dd_dt, same_level = TRUE, reverse = TRUE)
+  
+  # No dependency is dropped from deepdep source object
+  expect_equal(
+    nrow(dd_dt),
+    igraph::ecount(plt_dt$plot_env$G)
+  )
+})
+
 # CAPTION ----
 test_that("deepdep plot has a caption by default", {
   plt_shiny <- plot_dependencies(dd_shiny)
