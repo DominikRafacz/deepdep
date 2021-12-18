@@ -65,6 +65,11 @@ test_that("deepdep plot has no caption when specified", {
 
 # NO DEPENDENCIES ----
 test_that("deepdep plot with no dependencies has only a subset of layers", {
+  skip_if_not(
+    nrow(dd_rlang) == 0,
+    "rlang has dependencies now - use different package to test plotting empty deepdep"
+  )
+  
   # No circles, no edges
   # 1st layer is node points
   expect_s3_class(plt_rlang$layers[[1]]$geom, "GeomPoint")
