@@ -110,18 +110,12 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
       x <- x[(x$origin_level <= x$dest_level), ]
     }
     vertices <- compile_vertex_data(
-      x, version = show_version, downloads = show_downloads
+      x, show_version, show_downloads, label_percentage
     )
     G <- igraph::graph_from_data_frame(x, vertices = vertices)
   }
   
   G <- add_layers_to_vertices(G, x)
-  
-  # mark vertices to label
-  pkg_downloads <- unlist(x[!duplicated(x[["name"]]), "grand_total"])
-  # central node should always be labeled
-  igraph::V(G)$labeled <- c(TRUE, pkg_downloads >= quantile(pkg_downloads, probs = 1 - label_percentage))
-  labels <- levels(factor(igraph::E(G)$type))
   
   g <- switch(type,
               tree = ggraph::ggraph(G, "tree") +
@@ -171,34 +165,42 @@ add_layers_to_vertices <- function(G, x) {
   G
 }
 
-compile_vertex_data <- function(x, version, downloads) {
+compile_vertex_data <- function(x, version, downloads, label_percentage) {
   vertices <- data.frame(
     name = unique(c(attr(x, "package_name"), x[["name"]]))
   )
   vertices[["label"]] <- vertices[["name"]]
+  vertices[["version"]] <- vapply(
+    vertices[["name"]],
+    function(pkg) x[x[["name"]] == pkg, ][["version"]][1],
+    FUN.VALUE = character(1)
+  )
   if (version) {
-    vertices[["version"]] <- vapply(
-      vertices[["name"]],
-      function(pkg) x[x[["name"]] == pkg, ][["version"]][1],
-      FUN.VALUE = character(1)
-    )
     vertices[["label"]] <- ifelse(
       is.na(vertices[["version"]]),
       vertices[["label"]],
       paste0(vertices[["label"]], "\n(", vertices[["version"]], ")")
     )
   }
-  if (downloads) {
+  if ("grand_total" %in% colnames(x)) {
     vertices[["downloads"]] <- vapply(
       vertices[["name"]],
       function(pkg) x[x[["name"]] == pkg, ][["grand_total"]][1],
       FUN.VALUE = numeric(1)
     )
+  }
+  if (downloads) {
     vertices[["label"]] <- ifelse(
       is.na(vertices[["downloads"]]),
       vertices[["label"]],
       paste0(vertices[["label"]], "\n", vertices[["downloads"]])
     )
+  }
+  vertices[["labeled"]] <- if (label_percentage < 1) {
+    # Central node should always be labeled
+    c(TRUE, is_top_perc(vertices[["downloads"]][-1], label_percentage))
+  } else {
+    TRUE
   }
   vertices
 }
