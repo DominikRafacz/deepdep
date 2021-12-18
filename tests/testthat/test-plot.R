@@ -181,6 +181,24 @@ test_that("deepdep plot has no caption when specified", {
   })
 }
 
+test_that("showing versions don't break plots with depth >= 2", {
+  plt_shiny <- plot_dependencies(dd_shiny, show_version = TRUE)
+  
+  # Labels may or may not contain version code
+  expect_match(
+    plt_shiny$data$label,
+    "(?s)^[^\\n]+(\\n\\(.+\\))?$",
+    perl = TRUE
+  )
+  
+  # Package was selected so that there are version requirements in there
+  expect_true(any(grepl(
+    "(?s)^[^\\n]+\\n\\(.+\\)$",
+    plt_shiny$data$label,
+    perl = TRUE
+  )))
+})
+
 # NO DEPENDENCIES ----
 test_that("deepdep plot with no dependencies has only a subset of layers", {
   skip_if_not(
