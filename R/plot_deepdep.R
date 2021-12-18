@@ -109,13 +109,10 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     if (!reverse) {
       x <- x[(x$origin_level <= x$dest_level), ]
     }
-    if (show_version) {
-      x <- add_version_to_name(x)
-    }
-    if (show_downloads) {
-      x <- add_downloads_to_name(x)
-    }
-    G <- igraph::graph_from_data_frame(x)
+    vertices <- compile_vertex_data(
+      x, version = show_version, downloads = show_downloads
+    )
+    G <- igraph::graph_from_data_frame(x, vertices = vertices)
   }
   
   G <- add_layers_to_vertices(G, x)
@@ -152,7 +149,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   g <- g + ggraph::geom_node_point(ggplot2::aes(fill = factor(layer)),
                                    size = 3, shape = 21, show.legend = FALSE) +
     ggraph::geom_node_label(data = function(g) g[g[, "labeled"], ],
-                            ggplot2::aes(label = name, fill = factor(layer)),
+                            ggplot2::aes(label = label, fill = factor(layer)),
                             show.legend = FALSE,
                             label.padding = ggplot2::unit(0.28, "lines")) +
     default_nodefill_scale(length(levels(factor(igraph::V(G)$layer))))
@@ -172,6 +169,38 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
 add_layers_to_vertices <- function(G, x) {
   igraph::V(G)$layer <- c(0, x[match(igraph::V(G)$name[-1], x$name), "dest_level"])
   G
+}
+
+compile_vertex_data <- function(x, version, downloads) {
+  vertices <- data.frame(
+    name = unique(c(attr(x, "package_name"), x[["name"]]))
+  )
+  vertices[["label"]] <- vertices[["name"]]
+  if (version) {
+    vertices[["version"]] <- vapply(
+      vertices[["name"]],
+      function(pkg) x[x[["name"]] == pkg, ][["version"]][1],
+      FUN.VALUE = character(1)
+    )
+    vertices[["label"]] <- ifelse(
+      is.na(vertices[["version"]]),
+      vertices[["label"]],
+      paste0(vertices[["label"]], "\n(", vertices[["version"]], ")")
+    )
+  }
+  if (downloads) {
+    vertices[["downloads"]] <- vapply(
+      vertices[["name"]],
+      function(pkg) x[x[["name"]] == pkg, ][["grand_total"]][1],
+      FUN.VALUE = numeric(1)
+    )
+    vertices[["label"]] <- ifelse(
+      is.na(vertices[["downloads"]]),
+      vertices[["label"]],
+      paste0(vertices[["label"]], "\n", vertices[["downloads"]])
+    )
+  }
+  vertices
 }
 
 get_edgewidth_default_scale <- function() {
@@ -200,20 +229,4 @@ default_nodefill_scale <- function(num_colors) {
                                           "#7b5e7b",
                                           "#664e4c"))
   else ggplot2::scale_fill_discrete()
-}
-
-add_version_to_name <- function(x) {
-  tmp <- x[!duplicated(x$name), c("name", "version")]
-  nv <- ifelse(is.na(tmp$version), tmp$name, paste0(tmp$name, "\n(", tmp$version, ")"))
-  names(nv) <- tmp$name
-  x$name <- nv[x$name]
-  x
-}
-
-add_downloads_to_name <- function(x) {
-  tmp <- x[!duplicated(x$name), c("name", "grand_total")]
-  nv <- ifelse(is.na(tmp$grand_total), tmp$name, paste0(tmp$name, "\n", tmp$grand_total))
-  names(nv) <- tmp$name
-  x$name <- nv[x$name]
-  x
 }
