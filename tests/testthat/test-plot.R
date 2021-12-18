@@ -8,6 +8,9 @@ test_that("incorrect object type results in an error", {
 skip_if_not_installed("vcr")
 
 # Write cassettes first
+# vcr::use_cassette("plot-dd-shiny-1", {
+#   dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
+# })
 vcr::use_cassette("plot-dd-shiny-2", {
   dd_shiny <- deepdep("shiny", depth = 2)
 })
@@ -107,9 +110,6 @@ test_that("deepdep plot has no caption when specified", {
   # due to ":" character
   skip_on_cran()
   
-  # vcr::use_cassette("plot-dd-shiny-1", {
-  #   dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
-  # })
   dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
   
   test_that("no version or download count by default (resulting in one-line label)", {
