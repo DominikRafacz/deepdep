@@ -117,43 +117,43 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   
   G <- add_layers_to_vertices(G, x)
   
-  g <- switch(type,
-              tree = ggraph::ggraph(G, "tree") +
-                ggplot2::theme_void(),
-              circular = ggraph::ggraph(graph = G, layout = "focus", focus = 1) +
-                graphlayouts::draw_circle(use = "focus", max.circle = max(igraph::V(G)$layer), col = "#252525") +
-                ggplot2::theme_void() +
-                ggplot2::coord_fixed())
+  plt <- switch(type,
+                tree = ggraph::ggraph(G, "tree") +
+                  ggplot2::theme_void(),
+                circular = ggraph::ggraph(graph = G, layout = "focus", focus = 1) +
+                  graphlayouts::draw_circle(use = "focus", max.circle = max(igraph::V(G)$layer), col = "#252525") +
+                  ggplot2::theme_void() +
+                  ggplot2::coord_fixed())
   
   if (nrow(x) != 0) {
-    g <- g + ggraph::geom_edge_link(ggplot2::aes(end_cap = ggraph::label_rect(node2.name),
-                                                 start_cap = ggraph::label_rect(node1.name),
-                                                 edge_width = type,
-                                                 edge_linetype = type),
-                                    arrow = ggplot2::arrow(length = ggplot2::unit(0.5, 'lines'),
-                                                           ends = "first",
-                                                           type = "closed",
-                                                           angle = 16.6),
-                                    color = "#1f271b") +
+    plt <- plt + ggraph::geom_edge_link(ggplot2::aes(end_cap = ggraph::label_rect(node2.name),
+                                                     start_cap = ggraph::label_rect(node1.name),
+                                                     edge_width = type,
+                                                     edge_linetype = type),
+                                        arrow = ggplot2::arrow(length = ggplot2::unit(0.5, 'lines'),
+                                                               ends = "first",
+                                                               type = "closed",
+                                                               angle = 16.6),
+                                        color = "#1f271b") +
       ggraph::scale_edge_linetype_manual(values = get_edgelinetype_default_scale()) +
       ggraph::scale_edge_width_manual(values = get_edgewidth_default_scale()) +
       ggplot2::theme(legend.key.width = ggplot2::unit(3, "lines"))
   }
   
-  g <- g + ggraph::geom_node_point(ggplot2::aes(fill = factor(layer)),
-                                   size = 3, shape = 21, show.legend = FALSE) +
+  plt <- plt + ggraph::geom_node_point(ggplot2::aes(fill = factor(layer)),
+                                       size = 3, shape = 21, show.legend = FALSE) +
     ggraph::geom_node_label(data = function(g) g[g[, "labeled"], ],
                             ggplot2::aes(label = label, fill = factor(layer)),
                             show.legend = FALSE,
                             label.padding = ggplot2::unit(0.28, "lines")) +
     default_nodefill_scale(length(levels(factor(igraph::V(G)$layer))))
   if (show_stamp)
-    g <- g + ggplot2::labs(caption = paste0("Plot made with deepdep v",
-                                            packageVersion("deepdep"),
-                                            " on ", format(Sys.time(), usetz = FALSE)))
+    plt <- plt + ggplot2::labs(caption = paste0("Plot made with deepdep v",
+                                                packageVersion("deepdep"),
+                                                " on ", format(Sys.time(), usetz = FALSE)))
   
-  class(g) <- c(class(g), "deepdep_plot")
-  g
+  class(plt) <- c(class(plt), "deepdep_plot")
+  plt
 }
 
 #' @title Add layer property to graph vertices
