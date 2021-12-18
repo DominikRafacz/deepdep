@@ -199,6 +199,36 @@ test_that("showing versions don't break plots with depth >= 2", {
   )))
 })
 
+# LABEL PERCENTAGE ----
+{
+  # Extracting download count requires calling a HTTP address that vcr cannot yet record
+  # due to ":" character
+  skip_on_cran()
+  
+  dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
+  
+  test_that("by default label percentage is equal to 1", {
+    plt_shiny_1 <- plot_dependencies(dd_shiny_1)
+    
+    expect_true(all(plt_shiny_1$data$labeled == TRUE))
+  })
+  
+  test_that("actual label percentage is equal to or greater than argument value", {
+    for (l_perc in c(0.05, 0.17, 0.25, 0.47, 0.81, 0.99)) {
+      plt_shiny_1 <- plot_dependencies(dd_shiny_1, label_percentage = l_perc)
+      
+      expect_gte(mean(plt_shiny_1$data$labeled[-1] == TRUE), l_perc)
+    }
+  })
+  
+  test_that("label percentage equal to 0 means no labels except for the central package", {
+    plt_shiny_1 <- plot_dependencies(dd_shiny_1, label_percentage = 0)
+    
+    expect_equal(plt_shiny_1$data$labeled[1], TRUE)
+    expect_true(all(plt_shiny_1$data$labeled[-1] == FALSE))
+  })
+}
+
 # NO DEPENDENCIES ----
 test_that("deepdep plot with no dependencies has only a subset of layers", {
   skip_if_not(
