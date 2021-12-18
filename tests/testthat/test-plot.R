@@ -38,6 +38,17 @@ test_that("deepdep plot has correct layers and objects", {
   expect_s3_class(plt_shiny$layers[[4]]$stat, "StatFilter")
 })
 
+# SAME LEVEL & REVERSE EDGES ----
+test_that("deepdep plot omits same level and reverse dependencies", {
+  plt_dt <- plot_dependencies(dd_dt)
+  
+  edge_attrs <- igraph::edge_attr(plt_dt$plot_env$G)
+  # Origin level is always smaller than target level
+  expect_true(all(edge_attrs$origin_level < edge_attrs$dest_level))
+  # To be more precise, origin is always exactly 1 smaller than target level
+  expect_true(all(edge_attrs$origin_level == edge_attrs$dest_level - 1))
+})
+
 # CAPTION ----
 test_that("deepdep plot has a caption by default", {
   plt_shiny <- plot_dependencies(dd_shiny)
