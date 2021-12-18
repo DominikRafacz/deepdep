@@ -109,17 +109,16 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
       x <- x[x[["origin"]] == x[[1, "origin"]] |
                x[["type"]] %in% match_dependency_type("strong"), ]
     }
+    if (!same_level) {
+      x <- x[(x$origin_level != x$dest_level), ]
+    }
+    if (!reverse) {
+      x <- x[(x$origin_level <= x$dest_level), ]
+    }
     G <- igraph::graph_from_data_frame(x)
   }
   
   G <- add_layers_to_vertices(G, x)
-  if (!same_level) {
-    G <- delete_edges_within_layer(G)
-  }
-  if (!reverse) {
-    G <- delete_reverse_edges(G)
-  }
-  
   
   # mark vertices to label
   pkg_downloads <- unlist(x[!duplicated(x[["name"]]), "grand_total"])
@@ -173,28 +172,6 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
 add_layers_to_vertices <- function(G, x) {
   igraph::V(G)$layer <- c(0, x[match(igraph::V(G)$name[-1], x$name), "dest_level"])
   G
-}
-
-#' @title Remove edges on the same level
-#' @noRd
-#'
-#' @param G An \code{igraph} object.
-delete_edges_within_layer <- function(G) {
-  edges_to_delete <- igraph::E(G)[
-    igraph::head_of(G, igraph::E(G))$layer == igraph::tail_of(G, igraph::E(G))$layer
-  ]
-  igraph::delete_edges(G, edges_to_delete)
-}
-
-#' @title Remove edges that point from vertices on lower to higher level
-#' @noRd
-#'
-#' @param G An \code{igraph} object.
-delete_reverse_edges <- function(G) {
-  edges_to_delete <- igraph::E(G)[
-    igraph::head_of(G, igraph::E(G))$layer < igraph::tail_of(G, igraph::E(G))$layer
-  ]
-  igraph::delete_edges(G, edges_to_delete)
 }
 
 get_edgewidth_default_scale <- function() {
