@@ -73,10 +73,7 @@ test_that("deepdep plot can keep all dependencies", {
   plt_dt <- plot_dependencies(dd_dt, same_level = TRUE, reverse = TRUE)
   
   # No dependency is dropped from deepdep source object
-  expect_equal(
-    nrow(dd_dt),
-    igraph::ecount(plt_dt$plot_env$G)
-  )
+  expect_equal(nrow(dd_dt), igraph::ecount(plt_dt$plot_env$G))
 })
 
 # CAPTION ----
