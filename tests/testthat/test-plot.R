@@ -8,9 +8,6 @@ test_that("incorrect object type results in an error", {
 skip_if_not_installed("vcr")
 
 # Write cassettes first
-vcr::use_cassette("plot-dd-shiny-1", {
-  dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
-})
 vcr::use_cassette("plot-dd-shiny-2", {
   dd_shiny <- deepdep("shiny", depth = 2)
 })
@@ -105,46 +102,84 @@ test_that("deepdep plot has no caption when specified", {
 })
 
 # VERSION & DOWNLOADS ----
-test_that("no version or download count by default (resulting in one-line label)", {
-  plt_shiny_1 <- plot_dependencies(dd_shiny_1)
+{
+  # Extracting download count requires calling a HTTP address that vcr cannot yet record
+  # due to ":" character
+  skip_on_cran()
   
-  expect_match(
-    plt_shiny_1$data$label,
-    "^[^\\n]+$",
-    perl = TRUE
-  )
-})
-
-test_that("version code is placed in another line within braces", {
-  plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_version = TRUE)
+  # vcr::use_cassette("plot-dd-shiny-1", {
+  #   dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
+  # })
+  dd_shiny_1 <- deepdep("shiny", downloads = TRUE)
   
-  # Labels may or may not contain version code
-  expect_match(
-    plt_shiny_1$data$label,
-    "^[^\\n]+(\\n\\(.+\\))?$",
-    perl = TRUE
-  )
-})
-
-test_that("download count is placed in the last line", {
-  plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_downloads = TRUE)
+  test_that("no version or download count by default (resulting in one-line label)", {
+    plt_shiny_1 <- plot_dependencies(dd_shiny_1)
+    
+    expect_match(
+      plt_shiny_1$data$label,
+      "(?s)^[^\\n]+$",
+      perl = TRUE
+    )
+  })
   
-  # Download count is always shown
-  expect_match(
-    plt_shiny_1$data$label,
-    "^[^\\n]+\\n\\d+$",
-    perl = TRUE
-  )
+  test_that("version code is placed in another line within braces", {
+    plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_version = TRUE)
+    
+    # Labels may or may not contain version code
+    expect_match(
+      plt_shiny_1$data$label,
+      "(?s)^[^\\n]+(\\n\\(.+\\))?$",
+      perl = TRUE
+    )
+    
+    # Package was selected so that there are version requirements in there
+    expect_true(any(grepl(
+      "(?s)^[^\\n]+\\n\\(.+\\)$",
+      plt_shiny_1$data$label,
+      perl = TRUE
+    )))
+  })
   
-  plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_version = TRUE, show_downloads = TRUE)
-  
-  # Labels may or may not contain version code
-  expect_match(
-    plt_shiny_1$data$label,
-    "^[^\\n]+(\\n\\(.+\\))?\\n\\d+$",
-    perl = TRUE
-  )
-})
+  test_that("download count is placed in the last line", {
+    plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_downloads = TRUE)
+    
+    # Checked package is always without version or download count
+    expect_match(
+      plt_shiny_1$data$label[1],
+      "shiny",
+      fixed = TRUE
+    )
+    
+    # Download count is always shown for other packages
+    expect_match(
+      plt_shiny_1$data$label[-1],
+      "(?s)^[^\\n]+\\n\\d+$",
+      perl = TRUE
+    )
+    
+    plt_shiny_1 <- plot_dependencies(dd_shiny_1, show_version = TRUE, show_downloads = TRUE)
+    
+    expect_match(
+      plt_shiny_1$data$label[1],
+      "shiny",
+      fixed = TRUE
+    )
+    
+    # Labels may or may not contain version code
+    expect_match(
+      plt_shiny_1$data$label[-1],
+      "(?s)^[^\\n]+(\\n\\(.+\\))?\\n\\d+$",
+      perl = TRUE
+    )
+    
+    # Package was selected so that there are version requirements in there
+    expect_true(any(grepl(
+      "(?s)^[^\\n]+\\n\\(.+\\)\\n\\d+$",
+      plt_shiny_1$data$label,
+      perl = TRUE
+    )))
+  })
+}
 
 # NO DEPENDENCIES ----
 test_that("deepdep plot with no dependencies has only a subset of layers", {
