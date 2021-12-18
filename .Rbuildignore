@@ -21,3 +21,4 @@ README_files
 ^vignettes/precompile\.R$
 ^vignettes/.*\.Rmd\.orig$
 ^inst/doc/.*\.png$
+^\.github$
