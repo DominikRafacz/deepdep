@@ -260,17 +260,30 @@ test_that("deepdep plot with no dependencies has only a subset of layers", {
 
 # DECLUTTER ----
 test_that("declutter removes all Suggests and Enhances packages from outer layers", {
-  plt_dt <- plot_dependencies(dd_dt, declutter = TRUE)
+  for (dd in list(dd_dt, dd_R6)) {
+    plt <- plot_dependencies(dd, declutter = TRUE)
+    
+    # Node labels are equal to the names appearing in the filtered data
+    filtered_dd <- dd[dd$origin_level == 0 |
+                        !dd$type %in% c("Suggests", "Enhances"), ]
+    packages_plotted <- unique(c(filtered_dd$origin, filtered_dd$name))
+    expect_setequal(packages_plotted, plt$data$name)
+    
+    # If edge has type Suggests or Enhances, it starts in the center
+    edge_attrs <- igraph::edge_attr(attr(plt$data, "graph"))
+    expect_true(all(
+      edge_attrs$origin_level[edge_attrs$type %in% c("Suggests", "Enhances")] == 0
+    ))
+  }
+})
+
+test_that("declutter removes all dependencies of removed Suggests and Enhances", {
+  plt_R6 <- plot_dependencies(dd_R6, declutter = TRUE)
   
-  # Node labels are equal to the names appearing in the filtered data
-  filtered_dd <- dd_dt[dd_dt$origin_level == 0 |
-                         !dd_dt$type %in% c("Suggests", "Enhances"), ]
-  packages_plotted <- unique(c(filtered_dd$origin, filtered_dd$name))
-  expect_setequal(packages_plotted, plt_dt$data$name)
-  
-  # If edge has type Suggests or Enhances, it starts in the center
-  edge_attrs <- igraph::edge_attr(attr(plt_dt$data, "graph"))
-  expect_true(
-    all(edge_attrs$origin_level[edge_attrs$type %in% c("Suggests", "Enhances")] == 0)
-  )
+  # All names that are not origins
+  plot_edges <- plt_R6$plot_env$x
+  expect_true(all(
+    unique(plot_edges$origin[plot_edges$origin_level != 0]) %in%
+      unique(plot_edges$name)
+  ))
 })
