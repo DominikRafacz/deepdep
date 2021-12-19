@@ -1,7 +1,7 @@
 ---
 title: "Comparison of deepdep to similar packages"
 author: "Dominik Rafacz"
-date: "2021-12-17"
+date: "2021-12-19"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Comparison of deepdep to similar packages}
@@ -108,7 +108,6 @@ From README.md on Github:
 ```r
 #> an example from official vignette
 library(miniCRAN, quietly = TRUE)
-#> Warning: pakiet 'miniCRAN' został zbudowany w wersji R 4.1.2
 
 tags <- "chron"
 pkgDep(tags, availPkgs = cranJuly2014)
