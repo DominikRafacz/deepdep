@@ -84,6 +84,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   node2.name <- NULL
   name <- NULL
   layer <- NULL
+  label <- NULL
   
   # TODO: add boolean returns to check if packages are available
   if (!require_packages(c("ggplot2", "ggraph", "igraph", "graphlayouts"),
