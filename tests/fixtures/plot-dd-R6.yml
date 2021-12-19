@@ -1,0 +1,1902 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/R6
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:51 GMT
+      content-type: application/json
+      content-length: '1192'
+      connection: keep-alive
+      etag: '"DARDUTEE3DSRZX5NFMDBGQ3SL"'
+      vary: Accept
+      x-couch-request-id: 60dc0d360b
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"R6","Title":"Encapsulated Classes with Reference Semantics","Version":"2.5.1","Authors@R":"person(\"Winston\",
+        \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@stdout.org\")","Description":"Creates
+        classes with reference semantics, similar to R''s built-in\u000areference
+        classes. Compared to reference classes, R6 classes are simpler\u000aand lighter-weight,
+        and they are not built on S4 classes so they do not\u000arequire the methods
+        package. These classes allow public and private\u000amembers, and they support
+        inheritance, even when the classes are defined in\u000adifferent packages.","Depends":{"R":">=
+        3.0"},"Suggests":{"testthat":"*","pryr":"*"},"License":"MIT + file LICENSE","URL":"https://r6.r-lib.org,
+        https://github.com/r-lib/R6/","BugReports":"https://github.com/r-lib/R6/issues","RoxygenNote":"7.1.1","NeedsCompilation":"no","Packaged":"2021-08-06
+        20:18:46 UTC; winston","Author":"Winston Chang [aut, cre]","Maintainer":"Winston
+        Chang <winston@stdout.org>","Repository":"CRAN","Date/Publication":"2021-08-19
+        14:00:05 UTC","crandb_file_date":"2021-08-19 14:44:39","MD5sum":"e84fd376e246738402e5529b6d52e101","date":"2021-08-19T13:00:05+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/testthat
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:52 GMT
+      content-type: application/json
+      content-length: '1967'
+      connection: keep-alive
+      etag: '"2V1PHH5KGNMN2B1KNY16EYXGO"'
+      vary: Accept
+      x-couch-request-id: 191c3afd7b
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"testthat","Title":"Unit Testing for R","Version":"3.1.1","Authors@R":"\u000ac(person(given
+        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = c(\"aut\", \"cre\"),\u000aemail
+        = \"hadley@rstudio.com\"),\u000aperson(given = \"RStudio\",\u000arole = c(\"cph\",
+        \"fnd\")),\u000aperson(given = \"R Core team\",\u000arole = \"ctb\",\u000acomment
+        = \"Implementation of utils::recover()\"))","Description":"Software testing
+        is important, but, in part because it is\u000afrustrating and boring, many
+        of us avoid it. ''testthat'' is a testing\u000aframework for R that is easy
+        to learn and use, and integrates with\u000ayour existing ''workflow''.","License":"MIT
+        + file LICENSE","URL":"https://testthat.r-lib.org, https://github.com/r-lib/testthat","BugReports":"https://github.com/r-lib/testthat/issues","Depends":{"R":">=
+        3.1"},"Imports":{"brio":"*","callr":">= 3.5.1","cli":">= 2.2.0","crayon":">=
+        1.3.4","desc":"*","digest":"*","ellipsis":">= 0.2.0","evaluate":"*","jsonlite":"*","lifecycle":"*","magrittr":"*","methods":"*","pkgload":"*","praise":"*","processx":"*","ps":">=\u000a1.3.4","R6":">=
+        2.2.0","rlang":">= 0.4.9","utils":"*","waldo":">=\u000a0.2.4","withr":">=
+        2.3.0"},"Suggests":{"covr":"*","curl":">= 0.9.5","diffviewer":">= 0.1.0","knitr":"*","mockery":"*","rmarkdown":"*","rstudioapi":"*","shiny":"*","usethis":"*","vctrs":">=
+        0.1.0","xml2":"*"},"VignetteBuilder":"knitr","Config/testthat/edition":"3","Config/testthat/start-first":"watcher,
+        parallel*","Encoding":"UTF-8","RoxygenNote":"7.1.2.9000","NeedsCompilation":"yes","Packaged":"2021-12-03
+        19:34:04 UTC; hadleywickham","Author":"Hadley Wickham [aut, cre],\u000aRStudio
+        [cph, fnd],\u000aR Core team [ctb] (Implementation of utils::recover())","Maintainer":"Hadley
+        Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-12-03
+        22:50:02 UTC","crandb_file_date":"2021-12-03 23:56:35","MD5sum":"9cec2b8b568861d8c18158a015d22869","date":"2021-12-03T21:50:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/pryr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:54 GMT
+      content-type: application/json
+      content-length: '1118'
+      connection: keep-alive
+      etag: '"3E1YBV99J8855UW0GKY52DVEF"'
+      vary: Accept
+      x-couch-request-id: f9b14e4182
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"pryr","Version":"0.1.5","Title":"Tools for Computing on
+        the Language","Description":"Useful tools to pry back the covers of R and
+        understand the\u000alanguage at a deeper level.","Authors@R":"c(\u000aperson(\"Hadley\",
+        \"Wickham\", ,\"hadley@rstudio.com\", c(\"aut\", \"cre\")),\u000aperson(\"R
+        Core team\", role = \"ctb\",\u000acomment = \"Some code extracted from base
+        R\")\u000a)","License":"GPL-2","URL":"https://github.com/hadley/pryr","BugReports":"https://github.com/hadley/pryr/issues","LinkingTo":{"Rcpp":"*"},"Depends":{"R":">=
+        3.1.0"},"Imports":{"stringr":"*","codetools":"*","methods":"*","Rcpp":">=
+        0.11.0","lobstr":"*"},"Suggests":{"testthat":">= 0.8.0"},"RoxygenNote":"7.1.1","NeedsCompilation":"yes","Packaged":"2021-07-26
+        04:38:45 UTC; hadley","Author":"Hadley Wickham [aut, cre],\u000aR Core team
+        [ctb] (Some code extracted from base R)","Maintainer":"Hadley Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-07-26
+        09:30:02 UTC","crandb_file_date":"2021-07-26 11:02:38","MD5sum":"b13878df6b45c2fd0f40b2cf2eb7e8b6","date":"2021-07-26T08:30:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/brio
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:54 GMT
+      content-type: application/json
+      content-length: '1232'
+      connection: keep-alive
+      etag: '"23MM00O1LL0Z44B3VCEYT9SLA"'
+      vary: Accept
+      x-couch-request-id: 479e3c3dd9
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"brio","Title":"Basic R Input Output","Version":"1.1.3","Authors@R":"c(\u000aperson(\"Jim\",
+        \"Hester\", role = \"aut\",\u000acomment = c(ORCID = \"0000-0002-2739-7082\")),\u000aperson(\"Gábor\",
+        \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"aut\", \"cre\")),\u000aperson(\"RStudio\",
+        role = c(\"cph\", \"fnd\"))\u000a)","Description":"Functions to handle basic
+        input output, these functions\u000aalways read and write UTF-8 (8-bit Unicode
+        Transformation Format)\u000afiles and provide more explicit control over line
+        endings.","License":"MIT + file LICENSE","URL":"https://brio.r-lib.org, https://github.com/r-lib/brio","BugReports":"https://github.com/r-lib/brio/issues","Suggests":{"covr":"*","testthat":">=
+        2.1.0"},"Encoding":"UTF-8","RoxygenNote":"7.1.2","NeedsCompilation":"yes","Packaged":"2021-11-29
+        23:19:46 UTC; jhester","Author":"Jim Hester [aut] (<https://orcid.org/0000-0002-2739-7082>),\u000aGábor
+        Csárdi [aut, cre],\u000aRStudio [cph, fnd]","Maintainer":"Gábor Csárdi
+        <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-11-30
+        13:10:02 UTC","crandb_file_date":"2021-11-30 14:08:26","MD5sum":"33560fedf56bcd9507892631a527507a","date":"2021-11-30T12:10:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/callr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:55 GMT
+      content-type: application/json
+      content-length: '1479'
+      connection: keep-alive
+      etag: '"XB7ESM474XPWWBQG5F6L1D56"'
+      vary: Accept
+      x-couch-request-id: 7a94c6eb55
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"callr","Title":"Call R from R","Version":"3.7.0","Authors@R":"c(\u000aperson(\"Gábor\",
+        \"Csárdi\", role = c(\"aut\", \"cre\", \"cph\"),\u000aemail = \"csardi.gabor@gmail.com\",\u000acomment
+        = c(ORCID = \"0000-0001-7098-9676\")),\u000aperson(\"Winston\", \"Chang\",
+        role = \"aut\"),\u000aperson(\"RStudio\", role = c(\"cph\", \"fnd\")),\u000aperson(\"Mango
+        Solutions\", role  = c(\"cph\", \"fnd\")))","Description":"It is sometimes
+        useful to perform a computation in a\u000aseparate R process, without affecting
+        the current R process at all.\u000aThis packages does exactly that.","License":"MIT
+        + file LICENSE","URL":"https://callr.r-lib.org, https://github.com/r-lib/callr#readme","BugReports":"https://github.com/r-lib/callr/issues","RoxygenNote":"7.1.1.9001","Imports":{"processx":">=
+        3.5.0","R6":"*","utils":"*"},"Suggests":{"cli":"*","covr":"*","ps":"*","rprojroot":"*","spelling":"*","testthat":"*","withr":">=\u000a2.3.0"},"Encoding":"UTF-8","Language":"en-US","NeedsCompilation":"no","Packaged":"2021-04-20
+        12:39:23 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre, cph] (<https://orcid.org/0000-0001-7098-9676>),\u000aWinston
+        Chang [aut],\u000aRStudio [cph, fnd],\u000aMango Solutions [cph, fnd]","Maintainer":"Gábor
+        Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-04-20
+        14:20:10 UTC","crandb_file_date":"2021-04-20 15:50:38","MD5sum":"aad15b0304e0a0f59fe9f2f3e75c8f15","date":"2021-04-20T13:20:10+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/cli
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:55 GMT
+      content-type: application/json
+      content-length: '1772'
+      connection: keep-alive
+      etag: '"CSU4G2IENL765ARFX56N0081X"'
+      vary: Accept
+      x-couch-request-id: 3f35301e0c
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"cli","Title":"Helpers for Developing Command Line Interfaces","Version":"3.1.0","Authors@R":"c(\u000aperson(\"Gábor\",
+        \"Csárdi\", , \"csardi.gabor@gmail.com\", c(\"aut\", \"cre\")),\u000aperson(\"Hadley\",
+        \"Wickham\", role = c(\"ctb\")),\u000aperson(\"Kirill\", \"Müller\", role
+        = c(\"ctb\")),\u000aperson(\"RStudio\", role = \"cph\")\u000a)","Description":"A
+        suite of tools to build attractive command line interfaces\u000a(''CLIs''),
+        from semantic elements: headings, lists, alerts, paragraphs,\u000aetc. Supports
+        custom themes via a ''CSS''-like language. It also contains a\u000anumber
+        of lower level ''CLI'' elements: rules, boxes, trees, and\u000a''Unicode''
+        symbols with ''ASCII'' alternatives. It support ANSI colors and\u000atext
+        styles as well.","License":"MIT + file LICENSE","URL":"https://cli.r-lib.org,
+        https://github.com/r-lib/cli#readme","BugReports":"https://github.com/r-lib/cli/issues","RoxygenNote":"7.1.2","Depends":{"R":">=
+        2.10"},"Imports":{"glue":"*","utils":"*"},"Suggests":{"asciicast":"*","callr":"*","covr":"*","grDevices":"*","htmltools":"*","htmlwidgets":"*","knitr":"*","methods":"*","mockery":"*","processx":"*","ps":">=
+        1.3.4.9000","rlang":"*","rmarkdown":"*","rstudioapi":"*","shiny":"*","testthat":"*","tibble":"*","whoami":"*","withr":"*"},"Config/testthat/edition":"3","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2021-10-27
+        07:39:25 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre],\u000aHadley
+        Wickham [ctb],\u000aKirill Müller [ctb],\u000aRStudio [cph]","Maintainer":"Gábor
+        Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-10-27
+        14:50:06 UTC","crandb_file_date":"2021-10-27 17:32:33","MD5sum":"48640511ff6894f77d02aa1740c84dad","date":"2021-10-27T13:50:06+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/crayon
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:57 GMT
+      content-type: application/json
+      content-length: '1683'
+      connection: keep-alive
+      etag: '"3XQDAIZD76AGD413N3SKYFYWT"'
+      vary: Accept
+      x-couch-request-id: b06f8ec83d
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"crayon","Title":"Colored Terminal Output","Version":"1.4.2","Authors@R":"c(\u000aperson(\"Gábor\",
+        \"Csárdi\", , \"csardi.gabor@gmail.com\",\u000arole = c(\"aut\", \"cre\")),\u000aperson(\u000a\"Brodie\",
+        \"Gaslam\", email=\"brodie.gaslam@yahoo.com\",\u000arole=c(\"ctb\"))\u000a)","Description":"Colored
+        terminal output on terminals that support ''ANSI''\u000acolor and highlight
+        codes. It also works in ''Emacs'' ''ESS''. ''ANSI''\u000acolor support is
+        automatically detected. Colors and highlighting can\u000abe combined and nested.
+        New styles can also be created easily.\u000aThis package was inspired by the
+        ''chalk'' ''JavaScript'' project.","License":"MIT + file LICENSE","URL":"https://github.com/r-lib/crayon#readme","BugReports":"https://github.com/r-lib/crayon/issues","Collate":"''aaa-rstudio-detect.R''
+        ''aab-num-ansi-colors.R''\u000a''aac-num-ansi-colors.R'' ''ansi-256.r'' ''ansi-palette.R''\u000a''combine.r''
+        ''string.r'' ''utils.r'' ''crayon-package.r''\u000a''disposable.r'' ''has_ansi.r''
+        ''has_color.r'' ''link.R'' ''styles.r''\u000a''machinery.r'' ''parts.r'' ''print.r''
+        ''rematch2.R'' ''style-var.r''\u000a''show.r'' ''string_operations.r''","Imports":{"grDevices":"*","methods":"*","utils":"*"},"Suggests":{"mockery":"*","rstudioapi":"*","testthat":"*","withr":"*"},"RoxygenNote":"7.1.2","Encoding":"UTF-8","NeedsCompilation":"no","Packaged":"2021-10-26
+        12:16:51 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre],\u000aBrodie
+        Gaslam [ctb]","Maintainer":"Gábor Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-10-29
+        23:20:02 UTC","crandb_file_date":"2021-10-30 00:56:29","MD5sum":"38eb751b269bc21e9f5cc2f9f9a1a299","date":"2021-10-29T22:20:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/desc
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:57 GMT
+      content-type: application/json
+      content-length: '1880'
+      connection: keep-alive
+      etag: '"BOOCG7XIOOG78AGEBWR5CETN9"'
+      vary: Accept
+      x-couch-request-id: 5a2da5dc79
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"desc","Title":"Manipulate DESCRIPTION Files","Version":"1.4.0","Authors@R":"\u000ac(person(given
+        = \"Gábor\",\u000afamily = \"Csárdi\",\u000arole = c(\"aut\", \"cre\"),\u000aemail
+        = \"csardi.gabor@gmail.com\"),\u000aperson(given = \"Kirill\",\u000afamily
+        = \"Müller\",\u000arole = \"aut\"),\u000aperson(given = \"Jim\",\u000afamily
+        = \"Hester\",\u000arole = \"aut\",\u000aemail = \"james.f.hester@gmail.com\"),\u000aperson(given
+        = \"Maëlle\",\u000afamily = \"Salmon\",\u000arole = \"ctb\",\u000acomment
+        = c(ORCID = \"0000-0002-2815-0399\")))","Maintainer":"Gábor Csárdi <csardi.gabor@gmail.com>","Description":"Tools
+        to read, write, create, and manipulate DESCRIPTION files.\u000aIt is intended
+        for packages that create or manipulate other packages.","License":"MIT + file
+        LICENSE","URL":"https://github.com/r-lib/desc#readme","BugReports":"https://github.com/r-lib/desc/issues","Depends":{"R":">=
+        3.1.0"},"Suggests":{"covr":"*","testthat":"*","whoami":"*","withr":"*","spelling":"*","gh":"*"},"Imports":{"utils":"*","R6":"*","crayon":"*","rprojroot":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.2","Collate":"''assertions.R''
+        ''authors-at-r.R'' ''built.R'' ''classes.R''\u000a''collate.R'' ''constants.R''
+        ''deps.R'' ''description.R'' ''encoding.R''\u000a''latex.R'' ''non-oo-api.R''
+        ''package-archives.R'' ''read.R''\u000a''remotes.R'' ''str.R'' ''syntax_checks.R''
+        ''urls.R'' ''utils.R''\u000a''validate.R'' ''version.R''","Language":"en-US","Config/testthat/edition":"3","NeedsCompilation":"no","Packaged":"2021-09-27
+        17:26:10 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre],\u000aKirill
+        Müller [aut],\u000aJim Hester [aut],\u000aMaëlle Salmon [ctb] (<https://orcid.org/0000-0002-2815-0399>)","Repository":"CRAN","Date/Publication":"2021-09-28
+        07:30:02 UTC","crandb_file_date":"2021-09-28 08:56:45","MD5sum":"c22552fa75267f68143abfa8a13bc18f","date":"2021-09-28T06:30:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:47 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/digest
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:58 GMT
+      content-type: application/json
+      content-length: '1759'
+      connection: keep-alive
+      etag: '"ANHNJKLO93TFJCEFVJT7XJHB5"'
+      vary: Accept
+      x-couch-request-id: a9642bcad8
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"digest","Author":"Dirk Eddelbuettel <edd@debian.org> with
+        contributions\u000aby Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon
+        Urbanek,\u000aMario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\u000aDuncan
+        Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx,\u000aMichel Lang,
+        Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,\u000aMatthew de Queljoe,
+        Ion Suruceanu, Bill Denney, Dirk Schumacher,\u000aand Winston Chang.","Version":"0.6.29","Date":"2021-11-30","Maintainer":"Dirk
+        Eddelbuettel <edd@debian.org>","Title":"Create Compact Hash Digests of R Objects","Description":"Implementation
+        of a function ''digest()'' for the creation of hash\u000adigests of arbitrary
+        R objects (using the ''md5'', ''sha-1'', ''sha-256'', ''crc32'',\u000a''xxhash'',
+        ''murmurhash'', ''spookyhash'' and ''blake3'' algorithms) permitting easy\u000acomparison
+        of R language objects, as well as functions such as''hmac()'' to\u000acreate
+        hash-based message authentication code. Please note that this package\u000ais
+        not meant to be deployed for cryptographic purposes for which more\u000acomprehensive
+        (and widely tested) libraries such as ''OpenSSL'' should be\u000aused.","URL":"https://github.com/eddelbuettel/digest,\u000ahttp://dirk.eddelbuettel.com/code/digest.html","BugReports":"https://github.com/eddelbuettel/digest/issues","Depends":{"R":">=
+        3.3.0"},"Imports":{"utils":"*"},"License":"GPL (>= 2)","Suggests":{"tinytest":"*","simplermarkdown":"*"},"VignetteBuilder":"simplermarkdown","NeedsCompilation":"yes","Packaged":"2021-11-30
+        23:41:39 UTC; edd","Repository":"CRAN","Date/Publication":"2021-12-01 07:40:02
+        UTC","crandb_file_date":"2021-12-01 08:44:27","MD5sum":"90c3726bf088f74df10a4e724c358e50","date":"2021-12-01T06:40:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/ellipsis
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:59 GMT
+      content-type: application/json
+      content-length: '1175'
+      connection: keep-alive
+      etag: '"62O6G97F30NCJYHY39P4096FA"'
+      vary: Accept
+      x-couch-request-id: 23e2ec785c
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"ellipsis","Version":"0.3.2","Title":"Tools for Working
+        with ...","Description":"The ellipsis is a powerful tool for extending functions.
+        Unfortunately\u000athis power comes at a cost: misspelled arguments will be
+        silently ignored.\u000aThe ellipsis package provides a collection of functions
+        to catch problems\u000aand alert the user.","Authors@R":"c(\u000aperson(\"Hadley\",
+        \"Wickham\", , \"hadley@rstudio.com\", role = c(\"aut\", \"cre\")),\u000aperson(\"RStudio\",
+        role = \"cph\")\u000a)","License":"MIT + file LICENSE","Encoding":"UTF-8","RoxygenNote":"7.1.1","URL":"https://ellipsis.r-lib.org,
+        https://github.com/r-lib/ellipsis","BugReports":"https://github.com/r-lib/ellipsis/issues","Depends":{"R":">=
+        3.2"},"Imports":{"rlang":">= 0.3.0"},"Suggests":{"covr":"*","testthat":"*"},"NeedsCompilation":"yes","Packaged":"2021-04-29
+        12:06:44 UTC; lionel","Author":"Hadley Wickham [aut, cre],\u000aRStudio [cph]","Maintainer":"Hadley
+        Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-29
+        12:40:02 UTC","crandb_file_date":"2021-04-29 13:56:33","MD5sum":"c453b4514da3717af5d5b97f0e3d2415","date":"2021-04-29T11:40:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/evaluate
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:48:59 GMT
+      content-type: application/json
+      content-length: '1815'
+      connection: keep-alive
+      etag: '"DSPFGAKOWFQY6TDYC7418KCOV"'
+      vary: Accept
+      x-couch-request-id: 13bbf2fde1
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"evaluate","Type":"Package","Title":"Parsing and Evaluation
+        Tools that Provide More Details than the\u000aDefault","Version":"0.14","Authors@R":"c(\u000aperson(\"Hadley\",
+        \"Wickham\", role = \"aut\"),\u000aperson(\"Yihui\", \"Xie\", role = c(\"aut\",
+        \"cre\"), email = \"xie@yihui.name\", comment = c(ORCID = \"0000-0003-0645-5666\")),\u000aperson(\"Michael\",
+        \"Lawrence\", role = \"ctb\"),\u000aperson(\"Thomas\", \"Kluyver\", role =
+        \"ctb\"),\u000aperson(\"Jeroen\", \"Ooms\", role = \"ctb\"),\u000aperson(\"Barret\",
+        \"Schloerke\", role = \"ctb\"),\u000aperson(\"Adam\", \"Ryczkowski\", role
+        = \"ctb\"),\u000aperson(\"Hiroaki\", \"Yutani\", role = \"ctb\"),\u000aperson(\"Michel\",
+        \"Lang\", role = \"ctb\"),\u000aperson(\"Karolis\", \"Koncevičius\", role
+        = \"ctb\")\u000a)","Description":"Parsing and evaluation tools that make it
+        easy to recreate the\u000acommand line behaviour of R.","License":"MIT + file
+        LICENSE","URL":"https://github.com/r-lib/evaluate","BugReports":"https://github.com/r-lib/evaluate/issues","Depends":{"R":">=
+        3.0.2"},"Imports":{"methods":"*"},"Suggests":{"testthat":"*","lattice":"*","ggplot2":"*"},"RoxygenNote":"6.1.1","Encoding":"UTF-8","NeedsCompilation":"no","Packaged":"2019-05-28
+        15:30:02 UTC; yihui","Author":"Hadley Wickham [aut],\u000aYihui Xie [aut,
+        cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aMichael Lawrence [ctb],\u000aThomas
+        Kluyver [ctb],\u000aJeroen Ooms [ctb],\u000aBarret Schloerke [ctb],\u000aAdam
+        Ryczkowski [ctb],\u000aHiroaki Yutani [ctb],\u000aMichel Lang [ctb],\u000aKarolis
+        Koncevičius [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2019-05-28
+        15:50:02 UTC","crandb_file_date":"2019-05-28 16:56:25","MD5sum":"8bcf26d1cc5b3f8fc14056ddfebcd295","date":"2019-05-28T14:50:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/jsonlite
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:00 GMT
+      content-type: application/json
+      content-length: '1896'
+      connection: keep-alive
+      etag: '"BK6I8CZL4ZWG0RJHMEK2NCZGO"'
+      vary: Accept
+      x-couch-request-id: 0b984b1992
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"jsonlite","Version":"1.7.2","Title":"A Simple and Robust
+        JSON Parser and Generator for R","License":"MIT + file LICENSE","Depends":{"methods":"*"},"Authors@R":"c(\u000aperson(\"Jeroen\",
+        \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\",\u000acomment
+        = c(ORCID = \"0000-0002-4035-0289\")),\u000aperson(\"Duncan\", \"Temple Lang\",
+        role = \"ctb\"),\u000aperson(\"Lloyd\", \"Hilaiel\", role = \"cph\", comment=\"author
+        of bundled libyajl\"))","URL":"https://arxiv.org/abs/1403.2805 (paper)","BugReports":"https://github.com/jeroen/jsonlite/issues","Maintainer":"Jeroen
+        Ooms <jeroen@berkeley.edu>","VignetteBuilder":"knitr, R.rsp","Description":"A
+        reasonably fast JSON parser and generator, optimized for statistical\u000adata
+        and the web. Offers simple, flexible tools for working with JSON in R, and\u000ais
+        particularly powerful for building pipelines and interacting with a web API.\u000aThe
+        implementation is based on the mapping described in the vignette (Ooms, 2014).\u000aIn
+        addition to converting JSON data from/to R objects, ''jsonlite'' contains\u000afunctions
+        to stream, validate, and prettify JSON data. The unit tests included\u000awith
+        the package verify that all edge cases are encoded and decoded consistently\u000afor
+        use with dynamic data in systems and applications.","Suggests":{"httr":"*","curl":"*","plyr":"*","testthat":"*","knitr":"*","rmarkdown":"*","R.rsp":"*","sf":"*"},"RoxygenNote":"7.1.1","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2020-12-09
+        13:54:18 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aDuncan
+        Temple Lang [ctb],\u000aLloyd Hilaiel [cph] (author of bundled libyajl)","Repository":"CRAN","Date/Publication":"2020-12-09
+        17:40:03 UTC","crandb_file_date":"2020-12-09 18:32:36","MD5sum":"6131e916e7a678552f6debecf620ccb1","date":"2020-12-09T16:40:03+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/lifecycle
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:00 GMT
+      content-type: application/json
+      content-length: '1549'
+      connection: keep-alive
+      etag: '"2LB7583ALTJ1Z1OP1YDXBYHVA"'
+      vary: Accept
+      x-couch-request-id: '6705041081'
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"lifecycle","Title":"Manage the Life Cycle of your Package
+        Functions","Version":"1.0.1","Authors@R":"\u000ac(person(given = \"Lionel\",\u000afamily
+        = \"Henry\",\u000arole = c(\"aut\", \"cre\"),\u000aemail = \"lionel@rstudio.com\"),\u000aperson(given
+        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = \"aut\",\u000aemail =
+        \"hadley@rstudio.com\",\u000acomment = c(ORCID = \"0000-0003-4757-117X\")),\u000aperson(given
+        = \"RStudio\",\u000arole = \"cph\"))","Description":"Manage the life cycle
+        of your exported functions\u000awith shared conventions, documentation badges,
+        and user-friendly\u000adeprecation warnings.","License":"MIT + file LICENSE","URL":"https://lifecycle.r-lib.org/,
+        https://github.com/r-lib/lifecycle","BugReports":"https://github.com/r-lib/lifecycle/issues","Depends":{"R":">=
+        3.3"},"Imports":{"glue":"*","rlang":">= 0.4.10"},"Suggests":{"covr":"*","crayon":"*","lintr":"*","tidyverse":"*","knitr":"*","rmarkdown":"*","testthat":">=
+        3.0.1","tools":"*","tibble":"*","vctrs":"*"},"VignetteBuilder":"knitr","Config/testthat/edition":"3","Encoding":"UTF-8","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-09-24
+        14:46:50 UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham
+        [aut] (<https://orcid.org/0000-0003-4757-117X>),\u000aRStudio [cph]","Maintainer":"Lionel
+        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-09-24
+        15:30:02 UTC","crandb_file_date":"2021-09-24 16:26:30","MD5sum":"e9f7135a17ff300c2ab6a9e6b72e3810","date":"2021-09-24T14:30:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/magrittr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:01 GMT
+      content-type: application/json
+      content-length: '1842'
+      connection: keep-alive
+      etag: '"3CGUPT0TJDESEKUJD8I1ZIGQ"'
+      vary: Accept
+      x-couch-request-id: f1b1d7252e
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Type":"Package","Package":"magrittr","Title":"A Forward-Pipe Operator
+        for R","Version":"2.0.1","Authors@R":"\u000ac(person(given = \"Stefan Milton\",\u000afamily
+        = \"Bache\",\u000arole = c(\"aut\", \"cph\"),\u000aemail = \"stefan@stefanbache.dk\",\u000acomment
+        = \"Original author and creator of magrittr\"),\u000aperson(given = \"Hadley\",\u000afamily
+        = \"Wickham\",\u000arole = \"aut\",\u000aemail = \"hadley@rstudio.com\"),\u000aperson(given
+        = \"Lionel\",\u000afamily = \"Henry\",\u000arole = \"cre\",\u000aemail = \"lionel@rstudio.com\"),\u000aperson(given
+        = \"RStudio\",\u000arole = c(\"cph\", \"fnd\")))","Description":"Provides
+        a mechanism for chaining commands with a\u000anew forward-pipe operator, %>%.
+        This operator will forward a value, or\u000athe result of an expression, into
+        the next function call/expression.\u000aThere is flexible support for the
+        type of right-hand side expressions.\u000aFor more information, see package
+        vignette.  To quote Rene Magritte,\u000a\"Ceci n''est pas un pipe.\"","License":"MIT
+        + file LICENSE","URL":"https://magrittr.tidyverse.org,\u000ahttps://github.com/tidyverse/magrittr","BugReports":"https://github.com/tidyverse/magrittr/issues","Suggests":{"covr":"*","knitr":"*","rlang":"*","rmarkdown":"*","testthat":"*"},"VignetteBuilder":"knitr","ByteCompile":"Yes","Encoding":"UTF-8","RoxygenNote":"7.1.1","NeedsCompilation":"yes","Packaged":"2020-11-17
+        12:44:34 UTC; lionel","Author":"Stefan Milton Bache [aut, cph] (Original author
+        and creator of\u000amagrittr),\u000aHadley Wickham [aut],\u000aLionel Henry
+        [cre],\u000aRStudio [cph, fnd]","Maintainer":"Lionel Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2020-11-17
+        16:20:06 UTC","crandb_file_date":"2020-11-17 17:32:33","MD5sum":"10d9cda5a9f6b2b537749a1b703af571\u000a","date":"2020-11-17T15:20:06+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/pkgload
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:03 GMT
+      content-type: application/json
+      content-length: '1623'
+      connection: keep-alive
+      etag: '"4WXY3I8ZLHWN2V9ZQGHX0BC1S"'
+      vary: Accept
+      x-couch-request-id: 49a60d2913
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"pkgload","Title":"Simulate Package Installation and Attach","Version":"1.2.4","Authors@R":"c(\u000aperson(\"Hadley\",
+        \"Wickham\", role = \"aut\"),\u000aperson(\"Winston\", \"Chang\", role = \"aut\"),\u000aperson(\"Jim\",
+        \"Hester\", role = \"aut\"),\u000aperson(\"Lionel\", \"Henry\", , \"lionel@rstudio.com\",
+        role = c(\"aut\", \"cre\")),\u000aperson(\"RStudio\", role = \"cph\"),\u000aperson(\"R
+        Core team\", role = \"ctb\",\u000acomment = \"Some namespace and vignette
+        code extracted from base R\")\u000a)","Description":"Simulates the process
+        of installing a package and then\u000aattaching it. This is a key part of
+        the ''devtools'' package as it\u000aallows you to rapidly iterate while developing
+        a package.","License":"GPL-3","URL":"https://github.com/r-lib/pkgload","BugReports":"https://github.com/r-lib/pkgload/issues","Imports":{"cli":"*","crayon":"*","desc":"*","methods":"*","rlang":"*","rprojroot":"*","rstudioapi":"*","utils":"*","withr":"*"},"Suggests":{"bitops":"*","covr":"*","pkgbuild":"*","Rcpp":"*","testthat":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-11-30
+        09:32:04 UTC; lionel","Author":"Hadley Wickham [aut],\u000aWinston Chang [aut],\u000aJim
+        Hester [aut],\u000aLionel Henry [aut, cre],\u000aRStudio [cph],\u000aR Core
+        team [ctb] (Some namespace and vignette code extracted from base\u000aR)","Maintainer":"Lionel
+        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-11-30
+        14:30:02 UTC","crandb_file_date":"2021-11-30 15:14:29","MD5sum":"405ec61b9d2d57638e57a4560d8a56ad","date":"2021-11-30T13:30:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/praise
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:04 GMT
+      content-type: application/json
+      content-length: '800'
+      connection: keep-alive
+      etag: '"EO2CR74RM9XUB5MVYV6XFDCQ4"'
+      vary: Accept
+      x-couch-request-id: cd6567a651
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"praise","Title":"Praise Users","Version":"1.0.0","Author":"Gabor
+        Csardi, Sindre Sorhus","Maintainer":"Gabor Csardi <csardi.gabor@gmail.com>","Description":"Build
+        friendly R packages that\u000apraise their users if they have done something\u000agood,
+        or they just need it to feel better.","License":"MIT + file LICENSE","LazyData":"true","URL":"https://github.com/gaborcsardi/praise","BugReports":"https://github.com/gaborcsardi/praise/issues","Suggests":{"testthat":"*"},"Collate":"''adjective.R''
+        ''adverb.R'' ''exclamation.R'' ''verb.R'' ''rpackage.R''\u000a''package.R''","NeedsCompilation":"no","Packaged":"2015-08-11
+        02:01:43 UTC; gaborcsardi","Repository":"CRAN","Date/Publication":"2015-08-11
+        08:22:28","crandb_file_date":"2015-08-11 02:28:53","date":"2015-08-11T08:22:28+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/processx
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:04 GMT
+      content-type: application/json
+      content-length: '1804'
+      connection: keep-alive
+      etag: '"276I1VIRMT26C7L74LCX8BI0U"'
+      vary: Accept
+      x-couch-request-id: 56c0967f26
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"processx","Title":"Execute and Control System Processes","Version":"3.5.2","Authors@R":"c(\u000aperson(\"Gábor\",
+        \"Csárdi\", role = c(\"aut\", \"cre\", \"cph\"),\u000aemail = \"csardi.gabor@gmail.com\",\u000acomment
+        = c(ORCID = \"0000-0001-7098-9676\")),\u000aperson(\"Winston\", \"Chang\",
+        role = \"aut\"),\u000aperson(\"RStudio\", role = c(\"cph\", \"fnd\")),\u000aperson(\"Mango
+        Solutions\", role  = c(\"cph\", \"fnd\")))","Description":"Tools to run system
+        processes in the background.\u000aIt can check if a background process is
+        running; wait on a background\u000aprocess to finish; get the exit status
+        of finished processes; kill\u000abackground processes. It can read the standard
+        output and error of\u000athe processes, using non-blocking connections. ''processx''
+        can poll\u000aa process for standard output or error, with a timeout. It can
+        also\u000apoll several processes at once.","License":"MIT + file LICENSE","URL":"https://processx.r-lib.org,\u000ahttps://github.com/r-lib/processx#readme","BugReports":"https://github.com/r-lib/processx/issues","RoxygenNote":"7.1.1.9001","Imports":{"ps":">=
+        1.2.0","R6":"*","utils":"*"},"Suggests":{"callr":">= 3.2.0","cli":"*","codetools":"*","covr":"*","curl":"*","debugme":"*","parallel":"*","testthat":"*","withr":"*"},"Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2021-04-30
+        18:31:37 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre, cph] (<https://orcid.org/0000-0001-7098-9676>),\u000aWinston
+        Chang [aut],\u000aRStudio [cph, fnd],\u000aMango Solutions [cph, fnd]","Maintainer":"Gábor
+        Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-04-30
+        19:40:03 UTC","crandb_file_date":"2021-04-30 21:50:33","MD5sum":"c683ecca0bc91b19d1b0b4f19492e9f2","date":"2021-04-30T18:40:03+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/ps
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:05 GMT
+      content-type: application/json
+      content-length: '1328'
+      connection: keep-alive
+      etag: '"EFXRTJV35KLUY4AI3R577CROE"'
+      vary: Accept
+      x-couch-request-id: dcee0670cb
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"ps","Version":"1.6.0","Title":"List, Query, Manipulate
+        System Processes","Description":"List, query and manipulate all system processes,
+        on ''Windows'',\u000a''Linux'' and ''macOS''.","Authors@R":"c(\u000aperson(\"Jay\",
+        \"Loden\", role = \"aut\"),\u000aperson(\"Dave\", \"Daeschler\", role = \"aut\"),\u000aperson(\"Giampaolo\",
+        \"Rodola''\", role = \"aut\"),\u000aperson(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\",
+        c(\"aut\", \"cre\")),\u000aperson(\"RStudio\", role = \"cph\"))","License":"MIT
+        + file LICENSE","URL":"https://github.com/r-lib/ps#readme","BugReports":"https://github.com/r-lib/ps/issues","Encoding":"UTF-8","Depends":{"R":">=
+        3.1"},"Imports":{"utils":"*"},"Suggests":{"callr":"*","covr":"*","curl":"*","pingr":"*","processx":">=
+        3.1.0","R6":"*","rlang":"*","testthat":"*","tibble":"*"},"RoxygenNote":"7.1.1.9001","Biarch":"true","NeedsCompilation":"yes","Packaged":"2021-02-28
+        20:25:46 UTC; gaborcsardi","Author":"Jay Loden [aut],\u000aDave Daeschler
+        [aut],\u000aGiampaolo Rodola'' [aut],\u000aGábor Csárdi [aut, cre],\u000aRStudio
+        [cph]","Maintainer":"Gábor Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-02-28
+        20:50:02 UTC","crandb_file_date":"2021-02-28 21:50:30","MD5sum":"3dfe5df2b8e73b52d2370b65b8e5b8da","date":"2021-02-28T19:50:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/rlang
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:06 GMT
+      content-type: application/json
+      content-length: '1832'
+      connection: keep-alive
+      etag: '"41SAAZE9GL5PH2PZK3CO8R69Y"'
+      vary: Accept
+      x-couch-request-id: 14314185af
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"rlang","Version":"0.4.12","Title":"Functions for Base Types
+        and Core R and ''Tidyverse'' Features","Description":"A toolbox for working
+        with base types, core R features\u000alike the condition system, and core
+        ''Tidyverse'' features like tidy\u000aevaluation.","Authors@R":"c(\u000aperson(\"Lionel\",
+        \"Henry\", ,\"lionel@rstudio.com\", c(\"aut\", \"cre\")),\u000aperson(\"Hadley\",
+        \"Wickham\", ,\"hadley@rstudio.com\", \"aut\"),\u000aperson(given = \"mikefc\",\u000aemail
+        = \"mikefc@coolbutuseless.com\",\u000arole = \"cph\",\u000acomment = \"Hash
+        implementation based on Mike''s xxhashlite\"),\u000aperson(given = \"Yann\",\u000afamily
+        = \"Collet\",\u000arole = \"cph\",\u000acomment = \"Author of the embedded
+        xxHash library\"),\u000aperson(\"RStudio\", role = \"cph\")\u000a)","License":"MIT
+        + file LICENSE","ByteCompile":"true","Biarch":"true","Depends":{"R":">= 3.3.0"},"Imports":{"utils":"*"},"Suggests":{"cli":"*","covr":"*","crayon":"*","glue":"*","magrittr":"*","methods":"*","pak":"*","pillar":"*","rmarkdown":"*","testthat":">=
+        3.0.0","vctrs":">= 0.2.3","withr":"*"},"Enhances":{"winch":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.1","URL":"https://rlang.r-lib.org,
+        https://github.com/r-lib/rlang","BugReports":"https://github.com/r-lib/rlang/issues","Config/testthat/edition":"3","NeedsCompilation":"yes","Packaged":"2021-10-18
+        07:25:49 UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham
+        [aut],\u000amikefc [cph] (Hash implementation based on Mike''s xxhashlite),\u000aYann
+        Collet [cph] (Author of the embedded xxHash library),\u000aRStudio [cph]","Maintainer":"Lionel
+        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-18
+        23:00:02 UTC","crandb_file_date":"2021-10-19 00:14:38","MD5sum":"08b32904d41f5fcb5d33188f0004f91b","date":"2021-10-18T22:00:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/waldo
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:07 GMT
+      content-type: application/json
+      content-length: '1324'
+      connection: keep-alive
+      etag: '"8T14KFLRYMLS3LACBDP9LXKC6"'
+      vary: Accept
+      x-couch-request-id: 59c7f2cf19
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"waldo","Title":"Find Differences Between R Objects","Version":"0.3.1","Authors@R":"\u000ac(person(given
+        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = c(\"aut\", \"cre\"),\u000aemail
+        = \"hadley@rstudio.com\"),\u000aperson(given = \"RStudio\",\u000arole = \"cph\"))","Description":"Compare
+        complex R objects and reveal the key\u000adifferences.  Designed particularly
+        for use in testing packages where\u000abeing able to quickly isolate key differences
+        makes understanding test\u000afailures much easier.","License":"MIT + file
+        LICENSE","URL":"https://waldo.r-lib.org, https://github.com/r-lib/waldo","BugReports":"https://github.com/r-lib/waldo/issues","Imports":{"cli":"*","diffobj":">=
+        0.3.4","fansi":"*","glue":"*","methods":"*","rematch2":"*","rlang":">= 0.4.10","tibble":"*"},"Suggests":{"testthat":">=
+        3.0.0","covr":"*","R6":"*","withr":"*","xml2":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.2","Config/testthat/edition":"3","NeedsCompilation":"no","Packaged":"2021-09-14
+        17:58:24 UTC; hadley","Author":"Hadley Wickham [aut, cre],\u000aRStudio [cph]","Maintainer":"Hadley
+        Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-09-14
+        18:20:02 UTC","crandb_file_date":"2021-09-14 19:44:42","MD5sum":"516466ef85a393e610e97efa10d7718f","date":"2021-09-14T17:20:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/withr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:08 GMT
+      content-type: application/json
+      content-length: '2627'
+      connection: keep-alive
+      etag: '"2A8L3UJJGK2TC0ISQ3NB9KBZD"'
+      vary: Accept
+      x-couch-request-id: 92d9672e10
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"withr","Title":"Run Code ''With'' Temporarily Modified
+        Global State","Version":"2.4.3","Authors@R":"\u000ac(person(given = \"Jim\",\u000afamily
+        = \"Hester\",\u000arole = \"aut\"),\u000aperson(given = \"Lionel\",\u000afamily
+        = \"Henry\",\u000arole = c(\"aut\", \"cre\"),\u000aemail = \"lionel@rstudio.com\"),\u000aperson(given
+        = \"Kirill\",\u000afamily = \"Müller\",\u000arole = \"aut\",\u000aemail =
+        \"krlmlr+r@mailbox.org\"),\u000aperson(given = \"Kevin\",\u000afamily = \"Ushey\",\u000arole
+        = \"aut\",\u000aemail = \"kevinushey@gmail.com\"),\u000aperson(given = \"Hadley\",\u000afamily
+        = \"Wickham\",\u000arole = \"aut\",\u000aemail = \"hadley@rstudio.com\"),\u000aperson(given
+        = \"Winston\",\u000afamily = \"Chang\",\u000arole = \"aut\"),\u000aperson(given
+        = \"Jennifer\",\u000afamily = \"Bryan\",\u000arole = \"ctb\"),\u000aperson(given
+        = \"Richard\",\u000afamily = \"Cotton\",\u000arole = \"ctb\"),\u000aperson(given
+        = \"RStudio\",\u000arole = \"cph\"))","Description":"A set of functions to
+        run code ''with'' safely and\u000atemporarily modified global state. Many
+        of these functions were\u000aoriginally a part of the ''devtools'' package,
+        this provides a simple\u000apackage with limited dependencies to provide access
+        to these\u000afunctions.","License":"MIT + file LICENSE","URL":"https://withr.r-lib.org,
+        https://github.com/r-lib/withr#readme","BugReports":"https://github.com/r-lib/withr/issues","Depends":{"R":">=
+        3.2.0"},"Imports":{"graphics":"*","grDevices":"*","stats":"*"},"Suggests":{"callr":"*","covr":"*","DBI":"*","knitr":"*","lattice":"*","methods":"*","rmarkdown":"*","RSQLite":"*","testthat":">=
+        3.0.0"},"VignetteBuilder":"knitr","Encoding":"UTF-8","RoxygenNote":"7.1.2","Collate":"''local_.R''
+        ''with_.R'' ''collate.R'' ''compat-defer.R''\u000a''connection.R'' ''db.R''
+        ''defer.R'' ''wrap.R'' ''devices.R'' ''dir.R''\u000a''env.R'' ''file.R'' ''language.R''
+        ''libpaths.R'' ''locale.R''\u000a''makevars.R'' ''namespace.R'' ''options.R''
+        ''par.R'' ''path.R'' ''rng.R''\u000a''seed.R'' ''sink.R'' ''tempfile.R'' ''timezone.R''
+        ''torture.R''\u000a''utils.R'' ''with.R''","Config/testthat/edition":"3","NeedsCompilation":"no","Packaged":"2021-11-29
+        19:59:17 UTC; jhester","Author":"Jim Hester [aut],\u000aLionel Henry [aut,
+        cre],\u000aKirill Müller [aut],\u000aKevin Ushey [aut],\u000aHadley Wickham
+        [aut],\u000aWinston Chang [aut],\u000aJennifer Bryan [ctb],\u000aRichard Cotton
+        [ctb],\u000aRStudio [cph]","Maintainer":"Lionel Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-11-30
+        14:20:02 UTC","crandb_file_date":"2021-11-30 15:14:38","MD5sum":"4170be236f864a2ed346667f7e244662","date":"2021-11-30T13:20:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/covr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:09 GMT
+      content-type: application/json
+      content-length: '4022'
+      connection: keep-alive
+      etag: '"9B1S3ZAI9H4JF8IVXZQ698L0M"'
+      vary: Accept
+      x-couch-request-id: e0a45998a2
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Encoding":"UTF-8","Package":"covr","Title":"Test Coverage for Packages","Version":"3.5.1","Authors@R":"c(\u000aperson(\"Jim\",
+        \"Hester\", email = \"james.f.hester@gmail.com\", role = c(\"aut\", \"cre\")),\u000aperson(\"Willem\",
+        \"Ligtenberg\", role = \"ctb\"),\u000aperson(\"Kirill\", \"Müller\", role
+        = \"ctb\"),\u000aperson(\"Henrik\", \"Bengtsson\", role = \"ctb\"),\u000aperson(\"Steve\",
+        \"Peak\", role = \"ctb\"),\u000aperson(\"Kirill\", \"Sevastyanenko\", role
+        = \"ctb\"),\u000aperson(\"Jon\", \"Clayden\", role = \"ctb\"),\u000aperson(\"Robert\",
+        \"Flight\", role = \"ctb\"),\u000aperson(\"Eric\", \"Brown\", role = \"ctb\"),\u000aperson(\"Brodie\",
+        \"Gaslam\", role = \"ctb\"),\u000aperson(\"Will\", \"Beasley\", role = \"ctb\"),\u000aperson(\"Robert\",
+        \"Krzyzanowski\", role = \"ctb\"),\u000aperson(\"Markus\", \"Wamser\", role
+        = \"ctb\"),\u000aperson(\"Karl\", \"Forner\", role = \"ctb\"),\u000aperson(\"Gergely\",
+        \"Daróczi\", role = \"ctb\"),\u000aperson(\"Jouni\", \"Helske\", role = \"ctb\"),\u000aperson(\"Kun\",
+        \"Ren\", role = \"ctb\"),\u000aperson(\"Jeroen\", \"Ooms\", role = \"ctb\"),\u000aperson(\"Ken\",
+        \"Williams\", role = \"ctb\"),\u000aperson(\"Chris\", \"Campbell\", role =
+        \"ctb\"),\u000aperson(\"David\", \"Hugh-Jones\", role = \"ctb\"),\u000aperson(\"Qin\",
+        \"Wang\", role = \"ctb\"),\u000aperson(\"Ivan\", \"Sagalaev\", role = c(\"ctb\",
+        \"cph\"), comment = \"highlight.js library\"),\u000aperson(\"Mark\", \"Otto\",
+        role = \"ctb\", comment = \"Bootstrap library\"),\u000aperson(\"Jacob\", \"Thornton\",
+        role = \"ctb\", comment = \"Bootstrap library\"),\u000aperson(family = \"Bootstrap
+        contributors\", role = \"ctb\", comment = \"Bootstrap library\"),\u000aperson(family
+        = \"Twitter, Inc\", role = \"cph\", comment = \"Bootstrap library\")\u000a)","Description":"Track
+        and report code coverage for your package and (optionally)\u000aupload the
+        results to a coverage service like ''Codecov'' <https://codecov.io> or\u000a''Coveralls''
+        <https://coveralls.io>. Code coverage is a measure of the amount of\u000acode
+        being exercised by a set of tests. It is an indirect measure of test\u000aquality
+        and completeness. This package is compatible with any testing\u000amethodology
+        or framework and tracks coverage of both R code and compiled\u000aC/C++/FORTRAN
+        code.","URL":"https://covr.r-lib.org, https://github.com/r-lib/covr","BugReports":"https://github.com/r-lib/covr/issues","Depends":{"R":">=
+        3.1.0","methods":"*"},"Imports":{"digest":"*","stats":"*","utils":"*","jsonlite":"*","rex":"*","httr":"*","crayon":"*","withr":">=\u000a1.0.2","yaml":"*"},"Suggests":{"R6":"*","curl":"*","knitr":"*","rmarkdown":"*","htmltools":"*","DT":">=
+        0.2","testthat":"*","rlang":"*","rstudioapi":">= 0.2","xml2":">= 1.0.0","parallel":"*","memoise":"*","mockery":"*"},"License":"GPL-3","LazyData":"true","VignetteBuilder":"knitr","RoxygenNote":"7.1.0","NeedsCompilation":"yes","Packaged":"2020-09-16
+        20:09:53 UTC; jhester","Author":"Jim Hester [aut, cre],\u000aWillem Ligtenberg
+        [ctb],\u000aKirill Müller [ctb],\u000aHenrik Bengtsson [ctb],\u000aSteve
+        Peak [ctb],\u000aKirill Sevastyanenko [ctb],\u000aJon Clayden [ctb],\u000aRobert
+        Flight [ctb],\u000aEric Brown [ctb],\u000aBrodie Gaslam [ctb],\u000aWill Beasley
+        [ctb],\u000aRobert Krzyzanowski [ctb],\u000aMarkus Wamser [ctb],\u000aKarl
+        Forner [ctb],\u000aGergely Daróczi [ctb],\u000aJouni Helske [ctb],\u000aKun
+        Ren [ctb],\u000aJeroen Ooms [ctb],\u000aKen Williams [ctb],\u000aChris Campbell
+        [ctb],\u000aDavid Hugh-Jones [ctb],\u000aQin Wang [ctb],\u000aIvan Sagalaev
+        [ctb, cph] (highlight.js library),\u000aMark Otto [ctb] (Bootstrap library),\u000aJacob
+        Thornton [ctb] (Bootstrap library),\u000aBootstrap contributors [ctb] (Bootstrap
+        library),\u000aTwitter, Inc [cph] (Bootstrap library)","Maintainer":"Jim Hester
+        <james.f.hester@gmail.com>","Repository":"CRAN","Date/Publication":"2020-09-16
+        21:10:13 UTC","crandb_file_date":"2020-09-16 22:50:32","MD5sum":"77f37d886932c08d1325e0af8ab3a486\u000a","date":"2020-09-16T20:10:13+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/curl
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:10 GMT
+      content-type: application/json
+      content-length: '2025'
+      connection: keep-alive
+      etag: '"DSVVZW3ECYPGS4PITI57NO9VK"'
+      vary: Accept
+      x-couch-request-id: b2f589eda1
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"curl","Type":"Package","Title":"A Modern and Flexible Web
+        Client for R","Version":"4.3.2","Authors@R":"c(\u000aperson(\"Jeroen\", \"Ooms\",
+        role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\",\u000acomment
+        = c(ORCID = \"0000-0002-4035-0289\")),\u000aperson(\"Hadley\", \"Wickham\",
+        , \"hadley@rstudio.com\", role = \"ctb\"),\u000aperson(\"RStudio\", role =
+        \"cph\")\u000a)","Description":"The curl() and curl_download() functions provide
+        highly\u000aconfigurable drop-in replacements for base url() and download.file()
+        with\u000abetter performance, support for encryption (https, ftps), gzip compression,\u000aauthentication,
+        and other ''libcurl'' goodies. The core of the package implements a\u000aframework
+        for performing fully customized requests where data can be processed\u000aeither
+        in memory, on disk, or streaming via the callback or connection\u000ainterfaces.
+        Some knowledge of ''libcurl'' is recommended; for a more-user-friendly\u000aweb
+        client see the ''httr'' package which builds on this package with http\u000aspecific
+        tools and logic.","License":"MIT + file LICENSE","SystemRequirements":"libcurl:
+        libcurl-devel (rpm) or\u000alibcurl4-openssl-dev (deb).","URL":"https://github.com/jeroen/curl
+        (devel) https://curl.se/libcurl/\u000a(upstream)","BugReports":"https://github.com/jeroen/curl/issues","Suggests":{"spelling":"*","testthat":">=
+        1.0.0","knitr":"*","jsonlite":"*","rmarkdown":"*","magrittr":"*","httpuv":">=
+        1.4.4","webutils":"*"},"VignetteBuilder":"knitr","Depends":{"R":">= 3.0.0"},"RoxygenNote":"7.1.1","Encoding":"UTF-8","Language":"en-US","NeedsCompilation":"yes","Packaged":"2021-06-22
+        11:39:40 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aHadley
+        Wickham [ctb],\u000aRStudio [cph]","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2021-06-23
+        07:00:06 UTC","crandb_file_date":"2021-06-23 08:20:41","MD5sum":"fc65b8a0f730784d6ece4ae8893eae12","date":"2021-06-23T06:00:06+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/diffviewer
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:11 GMT
+      content-type: application/json
+      content-length: '2482'
+      connection: keep-alive
+      etag: '"F25SJE4V7DPIILQZ5OS20BSGC"'
+      vary: Accept
+      x-couch-request-id: a3fe3d7d08
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"diffviewer","Title":"HTML Widget to Show File Differences","Version":"0.1.1","Authors@R":"\u000ac(person(given
+        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = c(\"aut\", \"cre\"),\u000aemail
+        = \"hadley@rstudio.com\"),\u000aperson(given = \"Joshua\",\u000afamily = \"Kunst\",\u000arole
+        = \"aut\"),\u000aperson(given = \"Winston\",\u000afamily = \"Chang\",\u000arole
+        = \"aut\",\u000aemail = \"winston@rstudio.com\"),\u000aperson(given = \"RStudio\",\u000arole
+        = c(\"cph\", \"fnd\")),\u000aperson(given = \"Paul\",\u000afamily = \"Fitzpatrick\",\u000arole
+        = \"cph\",\u000acomment = \"Author of included daff.js library\"),\u000aperson(given
+        = \"Rodrigo\",\u000afamily = \"Fernandes\",\u000arole = \"cph\",\u000acomment
+        = \"Author of included diff2html library\"),\u000aperson(given = \"JQuery
+        Foundation\",\u000arole = \"cph\",\u000acomment = \"Author of included jquery
+        library\"),\u000aperson(given = \"Kevin\",\u000afamily = \"Decker\",\u000arole
+        = \"cph\",\u000acomment = \"Author of included jsdiff library\"),\u000aperson(given
+        = \"Matthew\",\u000afamily = \"Holt\",\u000arole = \"cph\",\u000acomment =
+        \"Author of incldued PapaParse library\"),\u000aperson(given = \"Huddle\",\u000arole
+        = \"cph\",\u000acomment = \"Author of included resemble library\"))","Description":"A
+        HTML widget that shows differences between files\u000a(text, images, and data
+        frames).","License":"MIT + file LICENSE","URL":"https://diffviewer.r-lib.org,
+        https://github.com/r-lib/diffviewer","BugReports":"https://github.com/r-lib/diffviewer/issues","Imports":{"htmlwidgets":"*","jsonlite":"*"},"Suggests":{"covr":"*","shiny":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.1","NeedsCompilation":"no","Packaged":"2021-09-30
+        20:08:35 UTC; hadley","Author":"Hadley Wickham [aut, cre],\u000aJoshua Kunst
+        [aut],\u000aWinston Chang [aut],\u000aRStudio [cph, fnd],\u000aPaul Fitzpatrick
+        [cph] (Author of included daff.js library),\u000aRodrigo Fernandes [cph] (Author
+        of included diff2html library),\u000aJQuery Foundation [cph] (Author of included
+        jquery library),\u000aKevin Decker [cph] (Author of included jsdiff library),\u000aMatthew
+        Holt [cph] (Author of incldued PapaParse library),\u000aHuddle [cph] (Author
+        of included resemble library)","Maintainer":"Hadley Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-09-30
+        20:20:02 UTC","crandb_file_date":"2021-09-30 22:14:29","MD5sum":"04cd0baa042af5a4c8b11445d2ec9798","date":"2021-09-30T19:20:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/knitr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:11 GMT
+      content-type: application/json
+      content-length: '10876'
+      connection: keep-alive
+      etag: '"6QPCTFQVA9PISB8EQGDEC4XTG"'
+      vary: Accept
+      x-couch-request-id: a13bbd4d4a
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"knitr","Type":"Package","Title":"A General-Purpose Package
+        for Dynamic Report Generation in R","Version":"1.37","Authors@R":"c(\u000aperson(\"Yihui\",
+        \"Xie\", role = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment =
+        c(ORCID = \"0000-0003-0645-5666\")),\u000aperson(\"Abhraneel\", \"Sarma\",
+        role = \"ctb\"),\u000aperson(\"Adam\", \"Vogt\", role = \"ctb\"),\u000aperson(\"Alastair\",
+        \"Andrew\", role = \"ctb\"),\u000aperson(\"Alex\", \"Zvoleff\", role = \"ctb\"),\u000aperson(\"Andre\",
+        \"Simon\", role = \"ctb\", comment = \"the CSS files under inst/themes/ were
+        derived from the Highlight package http://www.andre-simon.de\"),\u000aperson(\"Aron\",
+        \"Atkins\", role = \"ctb\"),\u000aperson(\"Aaron\", \"Wolen\", role = \"ctb\"),\u000aperson(\"Ashley\",
+        \"Manton\", role = \"ctb\"),\u000aperson(\"Atsushi\", \"Yasumoto\", role =
+        \"ctb\", comment = c(ORCID = \"0000-0002-8335-495X\")),\u000aperson(\"Ben\",
+        \"Baumer\", role = \"ctb\"),\u000aperson(\"Brian\", \"Diggs\", role = \"ctb\"),\u000aperson(\"Brian\",
+        \"Zhang\", role = \"ctb\"),\u000aperson(\"Bulat\", \"Yapparov\", role = \"ctb\"),\u000aperson(\"Cassio\",
+        \"Pereira\", role = \"ctb\"),\u000aperson(\"Christophe\", \"Dervieux\", role
+        = \"ctb\"),\u000aperson(\"David\", \"Hall\", role = \"ctb\"),\u000aperson(\"David\",
+        \"Hugh-Jones\", role = \"ctb\"),\u000aperson(\"David\", \"Robinson\", role
+        = \"ctb\"),\u000aperson(\"Doug\", \"Hemken\", role = \"ctb\"),\u000aperson(\"Duncan\",
+        \"Murdoch\", role = \"ctb\"),\u000aperson(\"Elio\", \"Campitelli\", role =
+        \"ctb\"),\u000aperson(\"Ellis\", \"Hughes\", role = \"ctb\"),\u000aperson(\"Emily\",
+        \"Riederer\", role = \"ctb\"),\u000aperson(\"Fabian\", \"Hirschmann\", role
+        = \"ctb\"),\u000aperson(\"Fitch\", \"Simeon\", role = \"ctb\"),\u000aperson(\"Forest\",
+        \"Fang\", role = \"ctb\"),\u000aperson(c(\"Frank\", \"E\", \"Harrell\", \"Jr\"),
+        role = \"ctb\", comment = \"the Sweavel package at inst/misc/Sweavel.sty\"),\u000aperson(\"Garrick\",
+        \"Aden-Buie\", role = \"ctb\"),\u000aperson(\"Gregoire\", \"Detrez\", role
+        = \"ctb\"),\u000aperson(\"Hadley\", \"Wickham\", role = \"ctb\"),\u000aperson(\"Hao\",
+        \"Zhu\", role = \"ctb\"),\u000aperson(\"Heewon\", \"Jeon\", role = \"ctb\"),\u000aperson(\"Henrik\",
+        \"Bengtsson\", role = \"ctb\"),\u000aperson(\"Hiroaki\", \"Yutani\", role
+        = \"ctb\"),\u000aperson(\"Ian\", \"Lyttle\", role = \"ctb\"),\u000aperson(\"Hodges\",
+        \"Daniel\", role = \"ctb\"),\u000aperson(\"Jake\", \"Burkhead\", role = \"ctb\"),\u000aperson(\"James\",
+        \"Manton\", role = \"ctb\"),\u000aperson(\"Jared\", \"Lander\", role = \"ctb\"),\u000aperson(\"Jason\",
+        \"Punyon\", role = \"ctb\"),\u000aperson(\"Javier\", \"Luraschi\", role =
+        \"ctb\"),\u000aperson(\"Jeff\", \"Arnold\", role = \"ctb\"),\u000aperson(\"Jenny\",
+        \"Bryan\", role = \"ctb\"),\u000aperson(\"Jeremy\", \"Ashkenas\", role = c(\"ctb\",
+        \"cph\"), comment = \"the CSS file at inst/misc/docco-classic.css\"),\u000aperson(\"Jeremy\",
+        \"Stephens\", role = \"ctb\"),\u000aperson(\"Jim\", \"Hester\", role = \"ctb\"),\u000aperson(\"Joe\",
+        \"Cheng\", role = \"ctb\"),\u000aperson(\"Johannes\", \"Ranke\", role = \"ctb\"),\u000aperson(\"John\",
+        \"Honaker\", role = \"ctb\"),\u000aperson(\"John\", \"Muschelli\", role =
+        \"ctb\"),\u000aperson(\"Jonathan\", \"Keane\", role = \"ctb\"),\u000aperson(\"JJ\",
+        \"Allaire\", role = \"ctb\"),\u000aperson(\"Johan\", \"Toloe\", role = \"ctb\"),\u000aperson(\"Jonathan\",
+        \"Sidi\", role = \"ctb\"),\u000aperson(\"Joseph\", \"Larmarange\", role =
+        \"ctb\"),\u000aperson(\"Julien\", \"Barnier\", role = \"ctb\"),\u000aperson(\"Kaiyin\",
+        \"Zhong\", role = \"ctb\"),\u000aperson(\"Kamil\", \"Slowikowski\", role =
+        \"ctb\"),\u000aperson(\"Karl\", \"Forner\", role = \"ctb\"),\u000aperson(c(\"Kevin\",
+        \"K.\"), \"Smith\", role = \"ctb\"),\u000aperson(\"Kirill\", \"Mueller\",
+        role = \"ctb\"),\u000aperson(\"Kohske\", \"Takahashi\", role = \"ctb\"),\u000aperson(\"Lorenz\",
+        \"Walthert\", role = \"ctb\"),\u000aperson(\"Lucas\", \"Gallindo\", role =
+        \"ctb\"),\u000aperson(\"Marius\", \"Hofert\", role = \"ctb\"),\u000aperson(\"Martin\",
+        \"Modrák\", role = \"ctb\"),\u000aperson(\"Michael\", \"Chirico\", role =
+        \"ctb\"),\u000aperson(\"Michael\", \"Friendly\", role = \"ctb\"),\u000aperson(\"Michal\",
+        \"Bojanowski\", role = \"ctb\"),\u000aperson(\"Michel\", \"Kuhlmann\", role
+        = \"ctb\"),\u000aperson(\"Miller\", \"Patrick\", role = \"ctb\"),\u000aperson(\"Nacho\",
+        \"Caballero\", role = \"ctb\"),\u000aperson(\"Nick\", \"Salkowski\", role
+        = \"ctb\"),\u000aperson(\"Niels Richard\", \"Hansen\", role = \"ctb\"),\u000aperson(\"Noam\",
+        \"Ross\", role = \"ctb\"),\u000aperson(\"Obada\", \"Mahdi\", role = \"ctb\"),\u000aperson(\"Pavel
+        N.\", \"Krivitsky\", role = \"ctb\", comment=c(ORCID = \"0000-0002-9101-3362\")),\u000aperson(\"Qiang\",
+        \"Li\", role = \"ctb\"),\u000aperson(\"Ramnath\", \"Vaidyanathan\", role =
+        \"ctb\"),\u000aperson(\"Richard\", \"Cotton\", role = \"ctb\"),\u000aperson(\"Robert\",
+        \"Krzyzanowski\", role = \"ctb\"),\u000aperson(\"Romain\", \"Francois\", role
+        = \"ctb\"),\u000aperson(\"Ruaridh\", \"Williamson\", role = \"ctb\"),\u000aperson(\"Scott\",
+        \"Kostyshak\", role = \"ctb\"),\u000aperson(\"Sebastian\", \"Meyer\", role
+        = \"ctb\"),\u000aperson(\"Sietse\", \"Brouwer\", role = \"ctb\"),\u000aperson(c(\"Simon\",
+        \"de\"), \"Bernard\", role = \"ctb\"),\u000aperson(\"Sylvain\", \"Rousseau\",
+        role = \"ctb\"),\u000aperson(\"Taiyun\", \"Wei\", role = \"ctb\"),\u000aperson(\"Thibaut\",
+        \"Assus\", role = \"ctb\"),\u000aperson(\"Thibaut\", \"Lamadon\", role = \"ctb\"),\u000aperson(\"Thomas\",
+        \"Leeper\", role = \"ctb\"),\u000aperson(\"Tim\", \"Mastny\", role = \"ctb\"),\u000aperson(\"Tom\",
+        \"Torsney-Weir\", role = \"ctb\"),\u000aperson(\"Trevor\", \"Davis\", role
+        = \"ctb\"),\u000aperson(\"Viktoras\", \"Veitas\", role = \"ctb\"),\u000aperson(\"Weicheng\",
+        \"Zhu\", role = \"ctb\"),\u000aperson(\"Wush\", \"Wu\", role = \"ctb\"),\u000aperson(\"Zachary\",
+        \"Foster\", role = \"ctb\")\u000a)","Description":"Provides a general-purpose
+        tool for dynamic report generation in R\u000ausing Literate Programming techniques.","Depends":{"R":">=
+        3.2.3"},"Imports":{"evaluate":">= 0.10","highr":"*","methods":"*","stringr":">=
+        0.6","yaml":">=\u000a2.1.19","xfun":">= 0.27","tools":"*"},"Suggests":{"markdown":"*","formatR":"*","testit":"*","digest":"*","rgl":">=
+        0.95.1201","codetools":"*","rmarkdown":"*","htmlwidgets":">= 0.7","webshot":"*","tikzDevice":">=
+        0.10","tinytex":"*","reticulate":">= 1.4","JuliaCall":">= 0.11.1","magick":"*","png":"*","jpeg":"*","gifski":"*","xml2":">=
+        1.2.0","httr":"*","DBI":">=\u000a0.4-1","showtext":"*","tibble":"*","sass":"*","bslib":"*","ragg":"*","styler":">=
+        1.2.0","targets":">= 0.6.0"},"License":"GPL","URL":"https://yihui.org/knitr/","BugReports":"https://github.com/yihui/knitr/issues","Encoding":"UTF-8","VignetteBuilder":"knitr","SystemRequirements":"Package
+        vignettes based on R Markdown v2 or\u000areStructuredText require Pandoc (http://pandoc.org).
+        The\u000afunction rst2pdf() require rst2pdf\u000a(https://github.com/rst2pdf/rst2pdf).","Collate":"''block.R''
+        ''cache.R'' ''utils.R'' ''citation.R'' ''hooks-html.R''\u000a''plot.R'' ''defaults.R''
+        ''concordance.R'' ''engine.R'' ''highlight.R''\u000a''themes.R'' ''header.R''
+        ''hooks-asciidoc.R'' ''hooks-chunk.R''\u000a''hooks-extra.R'' ''hooks-latex.R''
+        ''hooks-md.R'' ''hooks-rst.R''\u000a''hooks-textile.R'' ''hooks.R'' ''output.R''
+        ''package.R'' ''pandoc.R''\u000a''params.R'' ''parser.R'' ''pattern.R'' ''rocco.R''
+        ''spin.R'' ''table.R''\u000a''template.R'' ''utils-conversion.R'' ''utils-rd2html.R''\u000a''utils-sweave.R''
+        ''utils-upload.R'' ''utils-vignettes.R'' ''zzz.R''","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-12-16
+        04:57:48 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aAbhraneel
+        Sarma [ctb],\u000aAdam Vogt [ctb],\u000aAlastair Andrew [ctb],\u000aAlex Zvoleff
+        [ctb],\u000aAndre Simon [ctb] (the CSS files under inst/themes/ were derived
+        from\u000athe Highlight package http://www.andre-simon.de),\u000aAron Atkins
+        [ctb],\u000aAaron Wolen [ctb],\u000aAshley Manton [ctb],\u000aAtsushi Yasumoto
+        [ctb] (<https://orcid.org/0000-0002-8335-495X>),\u000aBen Baumer [ctb],\u000aBrian
+        Diggs [ctb],\u000aBrian Zhang [ctb],\u000aBulat Yapparov [ctb],\u000aCassio
+        Pereira [ctb],\u000aChristophe Dervieux [ctb],\u000aDavid Hall [ctb],\u000aDavid
+        Hugh-Jones [ctb],\u000aDavid Robinson [ctb],\u000aDoug Hemken [ctb],\u000aDuncan
+        Murdoch [ctb],\u000aElio Campitelli [ctb],\u000aEllis Hughes [ctb],\u000aEmily
+        Riederer [ctb],\u000aFabian Hirschmann [ctb],\u000aFitch Simeon [ctb],\u000aForest
+        Fang [ctb],\u000aFrank E Harrell Jr [ctb] (the Sweavel package at inst/misc/Sweavel.sty),\u000aGarrick
+        Aden-Buie [ctb],\u000aGregoire Detrez [ctb],\u000aHadley Wickham [ctb],\u000aHao
+        Zhu [ctb],\u000aHeewon Jeon [ctb],\u000aHenrik Bengtsson [ctb],\u000aHiroaki
+        Yutani [ctb],\u000aIan Lyttle [ctb],\u000aHodges Daniel [ctb],\u000aJake Burkhead
+        [ctb],\u000aJames Manton [ctb],\u000aJared Lander [ctb],\u000aJason Punyon
+        [ctb],\u000aJavier Luraschi [ctb],\u000aJeff Arnold [ctb],\u000aJenny Bryan
+        [ctb],\u000aJeremy Ashkenas [ctb, cph] (the CSS file at\u000ainst/misc/docco-classic.css),\u000aJeremy
+        Stephens [ctb],\u000aJim Hester [ctb],\u000aJoe Cheng [ctb],\u000aJohannes
+        Ranke [ctb],\u000aJohn Honaker [ctb],\u000aJohn Muschelli [ctb],\u000aJonathan
+        Keane [ctb],\u000aJJ Allaire [ctb],\u000aJohan Toloe [ctb],\u000aJonathan
+        Sidi [ctb],\u000aJoseph Larmarange [ctb],\u000aJulien Barnier [ctb],\u000aKaiyin
+        Zhong [ctb],\u000aKamil Slowikowski [ctb],\u000aKarl Forner [ctb],\u000aKevin
+        K. Smith [ctb],\u000aKirill Mueller [ctb],\u000aKohske Takahashi [ctb],\u000aLorenz
+        Walthert [ctb],\u000aLucas Gallindo [ctb],\u000aMarius Hofert [ctb],\u000aMartin
+        Modrák [ctb],\u000aMichael Chirico [ctb],\u000aMichael Friendly [ctb],\u000aMichal
+        Bojanowski [ctb],\u000aMichel Kuhlmann [ctb],\u000aMiller Patrick [ctb],\u000aNacho
+        Caballero [ctb],\u000aNick Salkowski [ctb],\u000aNiels Richard Hansen [ctb],\u000aNoam
+        Ross [ctb],\u000aObada Mahdi [ctb],\u000aPavel N. Krivitsky [ctb] (<https://orcid.org/0000-0002-9101-3362>),\u000aQiang
+        Li [ctb],\u000aRamnath Vaidyanathan [ctb],\u000aRichard Cotton [ctb],\u000aRobert
+        Krzyzanowski [ctb],\u000aRomain Francois [ctb],\u000aRuaridh Williamson [ctb],\u000aScott
+        Kostyshak [ctb],\u000aSebastian Meyer [ctb],\u000aSietse Brouwer [ctb],\u000aSimon
+        de Bernard [ctb],\u000aSylvain Rousseau [ctb],\u000aTaiyun Wei [ctb],\u000aThibaut
+        Assus [ctb],\u000aThibaut Lamadon [ctb],\u000aThomas Leeper [ctb],\u000aTim
+        Mastny [ctb],\u000aTom Torsney-Weir [ctb],\u000aTrevor Davis [ctb],\u000aViktoras
+        Veitas [ctb],\u000aWeicheng Zhu [ctb],\u000aWush Wu [ctb],\u000aZachary Foster
+        [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2021-12-16
+        18:00:02 UTC","crandb_file_date":"2021-12-16 19:20:24","MD5sum":"28ea89bf739a0ce53925f91050cad936","date":"2021-12-16T17:00:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/mockery
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:13 GMT
+      content-type: application/json
+      content-length: '1463'
+      connection: keep-alive
+      etag: '"5CCOH7MGCLWA0EDN05KBSWGDU"'
+      vary: Accept
+      x-couch-request-id: 2bfe323527
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"mockery","Version":"0.4.2","Title":"Mocking Library for
+        R","Description":"\u000aThe two main functionalities of this package are creating
+        mock\u000aobjects (functions) and selectively intercepting calls to a given\u000afunction
+        that originate in some other function. It can be used\u000awith any testing
+        framework available for R. Mock objects can\u000abe injected with either this
+        package''s own stub() function or a\u000asimilar with_mock() facility present
+        in the ''testthat'' package.","Authors@R":"c(\u000aperson(\"Noam\", \"Finkelstein\",
+        role = c(\"aut\")),\u000aperson(\"Lukasz\", \"Bartnik\", role = c(\"aut\")),\u000aperson(\"Jim\",
+        \"Hester\", role = c(\"cre\"),\u000aemail = \"jim.hester@rstudio.com\")\u000a)","URL":"https://github.com/jfiksel/mockery","BugReports":"https://github.com/jfiksel/mockery/issues","Imports":{"testthat":"*"},"Suggests":{"knitr":"*","rmarkdown":">=
+        1.0","R6":"*"},"License":"MIT + file LICENSE","Collate":"''expectations.R''
+        ''mockery.R'' ''mock-object.R'' ''stub.R''","VignetteBuilder":"knitr","RoxygenNote":"6.0.1","NeedsCompilation":"no","Packaged":"2019-09-03
+        14:05:29 UTC; jhester","Author":"Noam Finkelstein [aut],\u000aLukasz Bartnik
+        [aut],\u000aJim Hester [cre]","Maintainer":"Jim Hester <jim.hester@rstudio.com>","Repository":"CRAN","Date/Publication":"2019-09-03
+        22:10:06 UTC","crandb_file_date":"2019-09-03 23:32:27","MD5sum":"80cedbf0ee327f36d2920bee52eb0432","date":"2019-09-03T21:10:06+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/rmarkdown
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:14 GMT
+      content-type: application/json
+      content-length: '7559'
+      connection: keep-alive
+      etag: '"6K7V0OQ4R6ZKOEMQ5AFXGGR69"'
+      vary: Accept
+      x-couch-request-id: 7f5b7d6e3f
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"rmarkdown","Type":"Package","Title":"Dynamic Documents
+        for R","Version":"2.11","Authors@R":"c(\u000aperson(\"JJ\", \"Allaire\", role
+        = \"aut\", email = \"jj@rstudio.com\"),\u000aperson(\"Yihui\", \"Xie\", role
+        = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment = c(ORCID = \"0000-0003-0645-5666\")),\u000aperson(\"Jonathan\",
+        \"McPherson\", role = \"aut\", email = \"jonathan@rstudio.com\"),\u000aperson(\"Javier\",
+        \"Luraschi\", role = \"aut\", email = \"javier@rstudio.com\"),\u000aperson(\"Kevin\",
+        \"Ushey\", role = \"aut\", email = \"kevin@rstudio.com\"),\u000aperson(\"Aron\",
+        \"Atkins\", role = \"aut\", email = \"aron@rstudio.com\"),\u000aperson(\"Hadley\",
+        \"Wickham\", role = \"aut\", email = \"hadley@rstudio.com\"),\u000aperson(\"Joe\",
+        \"Cheng\", role = \"aut\", email = \"joe@rstudio.com\"),\u000aperson(\"Winston\",
+        \"Chang\", role = \"aut\", email = \"winston@rstudio.com\"),\u000aperson(\"Richard\",
+        \"Iannone\", role = \"aut\", email = \"rich@rstudio.com\", comment = c(ORCID
+        = \"0000-0003-3925-190X\")),\u000a#\u000a# Contributors, ordered alphabetically
+        by first name\u000aperson(\"Andrew\", \"Dunning\", role = \"ctb\", comment
+        = c(ORCID = \"0000-0003-0464-5036\")),\u000aperson(\"Atsushi\", \"Yasumoto\",
+        role = c(\"ctb\", \"cph\"),\u000acomment = c(ORCID = \"0000-0002-8335-495X\",\u000acph
+        = \"Number sections Lua filter\")),\u000aperson(\"Barret\", \"Schloerke\",
+        role = \"ctb\"),\u000aperson(\"Carson\", \"Sievert\", role = \"ctb\", comment
+        = c(ORCID = \"0000-0002-4958-2844\")),\u000aperson(\"Christophe\", \"Dervieux\",
+        role = \"ctb\"),\u000aperson(\"Devon\", \"Ryan\", role = \"ctb\", email =
+        \"dpryan79@gmail.com\", comment = c(ORCID = \"0000-0002-8549-0971\")),\u000aperson(\"Frederik\",
+        \"Aust\", role = \"ctb\", email = \"frederik.aust@uni-koeln.de\", comment
+        = c(ORCID = \"0000-0003-4900-788X\")),\u000aperson(\"Jeff\", \"Allen\", role
+        = \"ctb\", email = \"jeff@rstudio.com\"),\u000aperson(\"JooYoung\", \"Seo\",
+        role=\"ctb\", comment = c(ORCID = \"0000-0002-4064-6012\")),\u000aperson(\"Malcolm\",
+        \"Barrett\", role = \"ctb\"),\u000aperson(\"Rob\", \"Hyndman\", role = \"ctb\",
+        email = \"Rob.Hyndman@monash.edu\"),\u000aperson(\"Romain\", \"Lesur\", role
+        = \"ctb\"),\u000aperson(\"Roy\", \"Storey\", role = \"ctb\"),\u000aperson(\"Ruben\",
+        \"Arslan\", role = \"ctb\", email = \"ruben.arslan@uni-goettingen.de\"),\u000aperson(\"Sergio\",
+        \"Oller\", role = \"ctb\"),\u000a#\u000a# Copyright holders\u000aperson(family
+        = \"RStudio, PBC\", role = \"cph\"),\u000aperson(family = \"jQuery UI contributors\",
+        role = c(\"ctb\", \"cph\"),\u000acomment = \"jQuery UI library; authors listed
+        in inst/rmd/h/jqueryui-AUTHORS.txt\"),\u000aperson(\"Mark\", \"Otto\", role
+        = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(\"Jacob\", \"Thornton\",
+        role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(family
+        = \"Bootstrap contributors\", role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(family
+        = \"Twitter, Inc\", role = \"cph\",\u000acomment = \"Bootstrap library\"),\u000aperson(\"Alexander\",
+        \"Farkas\", role = c(\"ctb\", \"cph\"),\u000acomment = \"html5shiv library\"),\u000aperson(\"Scott\",
+        \"Jehl\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Respond.js library\"),\u000aperson(\"Ivan\",
+        \"Sagalaev\", role = c(\"ctb\", \"cph\"),\u000acomment = \"highlight.js library\"),\u000aperson(\"Greg\",
+        \"Franko\", role = c(\"ctb\", \"cph\"),\u000acomment = \"tocify library\"),\u000aperson(\"John\",
+        \"MacFarlane\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Pandoc templates\"),\u000aperson(family
+        = \"Google, Inc.\", role = c(\"ctb\", \"cph\"),\u000acomment = \"ioslides
+        library\"),\u000aperson(\"Dave\", \"Raggett\", role = \"ctb\",\u000acomment
+        = \"slidy library\"),\u000aperson(family = \"W3C\", role = \"cph\",\u000acomment
+        = \"slidy library\"),\u000aperson(\"Dave\", \"Gandy\", role = c(\"ctb\", \"cph\"),\u000acomment
+        = \"Font-Awesome\"),\u000aperson(\"Ben\", \"Sperry\", role = \"ctb\",\u000acomment
+        = \"Ionicons\"),\u000aperson(family = \"Drifty\", role = \"cph\",\u000acomment
+        = \"Ionicons\"),\u000aperson(\"Aidan\", \"Lister\", role = c(\"ctb\", \"cph\"),\u000acomment
+        = \"jQuery StickyTabs\"),\u000aperson(\"Benct Philip\", \"Jonsson\", role
+        = c(\"ctb\", \"cph\"),\u000acomment = \"pagebreak Lua filter\"),\u000aperson(\"Albert\",
+        \"Krewinkel\", role = c(\"ctb\", \"cph\"),\u000acomment = \"pagebreak Lua
+        filter\")\u000a)","Maintainer":"Yihui Xie <xie@yihui.name>","Description":"Convert
+        R Markdown documents into a variety of formats.","Depends":{"R":">= 3.0"},"Imports":{"tools":"*","utils":"*","knitr":">=
+        1.22","yaml":">= 2.1.19","htmltools":">=\u000a0.3.5","evaluate":">= 0.13","jsonlite":"*","tinytex":">=
+        0.31","xfun":">= 0.21","jquerylib":"*","methods":"*","stringr":">= 1.2.0"},"Suggests":{"shiny":">=
+        1.6.0","tufte":"*","testthat":">= 3.0.0","digest":"*","dygraphs":"*","vctrs":"*","tibble":"*","fs":"*","rsconnect":"*","withr":">=
+        2.4.2","bslib":">= 0.2.5.1","sass":">= 0.4.0"},"SystemRequirements":"pandoc
+        (>= 1.14) - http://pandoc.org","URL":"https://github.com/rstudio/rmarkdown,\u000ahttps://pkgs.rstudio.com/rmarkdown/","BugReports":"https://github.com/rstudio/rmarkdown/issues","License":"GPL-3","RoxygenNote":"7.1.2","Encoding":"UTF-8","VignetteBuilder":"knitr","NeedsCompilation":"no","Packaged":"2021-09-14
+        13:25:46 UTC; yihui","Author":"JJ Allaire [aut],\u000aYihui Xie [aut, cre]
+        (<https://orcid.org/0000-0003-0645-5666>),\u000aJonathan McPherson [aut],\u000aJavier
+        Luraschi [aut],\u000aKevin Ushey [aut],\u000aAron Atkins [aut],\u000aHadley
+        Wickham [aut],\u000aJoe Cheng [aut],\u000aWinston Chang [aut],\u000aRichard
+        Iannone [aut] (<https://orcid.org/0000-0003-3925-190X>),\u000aAndrew Dunning
+        [ctb] (<https://orcid.org/0000-0003-0464-5036>),\u000aAtsushi Yasumoto [ctb,
+        cph] (<https://orcid.org/0000-0002-8335-495X>,\u000aNumber sections Lua filter),\u000aBarret
+        Schloerke [ctb],\u000aCarson Sievert [ctb] (<https://orcid.org/0000-0002-4958-2844>),\u000aChristophe
+        Dervieux [ctb],\u000aDevon Ryan [ctb] (<https://orcid.org/0000-0002-8549-0971>),\u000aFrederik
+        Aust [ctb] (<https://orcid.org/0000-0003-4900-788X>),\u000aJeff Allen [ctb],\u000aJooYoung
+        Seo [ctb] (<https://orcid.org/0000-0002-4064-6012>),\u000aMalcolm Barrett
+        [ctb],\u000aRob Hyndman [ctb],\u000aRomain Lesur [ctb],\u000aRoy Storey [ctb],\u000aRuben
+        Arslan [ctb],\u000aSergio Oller [ctb],\u000aRStudio, PBC [cph],\u000ajQuery
+        UI contributors [ctb, cph] (jQuery UI library; authors listed in\u000ainst/rmd/h/jqueryui-AUTHORS.txt),\u000aMark
+        Otto [ctb] (Bootstrap library),\u000aJacob Thornton [ctb] (Bootstrap library),\u000aBootstrap
+        contributors [ctb] (Bootstrap library),\u000aTwitter, Inc [cph] (Bootstrap
+        library),\u000aAlexander Farkas [ctb, cph] (html5shiv library),\u000aScott
+        Jehl [ctb, cph] (Respond.js library),\u000aIvan Sagalaev [ctb, cph] (highlight.js
+        library),\u000aGreg Franko [ctb, cph] (tocify library),\u000aJohn MacFarlane
+        [ctb, cph] (Pandoc templates),\u000aGoogle, Inc. [ctb, cph] (ioslides library),\u000aDave
+        Raggett [ctb] (slidy library),\u000aW3C [cph] (slidy library),\u000aDave Gandy
+        [ctb, cph] (Font-Awesome),\u000aBen Sperry [ctb] (Ionicons),\u000aDrifty [cph]
+        (Ionicons),\u000aAidan Lister [ctb, cph] (jQuery StickyTabs),\u000aBenct Philip
+        Jonsson [ctb, cph] (pagebreak Lua filter),\u000aAlbert Krewinkel [ctb, cph]
+        (pagebreak Lua filter)","Repository":"CRAN","Date/Publication":"2021-09-14
+        14:10:02 UTC","crandb_file_date":"2021-09-14 16:38:36","MD5sum":"21b076c2a4ae224c0be720a980a2b9f7","date":"2021-09-14T13:10:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/rstudioapi
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:16 GMT
+      content-type: application/json
+      content-length: '1337'
+      connection: keep-alive
+      etag: '"3ZK569X11RL17N4GZN6NS6GUO"'
+      vary: Accept
+      x-couch-request-id: df20eeb539
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"rstudioapi","Title":"Safely Access the RStudio API","Description":"Access
+        the RStudio API (if available) and provide informative error\u000amessages
+        when it''s not.","Version":"0.13","Authors@R":"c(\u000aperson(\"Kevin\", \"Ushey\",
+        role = c(\"aut\", \"cre\"), email = \"kevin@rstudio.com\"),\u000aperson(\"JJ\",
+        \"Allaire\", role = c(\"aut\"), email = \"jj@rstudio.com\"),\u000aperson(\"Hadley\",
+        \"Wickham\", role = c(\"aut\"), email = \"hadley@rstudio.com\"),\u000aperson(\"Gary\",
+        \"Ritchie\", role = c(\"aut\"), email = \"gary@rstudio.com\"),\u000aperson(family
+        = \"RStudio\", role = \"cph\")\u000a)","Maintainer":"Kevin Ushey <kevin@rstudio.com>","License":"MIT
+        + file LICENSE","URL":"https://github.com/rstudio/rstudioapi","BugReports":"https://github.com/rstudio/rstudioapi/issues","RoxygenNote":"7.1.1","Suggests":{"testthat":"*","knitr":"*","rmarkdown":"*","clipr":"*"},"VignetteBuilder":"knitr","Encoding":"UTF-8","NeedsCompilation":"no","Packaged":"2020-11-11
+        23:34:30 UTC; kevinushey","Author":"Kevin Ushey [aut, cre],\u000aJJ Allaire
+        [aut],\u000aHadley Wickham [aut],\u000aGary Ritchie [aut],\u000aRStudio [cph]","Repository":"CRAN","Date/Publication":"2020-11-12
+        21:50:02 UTC","crandb_file_date":"2020-11-12 23:02:44","MD5sum":"360eec8e6b24ec975d2116639110632c","date":"2020-11-12T20:50:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/shiny
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:17 GMT
+      content-type: application/json
+      content-length: '8758'
+      connection: keep-alive
+      etag: '"4Y20K96SKFCZU2MZUGFVKGNPS"'
+      vary: Accept
+      x-couch-request-id: 50c3345e50
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"shiny","Type":"Package","Title":"Web Application Framework
+        for R","Version":"1.7.1","Authors@R":"c(\u000aperson(\"Winston\", \"Chang\",
+        role = c(\"aut\", \"cre\"), email = \"winston@rstudio.com\", comment = c(ORCID
+        = \"0000-0002-1576-2126\")),\u000aperson(\"Joe\", \"Cheng\", role = \"aut\",
+        email = \"joe@rstudio.com\"),\u000aperson(\"JJ\", \"Allaire\", role = \"aut\",
+        email = \"jj@rstudio.com\"),\u000aperson(\"Carson\", \"Sievert\", role = \"aut\",
+        email = \"carson@rstudio.com\", comment = c(ORCID = \"0000-0002-4958-2844\")),\u000aperson(\"Barret\",
+        \"Schloerke\", role = \"aut\", email = \"barret@rstudio.com\", comment = c(ORCID
+        = \"0000-0001-9986-114X\")),\u000aperson(\"Yihui\", \"Xie\", role = \"aut\",
+        email = \"yihui@rstudio.com\"),\u000aperson(\"Jeff\", \"Allen\", role = \"aut\",
+        email = \"jeff@rstudio.com\"),\u000aperson(\"Jonathan\", \"McPherson\", role
+        = \"aut\", email = \"jonathan@rstudio.com\"),\u000aperson(\"Alan\", \"Dipert\",
+        role = \"aut\"),\u000aperson(\"Barbara\", \"Borges\", role = \"aut\"),\u000aperson(family
+        = \"RStudio\", role = \"cph\"),\u000aperson(family = \"jQuery Foundation\",
+        role = \"cph\",\u000acomment = \"jQuery library and jQuery UI library\"),\u000aperson(family
+        = \"jQuery contributors\", role = c(\"ctb\", \"cph\"),\u000acomment = \"jQuery
+        library; authors listed in inst/www/shared/jquery-AUTHORS.txt\"),\u000aperson(family
+        = \"jQuery UI contributors\", role = c(\"ctb\", \"cph\"),\u000acomment = \"jQuery
+        UI library; authors listed in inst/www/shared/jqueryui/AUTHORS.txt\"),\u000aperson(\"Mark\",
+        \"Otto\", role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(\"Jacob\",
+        \"Thornton\", role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(family
+        = \"Bootstrap contributors\", role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(family
+        = \"Twitter, Inc\", role = \"cph\",\u000acomment = \"Bootstrap library\"),\u000aperson(\"Prem
+        Nawaz\", \"Khan\", role = \"ctb\",\u000acomment = \"Bootstrap accessibility
+        plugin\"),\u000aperson(\"Victor\", \"Tsaran\", role = \"ctb\",\u000acomment
+        = \"Bootstrap accessibility plugin\"),\u000aperson(\"Dennis\", \"Lembree\",
+        role = \"ctb\",\u000acomment = \"Bootstrap accessibility plugin\"),\u000aperson(\"Srinivasu\",
+        \"Chakravarthula\", role = \"ctb\",\u000acomment = \"Bootstrap accessibility
+        plugin\"),\u000aperson(\"Cathy\", \"O''Connor\", role = \"ctb\",\u000acomment
+        = \"Bootstrap accessibility plugin\"),\u000aperson(family = \"PayPal, Inc\",
+        role = \"cph\",\u000acomment = \"Bootstrap accessibility plugin\"),\u000aperson(\"Stefan\",
+        \"Petre\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Bootstrap-datepicker
+        library\"),\u000aperson(\"Andrew\", \"Rowls\", role = c(\"ctb\", \"cph\"),\u000acomment
+        = \"Bootstrap-datepicker library\"),\u000aperson(\"Brian\", \"Reavis\", role
+        = c(\"ctb\", \"cph\"),\u000acomment = \"selectize.js library\"),\u000aperson(\"Salmen\",
+        \"Bejaoui\", role = c(\"ctb\", \"cph\"),\u000acomment = \"selectize-plugin-a11y
+        library\"),\u000aperson(\"Denis\", \"Ineshin\", role = c(\"ctb\", \"cph\"),\u000acomment
+        = \"ion.rangeSlider library\"),\u000aperson(\"Sami\", \"Samhuri\", role =
+        c(\"ctb\", \"cph\"),\u000acomment = \"Javascript strftime library\"),\u000aperson(family
+        = \"SpryMedia Limited\", role = c(\"ctb\", \"cph\"),\u000acomment = \"DataTables
+        library\"),\u000aperson(\"John\", \"Fraser\", role = c(\"ctb\", \"cph\"),\u000acomment
+        = \"showdown.js library\"),\u000aperson(\"John\", \"Gruber\", role = c(\"ctb\",
+        \"cph\"),\u000acomment = \"showdown.js library\"),\u000aperson(\"Ivan\", \"Sagalaev\",
+        role = c(\"ctb\", \"cph\"),\u000acomment = \"highlight.js library\"),\u000aperson(family
+        = \"R Core Team\", role = c(\"ctb\", \"cph\"),\u000acomment = \"tar implementation
+        from R\")\u000a)","Description":"Makes it incredibly easy to build interactive
+        web\u000aapplications with R. Automatic \"reactive\" binding between inputs
+        and\u000aoutputs and extensive prebuilt widgets make it possible to build\u000abeautiful,
+        responsive, and powerful applications with minimal effort.","License":"GPL-3
+        | file LICENSE","Depends":{"R":">= 3.0.2","methods":"*"},"Imports":{"utils":"*","grDevices":"*","httpuv":">=
+        1.5.2","mime":">= 0.3","jsonlite":">= 0.9.16","xtable":"*","fontawesome":">=
+        0.2.1","htmltools":">=\u000a0.5.2","R6":">= 2.0","sourcetools":"*","later":">=
+        1.0.0","promises":">= 1.1.0","tools":"*","crayon":"*","rlang":">= 0.4.10","fastmap":">=\u000a1.1.0","withr":"*","commonmark":">=
+        1.7","glue":">= 1.3.2","bslib":">=\u000a0.3.0","cachem":"*","ellipsis":"*","lifecycle":">=
+        0.2.0"},"Suggests":{"datasets":"*","Cairo":">= 1.5-5","testthat":">= 3.0.0","knitr":">=\u000a1.6","markdown":"*","rmarkdown":"*","ggplot2":"*","reactlog":">=
+        1.0.0","magrittr":"*","shinytest":">= 1.4.0.9003","yaml":"*","future":"*","dygraphs":"*","ragg":"*","showtext":"*","sass":"*"},"URL":"https://shiny.rstudio.com/","BugReports":"https://github.com/rstudio/shiny/issues","Collate":"''globals.R''
+        ''app-state.R'' ''app_template.R'' ''bind-cache.R''\u000a''bind-event.R''
+        ''bookmark-state-local.R'' ''bookmark-state.R''\u000a''bootstrap-deprecated.R''
+        ''bootstrap-layout.R'' ''conditions.R''\u000a''map.R'' ''utils.R'' ''bootstrap.R''
+        ''cache-utils.R'' ''deprecated.R''\u000a''devmode.R'' ''diagnose.R'' ''fileupload.R''
+        ''graph.R'' ''reactives.R''\u000a''reactive-domains.R'' ''history.R'' ''hooks.R''
+        ''html-deps.R''\u000a''image-interact-opts.R'' ''image-interact.R'' ''imageutils.R''\u000a''input-action.R''
+        ''input-checkbox.R'' ''input-checkboxgroup.R''\u000a''input-date.R'' ''input-daterange.R''
+        ''input-file.R''\u000a''input-numeric.R'' ''input-password.R'' ''input-radiobuttons.R''\u000a''input-select.R''
+        ''input-slider.R'' ''input-submit.R''\u000a''input-text.R'' ''input-textarea.R''
+        ''input-utils.R''\u000a''insert-tab.R'' ''insert-ui.R'' ''jqueryui.R'' ''knitr.R''\u000a''middleware-shiny.R''
+        ''middleware.R'' ''timer.R'' ''shiny.R''\u000a''mock-session.R'' ''modal.R''
+        ''modules.R'' ''notifications.R''\u000a''priorityqueue.R'' ''progress.R''
+        ''react.R'' ''reexports.R''\u000a''render-cached-plot.R'' ''render-plot.R''
+        ''render-table.R''\u000a''run-url.R'' ''runapp.R'' ''serializers.R''\u000a''server-input-handlers.R''
+        ''server-resource-paths.R'' ''server.R''\u000a''shiny-options.R'' ''shiny-package.R''
+        ''shinyapp.R'' ''shinyui.R''\u000a''shinywrappers.R'' ''showcase.R'' ''snapshot.R''
+        ''tar.R''\u000a''test-export.R'' ''test-server.R'' ''test.R'' ''update-input.R''\u000a''utils-lang.R''
+        ''version_bs_date_picker.R''\u000a''version_ion_range_slider.R'' ''version_jquery.R''\u000a''version_selectize.R''
+        ''version_strftime.R'' ''viewer.R''","RoxygenNote":"7.1.2","Encoding":"UTF-8","RdMacros":"lifecycle","Config/testthat/edition":"3","NeedsCompilation":"no","Packaged":"2021-10-01
+        21:41:01 UTC; winston","Author":"Winston Chang [aut, cre] (<https://orcid.org/0000-0002-1576-2126>),\u000aJoe
+        Cheng [aut],\u000aJJ Allaire [aut],\u000aCarson Sievert [aut] (<https://orcid.org/0000-0002-4958-2844>),\u000aBarret
+        Schloerke [aut] (<https://orcid.org/0000-0001-9986-114X>),\u000aYihui Xie
+        [aut],\u000aJeff Allen [aut],\u000aJonathan McPherson [aut],\u000aAlan Dipert
+        [aut],\u000aBarbara Borges [aut],\u000aRStudio [cph],\u000ajQuery Foundation
+        [cph] (jQuery library and jQuery UI library),\u000ajQuery contributors [ctb,
+        cph] (jQuery library; authors listed in\u000ainst/www/shared/jquery-AUTHORS.txt),\u000ajQuery
+        UI contributors [ctb, cph] (jQuery UI library; authors listed in\u000ainst/www/shared/jqueryui/AUTHORS.txt),\u000aMark
+        Otto [ctb] (Bootstrap library),\u000aJacob Thornton [ctb] (Bootstrap library),\u000aBootstrap
+        contributors [ctb] (Bootstrap library),\u000aTwitter, Inc [cph] (Bootstrap
+        library),\u000aPrem Nawaz Khan [ctb] (Bootstrap accessibility plugin),\u000aVictor
+        Tsaran [ctb] (Bootstrap accessibility plugin),\u000aDennis Lembree [ctb] (Bootstrap
+        accessibility plugin),\u000aSrinivasu Chakravarthula [ctb] (Bootstrap accessibility
+        plugin),\u000aCathy O''Connor [ctb] (Bootstrap accessibility plugin),\u000aPayPal,
+        Inc [cph] (Bootstrap accessibility plugin),\u000aStefan Petre [ctb, cph] (Bootstrap-datepicker
+        library),\u000aAndrew Rowls [ctb, cph] (Bootstrap-datepicker library),\u000aBrian
+        Reavis [ctb, cph] (selectize.js library),\u000aSalmen Bejaoui [ctb, cph] (selectize-plugin-a11y
+        library),\u000aDenis Ineshin [ctb, cph] (ion.rangeSlider library),\u000aSami
+        Samhuri [ctb, cph] (Javascript strftime library),\u000aSpryMedia Limited [ctb,
+        cph] (DataTables library),\u000aJohn Fraser [ctb, cph] (showdown.js library),\u000aJohn
+        Gruber [ctb, cph] (showdown.js library),\u000aIvan Sagalaev [ctb, cph] (highlight.js
+        library),\u000aR Core Team [ctb, cph] (tar implementation from R)","Maintainer":"Winston
+        Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-02
+        04:30:02 UTC","crandb_file_date":"2021-10-02 05:38:33","MD5sum":"884b76c45eeaf4cc9054e127f9a980c4","date":"2021-10-02T03:30:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/usethis
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:19 GMT
+      content-type: application/json
+      content-length: '2361'
+      connection: keep-alive
+      etag: '"7977KKCUZF1EFHVJ2VBHI63ZU"'
+      vary: Accept
+      x-couch-request-id: f25a732e6e
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"usethis","Title":"Automate Package and Project Setup","Version":"2.1.5","Authors@R":"\u000ac(person(given
+        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = \"aut\",\u000aemail =
+        \"hadley@rstudio.com\",\u000acomment = c(ORCID = \"0000-0003-4757-117X\")),\u000aperson(given
+        = \"Jennifer\",\u000afamily = \"Bryan\",\u000arole = c(\"aut\", \"cre\"),\u000aemail
+        = \"jenny@rstudio.com\",\u000acomment = c(ORCID = \"0000-0002-6983-2759\")),\u000aperson(given
+        = \"Malcolm\",\u000afamily = \"Barrett\",\u000arole = \"aut\",\u000aemail
+        = \"malcolmbarrett@gmail.com\",\u000acomment = c(ORCID = \"0000-0003-0299-5825\")),\u000aperson(given
+        = \"RStudio\",\u000arole = c(\"cph\", \"fnd\")))","Description":"Automate
+        package and project setup tasks that are\u000aotherwise performed manually.
+        This includes setting up unit testing,\u000atest coverage, continuous integration,
+        Git, ''GitHub'', licenses,\u000a''Rcpp'', ''RStudio'' projects, and more.","License":"MIT
+        + file LICENSE","URL":"https://usethis.r-lib.org, https://github.com/r-lib/usethis","BugReports":"https://github.com/r-lib/usethis/issues","Depends":{"R":">=
+        3.4"},"Imports":{"cli":">= 3.0.1","clipr":">= 0.3.0","crayon":"*","curl":">=
+        2.7","desc":">= 1.4.0","fs":">= 1.3.0","gert":">= 1.4.1","gh":">= 1.2.1","glue":">=
+        1.3.0","jsonlite":"*","lifecycle":">= 1.0.0","purrr":"*","rappdirs":"*","rlang":">=
+        0.4.10","rprojroot":">= 1.2","rstudioapi":"*","stats":"*","utils":"*","whisker":"*","withr":">=
+        2.3.0","yaml":"*"},"Suggests":{"covr":"*","knitr":"*","magick":"*","mockr":"*","pkgload":"*","rmarkdown":"*","roxygen2":">=\u000a7.1.2","spelling":">=
+        1.2","styler":">= 1.2.0","testthat":">=\u000a3.1.0"},"Config/Needs/website":"tidyverse/tidytemplate","Config/testthat/edition":"3","Encoding":"UTF-8","Language":"en-US","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-12-09
+        18:41:36 UTC; jenny","Author":"Hadley Wickham [aut] (<https://orcid.org/0000-0003-4757-117X>),\u000aJennifer
+        Bryan [aut, cre] (<https://orcid.org/0000-0002-6983-2759>),\u000aMalcolm Barrett
+        [aut] (<https://orcid.org/0000-0003-0299-5825>),\u000aRStudio [cph, fnd]","Maintainer":"Jennifer
+        Bryan <jenny@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-12-09
+        23:00:02 UTC","crandb_file_date":"2021-12-10 01:02:23","MD5sum":"98a3099aac202676834d282b76a9afd6","date":"2021-12-09T22:00:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/vctrs
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:21 GMT
+      content-type: application/json
+      content-length: '2004'
+      connection: keep-alive
+      etag: '"BKXJJJFMEWCHFDTB0I3P3I8SS"'
+      vary: Accept
+      x-couch-request-id: 595b8ef10f
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"vctrs","Title":"Vector Helpers","Version":"0.3.8","Authors@R":"\u000ac(person(given
+        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = \"aut\",\u000aemail =
+        \"hadley@rstudio.com\"),\u000aperson(given = \"Lionel\",\u000afamily = \"Henry\",\u000arole
+        = c(\"aut\", \"cre\"),\u000aemail = \"lionel@rstudio.com\"),\u000aperson(given
+        = \"Davis\",\u000afamily = \"Vaughan\",\u000arole = \"aut\",\u000aemail =
+        \"davis@rstudio.com\"),\u000aperson(given = \"data.table team\",\u000arole
+        = \"cph\",\u000acomment = \"Radix sort based on data.table''s forder() and
+        their contribution to R''s order()\"),\u000aperson(given = \"RStudio\",\u000arole
+        = \"cph\"))","Description":"Defines new notions of prototype and size that
+        are\u000aused to provide tools for consistent and well-founded type-coercion\u000aand
+        size-recycling, and are in turn connected to ideas of type- and\u000asize-stability
+        useful for analysing function interfaces.","License":"MIT + file LICENSE","URL":"https://vctrs.r-lib.org/","BugReports":"https://github.com/r-lib/vctrs/issues","Depends":{"R":">=
+        3.3"},"Imports":{"ellipsis":">= 0.2.0","glue":"*","rlang":">= 0.4.10"},"Suggests":{"bit64":"*","covr":"*","crayon":"*","dplyr":">=
+        0.8.5","generics":"*","knitr":"*","pillar":">= 1.4.4","pkgdown":"*","rmarkdown":"*","testthat":">=
+        2.3.0","tibble":"*","withr":"*","xml2":"*","waldo":">= 0.2.0","zeallot":"*"},"VignetteBuilder":"knitr","Encoding":"UTF-8","Language":"en-GB","RoxygenNote":"7.1.1","NeedsCompilation":"yes","Packaged":"2021-04-29
+        15:14:11 UTC; lionel","Author":"Hadley Wickham [aut],\u000aLionel Henry [aut,
+        cre],\u000aDavis Vaughan [aut],\u000adata.table team [cph] (Radix sort based
+        on data.table''s forder() and\u000atheir contribution to R''s order()),\u000aRStudio
+        [cph]","Maintainer":"Lionel Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-29
+        16:00:03 UTC","crandb_file_date":"2021-04-29 17:44:39","MD5sum":"44b9cfe6b54c58fb740f8b0212dfac24","date":"2021-04-29T15:00:03+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/xml2
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:22 GMT
+      content-type: application/json
+      content-length: '1962'
+      connection: keep-alive
+      etag: '"DH9PL21UBFGSDJLMMLNW87QEE"'
+      vary: Accept
+      x-couch-request-id: 8b0413d29e
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"xml2","Title":"Parse XML","Version":"1.3.3","Authors@R":"\u000ac(person(given
+        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = c(\"aut\", \"cre\"),\u000aemail
+        = \"hadley@rstudio.com\"),\u000aperson(given = \"Jim\",\u000afamily = \"Hester\",\u000arole
+        = \"aut\"),\u000aperson(given = \"Jeroen\",\u000afamily = \"Ooms\",\u000arole
+        = \"aut\"),\u000aperson(given = \"RStudio\",\u000arole = \"cph\"),\u000aperson(given
+        = \"R Foundation\",\u000arole = \"ctb\",\u000acomment = \"Copy of R-project
+        homepage cached as example\"))","Description":"Work with XML files using a
+        simple, consistent\u000ainterface. Built on top of the ''libxml2'' C library.","License":"MIT
+        + file LICENSE","URL":"https://xml2.r-lib.org/, https://github.com/r-lib/xml2","BugReports":"https://github.com/r-lib/xml2/issues","Depends":{"R":">=
+        3.1.0"},"Imports":{"methods":"*"},"Suggests":{"covr":"*","curl":"*","httr":"*","knitr":"*","magrittr":"*","mockery":"*","rmarkdown":"*","testthat":">=
+        2.1.0"},"VignetteBuilder":"knitr","Encoding":"UTF-8","RoxygenNote":"7.1.1","SystemRequirements":"libxml2:
+        libxml2-dev (deb), libxml2-devel (rpm)","Collate":"''S4.R'' ''as_list.R''
+        ''xml_parse.R'' ''as_xml_document.R''\u000a''classes.R'' ''init.R'' ''paths.R''
+        ''utils.R'' ''xml_attr.R''\u000a''xml_children.R'' ''xml_find.R'' ''xml_modify.R''
+        ''xml_name.R''\u000a''xml_namespaces.R'' ''xml_path.R'' ''xml_schema.R''\u000a''xml_serialize.R''
+        ''xml_structure.R'' ''xml_text.R'' ''xml_type.R''\u000a''xml_url.R'' ''xml_write.R''
+        ''zzz.R''","NeedsCompilation":"yes","Packaged":"2021-11-29 17:55:43 UTC; jhester","Author":"Hadley
+        Wickham [aut, cre],\u000aJim Hester [aut],\u000aJeroen Ooms [aut],\u000aRStudio
+        [cph],\u000aR Foundation [ctb] (Copy of R-project homepage cached as example)","Maintainer":"Hadley
+        Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-11-30
+        14:40:02 UTC","crandb_file_date":"2021-11-30 15:14:39","MD5sum":"5052f23010ab90b27d16e62055791340","date":"2021-11-30T13:40:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/stringr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:23 GMT
+      content-type: application/json
+      content-length: '1502'
+      connection: keep-alive
+      etag: '"9PH1UMY2C0CTMBW0D3TWWW50K"'
+      vary: Accept
+      x-couch-request-id: d7bb239c44
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"stringr","Title":"Simple, Consistent Wrappers for Common
+        String Operations","Version":"1.4.0","Authors@R":"\u000ac(person(given = \"Hadley\",\u000afamily
+        = \"Wickham\",\u000arole = c(\"aut\", \"cre\", \"cph\"),\u000aemail = \"hadley@rstudio.com\"),\u000aperson(given
+        = \"RStudio\",\u000arole = c(\"cph\", \"fnd\")))","Description":"A consistent,
+        simple and easy to use set of\u000awrappers around the fantastic ''stringi''
+        package. All function and\u000aargument names (and positions) are consistent,
+        all functions deal with\u000a\"NA\"''s and zero length vectors in the same
+        way, and the output from\u000aone function is easy to feed into the input
+        of another.","License":"GPL-2 | file LICENSE","URL":"http://stringr.tidyverse.org,
+        https://github.com/tidyverse/stringr","BugReports":"https://github.com/tidyverse/stringr/issues","Depends":{"R":">=
+        3.1"},"Imports":{"glue":">= 1.2.0","magrittr":"*","stringi":">= 1.1.7"},"Suggests":{"covr":"*","htmltools":"*","htmlwidgets":"*","knitr":"*","rmarkdown":"*","testthat":"*"},"VignetteBuilder":"knitr","Encoding":"UTF-8","LazyData":"true","RoxygenNote":"6.1.1","NeedsCompilation":"no","Packaged":"2019-02-09
+        16:03:19 UTC; hadley","Author":"Hadley Wickham [aut, cre, cph],\u000aRStudio
+        [cph, fnd]","Maintainer":"Hadley Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2019-02-10
+        03:40:03 UTC","crandb_file_date":"2019-02-10 03:44:38","MD5sum":"1c3e0267af33d829b842de9fa68853e2","date":"2019-02-10T02:40:03+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/codetools
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:24 GMT
+      content-type: application/json
+      content-length: '605'
+      connection: keep-alive
+      etag: '"7AFJAIMFAFRJB9SWPUSI0YV8S"'
+      vary: Accept
+      x-couch-request-id: 243815ffe2
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"codetools","Version":"0.2-18","Priority":"recommended","Author":"Luke
+        Tierney <luke-tierney@uiowa.edu>","Description":"Code analysis tools for R.","Title":"Code
+        Analysis Tools for R","Depends":{"R":">= 2.1"},"Maintainer":"Luke Tierney
+        <luke-tierney@uiowa.edu>","URL":"https://gitlab.com/luke-tierney/codetools","License":"GPL","NeedsCompilation":"no","Packaged":"2020-11-02
+        14:45:50 UTC; luke","Repository":"CRAN","Date/Publication":"2020-11-04 17:12:32
+        UTC","crandb_file_date":"2020-11-04 18:56:29","MD5sum":"2603f5eea6378e889b198f8af5cb5985","date":"2020-11-04T16:12:32+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/Rcpp
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:24 GMT
+      content-type: application/json
+      content-length: '1705'
+      connection: keep-alive
+      etag: '"8BU5EGZYIKMN835G1TNVB886H"'
+      vary: Accept
+      x-couch-request-id: c2d7fb685b
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"Rcpp","Title":"Seamless R and C++ Integration","Version":"1.0.7","Date":"2021-07-06","Author":"Dirk
+        Eddelbuettel, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou,\u000aNathan
+        Russell, Inaki Ucar, Douglas Bates and John Chambers","Maintainer":"Dirk Eddelbuettel
+        <edd@debian.org>","Description":"The ''Rcpp'' package provides R functions
+        as well as C++ classes which\u000aoffer a seamless integration of R and C++.
+        Many R data types and objects can be\u000amapped back and forth to C++ equivalents
+        which facilitates both writing of new\u000acode as well as easier integration
+        of third-party libraries. Documentation\u000aabout ''Rcpp'' is provided by
+        several vignettes included in this package, via the\u000a''Rcpp Gallery''
+        site at <https://gallery.rcpp.org>, the paper by Eddelbuettel and\u000aFrancois
+        (2011, <doi:10.18637/jss.v040.i08>), the book by Eddelbuettel (2013,\u000a<doi:10.1007/978-1-4614-6868-4>)
+        and the paper by Eddelbuettel and Balamuta (2018,\u000a<doi:10.1080/00031305.2017.1375990>);
+        see ''citation(\"Rcpp\")'' for details.","Imports":{"methods":"*","utils":"*"},"Suggests":{"tinytest":"*","inline":"*","rbenchmark":"*","pkgKitten":">=
+        0.1.2"},"URL":"http://www.rcpp.org, https://dirk.eddelbuettel.com/code/rcpp.html,\u000ahttps://github.com/RcppCore/Rcpp","License":"GPL
+        (>= 2)","BugReports":"https://github.com/RcppCore/Rcpp/issues","MailingList":"rcpp-devel@lists.r-forge.r-project.org","RoxygenNote":"6.1.1","NeedsCompilation":"yes","Packaged":"2021-07-06
+        11:37:52 UTC; edd","Repository":"CRAN","Date/Publication":"2021-07-07 14:30:02
+        UTC","crandb_file_date":"2021-07-07 17:20:39","MD5sum":"a19ec5ec0e392829e869688c7b5fc581","date":"2021-07-07T13:30:02+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0
+- request:
+    method: get
+    uri: http://crandb.r-pkg.org/lobstr
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.4.6 (Ubuntu)
+      date: Sun, 19 Dec 2021 15:49:25 GMT
+      content-type: application/json
+      content-length: '1249'
+      connection: keep-alive
+      etag: '"DRUPGXXUVNU7VA4GAXPRX5RM4"'
+      vary: Accept
+      x-couch-request-id: 3e041f881d
+      x-couchdb-body-time: '0'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Package":"lobstr","Title":"Visualize R Data Structures with Trees","Version":"1.1.1","Authors@R":"c(\u000aperson(\"Hadley\",
+        \"Wickham\", , \"hadley@rstudio.com\", role = c(\"aut\", \"cre\")),\u000aperson(\"RStudio\",
+        role = \"cph\")\u000a)","Description":"A set of tools for inspecting and understanding
+        R data\u000astructures inspired by str(). Includes ast() for visualizing abstract\u000asyntax
+        trees, ref() for showing shared references, cst() for showing\u000acall stack
+        trees, and obj_size() for computing object sizes.","License":"GPL-3","URL":"https://github.com/r-lib/lobstr","BugReports":"https://github.com/r-lib/lobstr/issues","Depends":{"R":">=
+        3.2"},"Imports":{"crayon":"*","Rcpp":"*","rlang":">= 0.3.0"},"Suggests":{"covr":"*","pillar":"*","pkgdown":"*","testthat":"*"},"LinkingTo":{"Rcpp":"*"},"Encoding":"UTF-8","LazyData":"true","RoxygenNote":"6.1.1","NeedsCompilation":"yes","Packaged":"2019-07-02
+        17:00:44 UTC; hadley","Author":"Hadley Wickham [aut, cre],\u000aRStudio [cph]","Maintainer":"Hadley
+        Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2019-07-02
+        23:10:04 UTC","crandb_file_date":"2019-07-03 01:08:25","MD5sum":"aae694ae9db027b1760cf593eb3400ad","date":"2019-07-02T22:10:04+00:00","releases":[]}'
+  recorded_at: 2021-12-19 15:48:48 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0

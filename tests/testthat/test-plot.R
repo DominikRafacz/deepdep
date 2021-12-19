@@ -21,6 +21,19 @@ vcr::use_cassette("plot-dd-rlang", {
 vcr::use_cassette("plot-dd-datatable", {
   dd_dt <- deepdep("data.table", depth = 2, dependency_type = "all")
 })
+vcr::use_cassette("plot-dd-R6", {
+  dd_R6 <- deepdep("R6", depth = 3, dependency_type = "all")
+})
+
+# GENERAL PROPERTIES ----
+test_that("The only origin with level == 0 is equal to queried package", {
+  plt_R6 <- plot_dependencies(dd_R6)
+  
+  expect_equal(
+    unique(dd_R6$origin[dd_R6$origin_level == 0]),
+    attr(dd_R6, "package_name")
+  )
+})
 
 # LAYER CLASSES ----
 test_that("deepdep plot has correct layers and objects", {
