@@ -1,6 +1,7 @@
 # deepdep (development version)
-* fixed bug where `plot_dependencies()` would sometimes raise an error when using `show_version = TRUE` and `depth >= 2`
-* fixed bug where `plot_dependencies()` would plot one non-central label even when using `label_percentage = 0`
+* fixed bug where `plot_dependencies()` wouldn't remove all invalid dependencies when using `declutter = TRUE` (issue #35)
+* fixed bug where `plot_dependencies()` would sometimes raise an error when using `show_version = TRUE` and `depth >= 2` (issue #36)
+* fixed bug where `plot_dependencies()` would plot one non-central label even when using `label_percentage = 0` (issue #38)
 * tests that use CRAN download counts now skip on CRAN only
 
 # deepdep 0.4.0
