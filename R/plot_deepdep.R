@@ -100,8 +100,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
     type <- "tree"
   } else {
     if (declutter) {
-      x <- x[x[["origin"]] == x[[1, "origin"]] |
-               x[["type"]] %in% match_dependency_type("strong"), ]
+      x <- deepdep_declutter(x)
     }
     if (!same_level) {
       x <- x[(x$origin_level != x$dest_level), ]
