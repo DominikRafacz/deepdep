@@ -274,12 +274,6 @@ test_that("declutter removes all Suggests and Enhances packages from outer layer
   for (dd in list(dd_dt, dd_R6)) {
     plt <- plot_dependencies(dd, declutter = TRUE)
     
-    # Node labels are equal to the names appearing in the filtered data
-    filtered_dd <- dd[dd$origin_level == 0 |
-                        !dd$type %in% c("Suggests", "Enhances"), ]
-    packages_plotted <- unique(c(filtered_dd$origin, filtered_dd$name))
-    expect_setequal(packages_plotted, plt$data$name)
-    
     # If edge has type Suggests or Enhances, it starts in the center
     edge_attrs <- igraph::edge_attr(attr(plt$data, "graph"))
     expect_true(all(
