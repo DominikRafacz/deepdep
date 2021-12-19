@@ -35,6 +35,17 @@ test_that("The only origin with level == 0 is equal to queried package", {
   )
 })
 
+test_that("There are dependencies between central package and layer 1 packages", {
+  plt_R6 <- plot_dependencies(dd_R6)
+  
+  G <- plt_R6$plot_env$G
+  is_layer_1 <- igraph::vertex_attr(G, "layer") == 1
+  expect_setequal(
+    dd_R6[dd_R6$origin == attr(dd_R6, "package_name"), "name"],
+    igraph::vertex_attr(G, "name")[is_layer_1]
+  )
+})
+
 # LAYER CLASSES ----
 test_that("deepdep plot has correct layers and objects", {
   plt_shiny <- plot_dependencies(dd_shiny)
