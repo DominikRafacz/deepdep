@@ -1,4 +1,5 @@
 # deepdep (development version)
+* fixed failing `plot_dependencies()` when trying to plot empty deepdep object (issue #42)
 
 # deepdep 0.4.1
 * fixed bug where `plot_dependencies()` wouldn't remove all invalid dependencies when using `declutter = TRUE` (issue #35)
