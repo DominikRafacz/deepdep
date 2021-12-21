@@ -98,6 +98,8 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
   if (nrow(x) == 0) {
     G <- igraph::make_graph(edges = c(), n = 1)
     G <- igraph::set_vertex_attr(G, "name", value = attr(x, "package_name"))
+    G <- igraph::set_vertex_attr(G, "label", value = attr(x, "package_name"))
+    G <- igraph::set_vertex_attr(G, "labeled", value = TRUE)
     type <- "tree"
   } else {
     if (declutter) {
