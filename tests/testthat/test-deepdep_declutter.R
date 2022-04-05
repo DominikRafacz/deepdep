@@ -1,3 +1,5 @@
+skip_if_not_installed("vcr")
+
 vcr::use_cassette("dd-declutr-R6", {
   dd_R6 <- deepdep("R6", depth = 3, dependency_type = "all")
 })
