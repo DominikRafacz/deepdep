@@ -1,5 +1,5 @@
 
-# Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="180" />
+# Visualise and Explore Deep Dependencies of R Packages <img src='man/figures/logo.png' align="right" height="180" />
 
 <!-- badges: start -->
 
@@ -88,9 +88,9 @@ head(dd_xgboost)
 ```
 
     ##    origin       name  version    type last_day last_week last_month last_quarter last_half grand_total origin_level dest_level
-    ## 1 xgboost     Matrix >= 1.1-0 Imports    10823     53203     181582       405632    727125     6920925            0          1
-    ## 2 xgboost data.table >= 1.9.6 Imports    27530    192739     830277      2680986   4693176    31662141            0          1
-    ## 3 xgboost   jsonlite   >= 1.0 Imports    29113    198194     962410      3141085   6611507    51949816            0          1
+    ## 1 xgboost     Matrix >= 1.1-0 Imports     4962     49063     201226       599306   1098929     7800163            0          1
+    ## 2 xgboost data.table >= 1.9.6 Imports    40960    234207     944126      2698034   5087085    35644069            0          1
+    ## 3 xgboost   jsonlite   >= 1.0 Imports    47616    292658    1133042      4233587   7327155    58000689            0          1
 
 ``` r
 plot_downloads(dd_xgboost)

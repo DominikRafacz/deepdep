@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# Visualise and Explore Deep Dependencies of R Packages <img src='images/logo.png' align="right" height="180" />
+# Visualise and Explore Deep Dependencies of R Packages <img src='man/figures/logo.png' align="right" height="180" />
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/deepdep)](https://CRAN.R-project.org/package=deepdep)
