@@ -23,7 +23,8 @@ Depends:
 Imports:
     cranlogs,
     httr,
-    jsonlite
+    jsonlite,
+    woodendesc
 Suggests: 
     BiocManager,
     covr,
