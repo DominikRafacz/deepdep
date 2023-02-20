@@ -161,7 +161,7 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
 #'
 #' @param G An \code{igraph} object.
 add_layers_to_vertices <- function(G, x) {
-  igraph::V(G)$layer <- igraph::distances(G, 1, mode = "out")
+  igraph::V(G)$layer <- as.numeric(igraph::distances(G, 1, mode = "out"))
   G
 }
 
