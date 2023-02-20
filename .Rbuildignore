@@ -22,3 +22,6 @@ README_files
 ^vignettes/.*\.Rmd\.orig$
 ^inst/doc/.*\.png$
 ^\.github$
+^CRAN-SUBMISSION$
+^appveyor\.yml$
+^\.circleci/config\.yml$
