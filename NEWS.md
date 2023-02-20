@@ -1,3 +1,7 @@
+# deepdep 0.4.2
+* fixed bug caused by breaking change in `igraph` related to assigning attributes to graph nodes (issue #51)
+* fixed bug which made plots unable to be rendered when there are no dependencies
+
 # deepdep 0.4.1
 * fixed bug where `plot_dependencies()` wouldn't remove all invalid dependencies when using `declutter = TRUE` (issue #35)
 * fixed bug where `plot_dependencies()` would sometimes raise an error when using `show_version = TRUE` and `depth >= 2` (issue #36)
