@@ -1,7 +1,7 @@
 ---
 title: "Comparison of deepdep to similar packages"
 author: "Dominik Rafacz"
-date: "2021-12-19"
+date: "2023-02-20"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Comparison of deepdep to similar packages}
@@ -120,7 +120,7 @@ set.seed(1)
 plot(dg, legendPosition = c(-1, 1), vertex.size = 20)
 ```
 
-<img src="miniCRAN-1.png" title="plot of chunk miniCRAN" alt="plot of chunk miniCRAN" style="display: block; margin: auto;" />
+<img src="miniCRAN-1.png" alt="plot of chunk miniCRAN" style="display: block; margin: auto;" />
 # pkgDepTools
 
 Description from official vignette:

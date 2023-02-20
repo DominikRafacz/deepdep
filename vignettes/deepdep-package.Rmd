@@ -51,14 +51,12 @@ This function lists, as the name indicates, available packages. The default beha
 ```r
 t <- get_available_packages()
 head(t, 20)
-#>            A3         aaSEA      AATtools           aba        ABACUS    abbreviate 
-#>          "A3"       "aaSEA"    "AATtools"         "aba"      "ABACUS"  "abbreviate" 
-#>        abbyyR           abc      abc.data       ABC.RAP        abcADM   ABCanalysis 
-#>      "abbyyR"         "abc"    "abc.data"     "ABC.RAP"      "abcADM" "ABCanalysis" 
-#>      abcdeFBA      ABCoptim         ABCp2         abcrf       abcrlda      abctools 
-#>    "abcdeFBA"    "ABCoptim"       "ABCp2"       "abcrf"     "abcrlda"    "abctools" 
-#>           abd         abdiv 
-#>         "abd"       "abdiv"
+#>            A3      AATtools        ABACUS    abbreviate        abbyyR           abc      abc.data 
+#>          "A3"    "AATtools"      "ABACUS"  "abbreviate"      "abbyyR"         "abc"    "abc.data" 
+#>       ABC.RAP        abcADM   ABCanalysis       abclass      ABCoptim         ABCp2         abcrf 
+#>     "ABC.RAP"      "abcADM" "ABCanalysis"     "abclass"    "ABCoptim"       "ABCp2"       "abcrf" 
+#>       abcrlda      abctools           abd         abdiv           abe         abess 
+#>     "abcrlda"    "abctools"         "abd"       "abdiv"         "abe"       "abess"
 ```
 
 However, if you want to check if package is present in a little wider range -- on CRAN or Bioconductor repositories, you simply need to set argument `bioc = TRUE`. In this case function is simply wrapper around `BiocManager::available()` and to use it you need to have `BiocManager` package (available via CRAN) installed.
@@ -66,16 +64,14 @@ However, if you want to check if package is present in a little wider range -- o
 
 ```r
 t <- get_available_packages(bioc = TRUE)
-#> 'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for
-#> details
+#> 'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
 #> 
 #> replacement repositories:
 #>     CRAN: https://cran.rstudio.com/
 head(t, 20)
-#>  [1] "A3"            "a4"            "a4Base"        "a4Classif"     "a4Core"       
-#>  [6] "a4Preproc"     "a4Reporting"   "aaSEA"         "AATtools"      "aba"          
-#> [11] "ABACUS"        "ABAData"       "ABAEnrichment" "ABarray"       "abbreviate"   
-#> [16] "abbyyR"        "abc"           "abc.data"      "ABC.RAP"       "abcADM"
+#>  [1] "A3"          "a4"          "a4Base"      "a4Classif"   "a4Core"      "a4Preproc"   "a4Reporting"
+#>  [8] "AATtools"    "ABACUS"      "ABarray"     "abbreviate"  "abbyyR"      "abc"         "abc.data"   
+#> [15] "ABC.RAP"     "abcADM"      "ABCanalysis" "abclass"     "ABCoptim"    "ABCp2"
 ```
 
 Another possibility is checking what packages are installed -- you do it by adding `local = TRUE` parameter.
@@ -84,10 +80,10 @@ Another possibility is checking what packages are installed -- you do it by addi
 ```r
 t <- get_available_packages(local = TRUE)
 head(t, 20)
-#>  [1] "abind"         "ada"           "adabag"        "ade4"          "AmyloGram"    
-#>  [6] "AmyloGraph"    "ape"           "askpass"       "assertthat"    "auprc"        
-#> [11] "backports"     "base64enc"     "base64url"     "BBmisc"        "bench"        
-#> [16] "BH"            "binman"        "Biobase"       "BiocFileCache" "BiocGenerics"
+#>  [1] "abind"            "agricolae"        "aigoracomponents" "aigoraML"         "aigoraOpen"      
+#>  [6] "aigorapack"       "AlgDesign"        "anytime"          "AsioHeaders"      "askpass"         
+#> [11] "assertthat"       "attempt"          "backports"        "base64enc"        "base64url"       
+#> [16] "bayestestR"       "BBmisc"           "bdsmatrix"        "BH"               "bigD"
 ```
 
 Result of this function is cached (for more details, see *Caching* section of this vignette).
@@ -112,15 +108,13 @@ get_description("DALEXtra")
 #> 'DALEXtra' creates 'DALEX' Biecek (2018) <arXiv:1806.08915> explainer for many type of models
 #> including those created using 'python' 'scikit-learn' and 'keras' libraries, and 'java' 'h2o' library.
 #> Important part of the package is Champion-Challenger analysis and innovative approach
-#> to model performance across subsets of test data presented in Funnel Plot.
-#> Third branch of 'DALEXtra' package is aspect importance analysis
-#> that provides instance-level explanations for the groups of explanatory variables. 
+#> to model performance across subsets of test data presented in Funnel Plot. 
 #> Depends: R DALEX 
 #> Imports: reticulate ggplot2 
 #> LinkingTo: 
-#> Suggests: auditor ingredients gbm ggrepel h2o iml lime localModel mlr mlr3 randomForest recipes rmarkdown rpart xgboost testthat tidymodels 
+#> Suggests: auditor gbm ggrepel h2o iml ingredients lime localModel mlr mlr3 ranger recipes rmarkdown rpart stacks xgboost testthat tidymodels 
 #> Enhances: 
-#> Scrap date: 2021-05-09 09:08:34
+#> Scrap date: 2022-06-14 08:08:41
 ```
 
 Again, you can pass `bioc = TRUE` if you want to check for this package in Bioconductor repository. Notice that if package is not found there, it will be searched for on CRAN. The reason behind this type of behaviour is the fact that packages present on Bioconductor are updated more often than on CRAN and not all of them are present here. Option `local = TRUE` for only installed packages is also possible. If a package is not available in a given source, the function will return `NULL` value:
@@ -151,13 +145,13 @@ This package allows you obtaining information on how many times specified packag
 
 ```r
 get_downloads("ggplot2")
-#>                     x
-#> last_day        85630
-#> last_week      600713
-#> last_month    2849787
-#> last_quarter  9340444
-#> last_half    15747252
-#> grand_total  70015383
+#>                      x
+#> last_day         58986
+#> last_week       588212
+#> last_month     2421187
+#> last_quarter   7283366
+#> last_half     15698538
+#> grand_total  106188432
 ```
 
 Results of this function is not cached.
@@ -169,17 +163,19 @@ After parsing description file, you can now create a `data.frame` which will des
 
 ```r
 get_dependencies("ggplot2")
-#>       name   version    type last_day last_week last_month last_quarter last_half grand_total
-#> 1   digest      <NA> Imports    30915    197135     992112      2956521   5077241    43549524
-#> 2     glue      <NA> Imports    62423    302536    1523995      4340958   7557204    42758650
-#> 3   gtable  >= 0.1.1 Imports    21663    129947     651320      2037624   3427430    26841705
-#> 4  isoband      <NA> Imports    24034    152648     756437      2411172   4424548    16086469
-#> 5     MASS      <NA> Imports     3971     28816     140938       428300    804317     9416911
-#> 6     mgcv      <NA> Imports     7109     22872     123990       447953    719669     6933554
-#> 7    rlang >= 0.4.10 Imports    68029    441128    2020967      6509641  12043421    67191569
-#> 8   scales  >= 0.5.0 Imports    24462    149038     737337      2315333   3974440    34077837
-#> 9   tibble      <NA> Imports    46437    293190    1392810      4472978   8274610    51687533
-#> 10   withr  >= 2.0.0 Imports    35740    227038    1098520      3269447   5905686    30766402
+#>         name   version    type last_day last_week last_month last_quarter last_half grand_total
+#> 1        cli      <NA> Imports    37403    540894    2412409      7540831  14636052    65253097
+#> 2       glue      <NA> Imports    23255    299464    1227913      3316178   7392136    64049386
+#> 3     gtable  >= 0.1.1 Imports    12722    162527     681744      1919155   4289100    35736269
+#> 4    isoband      <NA> Imports    13772    178728     755858      2156434   4537600    25733208
+#> 5  lifecycle   > 1.0.1 Imports    33300    474632    2110034      6295444  12314841    57743668
+#> 6       MASS      <NA> Imports     3451     54701     240819       548525   1168085    12322995
+#> 7       mgcv      <NA> Imports     1466     22857      88442       283694    611885     8639283
+#> 8      rlang  >= 1.0.0 Imports    38603    552818    2426430      7234865  15325972    99564579
+#> 9     scales >=\n1.2.0 Imports    19735    262475    1155303      3409107   6550755    46716655
+#> 10    tibble      <NA> Imports    21206    273333    1140332      3203317   7609105    69099588
+#> 11     vctrs  >= 0.5.0 Imports    36066    510423    2300925      6420051  13411712    68644002
+#> 12     withr  >= 2.5.0 Imports    20456    276656    1197213      3456127   6660468    45414397
 ```
 
 As with two previously described functions - `get_available_packages` and `get_description`, here you can also use `bioc = TRUE` or `local = TRUE` and again, in case the package is not available, the result will be `NULL`. Here you have another options to set.
@@ -192,23 +188,23 @@ Another, more important parameter is `dependency_type`. You can specify how deta
 ```r
 get_dependencies("ggplot2", downloads = FALSE, dependency_type = c("Imports", "Suggests", "Enhances"))
 #>             name       version     type
-#> 1         digest          <NA>  Imports
+#> 1            cli          <NA>  Imports
 #> 2           glue          <NA>  Imports
 #> 3         gtable      >= 0.1.1  Imports
 #> 4        isoband          <NA>  Imports
-#> 5           MASS          <NA>  Imports
-#> 6           mgcv          <NA>  Imports
-#> 7          rlang     >= 0.4.10  Imports
-#> 8         scales      >= 0.5.0  Imports
-#> 9         tibble          <NA>  Imports
-#> 10         withr      >= 2.0.0  Imports
-#> 11          covr          <NA> Suggests
-#> 12          ragg          <NA> Suggests
-#> 13         dplyr          <NA> Suggests
-#> 14 ggplot2movies          <NA> Suggests
-#> 15        hexbin          <NA> Suggests
-#> 16         Hmisc          <NA> Suggests
-#> 17        interp          <NA> Suggests
+#> 5      lifecycle       > 1.0.1  Imports
+#> 6           MASS          <NA>  Imports
+#> 7           mgcv          <NA>  Imports
+#> 8          rlang      >= 1.0.0  Imports
+#> 9         scales     >=\n1.2.0  Imports
+#> 10        tibble          <NA>  Imports
+#> 11         vctrs      >= 0.5.0  Imports
+#> 12         withr      >= 2.5.0  Imports
+#> 13          covr          <NA> Suggests
+#> 14         dplyr          <NA> Suggests
+#> 15 ggplot2movies          <NA> Suggests
+#> 16        hexbin          <NA> Suggests
+#> 17         Hmisc          <NA> Suggests
 #> 18         knitr          <NA> Suggests
 #> 19       lattice          <NA> Suggests
 #> 20       mapproj          <NA> Suggests
@@ -219,16 +215,17 @@ get_dependencies("ggplot2", downloads = FALSE, dependency_type = c("Imports", "S
 #> 25          nlme          <NA> Suggests
 #> 26       profvis          <NA> Suggests
 #> 27      quantreg          <NA> Suggests
-#> 28  RColorBrewer          <NA> Suggests
-#> 29         rgeos          <NA> Suggests
-#> 30     rmarkdown          <NA> Suggests
-#> 31         rpart          <NA> Suggests
-#> 32            sf      >= 0.7-3 Suggests
-#> 33       svglite >= 1.2.0.9001 Suggests
-#> 34      testthat      >= 2.1.0 Suggests
-#> 35        vdiffr      >= 1.0.0 Suggests
-#> 36          xml2          <NA> Suggests
-#> 37            sp          <NA> Enhances
+#> 28          ragg          <NA> Suggests
+#> 29  RColorBrewer          <NA> Suggests
+#> 30         rgeos          <NA> Suggests
+#> 31     rmarkdown          <NA> Suggests
+#> 32         rpart          <NA> Suggests
+#> 33            sf     >=\n0.7-3 Suggests
+#> 34       svglite >= 1.2.0.9001 Suggests
+#> 35      testthat      >= 3.1.2 Suggests
+#> 36        vdiffr      >= 1.0.0 Suggests
+#> 37          xml2          <NA> Suggests
+#> 38            sp          <NA> Enhances
 ```
 
 Result of this function is not cached (at least yet).
@@ -242,34 +239,43 @@ Parameters are the same as in `get_dependencies`, but additionally you can speci
 
 ```r
 deepdep("ggplot2", depth = 2)
-#>     origin         name   version    type origin_level dest_level
-#> 1  ggplot2       digest      <NA> Imports            0          1
-#> 2  ggplot2         glue      <NA> Imports            0          1
-#> 3  ggplot2       gtable  >= 0.1.1 Imports            0          1
-#> 4  ggplot2      isoband      <NA> Imports            0          1
-#> 5  ggplot2         MASS      <NA> Imports            0          1
-#> 6  ggplot2         mgcv      <NA> Imports            0          1
-#> 7  ggplot2        rlang >= 0.4.10 Imports            0          1
-#> 8  ggplot2       scales  >= 0.5.0 Imports            0          1
-#> 9  ggplot2       tibble      <NA> Imports            0          1
-#> 10 ggplot2        withr  >= 2.0.0 Imports            0          1
-#> 11    mgcv         nlme >= 3.1-64 Depends            1          2
-#> 12    mgcv       Matrix      <NA> Imports            1          2
-#> 13  scales       farver  >= 2.0.3 Imports            1          2
-#> 14  scales     labeling      <NA> Imports            1          2
-#> 15  scales    lifecycle      <NA> Imports            1          2
-#> 16  scales      munsell    >= 0.5 Imports            1          2
-#> 17  scales           R6      <NA> Imports            1          2
-#> 18  scales RColorBrewer      <NA> Imports            1          2
-#> 19  scales  viridisLite      <NA> Imports            1          2
-#> 20  tibble     ellipsis  >= 0.3.2 Imports            1          2
-#> 21  tibble        fansi  >= 0.4.0 Imports            1          2
-#> 22  tibble    lifecycle  >= 1.0.0 Imports            1          2
-#> 23  tibble     magrittr      <NA> Imports            1          2
-#> 24  tibble       pillar  >= 1.6.2 Imports            1          2
-#> 25  tibble    pkgconfig      <NA> Imports            1          2
-#> 26  tibble        rlang >=\n0.4.3 Imports            1          1
-#> 27  tibble        vctrs  >= 0.3.8 Imports            1          2
+#>       origin         name   version    type origin_level dest_level
+#> 1    ggplot2          cli      <NA> Imports            0          1
+#> 2    ggplot2         glue      <NA> Imports            0          1
+#> 3    ggplot2       gtable  >= 0.1.1 Imports            0          1
+#> 4    ggplot2      isoband      <NA> Imports            0          1
+#> 5    ggplot2    lifecycle   > 1.0.1 Imports            0          1
+#> 6    ggplot2         MASS      <NA> Imports            0          1
+#> 7    ggplot2         mgcv      <NA> Imports            0          1
+#> 8    ggplot2        rlang  >= 1.0.0 Imports            0          1
+#> 9    ggplot2       scales >=\n1.2.0 Imports            0          1
+#> 10   ggplot2       tibble      <NA> Imports            0          1
+#> 11   ggplot2        vctrs  >= 0.5.0 Imports            0          1
+#> 12   ggplot2        withr  >= 2.5.0 Imports            0          1
+#> 13 lifecycle          cli  >= 3.4.0 Imports            1          1
+#> 14 lifecycle         glue      <NA> Imports            1          1
+#> 15 lifecycle        rlang  >= 1.0.6 Imports            1          1
+#> 16      mgcv         nlme >= 3.1-64 Depends            1          2
+#> 17      mgcv       Matrix      <NA> Imports            1          2
+#> 18    scales       farver  >= 2.0.3 Imports            1          2
+#> 19    scales     labeling      <NA> Imports            1          2
+#> 20    scales    lifecycle      <NA> Imports            1          1
+#> 21    scales      munsell    >= 0.5 Imports            1          2
+#> 22    scales           R6      <NA> Imports            1          2
+#> 23    scales RColorBrewer      <NA> Imports            1          2
+#> 24    scales        rlang  >= 1.0.0 Imports            1          1
+#> 25    scales  viridisLite      <NA> Imports            1          2
+#> 26    tibble        fansi  >= 0.4.0 Imports            1          2
+#> 27    tibble    lifecycle  >= 1.0.0 Imports            1          1
+#> 28    tibble     magrittr      <NA> Imports            1          2
+#> 29    tibble       pillar  >= 1.7.0 Imports            1          2
+#> 30    tibble    pkgconfig      <NA> Imports            1          2
+#> 31    tibble        rlang  >= 1.0.2 Imports            1          1
+#> 32    tibble        vctrs  >= 0.3.8 Imports            1          1
+#> 33     vctrs          cli  >= 3.4.0 Imports            1          1
+#> 34     vctrs         glue      <NA> Imports            1          1
+#> 35     vctrs    lifecycle  >= 1.0.3 Imports            1          1
+#> 36     vctrs        rlang  >= 1.0.6 Imports            1          1
 ```
 
 
@@ -289,13 +295,13 @@ dd <- deepdep("tibble", 2)
 plot_dependencies(dd)
 ```
 
-<img src="plot_dependencies1-1.png" title="plot of chunk plot_dependencies1" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
+<img src="plot_dependencies1-1.png" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
 
 ```r
 plot_dependencies("DT", depth = 2, dependency_type = c("Imports", "Depends", "Suggests"))
 ```
 
-<img src="plot_dependencies1-2.png" title="plot of chunk plot_dependencies1" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
+<img src="plot_dependencies1-2.png" alt="plot of chunk plot_dependencies1" style="display: block; margin: auto;" />
 
 
 In each of the plots you can see one package name in the centre and two circles of packages gathered around them. These are dependencies of the first and second level.
@@ -307,7 +313,7 @@ Default plot type is circular, as you can see on the examples presented above. H
 plot_dependencies(dd, type = "tree")
 ```
 
-<img src="plot_dependencies2-1.png" title="plot of chunk plot_dependencies2" alt="plot of chunk plot_dependencies2" style="display: block; margin: auto;" />
+<img src="plot_dependencies2-1.png" alt="plot of chunk plot_dependencies2" style="display: block; margin: auto;" />
 
 Not all dependencies are plotted. To increase readability, dependencies on the same level are hidden, but you can change this behaviour
 
@@ -316,7 +322,7 @@ Not all dependencies are plotted. To increase readability, dependencies on the s
 plot_dependencies(dd, same_level = TRUE)
 ```
 
-<img src="plot_dependencies3-1.png" title="plot of chunk plot_dependencies3" alt="plot of chunk plot_dependencies3" style="display: block; margin: auto;" />
+<img src="plot_dependencies3-1.png" alt="plot of chunk plot_dependencies3" style="display: block; margin: auto;" />
 
 You can also make use of numbers of downloads you obtained. There is an option to add labels to only certain percentage of most downloaded packages among those that are about to be plotted. This is meant to increase readability of the plot.
 
@@ -325,7 +331,7 @@ You can also make use of numbers of downloads you obtained. There is an option t
 plot_dependencies("tidyverse", type = "circular", label_percentage = 0.2, depth = 3)
 ```
 
-<img src="plot_dependencies4-1.png" title="plot of chunk plot_dependencies4" alt="plot of chunk plot_dependencies4" style="display: block; margin: auto;" />
+<img src="plot_dependencies4-1.png" alt="plot of chunk plot_dependencies4" style="display: block; margin: auto;" />
 
 Finally, returned object is a `ggplot` object, so you can easily manipulate them with syntax known from `ggplot2` package. We also use `ggraph` enhancement for plotting graphs.
 
@@ -334,11 +340,11 @@ Finally, returned object is a `ggplot` object, so you can easily manipulate them
 plot_dependencies(dd) +
   ggplot2::scale_fill_manual(values = c("#462CF8", "#F23A90", "#AF1023")) +
   ggraph::scale_edge_color_manual(values = "black")
-#> Scale for 'fill' is already present. Adding another scale for 'fill', which will replace the
-#> existing scale.
+#> Scale for fill is already present.
+#> Adding another scale for fill, which will replace the existing scale.
 ```
 
-<img src="plot_dependencies5-1.png" title="plot of chunk plot_dependencies5" alt="plot of chunk plot_dependencies5" style="display: block; margin: auto;" />
+<img src="plot_dependencies5-1.png" alt="plot of chunk plot_dependencies5" style="display: block; margin: auto;" />
 
 # Caching
 

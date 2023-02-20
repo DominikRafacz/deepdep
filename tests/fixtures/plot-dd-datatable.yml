@@ -14,19 +14,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:05 GMT
+      date: Mon, 20 Feb 2023 09:44:26 GMT
       content-type: application/json
-      content-length: '6300'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"9S3SGXILX2GWLSJDJ7UL209ON"'
+      etag: W/"5HU794Z3XF9NM3ZYOUL3PJ8EB"
       vary: Accept
-      x-couch-request-id: d28abcbe29
+      x-couch-request-id: 291fc2bb46
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=LUPOYCEDdCkU4cMpJ6NyVofZ8%2Bxhht%2BAPsYUBcdnZcyVIVSO65XpIBkTYgQjKcCZ3bfV%2Be1WHkFl9rxNP5J0QwBMXIiR6sMr3UgGEkIWfXCBU8Sz8U6vGfosDR6LDWDDZnGz"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dbcfd163570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"data.table","Version":"1.14.2","Title":"Extension of `data.frame`","Authors@R":"c(\u000aperson(\"Matt\",\"Dowle\",           role=c(\"aut\",\"cre\"),
+      string: '{"Package":"data.table","Version":"1.14.8","Title":"Extension of `data.frame`","Authors@R":"c(\u000aperson(\"Matt\",\"Dowle\",           role=c(\"aut\",\"cre\"),
         email=\"mattjdowle@gmail.com\"),\u000aperson(\"Arun\",\"Srinivasan\",      role=\"aut\",          email=\"asrini@pm.me\"),\u000aperson(\"Jan\",\"Gorecki\",          role=\"ctb\"),\u000aperson(\"Michael\",\"Chirico\",      role=\"ctb\"),\u000aperson(\"Pasha\",\"Stetsenko\",      role=\"ctb\"),\u000aperson(\"Tom\",\"Short\",            role=\"ctb\"),\u000aperson(\"Steve\",\"Lianoglou\",      role=\"ctb\"),\u000aperson(\"Eduard\",\"Antonyan\",      role=\"ctb\"),\u000aperson(\"Markus\",\"Bonsch\",        role=\"ctb\"),\u000aperson(\"Hugh\",\"Parsonage\",       role=\"ctb\"),\u000aperson(\"Scott\",\"Ritchie\",        role=\"ctb\"),\u000aperson(\"Kun\",\"Ren\",              role=\"ctb\"),\u000aperson(\"Xianying\",\"Tan\",         role=\"ctb\"),\u000aperson(\"Rick\",\"Saporta\",         role=\"ctb\"),\u000aperson(\"Otto\",\"Seiskari\",        role=\"ctb\"),\u000aperson(\"Xianghui\",\"Dong\",        role=\"ctb\"),\u000aperson(\"Michel\",\"Lang\",          role=\"ctb\"),\u000aperson(\"Watal\",\"Iwasaki\",        role=\"ctb\"),\u000aperson(\"Seth\",\"Wenchel\",         role=\"ctb\"),\u000aperson(\"Karl\",\"Broman\",          role=\"ctb\"),\u000aperson(\"Tobias\",\"Schmidt\",       role=\"ctb\"),\u000aperson(\"David\",\"Arenburg\",       role=\"ctb\"),\u000aperson(\"Ethan\",\"Smith\",          role=\"ctb\"),\u000aperson(\"Francois\",\"Cocquemas\",   role=\"ctb\"),\u000aperson(\"Matthieu\",\"Gomez\",       role=\"ctb\"),\u000aperson(\"Philippe\",\"Chataignon\",  role=\"ctb\"),\u000aperson(\"Nello\",\"Blaser\",         role=\"ctb\"),\u000aperson(\"Dmitry\",\"Selivanov\",     role=\"ctb\"),\u000aperson(\"Andrey\",\"Riabushenko\",   role=\"ctb\"),\u000aperson(\"Cheng\",\"Lee\",            role=\"ctb\"),\u000aperson(\"Declan\",\"Groves\",        role=\"ctb\"),\u000aperson(\"Daniel\",\"Possenriede\",   role=\"ctb\"),\u000aperson(\"Felipe\",\"Parages\",       role=\"ctb\"),\u000aperson(\"Denes\",\"Toth\",           role=\"ctb\"),\u000aperson(\"Mus\",\"Yaramaz-David\",    role=\"ctb\"),\u000aperson(\"Ayappan\",\"Perumal\",      role=\"ctb\"),\u000aperson(\"James\",\"Sams\",           role=\"ctb\"),\u000aperson(\"Martin\",\"Morgan\",        role=\"ctb\"),\u000aperson(\"Michael\",\"Quinn\",        role=\"ctb\"),\u000aperson(\"@javrucebo\",\"\",          role=\"ctb\"),\u000aperson(\"@marc-outins\",\"\",        role=\"ctb\"),\u000aperson(\"Roy\",\"Storey\",           role=\"ctb\"),\u000aperson(\"Manish\",\"Saraswat\",      role=\"ctb\"),\u000aperson(\"Morgan\",\"Jacob\",         role=\"ctb\"),\u000aperson(\"Michael\",\"Schubmehl\",    role=\"ctb\"),\u000aperson(\"Davis\",\"Vaughan\",        role=\"ctb\"),\u000aperson(\"Toby\",\"Hocking\",         role=\"ctb\"),\u000aperson(\"Leonardo\",\"Silvestri\",   role=\"ctb\"),\u000aperson(\"Tyson\",\"Barrett\",        role=\"ctb\"),\u000aperson(\"Jim\",\"Hester\",           role=\"ctb\"),\u000aperson(\"Anthony\",\"Damico\",       role=\"ctb\"),\u000aperson(\"Sebastian\",\"Freundt\",    role=\"ctb\"),\u000aperson(\"David\",\"Simons\",         role=\"ctb\"),\u000aperson(\"Elliott\",\"Sales
         de Andrade\", role=\"ctb\"),\u000aperson(\"Cole\",\"Miller\",          role=\"ctb\"),\u000aperson(\"Jens
         Peder\",\"Meldgaard\", role=\"ctb\"),\u000aperson(\"Vaclav\",\"Tlapak\",        role=\"ctb\"),\u000aperson(\"Kevin\",\"Ushey\",          role=\"ctb\"),\u000aperson(\"Dirk\",\"Eddelbuettel\",    role=\"ctb\"),\u000aperson(\"Ben\",\"Schwen\",           role=\"ctb\"))","Depends":{"R":">=
@@ -36,8 +42,8 @@ http_interactions:
         of columns by group using no copies at all, list columns, friendly and fast
         character-separated-value read/write. Offers a natural and flexible syntax,
         for faster development.","License":"MPL-2.0 | file LICENSE","URL":"https://r-datatable.com,
-        https://Rdatatable.gitlab.io/data.table,\u000ahttps://github.com/Rdatatable/data.table","BugReports":"https://github.com/Rdatatable/data.table/issues","VignetteBuilder":"knitr","ByteCompile":"TRUE","NeedsCompilation":"yes","Packaged":"2021-09-23
-        03:10:37 UTC; mdowle","Author":"Matt Dowle [aut, cre],\u000aArun Srinivasan
+        https://Rdatatable.gitlab.io/data.table,\u000ahttps://github.com/Rdatatable/data.table","BugReports":"https://github.com/Rdatatable/data.table/issues","VignetteBuilder":"knitr","ByteCompile":"TRUE","NeedsCompilation":"yes","Packaged":"2023-02-16
+        16:37:18 UTC; mdowle","Author":"Matt Dowle [aut, cre],\u000aArun Srinivasan
         [aut],\u000aJan Gorecki [ctb],\u000aMichael Chirico [ctb],\u000aPasha Stetsenko
         [ctb],\u000aTom Short [ctb],\u000aSteve Lianoglou [ctb],\u000aEduard Antonyan
         [ctb],\u000aMarkus Bonsch [ctb],\u000aHugh Parsonage [ctb],\u000aScott Ritchie
@@ -57,10 +63,10 @@ http_interactions:
         [ctb],\u000aSebastian Freundt [ctb],\u000aDavid Simons [ctb],\u000aElliott
         Sales de Andrade [ctb],\u000aCole Miller [ctb],\u000aJens Peder Meldgaard
         [ctb],\u000aVaclav Tlapak [ctb],\u000aKevin Ushey [ctb],\u000aDirk Eddelbuettel
-        [ctb],\u000aBen Schwen [ctb]","Maintainer":"Matt Dowle <mattjdowle@gmail.com>","Repository":"CRAN","Date/Publication":"2021-09-27
-        16:30:02 UTC","crandb_file_date":"2021-09-27 17:50:33","MD5sum":"a9ab8e430b59adab832e5bde0acd66a2","date":"2021-09-27T15:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        [ctb],\u000aBen Schwen [ctb]","Maintainer":"Matt Dowle <mattjdowle@gmail.com>","Repository":"CRAN","Date/Publication":"2023-02-17
+        12:20:12 UTC","crandb_file_date":"2023-02-17 13:15:21","MD5sum":"93972ea1df6dba2c37427d9f0973b113","date":"2023-02-17T11:20:12+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/bit64
@@ -76,17 +82,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:05 GMT
+      date: Mon, 20 Feb 2023 09:44:26 GMT
       content-type: application/json
-      content-length: '1666'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"4R9RJ2RY7FLE1MZSQ0VOGNZYT"'
+      etag: W/"4ID04HOZTR3199MMZ9EQH9GGF"
       vary: Accept
-      x-couch-request-id: fde39a1b41
+      x-couch-request-id: 3bcfa597ed
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=UFmmvs4oXNx7dd4px5ltZ2aLFRA2OMJDC2rHRXiQksMqhZSYKTNlC6PZcZk8qJZ2ABckSlCx5Y3jopMfekAlJDBvZ0EGfQs58v5j93jCPUw3AarZBpCc51kDYwx49WAtKi7y"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dbeff143570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"bit64","Type":"Package","Title":"A S3 Class for Vectors
         of 64bit Integers","Version":"4.0.5","Date":"2020-08-29","Author":"Jens Oehlschlägel
@@ -105,8 +117,8 @@ http_interactions:
         | GPL-3","LazyLoad":"yes","ByteCompile":"yes","URL":"https://github.com/truecluster/bit64","Encoding":"UTF-8","Repository":"CRAN","Repository/R-Forge/Project":"ff","Repository/R-Forge/Revision":"177","Repository/R-Forge/DateTimeStamp":"2018-08-17
         17:45:18","Date/Publication":"2020-08-30 07:20:02 UTC","NeedsCompilation":"yes","Packaged":"2020-08-29
         10:56:45 UTC; jo","crandb_file_date":"2020-08-30 08:02:34","MD5sum":"bdccc76b8505827a6f295181de2b308a","date":"2020-08-30T06:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/bit
@@ -122,20 +134,26 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:06 GMT
+      date: Mon, 20 Feb 2023 09:44:27 GMT
       content-type: application/json
-      content-length: '1185'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"74TY4UAE8J1FS3GUKI1X9G5PR"'
+      etag: W/"COG1JHNKO9THG0C0C5ZWAN5VM"
       vary: Accept
-      x-couch-request-id: d6ff29daa3
+      x-couch-request-id: d9f44d2db2
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=GIIj7kL%2F9gWuGxl1sgzU2NrleuQcH6Qo66%2F%2Baoko5Z5h1bgF%2B0l1fep7FBOcIUZfEUT4LWKLrzA5GQpPpsC%2Bwfng2LYLwUOOLWbFUWTItve7Hrwm%2FO1P7nKm2Rs0FZoHUtQT"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dc0689b3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"bit","Type":"Package","Title":"Classes and Methods for
-        Fast Memory-Efficient Boolean Selections","Version":"4.0.4","Date":"2020-08-03","Author":"Jens
+        Fast Memory-Efficient Boolean Selections","Version":"4.0.5","Date":"2022-11-13","Author":"Jens
         Oehlschlägel [aut, cre], Brian Ripley [ctb]","Maintainer":"Jens Oehlschlägel
         <Jens.Oehlschlaegel@truecluster.com>","Depends":{"R":">= 2.9.2"},"Suggests":{"testthat":">=
         0.11.0","roxygen2":"*","knitr":"*","rmarkdown":"*","microbenchmark":"*","bit64":">=
@@ -144,11 +162,11 @@ http_interactions:
         integer sorting,\u000afast set operations on sorted and unsorted sets of integers,
         and\u000afoundations for ff (range index, compression, chunked processing).","License":"GPL-2
         | GPL-3","LazyLoad":"yes","ByteCompile":"yes","Encoding":"UTF-8","URL":"https://github.com/truecluster/bit","VignetteBuilder":"knitr,
-        rmarkdown","RoxygenNote":"7.1.0.9000","NeedsCompilation":"yes","Packaged":"2020-08-03
-        12:14:34 UTC; jo","Repository":"CRAN","Date/Publication":"2020-08-04 04:20:08
-        UTC","crandb_file_date":"2020-08-04 05:02:30","MD5sum":"241d0a106bdf4a3ce26e1a2551f48409","date":"2020-08-04T03:20:08+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        rmarkdown","RoxygenNote":"7.2.0","NeedsCompilation":"yes","Packaged":"2022-11-13
+        21:22:09 UTC; jo","Repository":"CRAN","Date/Publication":"2022-11-15 21:20:16
+        UTC","crandb_file_date":"2022-11-15 22:44:36","MD5sum":"df4e6215d31058ea2860fadc7a7c80f4","date":"2022-11-15T20:20:16+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/curl
@@ -164,20 +182,26 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:06 GMT
+      date: Mon, 20 Feb 2023 09:44:27 GMT
       content-type: application/json
-      content-length: '2025'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"DSVVZW3ECYPGS4PITI57NO9VK"'
+      etag: W/"9B1WLBY0YYYJ5BQC1V3FL8DBI"
       vary: Accept
-      x-couch-request-id: 47a100ab7e
+      x-couch-request-id: 2c6e71e00b
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=if2Ufu11bg%2FZoyL%2BXYdUZbpnRV9YudC0teEURxwRZ8CvjIib04likppTbUvaAA40u4qpZD9KNeB67haD6m6IWJ%2Buvp2rD3n1hYfH2Oa%2FbvQBIOeCPt1yYZI4qzs%2FdqVfPcd1"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dc23a5c3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"curl","Type":"Package","Title":"A Modern and Flexible Web
-        Client for R","Version":"4.3.2","Authors@R":"c(\u000aperson(\"Jeroen\", \"Ooms\",
+        Client for R","Version":"5.0.0","Authors@R":"c(\u000aperson(\"Jeroen\", \"Ooms\",
         role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\",\u000acomment
         = c(ORCID = \"0000-0002-4035-0289\")),\u000aperson(\"Hadley\", \"Wickham\",
         , \"hadley@rstudio.com\", role = \"ctb\"),\u000aperson(\"RStudio\", role =
@@ -193,12 +217,12 @@ http_interactions:
         libcurl-devel (rpm) or\u000alibcurl4-openssl-dev (deb).","URL":"https://github.com/jeroen/curl
         (devel) https://curl.se/libcurl/\u000a(upstream)","BugReports":"https://github.com/jeroen/curl/issues","Suggests":{"spelling":"*","testthat":">=
         1.0.0","knitr":"*","jsonlite":"*","rmarkdown":"*","magrittr":"*","httpuv":">=
-        1.4.4","webutils":"*"},"VignetteBuilder":"knitr","Depends":{"R":">= 3.0.0"},"RoxygenNote":"7.1.1","Encoding":"UTF-8","Language":"en-US","NeedsCompilation":"yes","Packaged":"2021-06-22
-        11:39:40 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aHadley
-        Wickham [ctb],\u000aRStudio [cph]","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2021-06-23
-        07:00:06 UTC","crandb_file_date":"2021-06-23 08:20:41","MD5sum":"fc65b8a0f730784d6ece4ae8893eae12","date":"2021-06-23T06:00:06+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        1.4.4","webutils":"*"},"VignetteBuilder":"knitr","Depends":{"R":">= 3.0.0"},"RoxygenNote":"7.2.1","Encoding":"UTF-8","Language":"en-US","NeedsCompilation":"yes","Packaged":"2023-01-12
+        13:33:22 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aHadley
+        Wickham [ctb],\u000aRStudio [cph]","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2023-01-12
+        18:10:01 UTC","crandb_file_date":"2023-01-14 10:58:44","MD5sum":"cae7a80c8d94d435b39bee5457f78ab6","date":"2023-01-12T17:10:01+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/R.utils
@@ -214,29 +238,34 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:06 GMT
+      date: Mon, 20 Feb 2023 09:44:27 GMT
       content-type: application/json
-      content-length: '963'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"A78OYG48EJKAITYJRYL41HASK"'
+      etag: W/"4KVTQ6NJFPEN9G5FFBD6N1NRD"
       vary: Accept
-      x-couch-request-id: a03cd612ae
+      x-couch-request-id: 75c1e9ea33
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=0xuHKLg%2FlhvaRfFMGEY2QHDsMBWz%2BbzPyWE30B%2B6MSBQLXbbs4rudCfuCzMMbuFrnh%2FViphl4r4DqXBMPhKv7M2Sk9sw%2BEyxc%2Fs3ZNovbta%2FF7s6%2B9mlcZG5szYyiPpuiNB0"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dc41c523570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"R.utils","Version":"2.11.0","Depends":{"R":">= 2.14.0","R.oo":">=
-        1.24.0"},"Imports":{"methods":"*","utils":"*","tools":"*","R.methodsS3":">=
-        1.8.1"},"Suggests":{"digest":">= 0.6.10"},"Title":"Various Programming Utilities","Authors@R":"c(person(\"Henrik\",
+      string: '{"Package":"R.utils","Version":"2.12.2","Depends":{"R":">= 2.14.0","R.oo":"*"},"Imports":{"methods":"*","utils":"*","tools":"*","R.methodsS3":"*"},"Suggests":{"datasets":"*","digest":">=
+        0.6.10"},"Title":"Various Programming Utilities","Authors@R":"c(person(\"Henrik\",
         \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\u000aemail = \"henrikb@braju.com\"))","Author":"Henrik
         Bengtsson [aut, cre, cph]","Maintainer":"Henrik Bengtsson <henrikb@braju.com>","Description":"Utility
         functions useful when programming and developing R packages.","License":"LGPL
-        (>= 2.1)","LazyLoad":"TRUE","URL":"https://github.com/HenrikBengtsson/R.utils","BugReports":"https://github.com/HenrikBengtsson/R.utils/issues","NeedsCompilation":"no","Packaged":"2021-09-26
-        07:18:48 UTC; hb","Repository":"CRAN","Date/Publication":"2021-09-26 08:30:02
-        UTC","crandb_file_date":"2021-09-26 10:02:33","MD5sum":"9d963157a7ae827fc31336fb1f689aaf","date":"2021-09-26T07:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        (>= 2.1)","LazyLoad":"TRUE","URL":"https://henrikbengtsson.github.io/R.utils/,\u000ahttps://github.com/HenrikBengtsson/R.utils","BugReports":"https://github.com/HenrikBengtsson/R.utils/issues","NeedsCompilation":"no","Packaged":"2022-11-11
+        18:51:45 UTC; hb","Repository":"CRAN","Date/Publication":"2022-11-11 22:00:03
+        UTC","crandb_file_date":"2022-11-11 23:14:43","MD5sum":"05d7545f7cde9ea581f6d60da4339a6a","date":"2022-11-11T21:00:03+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/xts
@@ -252,33 +281,39 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:07 GMT
+      date: Mon, 20 Feb 2023 09:44:27 GMT
       content-type: application/json
-      content-length: '1466'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"3UUUDUBCV7AZK7DH7Y0Y42UVF"'
+      etag: W/"9TJARNOVV9SYQWUQ2KW3NMKF"
       vary: Accept
-      x-couch-request-id: 65efeb286f
+      x-couch-request-id: 024b089945
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=DfX4ihGPtRsoCxIVwsX9Br9ozXL%2BG4HWpY3gd61msSa4OifG3ht3aRKUdKR841u41ic2549lG5OZVbGU2RzMUL1WNBZMdGVYJPFLbl3LPPmy4NQDv%2FBwMisGAzYYsTEq3Rjs"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dc62e593570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"xts","Type":"Package","Title":"eXtensible Time Series","Version":"0.12.1","Authors@R":"c(\u000aperson(given=c(\"Jeffrey\",\"A.\"),
+      string: '{"Package":"xts","Type":"Package","Title":"eXtensible Time Series","Version":"0.12.2","Authors@R":"c(\u000aperson(given=c(\"Jeffrey\",\"A.\"),
         family=\"Ryan\", role=c(\"aut\",\"cph\")),\u000aperson(given=c(\"Joshua\",\"M.\"),
         family=\"Ulrich\", role=c(\"cre\",\"aut\"), email=\"josh.m.ulrich@gmail.com\"),\u000aperson(given=\"Ross\",
         family=\"Bennett\", role=\"ctb\"),\u000aperson(given=\"Corwin\", family=\"Joy\",
-        role=\"ctb\")\u000a)","Depends":{"zoo":">= 1.7-12"},"Imports":{"methods":"*"},"LinkingTo":{"zoo":"*"},"Suggests":{"timeSeries":"*","timeDate":"*","tseries":"*","chron":"*","fts":"*","tis":"*","RUnit":"*"},"LazyLoad":"yes","Description":"Provide
+        role=\"ctb\")\u000a)","Depends":{"zoo":">= 1.7-12"},"Imports":{"methods":"*"},"LinkingTo":{"zoo":"*"},"Suggests":{"timeSeries":"*","timeDate":"*","tseries":"*","chron":"*","tis":"*","RUnit":"*"},"LazyLoad":"yes","Description":"Provide
         for uniform handling of R''s different time-based data classes by extending
         zoo, maximizing native format information preservation and allowing for user
         level customization and extension, while simplifying cross-class interoperability.","License":"GPL
-        (>= 2)","URL":"https://github.com/joshuaulrich/xts","BugReports":"https://github.com/joshuaulrich/xts/issues","NeedsCompilation":"yes","Packaged":"2020-09-09
-        15:35:31 UTC; josh","Author":"Jeffrey A. Ryan [aut, cph],\u000aJoshua M. Ulrich
+        (>= 2)","URL":"https://github.com/joshuaulrich/xts","BugReports":"https://github.com/joshuaulrich/xts/issues","NeedsCompilation":"yes","Packaged":"2022-10-12
+        16:08:19 UTC; josh","Author":"Jeffrey A. Ryan [aut, cph],\u000aJoshua M. Ulrich
         [cre, aut],\u000aRoss Bennett [ctb],\u000aCorwin Joy [ctb]","Maintainer":"Joshua
-        M. Ulrich <josh.m.ulrich@gmail.com>","Repository":"CRAN","Date/Publication":"2020-09-09
-        16:40:03 UTC","crandb_file_date":"2020-09-09 18:32:31","MD5sum":"3f6c769b8839196569c1cd05a33b648d","date":"2020-09-09T15:40:03+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        M. Ulrich <josh.m.ulrich@gmail.com>","Repository":"CRAN","Date/Publication":"2022-10-16
+        00:20:02 UTC","crandb_file_date":"2022-10-16 01:38:42","MD5sum":"df6931a91fa69c9eb9ec5c511a459dd2","date":"2022-10-15T23:20:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/nanotime
@@ -294,32 +329,38 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:07 GMT
+      date: Mon, 20 Feb 2023 09:44:28 GMT
       content-type: application/json
-      content-length: '1296'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"8GWF9LWOD9ZD0XNRW8VCB6ZPD"'
+      etag: W/"ANA855I00E9HKRGTNBSHZ6A1K"
       vary: Accept
-      x-couch-request-id: 69ca4185aa
+      x-couch-request-id: 329f76ad0e
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=5oFGCgYbSmSp3qeZSgslVUIWUP4vJImc24ZOqsH674STp6aEp7kIMist0lzkG8nXrtqiQwGeNmhAMnCHKWGqRMiSbqNxGuL%2BiMwKg2KRjpEaupLvhLfAOsaJmQUbtCxI5%2FAc"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dc8082b3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"nanotime","Type":"Package","Title":"Nanosecond-Resolution
-        Time Support for R","Version":"0.3.5","Date":"2021-12-14","Author":"Dirk Eddelbuettel
+        Time Support for R","Version":"0.3.7","Date":"2022-10-23","Author":"Dirk Eddelbuettel
         and Leonardo Silvestri","Maintainer":"Dirk Eddelbuettel <edd@debian.org>","Description":"Full
         64-bit resolution date and time functionality with\u000ananosecond granularity
         is provided, with easy transition to and from\u000athe standard ''POSIXct''
         type. Three additional classes offer interval,\u000aperiod and duration functionality
         for nanosecond-resolution timestamps.","Imports":{"methods":"*","bit64":"*","RcppCCTZ":">=
         0.2.9","zoo":"*"},"Suggests":{"tinytest":"*","data.table":"*","xts":"*"},"LinkingTo":{"Rcpp":"*","RcppCCTZ":"*","RcppDate":"*"},"License":"GPL
-        (>= 2)","URL":"https://github.com/eddelbuettel/nanotime,\u000ahttps://dirk.eddelbuettel.com/code/nanotime.html","BugReports":"https://github.com/eddelbuettel/nanotime/issues","RoxygenNote":"7.1.2","Collate":"''nanotime.R''
-        ''nanoival.R'' ''nanoduration.R'' ''nanoperiod.R''\u000a''RcppExports.R''","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2021-12-14
-        13:29:33 UTC; edd","Repository":"CRAN","Date/Publication":"2021-12-15 03:50:11
-        UTC","crandb_file_date":"2021-12-15 05:44:22","MD5sum":"d0b98ea17a93ef61e79dc49a816356f8","date":"2021-12-15T02:50:11+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        (>= 2)","URL":"https://github.com/eddelbuettel/nanotime,\u000ahttps://eddelbuettel.github.io/nanotime/,\u000ahttps://dirk.eddelbuettel.com/code/nanotime.html","BugReports":"https://github.com/eddelbuettel/nanotime/issues","RoxygenNote":"7.1.2","Collate":"''nanotime.R''
+        ''nanoival.R'' ''nanoduration.R'' ''nanoperiod.R''\u000a''RcppExports.R''","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2022-10-24
+        00:26:28 UTC; edd","Repository":"CRAN","Date/Publication":"2022-10-24 07:02:51
+        UTC","crandb_file_date":"2022-10-24 08:44:41","MD5sum":"8bbffb130d7c9a2835e9f2e57517b6ca","date":"2022-10-24T06:02:51+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/zoo
@@ -335,19 +376,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:07 GMT
+      date: Mon, 20 Feb 2023 09:44:28 GMT
       content-type: application/json
-      content-length: '2055'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"32IKX80QZZHQT5DCX4OLXQKQK"'
+      etag: W/"25K3GCRHDGEWP8B195D6Q1H7I"
       vary: Accept
-      x-couch-request-id: beeefdb3e8
+      x-couch-request-id: 609091dfd2
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=rYASvEbMbxAu8PSo4xr0DIPmTxUPV6EzUi9HX0isJOGavdrne9fogh3FaSq%2FZ6DTFHrgo9PqWLg49rJw09jGSoqeSf8hlDhgsW8fJofQ83IWT7XcVnawINwGeUMUNVw2vJVh"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dc9fa1c3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"zoo","Version":"1.8-9","Date":"2021-03-06","Title":"S3
+      string: '{"Package":"zoo","Version":"1.8-11","Date":"2022-09-15","Title":"S3
         Infrastructure for Regular and Irregular Time Series (Z''s\u000aOrdered Observations)","Authors@R":"c(person(given
         = \"Achim\", family = \"Zeileis\", role = c(\"aut\", \"cre\"), email = \"Achim.Zeileis@R-project.org\",\u000acomment
         = c(ORCID = \"0000-0003-0918-3766\")),\u000aperson(given = \"Gabor\", family
@@ -359,15 +406,15 @@ http_interactions:
         particularly aimed at irregular time series\u000aof numeric vectors/matrices
         and factors. zoo''s key design goals\u000aare independence of a particular
         index/date/time class and\u000aconsistency with ts and base R by providing
-        methods to extend\u000astandard generics.","Depends":{"R":">= 3.1.0","stats":"*"},"Suggests":{"AER":"*","coda":"*","chron":"*","fts":"*","ggplot2":">=
+        methods to extend\u000astandard generics.","Depends":{"R":">= 3.1.0","stats":"*"},"Suggests":{"AER":"*","coda":"*","chron":"*","ggplot2":">=
         3.0.0","mondate":"*","scales":"*","stinepack":"*","strucchange":"*","timeDate":"*","timeSeries":"*","tis":"*","tseries":"*","xts":"*"},"Imports":{"utils":"*","graphics":"*","grDevices":"*","lattice":">=
-        0.20-27"},"License":"GPL-2 | GPL-3","URL":"https://zoo.R-Forge.R-project.org/","NeedsCompilation":"yes","Packaged":"2021-03-06
-        02:13:38 UTC; zeileis","Author":"Achim Zeileis [aut, cre] (<https://orcid.org/0000-0003-0918-3766>),\u000aGabor
+        0.20-27"},"License":"GPL-2 | GPL-3","URL":"https://zoo.R-Forge.R-project.org/","NeedsCompilation":"yes","Packaged":"2022-09-15
+        15:20:12 UTC; zeileis","Author":"Achim Zeileis [aut, cre] (<https://orcid.org/0000-0003-0918-3766>),\u000aGabor
         Grothendieck [aut],\u000aJeffrey A. Ryan [aut],\u000aJoshua M. Ulrich [ctb],\u000aFelix
-        Andrews [ctb]","Maintainer":"Achim Zeileis <Achim.Zeileis@R-project.org>","Repository":"CRAN","Date/Publication":"2021-03-09
-        16:20:02 UTC","crandb_file_date":"2021-03-09 18:14:39","MD5sum":"0dd205b0da555bb152b9c3898f609d71","date":"2021-03-09T15:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        Andrews [ctb]","Maintainer":"Achim Zeileis <Achim.Zeileis@R-project.org>","Repository":"CRAN","Date/Publication":"2022-09-17
+        19:50:02 UTC","crandb_file_date":"2022-09-17 21:38:47","MD5sum":"d683e8ce8b6baa69867c20e8510c00ee","date":"2022-09-17T18:50:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/yaml
@@ -383,30 +430,37 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:08 GMT
+      date: Mon, 20 Feb 2023 09:44:29 GMT
       content-type: application/json
-      content-length: '971'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"530Q6Q6D1U8GKJNF4NL6MYGVK"'
+      etag: W/"1DVM3S7X59KFNX81J319JMAOS"
       vary: Accept
-      x-couch-request-id: 0ae146f575
+      x-couch-request-id: 67fa157e63
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=3pRXdTHxTyo9i55kmhtCf%2Bkj9TyzR7q71OBqZcFWRyBklOmjiBYNbiD%2FuEy%2FlxuA5j%2FqA7UbI8hgnt4mWiQwI6a%2BKTCthHB56%2FB2EYBQQdAzHjnyRLz0F%2B1DoyTU7KvrDn7S"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dcd2cc73570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"yaml","Type":"Package","Title":"Methods to Convert R Data
-        to YAML and Back","Date":"2020-01-23","Version":"2.2.1","Suggests":{"RUnit":"*"},"Author":"Jeremy
-        Stephens [aut, cre], Kirill Simonov [aut], Yihui Xie [ctb],\u000aZhuoer Dong
-        [ctb], Hadley Wickham [ctb], Jeffrey Horner [ctb], reikoch [ctb],\u000aWill
-        Beasley [ctb], Brendan O''Connor [ctb], Gregory R. Warnes [ctb]","Maintainer":"Jeremy
-        Stephens <jeremy.f.stephens@vumc.org>","License":"BSD_3_clause + file LICENSE","Description":"Implements
-        the ''libyaml'' ''YAML'' 1.1 parser and emitter\u000a(<http://pyyaml.org/wiki/LibYAML>)
-        for R.","URL":"https://github.com/viking/r-yaml/","BugReports":"https://github.com/viking/r-yaml/issues","NeedsCompilation":"yes","Packaged":"2020-01-30
-        20:29:56 UTC; stephej1","Repository":"CRAN","Date/Publication":"2020-02-01
-        05:50:02 UTC","crandb_file_date":"2020-02-01 07:50:27","MD5sum":"ab6c7315d898dbd0848542bcbe5f335b","date":"2020-02-01T04:50:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        to YAML and Back","Date":"2023-01-18","Version":"2.3.7","Suggests":{"RUnit":"*"},"Author":"Shawn
+        P Garbett [aut], Jeremy Stephens [aut, cre], Kirill Simonov [aut], Yihui Xie
+        [ctb],\u000aZhuoer Dong [ctb], Hadley Wickham [ctb], Jeffrey Horner [ctb],
+        reikoch [ctb],\u000aWill Beasley [ctb], Brendan O''Connor [ctb], Gregory R.
+        Warnes [ctb],\u000aMichael Quinn [ctb], Zhian N. Kamvar [ctb]","Maintainer":"Shawn
+        Garbett <shawn.garbett@vumc.org>","License":"BSD_3_clause + file LICENSE","Description":"Implements
+        the ''libyaml'' ''YAML'' 1.1 parser and emitter\u000a(<https://pyyaml.org/wiki/LibYAML>)
+        for R.","URL":"https://github.com/vubiostat/r-yaml/","BugReports":"https://github.com/vubiostat/r-yaml/issues","NeedsCompilation":"yes","Packaged":"2023-01-18
+        17:20:16 UTC; garbetsp","Repository":"CRAN","Date/Publication":"2023-01-23
+        18:40:02 UTC","crandb_file_date":"2023-01-23 20:38:41","MD5sum":"38607c0b966d0b3b6c4f00419d251c8d","date":"2023-01-23T17:40:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/knitr
@@ -422,27 +476,34 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:08 GMT
+      date: Mon, 20 Feb 2023 09:44:29 GMT
       content-type: application/json
-      content-length: '10876'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"6QPCTFQVA9PISB8EQGDEC4XTG"'
+      etag: W/"BWR5S8XVFURNML8JWPUXRXTPT"
       vary: Accept
-      x-couch-request-id: 63aa010faa
+      x-couch-request-id: 772b3c4a78
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=f8nWWaZu8QJ%2Bzes0yEm3V92GdBvnHkGY3ZjBYP6Nvj2Hdb%2BiEhpzBt0NZa4X78EQsdLlKQRibd6w4T2acXrHgRax84XKXFejwJR1r0oXoTc4E0QU5cV0kJZZ%2Fhb1pUPDy9n3"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dce9e503570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"knitr","Type":"Package","Title":"A General-Purpose Package
-        for Dynamic Report Generation in R","Version":"1.37","Authors@R":"c(\u000aperson(\"Yihui\",
+        for Dynamic Report Generation in R","Version":"1.42","Authors@R":"c(\u000aperson(\"Yihui\",
         \"Xie\", role = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment =
         c(ORCID = \"0000-0003-0645-5666\")),\u000aperson(\"Abhraneel\", \"Sarma\",
         role = \"ctb\"),\u000aperson(\"Adam\", \"Vogt\", role = \"ctb\"),\u000aperson(\"Alastair\",
-        \"Andrew\", role = \"ctb\"),\u000aperson(\"Alex\", \"Zvoleff\", role = \"ctb\"),\u000aperson(\"Andre\",
-        \"Simon\", role = \"ctb\", comment = \"the CSS files under inst/themes/ were
-        derived from the Highlight package http://www.andre-simon.de\"),\u000aperson(\"Aron\",
-        \"Atkins\", role = \"ctb\"),\u000aperson(\"Aaron\", \"Wolen\", role = \"ctb\"),\u000aperson(\"Ashley\",
+        \"Andrew\", role = \"ctb\"),\u000aperson(\"Alex\", \"Zvoleff\", role = \"ctb\"),\u000aperson(\"Amar\",
+        \"Al-Zubaidi\", role = \"ctb\"),\u000aperson(\"Andre\", \"Simon\", role =
+        \"ctb\", comment = \"the CSS files under inst/themes/ were derived from the
+        Highlight package http://www.andre-simon.de\"),\u000aperson(\"Aron\", \"Atkins\",
+        role = \"ctb\"),\u000aperson(\"Aaron\", \"Wolen\", role = \"ctb\"),\u000aperson(\"Ashley\",
         \"Manton\", role = \"ctb\"),\u000aperson(\"Atsushi\", \"Yasumoto\", role =
         \"ctb\", comment = c(ORCID = \"0000-0002-8335-495X\")),\u000aperson(\"Ben\",
         \"Baumer\", role = \"ctb\"),\u000aperson(\"Brian\", \"Diggs\", role = \"ctb\"),\u000aperson(\"Brian\",
@@ -462,10 +523,10 @@ http_interactions:
         \"Zhu\", role = \"ctb\"),\u000aperson(\"Heewon\", \"Jeon\", role = \"ctb\"),\u000aperson(\"Henrik\",
         \"Bengtsson\", role = \"ctb\"),\u000aperson(\"Hiroaki\", \"Yutani\", role
         = \"ctb\"),\u000aperson(\"Ian\", \"Lyttle\", role = \"ctb\"),\u000aperson(\"Hodges\",
-        \"Daniel\", role = \"ctb\"),\u000aperson(\"Jake\", \"Burkhead\", role = \"ctb\"),\u000aperson(\"James\",
-        \"Manton\", role = \"ctb\"),\u000aperson(\"Jared\", \"Lander\", role = \"ctb\"),\u000aperson(\"Jason\",
-        \"Punyon\", role = \"ctb\"),\u000aperson(\"Javier\", \"Luraschi\", role =
-        \"ctb\"),\u000aperson(\"Jeff\", \"Arnold\", role = \"ctb\"),\u000aperson(\"Jenny\",
+        \"Daniel\", role = \"ctb\"),\u000aperson(\"Jacob\", \"Bien\", role = \"ctb\"),\u000aperson(\"Jake\",
+        \"Burkhead\", role = \"ctb\"),\u000aperson(\"James\", \"Manton\", role = \"ctb\"),\u000aperson(\"Jared\",
+        \"Lander\", role = \"ctb\"),\u000aperson(\"Jason\", \"Punyon\", role = \"ctb\"),\u000aperson(\"Javier\",
+        \"Luraschi\", role = \"ctb\"),\u000aperson(\"Jeff\", \"Arnold\", role = \"ctb\"),\u000aperson(\"Jenny\",
         \"Bryan\", role = \"ctb\"),\u000aperson(\"Jeremy\", \"Ashkenas\", role = c(\"ctb\",
         \"cph\"), comment = \"the CSS file at inst/misc/docco-classic.css\"),\u000aperson(\"Jeremy\",
         \"Stephens\", role = \"ctb\"),\u000aperson(\"Jim\", \"Hester\", role = \"ctb\"),\u000aperson(\"Joe\",
@@ -488,11 +549,13 @@ http_interactions:
         \"Caballero\", role = \"ctb\"),\u000aperson(\"Nick\", \"Salkowski\", role
         = \"ctb\"),\u000aperson(\"Niels Richard\", \"Hansen\", role = \"ctb\"),\u000aperson(\"Noam\",
         \"Ross\", role = \"ctb\"),\u000aperson(\"Obada\", \"Mahdi\", role = \"ctb\"),\u000aperson(\"Pavel
-        N.\", \"Krivitsky\", role = \"ctb\", comment=c(ORCID = \"0000-0002-9101-3362\")),\u000aperson(\"Qiang\",
-        \"Li\", role = \"ctb\"),\u000aperson(\"Ramnath\", \"Vaidyanathan\", role =
-        \"ctb\"),\u000aperson(\"Richard\", \"Cotton\", role = \"ctb\"),\u000aperson(\"Robert\",
-        \"Krzyzanowski\", role = \"ctb\"),\u000aperson(\"Romain\", \"Francois\", role
-        = \"ctb\"),\u000aperson(\"Ruaridh\", \"Williamson\", role = \"ctb\"),\u000aperson(\"Scott\",
+        N.\", \"Krivitsky\", role = \"ctb\", comment=c(ORCID = \"0000-0002-9101-3362\")),\u000aperson(\"Pedro\",
+        \"Faria\", role = \"ctb\"),\u000aperson(\"Qiang\", \"Li\", role = \"ctb\"),\u000aperson(\"Ramnath\",
+        \"Vaidyanathan\", role = \"ctb\"),\u000aperson(\"Richard\", \"Cotton\", role
+        = \"ctb\"),\u000aperson(\"Robert\", \"Krzyzanowski\", role = \"ctb\"),\u000aperson(\"Rodrigo\",
+        \"Copetti\", role = \"ctb\"),\u000aperson(\"Romain\", \"Francois\", role =
+        \"ctb\"),\u000aperson(\"Ruaridh\", \"Williamson\", role = \"ctb\"),\u000aperson(\"Sagiru\",
+        \"Mati\", role = \"ctb\", comment = c(ORCID = \"0000-0003-1413-3974\")),\u000aperson(\"Scott\",
         \"Kostyshak\", role = \"ctb\"),\u000aperson(\"Sebastian\", \"Meyer\", role
         = \"ctb\"),\u000aperson(\"Sietse\", \"Brouwer\", role = \"ctb\"),\u000aperson(c(\"Simon\",
         \"de\"), \"Bernard\", role = \"ctb\"),\u000aperson(\"Sylvain\", \"Rousseau\",
@@ -502,38 +565,41 @@ http_interactions:
         \"Torsney-Weir\", role = \"ctb\"),\u000aperson(\"Trevor\", \"Davis\", role
         = \"ctb\"),\u000aperson(\"Viktoras\", \"Veitas\", role = \"ctb\"),\u000aperson(\"Weicheng\",
         \"Zhu\", role = \"ctb\"),\u000aperson(\"Wush\", \"Wu\", role = \"ctb\"),\u000aperson(\"Zachary\",
-        \"Foster\", role = \"ctb\")\u000a)","Description":"Provides a general-purpose
-        tool for dynamic report generation in R\u000ausing Literate Programming techniques.","Depends":{"R":">=
-        3.2.3"},"Imports":{"evaluate":">= 0.10","highr":"*","methods":"*","stringr":">=
-        0.6","yaml":">=\u000a2.1.19","xfun":">= 0.27","tools":"*"},"Suggests":{"markdown":"*","formatR":"*","testit":"*","digest":"*","rgl":">=
-        0.95.1201","codetools":"*","rmarkdown":"*","htmlwidgets":">= 0.7","webshot":"*","tikzDevice":">=
-        0.10","tinytex":"*","reticulate":">= 1.4","JuliaCall":">= 0.11.1","magick":"*","png":"*","jpeg":"*","gifski":"*","xml2":">=
-        1.2.0","httr":"*","DBI":">=\u000a0.4-1","showtext":"*","tibble":"*","sass":"*","bslib":"*","ragg":"*","styler":">=
+        \"Foster\", role = \"ctb\"),\u000aperson(\"Zhian N.\", \"Kamvar\", role =
+        \"ctb\", comment = c(ORCID = \"0000-0003-1458-7108\"))\u000a)","Description":"Provides
+        a general-purpose tool for dynamic report generation in R\u000ausing Literate
+        Programming techniques.","Depends":{"R":">= 3.3.0"},"Imports":{"evaluate":">=
+        0.15","highr":"*","methods":"*","yaml":">= 2.1.19","xfun":">=\u000a0.34","tools":"*"},"Suggests":{"markdown":">=
+        1.3","formatR":"*","testit":"*","digest":"*","rgl":">=\u000a0.95.1201","codetools":"*","rmarkdown":"*","htmlwidgets":">=
+        0.7","webshot":"*","tikzDevice":">= 0.10","tinytex":"*","reticulate":">= 1.4","JuliaCall":">=
+        0.11.1","magick":"*","png":"*","jpeg":"*","gifski":"*","xml2":">=\u000a1.2.0","httr":"*","DBI":">=
+        0.4-1","showtext":"*","tibble":"*","sass":"*","bslib":"*","ragg":"*","gridSVG":"*","styler":">=
         1.2.0","targets":">= 0.6.0"},"License":"GPL","URL":"https://yihui.org/knitr/","BugReports":"https://github.com/yihui/knitr/issues","Encoding":"UTF-8","VignetteBuilder":"knitr","SystemRequirements":"Package
         vignettes based on R Markdown v2 or\u000areStructuredText require Pandoc (http://pandoc.org).
-        The\u000afunction rst2pdf() require rst2pdf\u000a(https://github.com/rst2pdf/rst2pdf).","Collate":"''block.R''
+        The\u000afunction rst2pdf() requires rst2pdf\u000a(https://github.com/rst2pdf/rst2pdf).","Collate":"''block.R''
         ''cache.R'' ''utils.R'' ''citation.R'' ''hooks-html.R''\u000a''plot.R'' ''defaults.R''
         ''concordance.R'' ''engine.R'' ''highlight.R''\u000a''themes.R'' ''header.R''
         ''hooks-asciidoc.R'' ''hooks-chunk.R''\u000a''hooks-extra.R'' ''hooks-latex.R''
         ''hooks-md.R'' ''hooks-rst.R''\u000a''hooks-textile.R'' ''hooks.R'' ''output.R''
         ''package.R'' ''pandoc.R''\u000a''params.R'' ''parser.R'' ''pattern.R'' ''rocco.R''
-        ''spin.R'' ''table.R''\u000a''template.R'' ''utils-conversion.R'' ''utils-rd2html.R''\u000a''utils-sweave.R''
-        ''utils-upload.R'' ''utils-vignettes.R'' ''zzz.R''","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-12-16
-        04:57:48 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aAbhraneel
+        ''spin.R'' ''table.R''\u000a''template.R'' ''utils-conversion.R'' ''utils-rd2html.R''\u000a''utils-string.R''
+        ''utils-sweave.R'' ''utils-upload.R''\u000a''utils-vignettes.R'' ''zzz.R''","RoxygenNote":"7.2.3","NeedsCompilation":"no","Packaged":"2023-01-20
+        05:51:44 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aAbhraneel
         Sarma [ctb],\u000aAdam Vogt [ctb],\u000aAlastair Andrew [ctb],\u000aAlex Zvoleff
-        [ctb],\u000aAndre Simon [ctb] (the CSS files under inst/themes/ were derived
-        from\u000athe Highlight package http://www.andre-simon.de),\u000aAron Atkins
-        [ctb],\u000aAaron Wolen [ctb],\u000aAshley Manton [ctb],\u000aAtsushi Yasumoto
-        [ctb] (<https://orcid.org/0000-0002-8335-495X>),\u000aBen Baumer [ctb],\u000aBrian
-        Diggs [ctb],\u000aBrian Zhang [ctb],\u000aBulat Yapparov [ctb],\u000aCassio
-        Pereira [ctb],\u000aChristophe Dervieux [ctb],\u000aDavid Hall [ctb],\u000aDavid
-        Hugh-Jones [ctb],\u000aDavid Robinson [ctb],\u000aDoug Hemken [ctb],\u000aDuncan
-        Murdoch [ctb],\u000aElio Campitelli [ctb],\u000aEllis Hughes [ctb],\u000aEmily
-        Riederer [ctb],\u000aFabian Hirschmann [ctb],\u000aFitch Simeon [ctb],\u000aForest
-        Fang [ctb],\u000aFrank E Harrell Jr [ctb] (the Sweavel package at inst/misc/Sweavel.sty),\u000aGarrick
-        Aden-Buie [ctb],\u000aGregoire Detrez [ctb],\u000aHadley Wickham [ctb],\u000aHao
-        Zhu [ctb],\u000aHeewon Jeon [ctb],\u000aHenrik Bengtsson [ctb],\u000aHiroaki
-        Yutani [ctb],\u000aIan Lyttle [ctb],\u000aHodges Daniel [ctb],\u000aJake Burkhead
+        [ctb],\u000aAmar Al-Zubaidi [ctb],\u000aAndre Simon [ctb] (the CSS files under
+        inst/themes/ were derived from\u000athe Highlight package http://www.andre-simon.de),\u000aAron
+        Atkins [ctb],\u000aAaron Wolen [ctb],\u000aAshley Manton [ctb],\u000aAtsushi
+        Yasumoto [ctb] (<https://orcid.org/0000-0002-8335-495X>),\u000aBen Baumer
+        [ctb],\u000aBrian Diggs [ctb],\u000aBrian Zhang [ctb],\u000aBulat Yapparov
+        [ctb],\u000aCassio Pereira [ctb],\u000aChristophe Dervieux [ctb],\u000aDavid
+        Hall [ctb],\u000aDavid Hugh-Jones [ctb],\u000aDavid Robinson [ctb],\u000aDoug
+        Hemken [ctb],\u000aDuncan Murdoch [ctb],\u000aElio Campitelli [ctb],\u000aEllis
+        Hughes [ctb],\u000aEmily Riederer [ctb],\u000aFabian Hirschmann [ctb],\u000aFitch
+        Simeon [ctb],\u000aForest Fang [ctb],\u000aFrank E Harrell Jr [ctb] (the Sweavel
+        package at inst/misc/Sweavel.sty),\u000aGarrick Aden-Buie [ctb],\u000aGregoire
+        Detrez [ctb],\u000aHadley Wickham [ctb],\u000aHao Zhu [ctb],\u000aHeewon Jeon
+        [ctb],\u000aHenrik Bengtsson [ctb],\u000aHiroaki Yutani [ctb],\u000aIan Lyttle
+        [ctb],\u000aHodges Daniel [ctb],\u000aJacob Bien [ctb],\u000aJake Burkhead
         [ctb],\u000aJames Manton [ctb],\u000aJared Lander [ctb],\u000aJason Punyon
         [ctb],\u000aJavier Luraschi [ctb],\u000aJeff Arnold [ctb],\u000aJenny Bryan
         [ctb],\u000aJeremy Ashkenas [ctb, cph] (the CSS file at\u000ainst/misc/docco-classic.css),\u000aJeremy
@@ -547,18 +613,20 @@ http_interactions:
         Modrák [ctb],\u000aMichael Chirico [ctb],\u000aMichael Friendly [ctb],\u000aMichal
         Bojanowski [ctb],\u000aMichel Kuhlmann [ctb],\u000aMiller Patrick [ctb],\u000aNacho
         Caballero [ctb],\u000aNick Salkowski [ctb],\u000aNiels Richard Hansen [ctb],\u000aNoam
-        Ross [ctb],\u000aObada Mahdi [ctb],\u000aPavel N. Krivitsky [ctb] (<https://orcid.org/0000-0002-9101-3362>),\u000aQiang
-        Li [ctb],\u000aRamnath Vaidyanathan [ctb],\u000aRichard Cotton [ctb],\u000aRobert
-        Krzyzanowski [ctb],\u000aRomain Francois [ctb],\u000aRuaridh Williamson [ctb],\u000aScott
+        Ross [ctb],\u000aObada Mahdi [ctb],\u000aPavel N. Krivitsky [ctb] (<https://orcid.org/0000-0002-9101-3362>),\u000aPedro
+        Faria [ctb],\u000aQiang Li [ctb],\u000aRamnath Vaidyanathan [ctb],\u000aRichard
+        Cotton [ctb],\u000aRobert Krzyzanowski [ctb],\u000aRodrigo Copetti [ctb],\u000aRomain
+        Francois [ctb],\u000aRuaridh Williamson [ctb],\u000aSagiru Mati [ctb] (<https://orcid.org/0000-0003-1413-3974>),\u000aScott
         Kostyshak [ctb],\u000aSebastian Meyer [ctb],\u000aSietse Brouwer [ctb],\u000aSimon
         de Bernard [ctb],\u000aSylvain Rousseau [ctb],\u000aTaiyun Wei [ctb],\u000aThibaut
         Assus [ctb],\u000aThibaut Lamadon [ctb],\u000aThomas Leeper [ctb],\u000aTim
         Mastny [ctb],\u000aTom Torsney-Weir [ctb],\u000aTrevor Davis [ctb],\u000aViktoras
         Veitas [ctb],\u000aWeicheng Zhu [ctb],\u000aWush Wu [ctb],\u000aZachary Foster
-        [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2021-12-16
-        18:00:02 UTC","crandb_file_date":"2021-12-16 19:20:24","MD5sum":"28ea89bf739a0ce53925f91050cad936","date":"2021-12-16T17:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        [ctb],\u000aZhian N. Kamvar [ctb] (<https://orcid.org/0000-0003-1458-7108>)","Maintainer":"Yihui
+        Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2023-01-25 10:20:08
+        UTC","crandb_file_date":"2023-01-25 11:03:11","MD5sum":"26beb465af3da73e153a5314c10bbced","date":"2023-01-25T09:20:08+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/rmarkdown
@@ -574,78 +642,82 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:09 GMT
+      date: Mon, 20 Feb 2023 09:44:30 GMT
       content-type: application/json
-      content-length: '7559'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"6K7V0OQ4R6ZKOEMQ5AFXGGR69"'
+      etag: W/"AY4LPYUUNDSZGBQCM72JAKZKE"
       vary: Accept
-      x-couch-request-id: 875ead3cc7
+      x-couch-request-id: 36e4e81b6f
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=0Ev2BEwBGmXw7AAUxR4TLhkYb3BXqegjkRTzJmq5UKEtC8hW2SxBL3NKe3wKlAviTx%2FITUcEOt9aNirjVNKOJJaGciRv06NYhZOrfFGpPb7f%2FiLrVQezqeuqQ%2FzEQxz6zI%2Fv"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dd2ea763570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"rmarkdown","Type":"Package","Title":"Dynamic Documents
-        for R","Version":"2.11","Authors@R":"c(\u000aperson(\"JJ\", \"Allaire\", role
-        = \"aut\", email = \"jj@rstudio.com\"),\u000aperson(\"Yihui\", \"Xie\", role
-        = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment = c(ORCID = \"0000-0003-0645-5666\")),\u000aperson(\"Jonathan\",
-        \"McPherson\", role = \"aut\", email = \"jonathan@rstudio.com\"),\u000aperson(\"Javier\",
-        \"Luraschi\", role = \"aut\", email = \"javier@rstudio.com\"),\u000aperson(\"Kevin\",
-        \"Ushey\", role = \"aut\", email = \"kevin@rstudio.com\"),\u000aperson(\"Aron\",
-        \"Atkins\", role = \"aut\", email = \"aron@rstudio.com\"),\u000aperson(\"Hadley\",
-        \"Wickham\", role = \"aut\", email = \"hadley@rstudio.com\"),\u000aperson(\"Joe\",
-        \"Cheng\", role = \"aut\", email = \"joe@rstudio.com\"),\u000aperson(\"Winston\",
-        \"Chang\", role = \"aut\", email = \"winston@rstudio.com\"),\u000aperson(\"Richard\",
-        \"Iannone\", role = \"aut\", email = \"rich@rstudio.com\", comment = c(ORCID
-        = \"0000-0003-3925-190X\")),\u000a#\u000a# Contributors, ordered alphabetically
-        by first name\u000aperson(\"Andrew\", \"Dunning\", role = \"ctb\", comment
-        = c(ORCID = \"0000-0003-0464-5036\")),\u000aperson(\"Atsushi\", \"Yasumoto\",
-        role = c(\"ctb\", \"cph\"),\u000acomment = c(ORCID = \"0000-0002-8335-495X\",\u000acph
-        = \"Number sections Lua filter\")),\u000aperson(\"Barret\", \"Schloerke\",
+      string: '{"Type":"Package","Package":"rmarkdown","Title":"Dynamic Documents
+        for R","Version":"2.20","Authors@R":"c(\u000aperson(\"JJ\", \"Allaire\", ,
+        \"jj@rstudio.com\", role = \"aut\"),\u000aperson(\"Yihui\", \"Xie\", , \"xie@yihui.name\",
+        role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0003-0645-5666\")),\u000aperson(\"Jonathan\",
+        \"McPherson\", , \"jonathan@rstudio.com\", role = \"aut\"),\u000aperson(\"Javier\",
+        \"Luraschi\", , \"javier@rstudio.com\", role = \"aut\"),\u000aperson(\"Kevin\",
+        \"Ushey\", , \"kevin@rstudio.com\", role = \"aut\"),\u000aperson(\"Aron\",
+        \"Atkins\", , \"aron@rstudio.com\", role = \"aut\"),\u000aperson(\"Hadley\",
+        \"Wickham\", , \"hadley@rstudio.com\", role = \"aut\"),\u000aperson(\"Joe\",
+        \"Cheng\", , \"joe@rstudio.com\", role = \"aut\"),\u000aperson(\"Winston\",
+        \"Chang\", , \"winston@rstudio.com\", role = \"aut\"),\u000aperson(\"Richard\",
+        \"Iannone\", , \"rich@rstudio.com\", role = \"aut\", comment = c(ORCID = \"0000-0003-3925-190X\")),\u000aperson(\"Andrew\",
+        \"Dunning\", role = \"ctb\", comment = c(ORCID = \"0000-0003-0464-5036\")),\u000aperson(\"Atsushi\",
+        \"Yasumoto\", role = c(\"ctb\", \"cph\"), comment = c(ORCID = \"0000-0002-8335-495X\",
+        cph = \"Number sections Lua filter\")),\u000aperson(\"Barret\", \"Schloerke\",
         role = \"ctb\"),\u000aperson(\"Carson\", \"Sievert\", role = \"ctb\", comment
         = c(ORCID = \"0000-0002-4958-2844\")),\u000aperson(\"Christophe\", \"Dervieux\",
-        role = \"ctb\"),\u000aperson(\"Devon\", \"Ryan\", role = \"ctb\", email =
-        \"dpryan79@gmail.com\", comment = c(ORCID = \"0000-0002-8549-0971\")),\u000aperson(\"Frederik\",
-        \"Aust\", role = \"ctb\", email = \"frederik.aust@uni-koeln.de\", comment
-        = c(ORCID = \"0000-0003-4900-788X\")),\u000aperson(\"Jeff\", \"Allen\", role
-        = \"ctb\", email = \"jeff@rstudio.com\"),\u000aperson(\"JooYoung\", \"Seo\",
-        role=\"ctb\", comment = c(ORCID = \"0000-0002-4064-6012\")),\u000aperson(\"Malcolm\",
-        \"Barrett\", role = \"ctb\"),\u000aperson(\"Rob\", \"Hyndman\", role = \"ctb\",
-        email = \"Rob.Hyndman@monash.edu\"),\u000aperson(\"Romain\", \"Lesur\", role
-        = \"ctb\"),\u000aperson(\"Roy\", \"Storey\", role = \"ctb\"),\u000aperson(\"Ruben\",
-        \"Arslan\", role = \"ctb\", email = \"ruben.arslan@uni-goettingen.de\"),\u000aperson(\"Sergio\",
-        \"Oller\", role = \"ctb\"),\u000a#\u000a# Copyright holders\u000aperson(family
-        = \"RStudio, PBC\", role = \"cph\"),\u000aperson(family = \"jQuery UI contributors\",
-        role = c(\"ctb\", \"cph\"),\u000acomment = \"jQuery UI library; authors listed
+        role = \"ctb\"),\u000aperson(\"Devon\", \"Ryan\", , \"dpryan79@gmail.com\",
+        role = \"ctb\", comment = c(ORCID = \"0000-0002-8549-0971\")),\u000aperson(\"Frederik\",
+        \"Aust\", , \"frederik.aust@uni-koeln.de\", role = \"ctb\", comment = c(ORCID
+        = \"0000-0003-4900-788X\")),\u000aperson(\"Jeff\", \"Allen\", , \"jeff@rstudio.com\",
+        role = \"ctb\"),\u000aperson(\"JooYoung\", \"Seo\", role = \"ctb\", comment
+        = c(ORCID = \"0000-0002-4064-6012\")),\u000aperson(\"Malcolm\", \"Barrett\",
+        role = \"ctb\"),\u000aperson(\"Rob\", \"Hyndman\", , \"Rob.Hyndman@monash.edu\",
+        role = \"ctb\"),\u000aperson(\"Romain\", \"Lesur\", role = \"ctb\"),\u000aperson(\"Roy\",
+        \"Storey\", role = \"ctb\"),\u000aperson(\"Ruben\", \"Arslan\", , \"ruben.arslan@uni-goettingen.de\",
+        role = \"ctb\"),\u000aperson(\"Sergio\", \"Oller\", role = \"ctb\"),\u000aperson(,
+        \"RStudio, PBC\", role = \"cph\"),\u000aperson(, \"jQuery UI contributors\",
+        role = c(\"ctb\", \"cph\"), comment = \"jQuery UI library; authors listed
         in inst/rmd/h/jqueryui-AUTHORS.txt\"),\u000aperson(\"Mark\", \"Otto\", role
-        = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(\"Jacob\", \"Thornton\",
-        role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(family
-        = \"Bootstrap contributors\", role = \"ctb\",\u000acomment = \"Bootstrap library\"),\u000aperson(family
-        = \"Twitter, Inc\", role = \"cph\",\u000acomment = \"Bootstrap library\"),\u000aperson(\"Alexander\",
-        \"Farkas\", role = c(\"ctb\", \"cph\"),\u000acomment = \"html5shiv library\"),\u000aperson(\"Scott\",
-        \"Jehl\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Respond.js library\"),\u000aperson(\"Ivan\",
-        \"Sagalaev\", role = c(\"ctb\", \"cph\"),\u000acomment = \"highlight.js library\"),\u000aperson(\"Greg\",
-        \"Franko\", role = c(\"ctb\", \"cph\"),\u000acomment = \"tocify library\"),\u000aperson(\"John\",
-        \"MacFarlane\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Pandoc templates\"),\u000aperson(family
-        = \"Google, Inc.\", role = c(\"ctb\", \"cph\"),\u000acomment = \"ioslides
-        library\"),\u000aperson(\"Dave\", \"Raggett\", role = \"ctb\",\u000acomment
-        = \"slidy library\"),\u000aperson(family = \"W3C\", role = \"cph\",\u000acomment
-        = \"slidy library\"),\u000aperson(\"Dave\", \"Gandy\", role = c(\"ctb\", \"cph\"),\u000acomment
-        = \"Font-Awesome\"),\u000aperson(\"Ben\", \"Sperry\", role = \"ctb\",\u000acomment
-        = \"Ionicons\"),\u000aperson(family = \"Drifty\", role = \"cph\",\u000acomment
-        = \"Ionicons\"),\u000aperson(\"Aidan\", \"Lister\", role = c(\"ctb\", \"cph\"),\u000acomment
-        = \"jQuery StickyTabs\"),\u000aperson(\"Benct Philip\", \"Jonsson\", role
-        = c(\"ctb\", \"cph\"),\u000acomment = \"pagebreak Lua filter\"),\u000aperson(\"Albert\",
-        \"Krewinkel\", role = c(\"ctb\", \"cph\"),\u000acomment = \"pagebreak Lua
-        filter\")\u000a)","Maintainer":"Yihui Xie <xie@yihui.name>","Description":"Convert
-        R Markdown documents into a variety of formats.","Depends":{"R":">= 3.0"},"Imports":{"tools":"*","utils":"*","knitr":">=
-        1.22","yaml":">= 2.1.19","htmltools":">=\u000a0.3.5","evaluate":">= 0.13","jsonlite":"*","tinytex":">=
-        0.31","xfun":">= 0.21","jquerylib":"*","methods":"*","stringr":">= 1.2.0"},"Suggests":{"shiny":">=
-        1.6.0","tufte":"*","testthat":">= 3.0.0","digest":"*","dygraphs":"*","vctrs":"*","tibble":"*","fs":"*","rsconnect":"*","withr":">=
-        2.4.2","bslib":">= 0.2.5.1","sass":">= 0.4.0"},"SystemRequirements":"pandoc
-        (>= 1.14) - http://pandoc.org","URL":"https://github.com/rstudio/rmarkdown,\u000ahttps://pkgs.rstudio.com/rmarkdown/","BugReports":"https://github.com/rstudio/rmarkdown/issues","License":"GPL-3","RoxygenNote":"7.1.2","Encoding":"UTF-8","VignetteBuilder":"knitr","NeedsCompilation":"no","Packaged":"2021-09-14
-        13:25:46 UTC; yihui","Author":"JJ Allaire [aut],\u000aYihui Xie [aut, cre]
+        = \"ctb\", comment = \"Bootstrap library\"),\u000aperson(\"Jacob\", \"Thornton\",
+        role = \"ctb\", comment = \"Bootstrap library\"),\u000aperson(, \"Bootstrap
+        contributors\", role = \"ctb\", comment = \"Bootstrap library\"),\u000aperson(,
+        \"Twitter, Inc\", role = \"cph\", comment = \"Bootstrap library\"),\u000aperson(\"Alexander\",
+        \"Farkas\", role = c(\"ctb\", \"cph\"), comment = \"html5shiv library\"),\u000aperson(\"Scott\",
+        \"Jehl\", role = c(\"ctb\", \"cph\"), comment = \"Respond.js library\"),\u000aperson(\"Ivan\",
+        \"Sagalaev\", role = c(\"ctb\", \"cph\"), comment = \"highlight.js library\"),\u000aperson(\"Greg\",
+        \"Franko\", role = c(\"ctb\", \"cph\"), comment = \"tocify library\"),\u000aperson(\"John\",
+        \"MacFarlane\", role = c(\"ctb\", \"cph\"), comment = \"Pandoc templates\"),\u000aperson(,
+        \"Google, Inc.\", role = c(\"ctb\", \"cph\"), comment = \"ioslides library\"),\u000aperson(\"Dave\",
+        \"Raggett\", role = \"ctb\", comment = \"slidy library\"),\u000aperson(, \"W3C\",
+        role = \"cph\", comment = \"slidy library\"),\u000aperson(\"Dave\", \"Gandy\",
+        role = c(\"ctb\", \"cph\"), comment = \"Font-Awesome\"),\u000aperson(\"Ben\",
+        \"Sperry\", role = \"ctb\", comment = \"Ionicons\"),\u000aperson(, \"Drifty\",
+        role = \"cph\", comment = \"Ionicons\"),\u000aperson(\"Aidan\", \"Lister\",
+        role = c(\"ctb\", \"cph\"), comment = \"jQuery StickyTabs\"),\u000aperson(\"Benct
+        Philip\", \"Jonsson\", role = c(\"ctb\", \"cph\"), comment = \"pagebreak Lua
+        filter\"),\u000aperson(\"Albert\", \"Krewinkel\", role = c(\"ctb\", \"cph\"),
+        comment = \"pagebreak Lua filter\")\u000a)","Maintainer":"Yihui Xie <xie@yihui.name>","Description":"Convert
+        R Markdown documents into a variety of formats.","License":"GPL-3","URL":"https://github.com/rstudio/rmarkdown,\u000ahttps://pkgs.rstudio.com/rmarkdown/","BugReports":"https://github.com/rstudio/rmarkdown/issues","Depends":{"R":">=
+        3.0"},"Imports":{"bslib":">= 0.2.5.1","evaluate":">= 0.13","htmltools":">=
+        0.5.1","jquerylib":"*","jsonlite":"*","knitr":">= 1.22","methods":"*","stringr":">=\u000a1.2.0","tinytex":">=
+        0.31","tools":"*","utils":"*","xfun":">= 0.36","yaml":">= 2.1.19"},"Suggests":{"digest":"*","dygraphs":"*","fs":"*","rsconnect":"*","downlit":">=
+        0.4.0","katex":">= 1.4.0","sass":">= 0.4.0","shiny":">= 1.6.0","testthat":">=\u000a3.0.3","tibble":"*","vctrs":"*","withr":">=
+        2.4.2"},"VignetteBuilder":"knitr","Config/Needs/website":"rstudio/quillt,
+        pkgdown","Encoding":"UTF-8","RoxygenNote":"7.2.3","SystemRequirements":"pandoc
+        (>= 1.14) - http://pandoc.org","NeedsCompilation":"no","Packaged":"2023-01-18
+        22:43:58 UTC; yihui","Author":"JJ Allaire [aut],\u000aYihui Xie [aut, cre]
         (<https://orcid.org/0000-0003-0645-5666>),\u000aJonathan McPherson [aut],\u000aJavier
         Luraschi [aut],\u000aKevin Ushey [aut],\u000aAron Atkins [aut],\u000aHadley
         Wickham [aut],\u000aJoe Cheng [aut],\u000aWinston Chang [aut],\u000aRichard
@@ -669,7 +741,7 @@ http_interactions:
         [ctb, cph] (Font-Awesome),\u000aBen Sperry [ctb] (Ionicons),\u000aDrifty [cph]
         (Ionicons),\u000aAidan Lister [ctb, cph] (jQuery StickyTabs),\u000aBenct Philip
         Jonsson [ctb, cph] (pagebreak Lua filter),\u000aAlbert Krewinkel [ctb, cph]
-        (pagebreak Lua filter)","Repository":"CRAN","Date/Publication":"2021-09-14
-        14:10:02 UTC","crandb_file_date":"2021-09-14 16:38:36","MD5sum":"21b076c2a4ae224c0be720a980a2b9f7","date":"2021-09-14T13:10:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:31 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        (pagebreak Lua filter)","Repository":"CRAN","Date/Publication":"2023-01-19
+        23:20:02 UTC","crandb_file_date":"2023-01-20 00:32:50","MD5sum":"ae67e12424b15f342c5c8d48694db82e\u000a","date":"2023-01-19T22:20:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:30 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2

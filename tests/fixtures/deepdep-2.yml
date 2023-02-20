@@ -14,19 +14,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:30 GMT
+      date: Mon, 20 Feb 2023 09:44:02 GMT
       content-type: application/json
-      content-length: '1832'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"41SAAZE9GL5PH2PZK3CO8R69Y"'
+      etag: W/"8M5BHOYFM4TSUL788BQRWYN0S"
       vary: Accept
-      x-couch-request-id: 343c5d6cd5
+      x-couch-request-id: 139565d00f
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=GJieOZriPexQwkurD3H0Z3LdxP55O%2B9MJ2xwTmpqWWpk4Sgz5qUXxAPEKBSLEdtKczUwdYsAwXSp9e0RUuJYRS6yomtHp3ktWZZ27siuBQ7Iz6MRrSPGIpvXN%2BTqigAK%2F9oy"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d27d8ac3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"rlang","Version":"0.4.12","Title":"Functions for Base Types
+      string: '{"Package":"rlang","Version":"1.0.6","Title":"Functions for Base Types
         and Core R and ''Tidyverse'' Features","Description":"A toolbox for working
         with base types, core R features\u000alike the condition system, and core
         ''Tidyverse'' features like tidy\u000aevaluation.","Authors@R":"c(\u000aperson(\"Lionel\",
@@ -35,14 +41,16 @@ http_interactions:
         = \"mikefc@coolbutuseless.com\",\u000arole = \"cph\",\u000acomment = \"Hash
         implementation based on Mike''s xxhashlite\"),\u000aperson(given = \"Yann\",\u000afamily
         = \"Collet\",\u000arole = \"cph\",\u000acomment = \"Author of the embedded
-        xxHash library\"),\u000aperson(\"RStudio\", role = \"cph\")\u000a)","License":"MIT
-        + file LICENSE","ByteCompile":"true","Biarch":"true","Depends":{"R":">= 3.3.0"},"Imports":{"utils":"*"},"Suggests":{"cli":"*","covr":"*","crayon":"*","glue":"*","magrittr":"*","methods":"*","pak":"*","pillar":"*","rmarkdown":"*","testthat":">=
-        3.0.0","vctrs":">= 0.2.3","withr":"*"},"Enhances":{"winch":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.1","URL":"https://rlang.r-lib.org,
-        https://github.com/r-lib/rlang","BugReports":"https://github.com/r-lib/rlang/issues","Config/testthat/edition":"3","NeedsCompilation":"yes","Packaged":"2021-10-18
-        07:25:49 UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham
-        [aut],\u000amikefc [cph] (Hash implementation based on Mike''s xxhashlite),\u000aYann
-        Collet [cph] (Author of the embedded xxHash library),\u000aRStudio [cph]","Maintainer":"Lionel
-        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-18
-        23:00:02 UTC","crandb_file_date":"2021-10-19 00:14:38","MD5sum":"08b32904d41f5fcb5d33188f0004f91b","date":"2021-10-18T22:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:16:51 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        xxHash library\"),\u000aperson(given = \"RStudio\", role = c(\"cph\", \"fnd\"))\u000a)","License":"MIT
+        + file LICENSE","ByteCompile":"true","Biarch":"true","Depends":{"R":">= 3.4.0"},"Imports":{"utils":"*"},"Suggests":{"cli":">=
+        3.1.0","covr":"*","crayon":"*","fs":"*","glue":"*","knitr":"*","magrittr":"*","methods":"*","pillar":"*","rmarkdown":"*","stats":"*","testthat":">=
+        3.0.0","tibble":"*","usethis":"*","vctrs":">= 0.2.3","withr":"*"},"Enhances":{"winch":"*"},"SystemRequirements":"C++11","Encoding":"UTF-8","RoxygenNote":"7.2.1.9000","URL":"https://rlang.r-lib.org,
+        https://github.com/r-lib/rlang","BugReports":"https://github.com/r-lib/rlang/issues","Config/testthat/edition":"3","Config/Needs/website":"dplyr,
+        tidyverse/tidytemplate","NeedsCompilation":"yes","Packaged":"2022-09-23 16:12:48
+        UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham [aut],\u000amikefc
+        [cph] (Hash implementation based on Mike''s xxhashlite),\u000aYann Collet
+        [cph] (Author of the embedded xxHash library),\u000aRStudio [cph, fnd]","Maintainer":"Lionel
+        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-09-24
+        05:40:02 UTC","crandb_file_date":"2022-09-24 06:56:45","MD5sum":"907bc04039194b0c7edc19e9084b14fc","date":"2022-09-24T04:40:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:02 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2

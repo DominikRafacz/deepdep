@@ -14,20 +14,26 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:54 GMT
+      date: Mon, 20 Feb 2023 09:44:18 GMT
       content-type: application/json
-      content-length: '8758'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"4Y20K96SKFCZU2MZUGFVKGNPS"'
+      etag: W/"CIPIDURVS3SP5A3233KBYAY79"
       vary: Accept
-      x-couch-request-id: 78bb30d817
+      x-couch-request-id: 403b7e3479
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=bUgLiwkp9aycuFkeJXmOG27RMpgfTINcJADlDyd774yz8xxl0v%2FAjyP20QFQZL8byWSrLGRhTnqfMalLVCeTS1ErbS%2FLOLcGWYrhfU4MTZww3jzkvsPtbPPKlHAbNy%2Fcu21F"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d8bfead3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"shiny","Type":"Package","Title":"Web Application Framework
-        for R","Version":"1.7.1","Authors@R":"c(\u000aperson(\"Winston\", \"Chang\",
+        for R","Version":"1.7.4","Authors@R":"c(\u000aperson(\"Winston\", \"Chang\",
         role = c(\"aut\", \"cre\"), email = \"winston@rstudio.com\", comment = c(ORCID
         = \"0000-0002-1576-2126\")),\u000aperson(\"Joe\", \"Cheng\", role = \"aut\",
         email = \"joe@rstudio.com\"),\u000aperson(\"JJ\", \"Allaire\", role = \"aut\",
@@ -77,11 +83,11 @@ http_interactions:
         responsive, and powerful applications with minimal effort.","License":"GPL-3
         | file LICENSE","Depends":{"R":">= 3.0.2","methods":"*"},"Imports":{"utils":"*","grDevices":"*","httpuv":">=
         1.5.2","mime":">= 0.3","jsonlite":">= 0.9.16","xtable":"*","fontawesome":">=
-        0.2.1","htmltools":">=\u000a0.5.2","R6":">= 2.0","sourcetools":"*","later":">=
+        0.4.0","htmltools":">=\u000a0.5.4","R6":">= 2.0","sourcetools":"*","later":">=
         1.0.0","promises":">= 1.1.0","tools":"*","crayon":"*","rlang":">= 0.4.10","fastmap":">=\u000a1.1.0","withr":"*","commonmark":">=
         1.7","glue":">= 1.3.2","bslib":">=\u000a0.3.0","cachem":"*","ellipsis":"*","lifecycle":">=
         0.2.0"},"Suggests":{"datasets":"*","Cairo":">= 1.5-5","testthat":">= 3.0.0","knitr":">=\u000a1.6","markdown":"*","rmarkdown":"*","ggplot2":"*","reactlog":">=
-        1.0.0","magrittr":"*","shinytest":">= 1.4.0.9003","yaml":"*","future":"*","dygraphs":"*","ragg":"*","showtext":"*","sass":"*"},"URL":"https://shiny.rstudio.com/","BugReports":"https://github.com/rstudio/shiny/issues","Collate":"''globals.R''
+        1.0.0","magrittr":"*","yaml":"*","future":"*","dygraphs":"*","ragg":"*","showtext":"*","sass":"*"},"URL":"https://shiny.rstudio.com/","BugReports":"https://github.com/rstudio/shiny/issues","Collate":"''globals.R''
         ''app-state.R'' ''app_template.R'' ''bind-cache.R''\u000a''bind-event.R''
         ''bookmark-state-local.R'' ''bookmark-state.R''\u000a''bootstrap-deprecated.R''
         ''bootstrap-layout.R'' ''conditions.R''\u000a''map.R'' ''utils.R'' ''bootstrap.R''
@@ -98,10 +104,10 @@ http_interactions:
         ''render-table.R''\u000a''run-url.R'' ''runapp.R'' ''serializers.R''\u000a''server-input-handlers.R''
         ''server-resource-paths.R'' ''server.R''\u000a''shiny-options.R'' ''shiny-package.R''
         ''shinyapp.R'' ''shinyui.R''\u000a''shinywrappers.R'' ''showcase.R'' ''snapshot.R''
-        ''tar.R''\u000a''test-export.R'' ''test-server.R'' ''test.R'' ''update-input.R''\u000a''utils-lang.R''
-        ''version_bs_date_picker.R''\u000a''version_ion_range_slider.R'' ''version_jquery.R''\u000a''version_selectize.R''
-        ''version_strftime.R'' ''viewer.R''","RoxygenNote":"7.1.2","Encoding":"UTF-8","RdMacros":"lifecycle","Config/testthat/edition":"3","NeedsCompilation":"no","Packaged":"2021-10-01
-        21:41:01 UTC; winston","Author":"Winston Chang [aut, cre] (<https://orcid.org/0000-0002-1576-2126>),\u000aJoe
+        ''staticimports.R''\u000a''tar.R'' ''test-export.R'' ''test-server.R'' ''test.R''\u000a''update-input.R''
+        ''utils-lang.R'' ''version_bs_date_picker.R''\u000a''version_ion_range_slider.R''
+        ''version_jquery.R''\u000a''version_jqueryui.R'' ''version_selectize.R'' ''version_strftime.R''\u000a''viewer.R''","RoxygenNote":"7.2.2","Encoding":"UTF-8","RdMacros":"lifecycle","Config/testthat/edition":"3","Config/Needs/check":"shinytest2","NeedsCompilation":"no","Packaged":"2022-12-13
+        20:45:56 UTC; winston","Author":"Winston Chang [aut, cre] (<https://orcid.org/0000-0002-1576-2126>),\u000aJoe
         Cheng [aut],\u000aJJ Allaire [aut],\u000aCarson Sievert [aut] (<https://orcid.org/0000-0002-4958-2844>),\u000aBarret
         Schloerke [aut] (<https://orcid.org/0000-0001-9986-114X>),\u000aYihui Xie
         [aut],\u000aJeff Allen [aut],\u000aJonathan McPherson [aut],\u000aAlan Dipert
@@ -123,10 +129,10 @@ http_interactions:
         cph] (DataTables library),\u000aJohn Fraser [ctb, cph] (showdown.js library),\u000aJohn
         Gruber [ctb, cph] (showdown.js library),\u000aIvan Sagalaev [ctb, cph] (highlight.js
         library),\u000aR Core Team [ctb, cph] (tar implementation from R)","Maintainer":"Winston
-        Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-02
-        04:30:02 UTC","crandb_file_date":"2021-10-02 05:38:33","MD5sum":"884b76c45eeaf4cc9054e127f9a980c4","date":"2021-10-02T03:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-12-15
+        13:10:02 UTC","crandb_file_date":"2022-12-15 14:02:40","MD5sum":"cb09d415caf498e9055aa896f8422e3c","date":"2022-12-15T12:10:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/httpuv
@@ -142,20 +148,26 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:55 GMT
+      date: Mon, 20 Feb 2023 09:44:19 GMT
       content-type: application/json
-      content-length: '2589'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"411OYBKH6JH8XHSQJECPTYS41"'
+      etag: W/"3DLY56BISTL8KXZCA9JTDZO2G"
       vary: Accept
-      x-couch-request-id: 06f3047774
+      x-couch-request-id: 793bcb9713
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Jioc1R1FAK7OWUf%2BLqVCVjEqshZg0qYX6xjku3wQfi8%2FfuySDzCwFczIkZDQqT6ISbn9t1OTiMkNtXTk4C0jk0JN50RC3BywsxYHN46EFBKNPdqRFMU9JiLcfZUyzFoXc2Tf"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d8f29de3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"httpuv","Type":"Package","Encoding":"UTF-8","Title":"HTTP
-        and WebSocket Server Library","Version":"1.6.4","Authors@R":"c(\u000aperson(\"Joe\",
+        and WebSocket Server Library","Version":"1.6.9","Authors@R":"c(\u000aperson(\"Joe\",
         \"Cheng\", role = c(\"aut\"), email = \"joe@rstudio.com\"),\u000aperson(\"Winston\",
         \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@rstudio.com\"),\u000aperson(family
         = \"RStudio, PBC\", role = \"cph\"),\u000aperson(\"Hector\", \"Corrada Bravo\",
@@ -176,15 +188,15 @@ http_interactions:
         by Joyent, Inc. (See LICENSE file for libuv and\u000ahttp-parser license information.)","License":"GPL
         (>= 2) | file LICENSE","Depends":{"R":">= 2.15.1"},"Imports":{"Rcpp":">= 1.0.7","utils":"*","R6":"*","promises":"*","later":">=
         0.8.0"},"LinkingTo":{"Rcpp":"*","later":"*"},"URL":"https://github.com/rstudio/httpuv","SystemRequirements":"GNU
-        make, C++11, zlib","RoxygenNote":"7.1.2","Suggests":{"testthat":"*","callr":"*","curl":"*","websocket":"*"},"Collate":"''RcppExports.R''
-        ''httpuv.R'' ''random_port.R'' ''server.R''\u000a''static_paths.R'' ''utils.R''","NeedsCompilation":"yes","Packaged":"2021-12-13
-        19:41:29 UTC; winston","Author":"Joe Cheng [aut],\u000aWinston Chang [aut,
+        make, zlib","RoxygenNote":"7.2.3","Suggests":{"testthat":"*","callr":"*","curl":"*","websocket":"*"},"Collate":"''RcppExports.R''
+        ''httpuv.R'' ''random_port.R'' ''server.R''\u000a''static_paths.R'' ''utils.R''","NeedsCompilation":"yes","Packaged":"2023-02-08
+        20:09:18 UTC; winston","Author":"Joe Cheng [aut],\u000aWinston Chang [aut,
         cre],\u000aRStudio, PBC [cph],\u000aHector Corrada Bravo [ctb],\u000aJeroen
         Ooms [ctb],\u000aAndrzej Krzemienski [cph] (optional.hpp)","Maintainer":"Winston
-        Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-12-14
-        14:20:14 UTC","crandb_file_date":"2021-12-14 16:02:23","MD5sum":"efe4b110b14f2f0651cdd2941a2b6067","date":"2021-12-14T13:20:14+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2023-02-14
+        10:00:06 UTC","crandb_file_date":"2023-02-14 12:09:19","MD5sum":"49f79f246251a7fc5ce3b23d1f1e9b89","date":"2023-02-14T09:00:06+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/mime
@@ -200,17 +212,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:55 GMT
+      date: Mon, 20 Feb 2023 09:44:19 GMT
       content-type: application/json
-      content-length: '1094'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"3HC4015OA1RRNY3NVDPKLKG0"'
+      etag: W/"ATIR0IGU1OW7OR935R84M077J"
       vary: Accept
-      x-couch-request-id: e56a586504
+      x-couch-request-id: c1a6b8afbd
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=DyCReysQxQByvj6Rfymuq2fzBI%2BsLwxYAggfaeRavNNjIyV3gvkm1V2tFB69Xw0u%2Bvt7F4w2fzsf6ZqWwitsndyb6N2GwQTb9AgkXIO0fygolDMvRz2mJavPgQ8FellChe41"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d910bc73570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"mime","Type":"Package","Title":"Map Filenames to MIME Types","Version":"0.12","Authors@R":"c(\u000aperson(\"Yihui\",
         \"Xie\", role = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment =
@@ -221,8 +239,8 @@ http_interactions:
         02:06:04 UTC; yihui","Author":"Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\u000aJeffrey
         Horner [ctb],\u000aBeilei Bian [ctb]","Maintainer":"Yihui Xie <xie@yihui.name>","Repository":"CRAN","Date/Publication":"2021-09-28
         05:00:05 UTC","crandb_file_date":"2021-09-28 06:32:44","MD5sum":"7314f3b57f70474d9b4d2b831d6bb59d","date":"2021-09-28T04:00:05+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/jsonlite
@@ -238,19 +256,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:55 GMT
+      date: Mon, 20 Feb 2023 09:44:19 GMT
       content-type: application/json
-      content-length: '1896'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"BK6I8CZL4ZWG0RJHMEK2NCZGO"'
+      etag: W/"1HLQVHMK5J819GG4XGB5SPR9E"
       vary: Accept
-      x-couch-request-id: 069deed85c
+      x-couch-request-id: 9881a011ad
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=paAIiN1jn7JI1R4aL93ixlp2v6%2BHh2DF9AArUYNprLV5I84W2wfhF3yFBf4KDnExT8BZOiEp3ZrOXoqG9dOBORqblGWBW8Tqfjagyz3J%2B4zN3NNEqL8OFX9prqxKOifDreuO"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d923ce23570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"jsonlite","Version":"1.7.2","Title":"A Simple and Robust
+      string: '{"Package":"jsonlite","Version":"1.8.4","Title":"A Simple and Robust
         JSON Parser and Generator for R","License":"MIT + file LICENSE","Depends":{"methods":"*"},"Authors@R":"c(\u000aperson(\"Jeroen\",
         \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\",\u000acomment
         = c(ORCID = \"0000-0002-4035-0289\")),\u000aperson(\"Duncan\", \"Temple Lang\",
@@ -264,12 +288,12 @@ http_interactions:
         addition to converting JSON data from/to R objects, ''jsonlite'' contains\u000afunctions
         to stream, validate, and prettify JSON data. The unit tests included\u000awith
         the package verify that all edge cases are encoded and decoded consistently\u000afor
-        use with dynamic data in systems and applications.","Suggests":{"httr":"*","curl":"*","plyr":"*","testthat":"*","knitr":"*","rmarkdown":"*","R.rsp":"*","sf":"*"},"RoxygenNote":"7.1.1","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2020-12-09
-        13:54:18 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aDuncan
-        Temple Lang [ctb],\u000aLloyd Hilaiel [cph] (author of bundled libyajl)","Repository":"CRAN","Date/Publication":"2020-12-09
-        17:40:03 UTC","crandb_file_date":"2020-12-09 18:32:36","MD5sum":"6131e916e7a678552f6debecf620ccb1","date":"2020-12-09T16:40:03+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        use with dynamic data in systems and applications.","Suggests":{"httr":"*","vctrs":"*","testthat":"*","knitr":"*","rmarkdown":"*","R.rsp":"*","sf":"*"},"RoxygenNote":"7.2.1","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2022-12-05
+        23:21:23 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aDuncan
+        Temple Lang [ctb],\u000aLloyd Hilaiel [cph] (author of bundled libyajl)","Repository":"CRAN","Date/Publication":"2022-12-06
+        08:10:02 UTC","crandb_file_date":"2022-12-06 09:20:43","MD5sum":"2eaa62ab9c269c8db6009135e2f5f4b7","date":"2022-12-06T07:10:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/xtable
@@ -285,17 +309,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:56 GMT
+      date: Mon, 20 Feb 2023 09:44:19 GMT
       content-type: application/json
-      content-length: '2988'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"345F64C7G4OMAC738M4SQCANF"'
+      etag: W/"14MVY7UKF2GTHSHTSHYKWJYFN"
       vary: Accept
-      x-couch-request-id: 4e8e390ee4
+      x-couch-request-id: c0a0e09d89
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=U8DLnG4p%2FUcTjd1n%2B68GgbkXDvOLiGskDSOTEnLcMoZJWIbQ1D8qiCOLDaGTZrbnHjZ4Kr8fh2ZaiG%2BKfLKZMdTnrXq631xa6gYBvl1OTLZd5ZV1DF9Dq7p8tJn8h07x6sIe"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d939e223570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"xtable","Version":"1.8-4","Date":"2019-04-08","Title":"Export
         Tables to LaTeX or HTML","Authors@R":"c(person(\"David B.\", \"Dahl\", role=\"aut\"),\u000aperson(\"David\",
@@ -327,8 +357,8 @@ http_interactions:
         Stigler [ctb],\u000aRobert Castelo [ctb],\u000aSeth Falcon [ctb],\u000aStefan
         Edwards [ctb],\u000aSven Garbade [ctb],\u000aUwe Ligges [ctb]","Date/Publication":"2019-04-21
         12:20:03 UTC","crandb_file_date":"2019-04-21 13:20:26","MD5sum":"0a7da6c3b34b2974110a7d00fe9afa79","date":"2019-04-21T11:20:03+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/fontawesome
@@ -344,19 +374,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:56 GMT
+      date: Mon, 20 Feb 2023 09:44:20 GMT
       content-type: application/json
-      content-length: '1911'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"3D4PZEJJ84LSKS1L8FM64ICVY"'
+      etag: W/"CNK7WZ2YVRG1S171FPO8GZF7H"
       vary: Accept
-      x-couch-request-id: '8312774524'
+      x-couch-request-id: f507888edb
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=7%2BsHsKRhWl9TdHPuxiCAPKYmSpA3nD1dpT5tRoWRtFQHbKdcr%2F6ynzG3iPnNxXTobMJsHkpdR3PMdSVTxuGdeNn93XDnQ8eJxGYEozAAuA1XF3tHYi66j7WipSX47eOsZu%2FS"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d951fba3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Type":"Package","Package":"fontawesome","Version":"0.2.2","Title":"Easily
+      string: '{"Type":"Package","Package":"fontawesome","Version":"0.5.0","Title":"Easily
         Work with ''Font Awesome'' Icons","Description":"Easily and flexibly insert
         ''Font Awesome'' icons into ''R Markdown''\u000adocuments and ''Shiny'' apps.
         These icons can be inserted into HTML content\u000athrough inline ''SVG''
@@ -367,16 +403,17 @@ http_interactions:
         \"Dervieux\", , \"cderv@rstudio.com\", role = \"ctb\",\u000acomment = c(ORCID
         = \"0000-0003-4474-2498\")),\u000aperson(\"Winston\", \"Chang\", , \"winston@rstudio.com\",
         role = \"ctb\"),\u000aperson(\"Dave\", \"Gandy\", role = c(\"ctb\", \"cph\"),\u000acomment
-        = \"Font-Awesome font\"),\u000aperson(\"RStudio\", role = c(\"cph\", \"fnd\"))\u000a)","License":"MIT
-        + file LICENSE","URL":"https://github.com/rstudio/fontawesome","BugReports":"https://github.com/rstudio/fontawesome/issues","Encoding":"UTF-8","ByteCompile":"true","RoxygenNote":"7.1.1","Depends":{"R":">=
-        3.3.0"},"Imports":{"rlang":">= 0.4.10","htmltools":">= 0.5.1.1"},"Suggests":{"covr":"*","knitr":"*","testthat":"*","rsvg":"*"},"NeedsCompilation":"no","Packaged":"2021-07-02
-        18:33:03 UTC; rich","Author":"Richard Iannone [aut, cre] (<https://orcid.org/0000-0003-3925-190X>),\u000aChristophe
+        = \"Font-Awesome font\"),\u000aperson(\"Posit Software, PBC\", role = c(\"cph\",
+        \"fnd\"))\u000a)","License":"MIT + file LICENSE","URL":"https://github.com/rstudio/fontawesome,\u000ahttps://rstudio.github.io/fontawesome/","BugReports":"https://github.com/rstudio/fontawesome/issues","Encoding":"UTF-8","ByteCompile":"true","RoxygenNote":"7.2.3","Depends":{"R":">=
+        3.3.0"},"Imports":{"rlang":">= 1.0.6","htmltools":">= 0.5.1.1"},"Suggests":{"covr":"*","dplyr":">=
+        1.0.8","knitr":">= 1.31","testthat":">= 3.0.0","rsvg":"*"},"Config/testthat/edition":"3","NeedsCompilation":"no","Packaged":"2023-01-25
+        19:30:38 UTC; rich","Author":"Richard Iannone [aut, cre] (<https://orcid.org/0000-0003-3925-190X>),\u000aChristophe
         Dervieux [ctb] (<https://orcid.org/0000-0003-4474-2498>),\u000aWinston Chang
-        [ctb],\u000aDave Gandy [ctb, cph] (Font-Awesome font),\u000aRStudio [cph,
-        fnd]","Maintainer":"Richard Iannone <rich@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-07-02
-        18:50:02 UTC","crandb_file_date":"2021-07-02 20:02:33","MD5sum":"c693ad3dcba043ac4a403d82b14cc507\u000a","date":"2021-07-02T17:50:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        [ctb],\u000aDave Gandy [ctb, cph] (Font-Awesome font),\u000aPosit Software,
+        PBC [cph, fnd]","Maintainer":"Richard Iannone <rich@rstudio.com>","Repository":"CRAN","Date/Publication":"2023-01-25
+        20:30:02 UTC","crandb_file_date":"2023-01-25 22:03:08","MD5sum":"8930df3ea6e74fbd3bd24832c205b97e\u000a","date":"2023-01-25T19:30:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/htmltools
@@ -392,19 +429,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:56 GMT
+      date: Mon, 20 Feb 2023 09:44:20 GMT
       content-type: application/json
-      content-length: '2079'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"3S8Q2L0334X82E6UDZGA5KQ2T"'
+      etag: W/"5RD4KLGKSIJSZTE8PTSKZX0GF"
       vary: Accept
-      x-couch-request-id: f2ec4aa015
+      x-couch-request-id: a4a8927cad
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=5va9MTEsLmplON%2F%2FJ9YC3zdNsSJLMLhQ5pv732Sl07tECjJGcShUEID6M9bbQgE3LR8%2B%2BWiH%2Bnk9bDJ%2BspmmqFJ3ySAoKM%2F5jXUDssPs8jr3WjM7MOVzMKrAfIah%2BbED1bdd"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d9699193570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"htmltools","Type":"Package","Title":"Tools for HTML","Version":"0.5.2","Authors@R":"c(\u000aperson(\"Joe\",
+      string: '{"Package":"htmltools","Type":"Package","Title":"Tools for HTML","Version":"0.5.4","Authors@R":"c(\u000aperson(\"Joe\",
         \"Cheng\", role = \"aut\", email = \"joe@rstudio.com\"),\u000aperson(\"Carson\",
         \"Sievert\", role = c(\"aut\", \"cre\"), email = \"carson@rstudio.com\", comment
         = c(ORCID = \"0000-0002-4958-2844\")),\u000aperson(\"Barret\", \"Schloerke\",
@@ -414,19 +457,19 @@ http_interactions:
         email = \"yihui@rstudio.com\"),\u000aperson(\"Jeff\", \"Allen\", role = \"aut\",
         email = \"jeff@rstudio.com\"),\u000aperson(family = \"RStudio\", role = \"cph\")\u000a)","Description":"Tools
         for HTML generation and output.","Depends":{"R":">= 2.14.1"},"Imports":{"utils":"*","digest":"*","grDevices":"*","base64enc":"*","rlang":">=
-        0.4.10","fastmap":"*"},"Suggests":{"markdown":"*","testthat":"*","withr":"*","Cairo":"*","ragg":"*","shiny":"*"},"Enhances":{"knitr":"*"},"License":"GPL
-        (>= 2)","URL":"https://github.com/rstudio/htmltools","BugReports":"https://github.com/rstudio/htmltools/issues","RoxygenNote":"7.1.1","Encoding":"UTF-8","Collate":"''colors.R''
-        ''html_dependency.R'' ''html_escape.R'' ''html_print.R''\u000a''images.R''
-        ''known_tags.R'' ''selector.R'' ''shim.R'' ''tag_query.R''\u000a''utils.R''
-        ''tags.R'' ''template.R''","NeedsCompilation":"yes","Packaged":"2021-08-17
-        17:26:06 UTC; cpsievert","Author":"Joe Cheng [aut],\u000aCarson Sievert [aut,
+        0.4.10","fastmap":">= 1.1.0","ellipsis":"*"},"Suggests":{"markdown":"*","testthat":"*","withr":"*","Cairo":"*","ragg":"*","shiny":"*"},"Enhances":{"knitr":"*"},"License":"GPL
+        (>= 2)","URL":"https://github.com/rstudio/htmltools,\u000ahttps://rstudio.github.io/htmltools/","BugReports":"https://github.com/rstudio/htmltools/issues","RoxygenNote":"7.2.2","Encoding":"UTF-8","Collate":"''colors.R''
+        ''fill.R'' ''html_dependency.R'' ''html_escape.R''\u000a''html_print.R'' ''images.R''
+        ''known_tags.R'' ''selector.R''\u000a''staticimports.R'' ''tag_query.R'' ''utils.R''
+        ''tags.R'' ''template.R''","Config/Needs/website":"rstudio/quillt, bench","NeedsCompilation":"yes","Packaged":"2022-12-07
+        17:55:41 UTC; cpsievert","Author":"Joe Cheng [aut],\u000aCarson Sievert [aut,
         cre] (<https://orcid.org/0000-0002-4958-2844>),\u000aBarret Schloerke [aut]
         (<https://orcid.org/0000-0001-9986-114X>),\u000aWinston Chang [aut] (<https://orcid.org/0000-0002-1576-2126>),\u000aYihui
         Xie [aut],\u000aJeff Allen [aut],\u000aRStudio [cph]","Maintainer":"Carson
-        Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-08-25
-        13:50:02 UTC","crandb_file_date":"2021-08-25 14:50:39","MD5sum":"162af3d4892ff23c984645c78f50daea","date":"2021-08-25T12:50:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-12-07
+        20:50:06 UTC","crandb_file_date":"2022-12-07 22:32:39","MD5sum":"efca924584babe0d4ea19c3bc4bdae8c","date":"2022-12-07T19:50:06+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/R6
@@ -442,17 +485,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:57 GMT
+      date: Mon, 20 Feb 2023 09:44:20 GMT
       content-type: application/json
-      content-length: '1192'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"DARDUTEE3DSRZX5NFMDBGQ3SL"'
+      etag: W/"67F0IC5090KNEZQPEQ192C6SW"
       vary: Accept
-      x-couch-request-id: 865cecd636
+      x-couch-request-id: 520c1de394
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Bg4cq0zepnSVAqUyJEomH%2BLC2i27I9BUBeamFIxkyOTABETA0Mvt1azbNtjCfWZ6fpdodqRFDUwpAGwr1O6bqFeRBla3v%2BU%2Ff%2F4mwF8SbTGQ91ajKFSUdRbM64P6HcuZmihh"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d987a9b3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"R6","Title":"Encapsulated Classes with Reference Semantics","Version":"2.5.1","Authors@R":"person(\"Winston\",
         \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@stdout.org\")","Description":"Creates
@@ -466,8 +515,8 @@ http_interactions:
         20:18:46 UTC; winston","Author":"Winston Chang [aut, cre]","Maintainer":"Winston
         Chang <winston@stdout.org>","Repository":"CRAN","Date/Publication":"2021-08-19
         14:00:05 UTC","crandb_file_date":"2021-08-19 14:44:39","MD5sum":"e84fd376e246738402e5529b6d52e101","date":"2021-08-19T13:00:05+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/sourcetools
@@ -483,29 +532,35 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:57 GMT
+      date: Mon, 20 Feb 2023 09:44:20 GMT
       content-type: application/json
-      content-length: '918'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"BC3KSAS6E0XWNNGKFH7N5R2RG"'
+      etag: W/"82V6VJDKVGOXZXEO9NS3MVSPT"
       vary: Accept
-      x-couch-request-id: 2f886f0a97
+      x-couch-request-id: bb2d0ce714
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=HKqZ33unmI6xV4cXCTD7Kn4qTjUi6%2FcSd%2BWq0d%2Bs4IDxpfQqMPHJ0WeuCcE%2BHP0UwXQBX3kXfjnrP3URjTdNr9XRiMDY%2FOjoYKZMvOgYeB0ULBa2EYgXPCK2u2i%2B1RwxVNPe"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d99ab7f3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"sourcetools","Type":"Package","Title":"Tools for Reading,
-        Tokenizing and Parsing R Code","Version":"0.1.7","Author":"Kevin Ushey","Maintainer":"Kevin
+        Tokenizing and Parsing R Code","Version":"0.1.7-1","Author":"Kevin Ushey","Maintainer":"Kevin
         Ushey <kevinushey@gmail.com>","Description":"Tools for the reading and tokenization
         of R code. The\u000a''sourcetools'' package provides both an R and C++ interface
         for the tokenization\u000aof R code, and helpers for interacting with the
-        tokenized representation of R\u000acode.","License":"MIT + file LICENSE","LazyData":"TRUE","Depends":{"R":">=
-        3.0.2"},"Suggests":{"testthat":"*"},"RoxygenNote":"5.0.1","BugReports":"https://github.com/kevinushey/sourcetools/issues","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2018-04-25
-        03:19:22 UTC; kevin","Repository":"CRAN","Date/Publication":"2018-04-25 03:38:09
-        UTC","crandb_file_date":"2018-04-25 03:44:19","MD5sum":"04284c2d78a9626fe5f219942836c530","date":"2018-04-25T02:38:09+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        tokenized representation of R\u000acode.","License":"MIT + file LICENSE","Depends":{"R":">=
+        3.0.2"},"Suggests":{"testthat":"*"},"RoxygenNote":"5.0.1","BugReports":"https://github.com/kevinushey/sourcetools/issues","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2023-01-31
+        18:03:04 UTC; kevin","Repository":"CRAN","Date/Publication":"2023-02-01 10:10:02
+        UTC","crandb_file_date":"2023-02-01 11:26:51","MD5sum":"dd4a9af00de6e874802f6e6622b774fb","date":"2023-02-01T09:10:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/later
@@ -521,17 +576,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:57 GMT
+      date: Mon, 20 Feb 2023 09:44:21 GMT
       content-type: application/json
-      content-length: '1770'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"2HACH0V6POLAMM7NKO4B9J035"'
+      etag: W/"D8VXE66TU9CDN4MIANAMUZV6R"
       vary: Accept
-      x-couch-request-id: c7456c77e7
+      x-couch-request-id: fb0c24a088
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=pEg%2FlZhHn05Vb2npN29PYw%2B0gQ3JEuRtbzNU2928PaU4o4S2NepbYsDETRc7hi18OvZevhRfkXlmmwOkWAjRBwKoXajg%2FjE2PKwxLfdRZTRut4l5UG6nSe9IONjAWD2R5kKw"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d9acc973570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"later","Type":"Package","Title":"Utilities for Scheduling
         Functions to Execute Later with Event\u000aLoops","Version":"1.3.0","Authors@R":"c(\u000aperson(\"Winston\",
@@ -550,8 +611,8 @@ http_interactions:
         Nemerson [ctb, cph] (TinyCThread library,\u000ahttps://tinycthread.github.io/)","Maintainer":"Winston
         Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-08-18
         16:30:06 UTC","crandb_file_date":"2021-08-18 18:26:36","MD5sum":"87b6dae5e7c3f822dd86a20b3a52059f","date":"2021-08-18T15:30:06+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/promises
@@ -567,17 +628,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:58 GMT
+      date: Mon, 20 Feb 2023 09:44:21 GMT
       content-type: application/json
-      content-length: '1567'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"2Y2UV7DPTY3U6C99LKI7P6OCJ"'
+      etag: W/"66LCI239ZNBE1PIIHQ6ZTZ3R"
       vary: Accept
-      x-couch-request-id: 920fbc8e4f
+      x-couch-request-id: c537f0a9d9
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=UNUndsCgtD2Yxd%2FN4YIJ91qyAqYmLuJreNkbv0EUcDflmJQzlZPI%2B6R0j63iHgruGwlnqkOi%2BjBWzFM0rMEsRbUdINzlDcQ9sCTLcBBqunvGiGD5Ki7u%2BtYARg4e5CUw1sLE"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d9c5dfa3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"promises","Type":"Package","Title":"Abstractions for Promise-Based
         Asynchronous Programming","Version":"1.2.0.1","Authors@R":"c(\u000aperson(\"Joe\",
@@ -592,8 +659,8 @@ http_interactions:
         18:18:47 UTC; barret","Author":"Joe Cheng [aut, cre],\u000aRStudio [cph, fnd]","Maintainer":"Joe
         Cheng <joe@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-02-11
         19:00:02 UTC","crandb_file_date":"2021-02-11 20:02:42","MD5sum":"adba783866d5496080f8a4e77576817b","date":"2021-02-11T18:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/crayon
@@ -609,35 +676,43 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:58 GMT
+      date: Mon, 20 Feb 2023 09:44:21 GMT
       content-type: application/json
-      content-length: '1683'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"3XQDAIZD76AGD413N3SKYFYWT"'
+      etag: W/"5FJ17389WZ9S2OCICATG6Q4D4"
       vary: Accept
-      x-couch-request-id: f7df0030f0
+      x-couch-request-id: 7c0ab20168
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=4sY19YQ0VGvB4HPkvmSOsnL7Ox3JAgzm6m%2B699s9FufP95UwcYsoHYM%2BZtmsZadp3FV7pxSPTVBQ49pkJ7gev3FLdkHXJJTao%2FfKNL5OvJyePQiZlrj3kvtRoJajhZUGXmlf"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d9e0f973570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"crayon","Title":"Colored Terminal Output","Version":"1.4.2","Authors@R":"c(\u000aperson(\"Gábor\",
+      string: '{"Package":"crayon","Title":"Colored Terminal Output","Version":"1.5.2","Authors@R":"c(\u000aperson(\"Gábor\",
         \"Csárdi\", , \"csardi.gabor@gmail.com\",\u000arole = c(\"aut\", \"cre\")),\u000aperson(\u000a\"Brodie\",
-        \"Gaslam\", email=\"brodie.gaslam@yahoo.com\",\u000arole=c(\"ctb\"))\u000a)","Description":"Colored
-        terminal output on terminals that support ''ANSI''\u000acolor and highlight
-        codes. It also works in ''Emacs'' ''ESS''. ''ANSI''\u000acolor support is
-        automatically detected. Colors and highlighting can\u000abe combined and nested.
-        New styles can also be created easily.\u000aThis package was inspired by the
-        ''chalk'' ''JavaScript'' project.","License":"MIT + file LICENSE","URL":"https://github.com/r-lib/crayon#readme","BugReports":"https://github.com/r-lib/crayon/issues","Collate":"''aaa-rstudio-detect.R''
-        ''aab-num-ansi-colors.R''\u000a''aac-num-ansi-colors.R'' ''ansi-256.r'' ''ansi-palette.R''\u000a''combine.r''
-        ''string.r'' ''utils.r'' ''crayon-package.r''\u000a''disposable.r'' ''has_ansi.r''
-        ''has_color.r'' ''link.R'' ''styles.r''\u000a''machinery.r'' ''parts.r'' ''print.r''
-        ''rematch2.R'' ''style-var.r''\u000a''show.r'' ''string_operations.r''","Imports":{"grDevices":"*","methods":"*","utils":"*"},"Suggests":{"mockery":"*","rstudioapi":"*","testthat":"*","withr":"*"},"RoxygenNote":"7.1.2","Encoding":"UTF-8","NeedsCompilation":"no","Packaged":"2021-10-26
-        12:16:51 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre],\u000aBrodie
-        Gaslam [ctb]","Maintainer":"Gábor Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2021-10-29
-        23:20:02 UTC","crandb_file_date":"2021-10-30 00:56:29","MD5sum":"38eb751b269bc21e9f5cc2f9f9a1a299","date":"2021-10-29T22:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        \"Gaslam\", email=\"brodie.gaslam@yahoo.com\",\u000arole=c(\"ctb\"))\u000a)","Description":"The
+        crayon package is now superseded. Please use the ''cli'' package\u000afor
+        new projects.\u000aColored terminal output on terminals that support ''ANSI''\u000acolor
+        and highlight codes. It also works in ''Emacs'' ''ESS''. ''ANSI''\u000acolor
+        support is automatically detected. Colors and highlighting can\u000abe combined
+        and nested. New styles can also be created easily.\u000aThis package was inspired
+        by the ''chalk'' ''JavaScript'' project.","License":"MIT + file LICENSE","URL":"https://github.com/r-lib/crayon#readme","BugReports":"https://github.com/r-lib/crayon/issues","Collate":"''aaa-rstudio-detect.R''
+        ''aaaa-rematch2.R''\u000a''aab-num-ansi-colors.R'' ''aac-num-ansi-colors.R''
+        ''ansi-256.r''\u000a''ansi-palette.R'' ''combine.r'' ''string.r'' ''utils.r''\u000a''crayon-package.r''
+        ''disposable.r'' ''enc-utils.R'' ''has_ansi.r''\u000a''has_color.r'' ''link.R''
+        ''styles.r'' ''machinery.r'' ''parts.r''\u000a''print.r'' ''style-var.r''
+        ''show.r'' ''string_operations.r''","Imports":{"grDevices":"*","methods":"*","utils":"*"},"Suggests":{"mockery":"*","rstudioapi":"*","testthat":"*","withr":"*"},"RoxygenNote":"7.1.2","Encoding":"UTF-8","NeedsCompilation":"no","Packaged":"2022-09-29
+        06:24:10 UTC; gaborcsardi","Author":"Gábor Csárdi [aut, cre],\u000aBrodie
+        Gaslam [ctb]","Maintainer":"Gábor Csárdi <csardi.gabor@gmail.com>","Repository":"CRAN","Date/Publication":"2022-09-29
+        16:20:24 UTC","crandb_file_date":"2022-09-29 18:20:37","MD5sum":"7c5b681dd3da578b5d154b2b01491c02","date":"2022-09-29T15:20:24+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/rlang
@@ -653,19 +728,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:58 GMT
+      date: Mon, 20 Feb 2023 09:44:21 GMT
       content-type: application/json
-      content-length: '1832'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"41SAAZE9GL5PH2PZK3CO8R69Y"'
+      etag: W/"8M5BHOYFM4TSUL788BQRWYN0S"
       vary: Accept
-      x-couch-request-id: 2d434934ea
+      x-couch-request-id: cb49b1c275
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=lkppLEH0xpMSoWzMLT0ZPHDoGw1ohyiHdUcsGPN5BP2cAr7XFE%2BzjIaUqz1YgZ7WGBvnhBJMt7uSi8VnV5h8Yq4V7RL5Mh%2BK6wuany6OvatmQIxrwAN49olrF5UtXDFqjgTY"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64d9f79123570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"rlang","Version":"0.4.12","Title":"Functions for Base Types
+      string: '{"Package":"rlang","Version":"1.0.6","Title":"Functions for Base Types
         and Core R and ''Tidyverse'' Features","Description":"A toolbox for working
         with base types, core R features\u000alike the condition system, and core
         ''Tidyverse'' features like tidy\u000aevaluation.","Authors@R":"c(\u000aperson(\"Lionel\",
@@ -674,17 +755,19 @@ http_interactions:
         = \"mikefc@coolbutuseless.com\",\u000arole = \"cph\",\u000acomment = \"Hash
         implementation based on Mike''s xxhashlite\"),\u000aperson(given = \"Yann\",\u000afamily
         = \"Collet\",\u000arole = \"cph\",\u000acomment = \"Author of the embedded
-        xxHash library\"),\u000aperson(\"RStudio\", role = \"cph\")\u000a)","License":"MIT
-        + file LICENSE","ByteCompile":"true","Biarch":"true","Depends":{"R":">= 3.3.0"},"Imports":{"utils":"*"},"Suggests":{"cli":"*","covr":"*","crayon":"*","glue":"*","magrittr":"*","methods":"*","pak":"*","pillar":"*","rmarkdown":"*","testthat":">=
-        3.0.0","vctrs":">= 0.2.3","withr":"*"},"Enhances":{"winch":"*"},"Encoding":"UTF-8","RoxygenNote":"7.1.1","URL":"https://rlang.r-lib.org,
-        https://github.com/r-lib/rlang","BugReports":"https://github.com/r-lib/rlang/issues","Config/testthat/edition":"3","NeedsCompilation":"yes","Packaged":"2021-10-18
-        07:25:49 UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham
-        [aut],\u000amikefc [cph] (Hash implementation based on Mike''s xxhashlite),\u000aYann
-        Collet [cph] (Author of the embedded xxHash library),\u000aRStudio [cph]","Maintainer":"Lionel
-        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-18
-        23:00:02 UTC","crandb_file_date":"2021-10-19 00:14:38","MD5sum":"08b32904d41f5fcb5d33188f0004f91b","date":"2021-10-18T22:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        xxHash library\"),\u000aperson(given = \"RStudio\", role = c(\"cph\", \"fnd\"))\u000a)","License":"MIT
+        + file LICENSE","ByteCompile":"true","Biarch":"true","Depends":{"R":">= 3.4.0"},"Imports":{"utils":"*"},"Suggests":{"cli":">=
+        3.1.0","covr":"*","crayon":"*","fs":"*","glue":"*","knitr":"*","magrittr":"*","methods":"*","pillar":"*","rmarkdown":"*","stats":"*","testthat":">=
+        3.0.0","tibble":"*","usethis":"*","vctrs":">= 0.2.3","withr":"*"},"Enhances":{"winch":"*"},"SystemRequirements":"C++11","Encoding":"UTF-8","RoxygenNote":"7.2.1.9000","URL":"https://rlang.r-lib.org,
+        https://github.com/r-lib/rlang","BugReports":"https://github.com/r-lib/rlang/issues","Config/testthat/edition":"3","Config/Needs/website":"dplyr,
+        tidyverse/tidytemplate","NeedsCompilation":"yes","Packaged":"2022-09-23 16:12:48
+        UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham [aut],\u000amikefc
+        [cph] (Hash implementation based on Mike''s xxhashlite),\u000aYann Collet
+        [cph] (Author of the embedded xxHash library),\u000aRStudio [cph, fnd]","Maintainer":"Lionel
+        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-09-24
+        05:40:02 UTC","crandb_file_date":"2022-09-24 06:56:45","MD5sum":"907bc04039194b0c7edc19e9084b14fc","date":"2022-09-24T04:40:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/fastmap
@@ -700,17 +783,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:58 GMT
+      date: Mon, 20 Feb 2023 09:44:22 GMT
       content-type: application/json
-      content-length: '1481'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"79AGJ5DC4XEY3VKFUZKOJU7BH"'
+      etag: W/"C27E7UWG9GQ6K9HZNJE71SO5U"
       vary: Accept
-      x-couch-request-id: 554d1f4749
+      x-couch-request-id: 288086c394
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=AHaWmcVLB1rOn7BUJOKqWdUDD5Adt54Nas2rV39y%2Fu1CphEYMCp6toGBoR3l%2B2xfRZ4Jk4FBx2HjLj2KByaYzPbitMtV4zojp9Lq1qWkHKkcUoB8Oc88tIMWpjE69LMYQRGo"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64da0fab23570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"fastmap","Title":"Fast Data Structures","Version":"1.1.0","Authors@R":"c(\u000aperson(\"Winston\",
         \"Chang\", email = \"winston@rstudio.com\", role = c(\"aut\", \"cre\")),\u000aperson(given
@@ -728,8 +817,8 @@ http_interactions:
         fnd],\u000aTessil [cph] (hopscotch_map library)","Maintainer":"Winston Chang
         <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-01-25
         21:00:02 UTC","crandb_file_date":"2021-01-25 21:50:55","MD5sum":"0a13d52751d2f910ab907d3b44756108","date":"2021-01-25T20:00:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/withr
@@ -745,20 +834,26 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:59 GMT
+      date: Mon, 20 Feb 2023 09:44:22 GMT
       content-type: application/json
-      content-length: '2627'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"2A8L3UJJGK2TC0ISQ3NB9KBZD"'
+      etag: W/"9P5RF0ZGY7U8HT9AQNWF77XPR"
       vary: Accept
-      x-couch-request-id: 079e567286
+      x-couch-request-id: 6e2934de3a
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=KkO1gUO8V0%2FmpKJFbBae17zb0iNbpxI8MIY3RBFmdSwm5Z6qrNRLCGFvc7zu5XQSCpXSn2i%2BCyI2tjlNYbz3Bm%2FCT2BW8cDLsNBMo7H0ai6ozz4x8f74u377IZzXZgByEbQK"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64da23c133570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"withr","Title":"Run Code ''With'' Temporarily Modified
-        Global State","Version":"2.4.3","Authors@R":"\u000ac(person(given = \"Jim\",\u000afamily
+        Global State","Version":"2.5.0","Authors@R":"\u000ac(person(given = \"Jim\",\u000afamily
         = \"Hester\",\u000arole = \"aut\"),\u000aperson(given = \"Lionel\",\u000afamily
         = \"Henry\",\u000arole = c(\"aut\", \"cre\"),\u000aemail = \"lionel@rstudio.com\"),\u000aperson(given
         = \"Kirill\",\u000afamily = \"Müller\",\u000arole = \"aut\",\u000aemail =
@@ -768,26 +863,26 @@ http_interactions:
         = \"Winston\",\u000afamily = \"Chang\",\u000arole = \"aut\"),\u000aperson(given
         = \"Jennifer\",\u000afamily = \"Bryan\",\u000arole = \"ctb\"),\u000aperson(given
         = \"Richard\",\u000afamily = \"Cotton\",\u000arole = \"ctb\"),\u000aperson(given
-        = \"RStudio\",\u000arole = \"cph\"))","Description":"A set of functions to
-        run code ''with'' safely and\u000atemporarily modified global state. Many
-        of these functions were\u000aoriginally a part of the ''devtools'' package,
-        this provides a simple\u000apackage with limited dependencies to provide access
-        to these\u000afunctions.","License":"MIT + file LICENSE","URL":"https://withr.r-lib.org,
+        = \"RStudio\",\u000arole = c(\"cph\", \"fnd\")))","Description":"A set of
+        functions to run code ''with'' safely and\u000atemporarily modified global
+        state. Many of these functions were\u000aoriginally a part of the ''devtools''
+        package, this provides a simple\u000apackage with limited dependencies to
+        provide access to these\u000afunctions.","License":"MIT + file LICENSE","URL":"https://withr.r-lib.org,
         https://github.com/r-lib/withr#readme","BugReports":"https://github.com/r-lib/withr/issues","Depends":{"R":">=
-        3.2.0"},"Imports":{"graphics":"*","grDevices":"*","stats":"*"},"Suggests":{"callr":"*","covr":"*","DBI":"*","knitr":"*","lattice":"*","methods":"*","rmarkdown":"*","RSQLite":"*","testthat":">=
-        3.0.0"},"VignetteBuilder":"knitr","Encoding":"UTF-8","RoxygenNote":"7.1.2","Collate":"''local_.R''
-        ''with_.R'' ''collate.R'' ''compat-defer.R''\u000a''connection.R'' ''db.R''
-        ''defer.R'' ''wrap.R'' ''devices.R'' ''dir.R''\u000a''env.R'' ''file.R'' ''language.R''
-        ''libpaths.R'' ''locale.R''\u000a''makevars.R'' ''namespace.R'' ''options.R''
-        ''par.R'' ''path.R'' ''rng.R''\u000a''seed.R'' ''sink.R'' ''tempfile.R'' ''timezone.R''
-        ''torture.R''\u000a''utils.R'' ''with.R''","Config/testthat/edition":"3","NeedsCompilation":"no","Packaged":"2021-11-29
-        19:59:17 UTC; jhester","Author":"Jim Hester [aut],\u000aLionel Henry [aut,
+        3.2.0"},"Imports":{"graphics":"*","grDevices":"*","stats":"*"},"Suggests":{"callr":"*","covr":"*","DBI":"*","knitr":"*","lattice":"*","methods":"*","rlang":"*","rmarkdown":">=
+        2.12","RSQLite":"*","testthat":">= 3.0.0"},"VignetteBuilder":"knitr","Encoding":"UTF-8","RoxygenNote":"7.1.2","Collate":"''aaa.R''
+        ''collate.R'' ''compat-defer.R'' ''connection.R'' ''db.R''\u000a''defer.R''
+        ''wrap.R'' ''local_.R'' ''with_.R'' ''devices.R'' ''dir.R''\u000a''env.R''
+        ''file.R'' ''language.R'' ''libpaths.R'' ''locale.R''\u000a''makevars.R''
+        ''namespace.R'' ''options.R'' ''par.R'' ''path.R'' ''rng.R''\u000a''seed.R''
+        ''sink.R'' ''tempfile.R'' ''timezone.R'' ''torture.R''\u000a''utils.R'' ''with.R''","Config/testthat/edition":"3","Config/Needs/website":"tidyverse/tidytemplate","NeedsCompilation":"no","Packaged":"2022-03-03
+        21:13:01 UTC; lionel","Author":"Jim Hester [aut],\u000aLionel Henry [aut,
         cre],\u000aKirill Müller [aut],\u000aKevin Ushey [aut],\u000aHadley Wickham
         [aut],\u000aWinston Chang [aut],\u000aJennifer Bryan [ctb],\u000aRichard Cotton
-        [ctb],\u000aRStudio [cph]","Maintainer":"Lionel Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-11-30
-        14:20:02 UTC","crandb_file_date":"2021-11-30 15:14:38","MD5sum":"4170be236f864a2ed346667f7e244662","date":"2021-11-30T13:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        [ctb],\u000aRStudio [cph, fnd]","Maintainer":"Lionel Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-03-03
+        21:50:02 UTC","crandb_file_date":"2022-03-03 23:14:30","MD5sum":"26006b3833199a6b6db70fda04126b87","date":"2022-03-03T20:50:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/commonmark
@@ -803,34 +898,42 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:59 GMT
+      date: Mon, 20 Feb 2023 09:44:22 GMT
       content-type: application/json
-      content-length: '1401'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"7E46MFBNY33YD3PBYZXQ08IKZ"'
+      etag: W/"VL2CC5AMUU5S3W9BAPVWS6M4"
       vary: Accept
-      x-couch-request-id: f78347c2de
+      x-couch-request-id: 45f8e22758
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=8k4y73ZFMV%2FpUC1rtqTRgokK%2FzckarDA5vTwgzusumSdk76y0jAB1Il0t7GkXZNt4a9xNS3FSeiC50d40xql1WNe4zuWlIWFj8MrQVqCAPbTgMQAL3u02G%2FwvJFp5eUlEOed"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64da3ddc53570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"commonmark","Type":"Package","Title":"High Performance
-        CommonMark and Github Markdown Rendering in R","Version":"1.7","Authors@R":"c(\u000aperson(\"Jeroen\",
-        \"Ooms\", ,\"jeroen@berkeley.edu\", role = c(\"aut\", \"cre\")),\u000aperson(\"John
-        MacFarlane\", role = \"cph\", comment = \"Author of cmark\"))","URL":"http://github.com/jeroen/commonmark
-        (devel)\u000ahttps://github.github.com/gfm/ (spec)","BugReports":"http://github.com/jeroen/commonmark/issues","Description":"The
+        CommonMark and Github Markdown Rendering in R","Version":"1.8.1","Authors@R":"c(\u000aperson(\"Jeroen\",
+        \"Ooms\", ,\"jeroen@berkeley.edu\", role = c(\"aut\", \"cre\"),\u000acomment
+        = c(ORCID = \"0000-0002-4035-0289\")),\u000aperson(\"John MacFarlane\", role
+        = \"cph\", comment = \"Author of cmark\"))","URL":"https://docs.ropensci.org/commonmark/
+        (docs)\u000ahttps://github.com/r-lib/commonmark (devel)\u000ahttps://github.github.com/gfm/
+        (spec)","BugReports":"https://github.com/r-lib/commonmark/issues","Description":"The
         CommonMark specification defines a rationalized version of markdown\u000asyntax.
         This package uses the ''cmark'' reference implementation for converting\u000amarkdown
         text into various formats including html, latex and groff man. In\u000aaddition
         it exposes the markdown parse tree in xml format. Also includes opt-in\u000asupport
         for GFM extensions including tables, autolinks, and strikethrough text.","License":"BSD_2_clause
-        + file LICENSE","Suggests":{"curl":"*","testthat":"*","xml2":"*"},"RoxygenNote":"6.0.1","NeedsCompilation":"yes","Packaged":"2018-12-01
-        11:57:14 UTC; jeroen","Author":"Jeroen Ooms [aut, cre],\u000aJohn MacFarlane
-        [cph] (Author of cmark)","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2018-12-01
-        12:30:03 UTC","crandb_file_date":"2018-12-01 12:32:27","MD5sum":"48bf2251862a494d8ee3acde02dce385","date":"2018-12-01T11:30:03+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        + file LICENSE","Suggests":{"curl":"*","testthat":"*","xml2":"*"},"RoxygenNote":"7.1.2","Language":"en-US","Encoding":"UTF-8","NeedsCompilation":"yes","Packaged":"2022-10-14
+        12:04:12 UTC; jeroen","Author":"Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\u000aJohn
+        MacFarlane [cph] (Author of cmark)","Maintainer":"Jeroen Ooms <jeroen@berkeley.edu>","Repository":"CRAN","Date/Publication":"2022-10-14
+        12:42:33 UTC","crandb_file_date":"2022-10-14 14:32:29","MD5sum":"befd4d1261c898b147a75da4b91e4232","date":"2022-10-14T11:42:33+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/glue
@@ -846,19 +949,25 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:17:59 GMT
+      date: Mon, 20 Feb 2023 09:44:22 GMT
       content-type: application/json
-      content-length: '1905'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"A5C7740CG35JPKY2SDSA27QIW"'
+      etag: W/"1TKSQMA11NB4E7HW0U5VUVUHH"
       vary: Accept
-      x-couch-request-id: 1cbea3a610
+      x-couch-request-id: dc82f4068e
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=c%2B8oW5L4LcjTojW6ZCEWMaVHIf2x4X1RAhPZanEotfuaF7xxRvuLV7U1H0Ui%2F%2FBIxKJJWgPiYxx8n6rW2DgRrEFcuZVjcTaTHpGNMWn3yv4PHMzwSifdi4fCt5K%2B45F4InYA"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64da52f0d3570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"Package":"glue","Title":"Interpreted String Literals","Version":"1.6.0","Authors@R":"c(\u000aperson(\"Jim\",
+      string: '{"Package":"glue","Title":"Interpreted String Literals","Version":"1.6.2","Authors@R":"c(\u000aperson(\"Jim\",
         \"Hester\", role = \"aut\",\u000acomment = c(ORCID = \"0000-0002-2739-7082\")),\u000aperson(\"Jennifer\",
         \"Bryan\", , \"jenny@rstudio.com\", role = c(\"aut\", \"cre\"),\u000acomment
         = c(ORCID = \"0000-0002-6983-2759\")),\u000aperson(\"RStudio\", role = c(\"cph\",
@@ -867,15 +976,15 @@ http_interactions:
         and Docstrings\u000a<https://www.python.org/dev/peps/pep-0257/> and Julia''s
         Triple-Quoted\u000aString Literals\u000a<https://docs.julialang.org/en/v1.3/manual/strings/#Triple-Quoted-String-Literals-1>.","License":"MIT
         + file LICENSE","URL":"https://github.com/tidyverse/glue, https://glue.tidyverse.org/","BugReports":"https://github.com/tidyverse/glue/issues","Depends":{"R":">=
-        3.4"},"Imports":{"methods":"*"},"Suggests":{"covr":"*","crayon":"*","DBI":"*","dplyr":"*","forcats":"*","ggplot2":"*","knitr":"*","magrittr":"*","microbenchmark":"*","R.utils":"*","rmarkdown":"*","rprintf":"*","RSQLite":"*","stringr":"*","testthat":"*","vctrs":">=
-        0.3.0","waldo":"*","withr":"*"},"VignetteBuilder":"knitr","ByteCompile":"true","Config/Needs/website":"hadley/emo,
-        tidyverse/tidytemplate","Config/testthat/edition":"3","Encoding":"UTF-8","RoxygenNote":"7.1.2","NeedsCompilation":"yes","Packaged":"2021-12-16
-        20:07:41 UTC; jenny","Author":"Jim Hester [aut] (<https://orcid.org/0000-0002-2739-7082>),\u000aJennifer
+        3.4"},"Imports":{"methods":"*"},"Suggests":{"covr":"*","crayon":"*","DBI":"*","dplyr":"*","forcats":"*","ggplot2":"*","knitr":"*","magrittr":"*","microbenchmark":"*","R.utils":"*","rmarkdown":"*","rprintf":"*","RSQLite":"*","stringr":"*","testthat":">=
+        3.0.0","vctrs":">= 0.3.0","waldo":">= 0.3.0","withr":"*"},"VignetteBuilder":"knitr","ByteCompile":"true","Config/Needs/website":"hadley/emo,
+        tidyverse/tidytemplate","Config/testthat/edition":"3","Encoding":"UTF-8","RoxygenNote":"7.1.2","NeedsCompilation":"yes","Packaged":"2022-02-23
+        22:50:40 UTC; jenny","Author":"Jim Hester [aut] (<https://orcid.org/0000-0002-2739-7082>),\u000aJennifer
         Bryan [aut, cre] (<https://orcid.org/0000-0002-6983-2759>),\u000aRStudio [cph,
-        fnd]","Maintainer":"Jennifer Bryan <jenny@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-12-17
-        07:20:02 UTC","crandb_file_date":"2021-12-17 08:38:23","MD5sum":"3f6c5e93eb3ece64c93d038e618b3e08","date":"2021-12-17T06:20:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        fnd]","Maintainer":"Jennifer Bryan <jenny@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-02-24
+        07:50:20 UTC","crandb_file_date":"2022-02-24 09:38:32","MD5sum":"4a92a6b8f8015a2ac8b0bfeac7f163fc","date":"2022-02-24T06:50:20+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/bslib
@@ -891,20 +1000,26 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:00 GMT
+      date: Mon, 20 Feb 2023 09:44:22 GMT
       content-type: application/json
-      content-length: '2930'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"9QHJRS848E6R2JCHYUBDXCBRD"'
+      etag: W/"DNI3LCPH67ABZCNGBBZH03FCL"
       vary: Accept
-      x-couch-request-id: 11ae18550d
+      x-couch-request-id: 557cf8cb29
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=avPNFSOKuQtD%2BHyGoioG1agCEgTTXCS4lx66Vaik5svgVhORxM3GrDPhutkOI%2BomKRU%2FO0H9mRlf61berf149q4IoFVrdhktdddzObZvVbYcEe8ocaNMHmHKPU5UZA6UeQf5"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64da6b8693570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"bslib","Title":"Custom ''Bootstrap'' ''Sass'' Themes for
-        ''shiny'' and ''rmarkdown''","Version":"0.3.1","Authors@R":"c(\u000aperson(\"Carson\",
+        ''shiny'' and ''rmarkdown''","Version":"0.4.2","Authors@R":"c(\u000aperson(\"Carson\",
         \"Sievert\", role = c(\"aut\", \"cre\"), email = \"carson@rstudio.com\", comment
         = c(ORCID = \"0000-0002-4958-2844\")),\u000aperson(\"Joe\", \"Cheng\", role
         = \"aut\", email = \"joe@rstudio.com\"),\u000aperson(family = \"RStudio\",
@@ -915,28 +1030,34 @@ http_interactions:
         \"Park\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Bootswatch library\"),\u000aperson(family
         = \"PayPal\", role = c(\"ctb\", \"cph\"),\u000acomment = \"Bootstrap accessibility
         plugin\")\u000a)","Description":"Simplifies custom ''CSS'' styling of both
-        ''shiny'' and ''rmarkdown'' via ''Bootstrap'' ''Sass''. Supports both ''Bootstrap''
-        3 and 4 as well as their various ''Bootswatch'' themes. An interactive widget
-        is also provided for previewing themes in real time.","Depends":{"R":">= 2.10"},"Imports":{"grDevices":"*","htmltools":">=
-        0.5.2","jsonlite":"*","sass":">= 0.4.0","jquerylib":">= 0.1.3","rlang":"*"},"Suggests":{"shiny":">=
-        1.6.0","rmarkdown":">= 2.7","thematic":"*","knitr":"*","testthat":"*","withr":"*","rappdirs":"*","curl":"*","magrittr":"*"},"License":"MIT
-        + file LICENSE","Encoding":"UTF-8","RoxygenNote":"7.1.2","Config/testthat/edition":"3","Collate":"''bootswatch.R''
+        ''shiny'' and ''rmarkdown'' via ''Bootstrap'' ''Sass''. Supports ''Bootstrap''
+        3, 4 and 5 as well as their various ''Bootswatch'' themes. An interactive
+        widget is also provided for previewing themes in real time.","Depends":{"R":">=
+        2.10"},"Imports":{"grDevices":"*","htmltools":">= 0.5.4","jsonlite":"*","sass":">=
+        0.4.0","jquerylib":">= 0.1.3","rlang":"*","cachem":"*","memoise":">= 2.0.1","base64enc":"*","mime":"*"},"Suggests":{"shiny":">=
+        1.6.0","rmarkdown":">= 2.7","thematic":"*","knitr":"*","testthat":"*","withr":"*","rappdirs":"*","curl":"*","magrittr":"*","fontawesome":"*","bsicons":"*"},"License":"MIT
+        + file LICENSE","Encoding":"UTF-8","RoxygenNote":"7.2.3","Collate":"''bootswatch.R''
         ''bs-current-theme.R'' ''bs-dependencies.R''\u000a''bs-global.R'' ''bs-remove.R''
         ''bs-theme-layers.R'' ''utils.R''\u000a''bs-theme-preview.R'' ''bs-theme-update.R''
-        ''bs-theme.R''\u000a''deprecated.R'' ''files.R'' ''imports.R'' ''nav-items.R''\u000a''nav-update.R''
-        ''navs-legacy.R'' ''navs.R'' ''onLoad.R'' ''page.R''\u000a''precompiled.R''
-        ''print.R'' ''shiny-devmode.R'' ''utils-shiny.R''\u000a''utils-tags.R'' ''version-default.R''
-        ''versions.R''","URL":"https://rstudio.github.io/bslib/, https://github.com/rstudio/bslib","BugReports":"https://github.com/rstudio/bslib/issues","Config/Needs/website":"rsconnect,
-        renv, r-lib/pkgdown, apreshill/quillt","NeedsCompilation":"no","Packaged":"2021-10-06
-        14:12:58 UTC; cpsievert","Author":"Carson Sievert [aut, cre] (<https://orcid.org/0000-0002-4958-2844>),\u000aJoe
+        ''bs-theme.R'' ''card.R''\u000a''deprecated.R'' ''files.R'' ''imports.R''
+        ''layout.R'' ''nav-items.R''\u000a''nav-update.R'' ''navs-legacy.R'' ''navs.R''
+        ''onLoad.R'' ''page.R''\u000a''precompiled.R'' ''print.R'' ''shiny-devmode.R''
+        ''staticimports.R''\u000a''utils-shiny.R'' ''utils-tags.R'' ''value-box.R''\u000a''version-default.R''
+        ''versions.R''","URL":"https://rstudio.github.io/bslib/, https://github.com/rstudio/bslib","BugReports":"https://github.com/rstudio/bslib/issues","Config/testthat/edition":"3","Config/Needs/routine":"desc,
+        renv","Config/Needs/website":"brio, dplyr, glue, purrr, rprojroot, stringr,\u000atidyr,
+        DT, leaflet, plotly, htmlwidgets, shiny, ggplot2,\u000asvglite","Config/Needs/deploy":"BH,
+        DT, ggplot2, hexbin, lattice, lubridate,\u000adplyr, modelr, nycflights13,
+        histoslider, reactable, rprojroot,\u000arsconnect, plotly, leaflet, gt, shiny,
+        htmlwidgets","NeedsCompilation":"no","Packaged":"2022-12-15 16:02:29 UTC;
+        cpsievert","Author":"Carson Sievert [aut, cre] (<https://orcid.org/0000-0002-4958-2844>),\u000aJoe
         Cheng [aut],\u000aRStudio [cph],\u000aBootstrap contributors [ctb] (Bootstrap
         library),\u000aTwitter, Inc [cph] (Bootstrap library),\u000aJavi Aguilar [ctb,
         cph] (Bootstrap colorpicker library),\u000aThomas Park [ctb, cph] (Bootswatch
         library),\u000aPayPal [ctb, cph] (Bootstrap accessibility plugin)","Maintainer":"Carson
-        Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-10-06
-        15:10:05 UTC","crandb_file_date":"2021-10-06 16:20:32","MD5sum":"ae47d103100bfdfa16051832e2d8bf86","date":"2021-10-06T14:10:05+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        Sievert <carson@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-12-16
+        10:30:06 UTC","crandb_file_date":"2022-12-16 12:02:31","MD5sum":"78fe16c2a74c4f3a9c10f9670d147eb5","date":"2022-12-16T09:30:06+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/cachem
@@ -952,17 +1073,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:00 GMT
+      date: Mon, 20 Feb 2023 09:44:23 GMT
       content-type: application/json
-      content-length: '1069'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"DNJNRT8PMUQWIBY9E2BBT46NQ"'
+      etag: W/"3I7JFWNO1SQQTG9TCQJBBG0N6"
       vary: Accept
-      x-couch-request-id: 59629c3ad5
+      x-couch-request-id: 2ca73dbc6d
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=vr2XR0R3C41GEQzN8pD%2B3DC9PAW1dWlZCW8HKc7WhAhlKpL5lhK6u0b%2Bqlwu8Z9YSOQion9At%2BqRc4mXMltJNnKRjixbpFCPo385R5BkCASPGriItUibH97%2B1E5iPagUKsPZ"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64da8ea373570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"cachem","Version":"1.0.6","Title":"Cache R Objects with
         Automatic Pruning","Description":"Key-value stores with automatic pruning.
@@ -974,8 +1101,8 @@ http_interactions:
         21:07:46 UTC; barret","Author":"Winston Chang [aut, cre],\u000aRStudio [cph,
         fnd]","Maintainer":"Winston Chang <winston@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-08-19
         21:30:02 UTC","crandb_file_date":"2021-08-19 23:14:33","MD5sum":"dda8ecf0d6c2b287134bb926824f3551","date":"2021-08-19T20:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/ellipsis
@@ -991,17 +1118,23 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:00 GMT
+      date: Mon, 20 Feb 2023 09:44:23 GMT
       content-type: application/json
-      content-length: '1175'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"62O6G97F30NCJYHY39P4096FA"'
+      etag: W/"CNPBS4HT451W8GZPHO2UYXHV7"
       vary: Accept
-      x-couch-request-id: aa7d7db88c
+      x-couch-request-id: 137ffcac6f
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=rbPmrfGLBRKKCcom28VVEjRzNbhnVqMiJvXMnAmLwONPPjKgwmoPRbFvM%2BjVwjPAEtAtp37QXzUOFZneifCjxgZ3nsMLZnme7OOr29CRJT2ab6ig2x4bfEpBk%2B%2F0Yia8fCIm"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64daa7bc63570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"ellipsis","Version":"0.3.2","Title":"Tools for Working
         with ...","Description":"The ellipsis is a powerful tool for extending functions.
@@ -1015,8 +1148,8 @@ http_interactions:
         12:06:44 UTC; lionel","Author":"Hadley Wickham [aut, cre],\u000aRStudio [cph]","Maintainer":"Hadley
         Wickham <hadley@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-04-29
         12:40:02 UTC","crandb_file_date":"2021-04-29 13:56:33","MD5sum":"c453b4514da3717af5d5b97f0e3d2415","date":"2021-04-29T11:40:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: http://crandb.r-pkg.org/lifecycle
@@ -1032,32 +1165,37 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.4.6 (Ubuntu)
-      date: Sun, 19 Dec 2021 19:18:01 GMT
+      date: Mon, 20 Feb 2023 09:44:23 GMT
       content-type: application/json
-      content-length: '1549'
+      transfer-encoding: chunked
       connection: keep-alive
-      etag: '"2LB7583ALTJ1Z1OP1YDXBYHVA"'
+      etag: W/"27PRDZB6GHGTEO3FYOOAN8HXI"
       vary: Accept
-      x-couch-request-id: '4258683980'
+      x-couch-request-id: 19aad2423d
       x-couchdb-body-time: '0'
+      cf-cache-status: DYNAMIC
+      report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=A5zpwwe7Yi6q3OO14wB%2BFt2%2BMat%2Fgv522%2Fukhsx9iacUxfkkzbpyCcSjNqu%2FSI5T0rKQ6O3npO98sVdNQ934blu%2Bsq7QmSEJPjy6hBeRxLYJAAfM9WFRUyIlRovNaeX1AGOI"}],"group":"cf-nel","max_age":604800}'
+      nel: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      server: cloudflare
+      cf-ray: 79c64dac0d623570-WAW
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
       string: '{"Package":"lifecycle","Title":"Manage the Life Cycle of your Package
-        Functions","Version":"1.0.1","Authors@R":"\u000ac(person(given = \"Lionel\",\u000afamily
-        = \"Henry\",\u000arole = c(\"aut\", \"cre\"),\u000aemail = \"lionel@rstudio.com\"),\u000aperson(given
-        = \"Hadley\",\u000afamily = \"Wickham\",\u000arole = \"aut\",\u000aemail =
-        \"hadley@rstudio.com\",\u000acomment = c(ORCID = \"0000-0003-4757-117X\")),\u000aperson(given
-        = \"RStudio\",\u000arole = \"cph\"))","Description":"Manage the life cycle
-        of your exported functions\u000awith shared conventions, documentation badges,
-        and user-friendly\u000adeprecation warnings.","License":"MIT + file LICENSE","URL":"https://lifecycle.r-lib.org/,
-        https://github.com/r-lib/lifecycle","BugReports":"https://github.com/r-lib/lifecycle/issues","Depends":{"R":">=
-        3.3"},"Imports":{"glue":"*","rlang":">= 0.4.10"},"Suggests":{"covr":"*","crayon":"*","lintr":"*","tidyverse":"*","knitr":"*","rmarkdown":"*","testthat":">=
-        3.0.1","tools":"*","tibble":"*","vctrs":"*"},"VignetteBuilder":"knitr","Config/testthat/edition":"3","Encoding":"UTF-8","RoxygenNote":"7.1.2","NeedsCompilation":"no","Packaged":"2021-09-24
-        14:46:50 UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham
-        [aut] (<https://orcid.org/0000-0003-4757-117X>),\u000aRStudio [cph]","Maintainer":"Lionel
-        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2021-09-24
-        15:30:02 UTC","crandb_file_date":"2021-09-24 16:26:30","MD5sum":"e9f7135a17ff300c2ab6a9e6b72e3810","date":"2021-09-24T14:30:02+00:00","releases":[]}'
-  recorded_at: 2021-12-19 19:17:22 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+        Functions","Version":"1.0.3","Authors@R":"c(\u000aperson(\"Lionel\", \"Henry\",
+        , \"lionel@rstudio.com\", role = c(\"aut\", \"cre\")),\u000aperson(\"Hadley\",
+        \"Wickham\", , \"hadley@rstudio.com\", role = \"aut\",\u000acomment = c(ORCID
+        = \"0000-0003-4757-117X\")),\u000aperson(\"RStudio\", role = c(\"cph\", \"fnd\"))\u000a)","Description":"Manage
+        the life cycle of your exported functions with shared\u000aconventions, documentation
+        badges, and user-friendly deprecation\u000awarnings.","License":"MIT + file
+        LICENSE","URL":"https://lifecycle.r-lib.org/, https://github.com/r-lib/lifecycle","BugReports":"https://github.com/r-lib/lifecycle/issues","Depends":{"R":">=
+        3.4"},"Imports":{"cli":">= 3.4.0","glue":"*","rlang":">= 1.0.6"},"Suggests":{"covr":"*","crayon":"*","knitr":"*","lintr":"*","rmarkdown":"*","testthat":">=
+        3.0.1","tibble":"*","tidyverse":"*","tools":"*","vctrs":"*","withr":"*"},"VignetteBuilder":"knitr","Config/testthat/edition":"3","Config/Needs/website":"tidyverse/tidytemplate","Encoding":"UTF-8","RoxygenNote":"7.2.1","NeedsCompilation":"no","Packaged":"2022-10-07
+        08:50:55 UTC; lionel","Author":"Lionel Henry [aut, cre],\u000aHadley Wickham
+        [aut] (<https://orcid.org/0000-0003-4757-117X>),\u000aRStudio [cph, fnd]","Maintainer":"Lionel
+        Henry <lionel@rstudio.com>","Repository":"CRAN","Date/Publication":"2022-10-07
+        09:50:02 UTC","crandb_file_date":"2022-10-07 11:32:33","MD5sum":"023bff9f9b99ca56ed01b705a41a8bed","date":"2022-10-07T08:50:02+00:00","releases":[]}'
+  recorded_at: 2023-02-20 09:44:23 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
