@@ -24,6 +24,7 @@ Imports:
     cranlogs,
     httr,
     jsonlite,
+    lifecycle,
     woodendesc
 Suggests: 
     BiocManager,
@@ -48,3 +49,4 @@ VignetteBuilder: knitr
 URL: https://dominikrafacz.github.io/deepdep/, https://github.com/DominikRafacz/deepdep
 BugReports: https://github.com/DominikRafacz/deepdep/issues
 Language: en-GB
+Roxygen: list(markdown = TRUE)
