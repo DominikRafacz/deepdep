@@ -1,0 +1,11 @@
+deepdep():
+  x (#41) unlimited depth
+  - (#17) package version
+  x (#44) custom repos
+  x can use local libs other than the first one
+  x (#49) consistent columns in empty returns
+  x mark packages where no repository worked
+  - fail if the central package not found in any repository
+  - append "cran" to repos (?)
+  - backward compatible parameters with deprecation messages
+  - custom print
