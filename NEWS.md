@@ -1,3 +1,6 @@
+# deepdep 0.4.3
+* fixed bug related to change in how indexing of data frame is performed
+
 # deepdep 0.4.2
 * fixed bug caused by breaking change in `igraph` related to assigning attributes to graph nodes (issue #51)
 * fixed bug which made plots unable to be rendered when there are no dependencies

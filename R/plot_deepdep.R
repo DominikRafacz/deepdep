@@ -147,7 +147,9 @@ plot_dependencies.deepdep <- function(x, type = "circular", same_level = FALSE, 
         if (is.null(g[["labeled"]])) {
           g$label <- character(nrow(g))
           g
-        } else g[g[, "labeled"], ] 
+        } else {
+          g[g[["labeled"]], ] 
+        }
       },
       ggplot2::aes(label = label, fill = factor(layer)),
       show.legend = FALSE,
