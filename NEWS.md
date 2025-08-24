@@ -1,3 +1,6 @@
+# deepdep 0.4.4
+* fixed failing tests caused by new version of vcr package
+
 # deepdep 0.4.3
 * fixed bug related to change in how indexing of data frame is performed
 
